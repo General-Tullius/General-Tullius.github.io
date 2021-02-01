@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>黑神话之悟空 | Ionosphere</title>
+<title>nginx | Ionosphere</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -12,22 +12,13 @@
 <link rel="stylesheet" href="https://General-Tullius.github.io/styles/main.css">
 
 
-  
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-  
-
-  
-
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 
-    <meta name="description" content="
- 
-..." />
-    <meta name="keywords" content="游戏" />
+    <meta name="description" content="😏你找到我了">
   </head>
   <body>
     <div id="app" class="main">
@@ -97,44 +88,60 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">黑神话之悟空</h2>
-            <div class="post-date">2021-02-01</div>
-            
-            <div class="post-content" v-pre>
-              <div style="position: relative; padding: 30% 45%;">
-<iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="//player.bilibili.com/player.html?aid=841786906&bvid=BV1x54y1e7zf&cid=226204073&page=1&high_quality=1&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-</div>
-            </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://General-Tullius.github.io/SNquWwbZf/" class="tag">
-                    游戏
-                  </a>
-                
-              </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://General-Tullius.github.io/202008062135/">
-                  <h3 class="post-title">
-                    202102011428
-                  </h3>
+          <h2 class="current-tag">标签: nginx</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://General-Tullius.github.io/nginx-pei-zhi-wen-jian-xiang-jie/">
+                  <h2 class="post-title">nginx配置文件详解</h2>
                 </a>
+                <div class="post-date">
+                  2021-02-01
+                </div>
+                <div class="post-abstract">
+                  <hr>
+<h2 id="基础配置">基础配置</h2>
+<pre><code class="language-bash"># 定义nginx运行的用户和组
+user ** **;
+
+# nginx进程数，一般设置为等于CPU总核心数
+worker_processes 8;
+</code></pre>
+
+                </div>
               </div>
-            
-
-            
               
-                <div id="gitalk-container" data-aos="fade-in"></div>
-              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://General-Tullius.github.io/nginx-an-zhuang-he-ji-chu-ming-ling/">
+                  <h2 class="post-title">nginx安装和基础命令</h2>
+                </a>
+                <div class="post-date">
+                  2021-02-01
+                </div>
+                <div class="post-abstract">
+                  <hr>
+<h2 id="安装">安装</h2>
+<p>Windows：</p>
+<pre><code class="language-bash"># https://nginx.org/en/download.html
+# 下载合适的版本，解压放在合适的磁盘位置
+</code></pre>
+<p>Mac：</p>
+<pre><code class="language-bash">$ brew install nginx
+</code></pre>
 
+                </div>
+              </div>
               
-            
+            </article>
+          
 
-          </div>
+          <div class="pagination-container">
+  
+  
+</div>
 
         </div>
       </div>
@@ -155,29 +162,6 @@ var app = new Vue({
 </script>
 
 
-
-
-
-  
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-    <script>
-
-      var gitalk = new Gitalk({
-        clientID: '9650a5d0b28a30e05d11',
-        clientSecret: '3e696ee70526435c378c26059ab378bf27db65dd',
-        repo: 'Blog',
-        owner: 'General-Tullius',
-        admin: ['General-Tullius'],
-        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
-      })
-
-      gitalk.render('gitalk-container')
-
-    </script>
-  
-
-  
 
 
 
