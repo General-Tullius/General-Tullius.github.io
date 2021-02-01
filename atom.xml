@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://General-Tullius.github.io</id>
+    <id>https://blog.ionosphere.site</id>
     <title>Ionosphere</title>
-    <updated>2021-02-01T09:01:29.383Z</updated>
+    <updated>2021-02-01T09:18:32.836Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://General-Tullius.github.io"/>
-    <link rel="self" href="https://General-Tullius.github.io/atom.xml"/>
+    <link rel="alternate" href="https://blog.ionosphere.site"/>
+    <link rel="self" href="https://blog.ionosphere.site/atom.xml"/>
     <subtitle>😏你找到我了</subtitle>
-    <logo>https://General-Tullius.github.io/images/avatar.png</logo>
-    <icon>https://General-Tullius.github.io/favicon.ico</icon>
+    <logo>https://blog.ionosphere.site/images/avatar.png</logo>
+    <icon>https://blog.ionosphere.site/favicon.ico</icon>
     <rights>All rights reserved 2021, Ionosphere</rights>
     <entry>
         <title type="html"><![CDATA[NLog用法整理]]></title>
-        <id>https://General-Tullius.github.io/nlog-yong-fa-zheng-li/</id>
-        <link href="https://General-Tullius.github.io/nlog-yong-fa-zheng-li/">
+        <id>https://blog.ionosphere.site/nlog-yong-fa-zheng-li/</id>
+        <link href="https://blog.ionosphere.site/nlog-yong-fa-zheng-li/">
         </link>
         <updated>2021-02-01T06:34:32.000Z</updated>
         <summary type="html"><![CDATA[<hr/>
@@ -132,8 +132,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[nginx配置文件详解]]></title>
-        <id>https://General-Tullius.github.io/nginx-pei-zhi-wen-jian-xiang-jie/</id>
-        <link href="https://General-Tullius.github.io/nginx-pei-zhi-wen-jian-xiang-jie/">
+        <id>https://blog.ionosphere.site/nginx-pei-zhi-wen-jian-xiang-jie/</id>
+        <link href="https://blog.ionosphere.site/nginx-pei-zhi-wen-jian-xiang-jie/">
         </link>
         <updated>2021-02-01T06:32:52.000Z</updated>
         <summary type="html"><![CDATA[<hr>
@@ -483,8 +483,8 @@ worker_rlimit_nofile 65535;
     </entry>
     <entry>
         <title type="html"><![CDATA[nginx安装和基础命令]]></title>
-        <id>https://General-Tullius.github.io/nginx-an-zhuang-he-ji-chu-ming-ling/</id>
-        <link href="https://General-Tullius.github.io/nginx-an-zhuang-he-ji-chu-ming-ling/">
+        <id>https://blog.ionosphere.site/nginx-an-zhuang-he-ji-chu-ming-ling/</id>
+        <link href="https://blog.ionosphere.site/nginx-an-zhuang-he-ji-chu-ming-ling/">
         </link>
         <updated>2021-02-01T06:31:50.000Z</updated>
         <summary type="html"><![CDATA[<hr>
@@ -551,8 +551,8 @@ $ nginx -s reopen
     </entry>
     <entry>
         <title type="html"><![CDATA[Linux常用命令]]></title>
-        <id>https://General-Tullius.github.io/linux-chang-yong-ming-ling/</id>
-        <link href="https://General-Tullius.github.io/linux-chang-yong-ming-ling/">
+        <id>https://blog.ionosphere.site/linux-chang-yong-ming-ling/</id>
+        <link href="https://blog.ionosphere.site/linux-chang-yong-ming-ling/">
         </link>
         <updated>2021-02-01T06:30:05.000Z</updated>
         <summary type="html"><![CDATA[<ol>
@@ -616,8 +616,8 @@ scp -P 666  localpath user@***.***.***.***:filePath
     </entry>
     <entry>
         <title type="html"><![CDATA[黑神话之悟空]]></title>
-        <id>https://General-Tullius.github.io/hei-shen-hua-zhi-wu-kong/</id>
-        <link href="https://General-Tullius.github.io/hei-shen-hua-zhi-wu-kong/">
+        <id>https://blog.ionosphere.site/hei-shen-hua-zhi-wu-kong/</id>
+        <link href="https://blog.ionosphere.site/hei-shen-hua-zhi-wu-kong/">
         </link>
         <updated>2021-02-01T06:26:07.000Z</updated>
         <content type="html"><![CDATA[<div style="position: relative; padding: 30% 45%;">
@@ -626,11 +626,11 @@ scp -P 666  localpath user@***.***.***.***:filePath
     </entry>
     <entry>
         <title type="html"><![CDATA[202102011428]]></title>
-        <id>https://General-Tullius.github.io/202008062135/</id>
-        <link href="https://General-Tullius.github.io/202008062135/">
+        <id>https://blog.ionosphere.site/202008062135/</id>
+        <link href="https://blog.ionosphere.site/202008062135/">
         </link>
         <updated>2021-02-01T06:20:25.000Z</updated>
-        <content type="html"><![CDATA[<p><img src="https://General-Tullius.github.io/post-images/1612160605326.png" alt="" loading="lazy">今天天气很是不错...</p>
+        <content type="html"><![CDATA[<p><img src="https://blog.ionosphere.site/post-images/1612160605326.png" alt="" loading="lazy">今天天气很是不错...</p>
 ]]></content>
     </entry>
 </feed>
