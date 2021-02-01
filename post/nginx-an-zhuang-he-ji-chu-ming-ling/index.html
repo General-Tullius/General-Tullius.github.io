@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>nginx安装和基础命令 | Ionosphere</title>
+<meta name="description" content="😏你找到我了">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://General-Tullius.github.io/favicon.ico?v=1612161971390">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://General-Tullius.github.io/styles/main.css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://General-Tullius.github.io">Ionosphere</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>nginx安装和基础命令</h1>
+            <p class="article-meta">
+              2021-02-01
+              
+                <a href="https://General-Tullius.github.io/tag/WkC_8_bNb/" class="badge secondary">
+                  nginx
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <hr>
+<h2 id="安装">安装</h2>
+<p>Windows：</p>
+<pre><code class="language-bash"># https://nginx.org/en/download.html
+# 下载合适的版本，解压放在合适的磁盘位置
+</code></pre>
+<p>Mac：</p>
+<pre><code class="language-bash">$ brew install nginx
+</code></pre>
+<!--more-->
+<hr>
+<h2 id="基础命令">基础命令</h2>
+<h3 id="1-启动">1. 启动</h3>
+<pre><code class="language-bash"># Windows
+# cd 至 nginx 根目录
+# 后台运行
+$ start .\nginx
+# 临时运行
+$ .\nginx
+
+# Mac
+# 后台运行并开机自启动
+$ brew services start nginx
+# 临时运行
+$ nginx
+</code></pre>
+<h3 id="2-维护">2. 维护</h3>
+<pre><code class="language-bash"># 重载配置
+# 重新加载配置文件
+# 不中断nginx服务，conf配置有错，会用上一次正确配置正常运行。
+$ nginx -s reload
+
+# 重启
+# nginx服务会中断，若conf配置有误，则nginx不能启动
+$ nginx - s restart
+
+# 截断日志
+# 用于防止日志文件过大,需要先移动文件，然后执行此命令
+$ nginx -s reopen
+</code></pre>
+<h3 id="3-停止">3. 停止</h3>
+<pre><code class="language-bash"> # 快速停止
+ # 可能并不保存相关信息
+ nginx -s stop
+ 
+ # 有序停止
+ # 完整有序停止，并保存相关信息
+ nginx -s quit
+</code></pre>
+<hr>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://General-Tullius.github.io/post/linux-chang-yong-ming-ling/">
+                <h3 class="post-title">
+                  Linux常用命令
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://General-Tullius.github.io/images/avatar.png?v=1612161971390" class="no-responsive avatar">
+    <div class="text-muted">😏你找到我了</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://General-Tullius.github.io/post/nlog-yong-fa-zheng-li/">NLog用法整理</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://General-Tullius.github.io/post/nginx-pei-zhi-wen-jian-xiang-jie/">nginx配置文件详解</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://General-Tullius.github.io/post/nginx-an-zhuang-he-ji-chu-ming-ling/">nginx安装和基础命令</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://General-Tullius.github.io/post/linux-chang-yong-ming-ling/">Linux常用命令</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://General-Tullius.github.io/post/hei-shen-hua-zhi-wu-kong/">黑神话之悟空</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://General-Tullius.github.io/post/202008062135/">202102011428</a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://General-Tullius.github.io/tag/hUWAycyfT/" class="badge secondary">
+          dotnet
+        </a>
+      
+        <a href="https://General-Tullius.github.io/tag/WkC_8_bNb/" class="badge warning">
+          nginx
+        </a>
+      
+        <a href="https://General-Tullius.github.io/tag/BcThDDvbm/" class="badge success">
+          Linux
+        </a>
+      
+        <a href="https://General-Tullius.github.io/tag/SNquWwbZf/" class="badge success">
+          游戏
+        </a>
+      
+        <a href="https://General-Tullius.github.io/tag/b3pYdgYb3/" class="badge ">
+          扯淡
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://General-Tullius.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+
+  </body>
+</html>
