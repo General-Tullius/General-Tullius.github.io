@@ -1,26 +1,13 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>NLog用法整理 | Ionosphere</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://blog.ionosphere.site/favicon.ico?v=1612172948493">
+<link rel="shortcut icon" href="https://blog.ionosphere.site/favicon.ico?v=1612173163169">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.ionosphere.site/styles/main.css">
-
-
-  
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-  
-
-  
-
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<link rel="alternate" type="application/atom+xml" title="NLog用法整理 | Ionosphere - Atom Feed" href="https://blog.ionosphere.site/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
@@ -41,81 +28,86 @@ NLog
 配置内容如下
 &lt;?xml version=&q..." />
     <meta name="keywords" content="dotnet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://blog.ionosphere.site">
-        <img src="https://blog.ionosphere.site/images/avatar.png?v=1612172948493" class="site-logo">
-        <h1 class="site-title">Ionosphere</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
-    </div>
-    <div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://blog.ionosphere.site">
+  <img class="avatar" src="https://blog.ionosphere.site/images/avatar.png?v=1612173163169" alt="">
+  </a>
+  <h1 class="site-title">
+    Ionosphere
+  </h1>
+  <p class="site-description">
+    😏你找到我了
+  </p>
+  <div class="menu-container">
+    
       
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
+        <a href="/" class="menu">
+          首页
+        </a>
       
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
+    
       
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
+        <a href="/archives" class="menu">
+          归档
+        </a>
       
-        
-          <a href="https://blog.ionosphere.site/guan-yu-wo" class="site-nav">
-            关于
-          </a>
-        
+    
       
-    </div>
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="https://blog.ionosphere.site/guan-yu-wo" class="menu">
+          关于
+        </a>
+      
+    
   </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
+  <div class="social-container">
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
-      
-    </div>
-    <div class="site-description">
-      😏你找到我了
-    </div>
-    <div class="site-footer">
-      QQ:85653879 | <a class="rss" href="https://blog.ionosphere.site/atom.xml" target="_blank">RSS</a>
-    </div>
+    
   </div>
 </div>
 
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">NLog用法整理</h2>
-            <div class="post-date">2021-02-01</div>
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              NLog用法整理
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-02-01
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+                <a href="https://blog.ionosphere.site/hUWAycyfT/" class="post-tag">
+                  # dotnet
+                </a>
+              
+            </div>
             
-            <div class="post-content" v-pre>
-              <hr/>
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <hr/>
 <p>NLog是一个简单灵活的.NET日志记录类库。</p>
 <hr>
 <blockquote>
@@ -221,87 +213,126 @@ NLog
 </li>
 </ul>
 <hr/>
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B">使用流程</a>
+<ul>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%85%B3%E5%8C%85%E5%BC%95%E7%94%A8">添加相关包引用</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0nlogconfig">添加nlog.config</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9programcs">修改program.cs</a></li>
+<li><a href="#%E8%AE%B0%E5%BD%95%E6%97%A5%E5%BF%97">记录日志</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%B6%E5%AE%83%E8%AF%B4%E6%98%8E">其它说明</a>
+<ul>
+<li><a href="#%E5%85%B3%E4%BA%8E%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E">关于配置文件说明</a>
+<ul>
+<li><a href="#targets%E9%83%A8%E5%88%86">targets部分</a></li>
+<li><a href="#rules%E9%83%A8%E5%88%86">rules部分</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
             </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://blog.ionosphere.site/hUWAycyfT/" class="tag">
-                    dotnet
-                  </a>
-                
-              </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://blog.ionosphere.site/nginx-pei-zhi-wen-jian-xiang-jie/">
-                  <h3 class="post-title">
-                    nginx配置文件详解
-                  </h3>
-                </a>
-              </div>
-            
-
-            
-              
-                <div id="gitalk-container" data-aos="fade-in"></div>
-              
-
-              
-            
-
-          </div>
-
+          </article>
         </div>
-      </div>
-    </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script type="application/javascript">
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://blog.ionosphere.site/nginx-pei-zhi-wen-jian-xiang-jie/">
+              <h3 class="post-title">
+                nginx配置文件详解
+              </h3>
+            </a>
+          </div>
+        
 
-AOS.init();
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '3140274bcd6d2606eb8f',
+    clientSecret: 'f69f993bfbdfa1ed6f0bae471baca6f06350165b',
+    repo: 'Gitalk',
+    owner: 'General-Tullius',
+    admin: ['General-Tullius'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
 
 </script>
 
+          
 
-  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad()
-  </script>
+          
+        
 
+        <div class="site-footer">
+  QQ:85653879
+  <a class="rss" href="https://blog.ionosphere.site/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
 
+      </div>
+    </div>
 
-
-  
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
     <script>
+      hljs.initHighlightingOnLoad()
 
-      var gitalk = new Gitalk({
-        clientID: '3140274bcd6d2606eb8f',
-        clientSecret: 'f69f993bfbdfa1ed6f0bae471baca6f06350165b',
-        repo: 'Gitalk',
-        owner: 'General-Tullius',
-        admin: ['General-Tullius'],
-        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
-      })
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-      gitalk.render('gitalk-container')
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
 
     </script>
-  
-
-  
-
-
-
-
   </body>
 </html>
