@@ -4,65 +4,125 @@
     <meta charset="utf-8" >
 
 <title>dotnet | Ionosphere</title>
+<meta name="description" content="😏你找到我了">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://blog.ionosphere.site/favicon.ico?v=1612172306176">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://blog.ionosphere.site/favicon.ico?v=1612171167569">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://blog.ionosphere.site/styles/main.css">
 
 
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
-
-    <meta name="description" content="😏你找到我了">
   </head>
   <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://blog.ionosphere.site">
-        <img src="https://blog.ionosphere.site/images/avatar.png?v=1612171167569" class="site-logo">
-        <h1 class="site-title">Ionosphere</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
-    </div>
-    <div>
-      
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://blog.ionosphere.site">Ionosphere</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
         
-          <a href="/" class="site-nav">
-            首页
-          </a>
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
         
-      
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
         
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
         
-      
+          <li>
+            
+              <a href="https://blog.ionosphere.site/guan-yu-wo" class="menu">
+                关于
+              </a>
+            
+          </li>
         
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
-      
-        
-          <a href="https://blog.ionosphere.site/guan-yu-wo" class="site-nav">
-            关于
-          </a>
-        
-      
+      </ul>
     </div>
   </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <h2 class="current-tag">标签: dotnet</h2>
+          
+  <article class="article">
+    <h2 class="article-title">
+      <a href="https://blog.ionosphere.site/nlog-yong-fa-zheng-li/">NLog用法整理</a>
+    </h2>
+    <p class="article-meta">
+      2021-02-01
+      
+        <a href="https://blog.ionosphere.site/hUWAycyfT/" class="badge secondary">
+          dotnet
+        </a>
+      
+    </p>
+    <p class="text-lead">
+      <hr/>
+<p>NLog是一个简单灵活的.NET日志记录类库。</p>
+<hr>
+<blockquote>
+<p>官方文档  <a href="https://www.nuget.org/packages/NLog.Web.AspNetCore/#">Nlog</a></p>
+</blockquote>
+
+    </p>
+    <div class="row">
+      <a href="https://blog.ionosphere.site/nlog-yong-fa-zheng-li/" class="readmore-link">
+        <button>
+          Read More
+        </button>
+      </a>
+    </div>
+  </article>
+
+
+        </div>
+        <div class="row flex-edges">
+  
+  
+</div>
+
+      </div>
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://blog.ionosphere.site/images/avatar.png?v=1612172306176" class="no-responsive avatar">
+    <div class="text-muted">😏你找到我了</div>
     <div class="social-container">
       
         
@@ -76,66 +136,103 @@
         
       
     </div>
-    <div class="site-description">
-      😏你找到我了
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
     </div>
-    <div class="site-footer">
-      QQ:85653879 | <a class="rss" href="https://blog.ionosphere.site/atom.xml" target="_blank">RSS</a>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://blog.ionosphere.site/guan-yu-wo/">关于我</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://blog.ionosphere.site/nlog-yong-fa-zheng-li/">NLog用法整理</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://blog.ionosphere.site/nginx-pei-zhi-wen-jian-xiang-jie/">nginx配置文件详解</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://blog.ionosphere.site/nginx-an-zhuang-he-ji-chu-ming-ling/">nginx安装和基础命令</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://blog.ionosphere.site/linux-chang-yong-ming-ling/">Linux常用命令</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://blog.ionosphere.site/hei-shen-hua-zhi-wu-kong/">黑神话之悟空</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://blog.ionosphere.site/202008062135/">202102011428</a>
+            </li>
+          
+        
+      </ul>
     </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://blog.ionosphere.site/hUWAycyfT/" class="badge success">
+          dotnet
+        </a>
+      
+        <a href="https://blog.ionosphere.site/WkC_8_bNb/" class="badge success">
+          nginx
+        </a>
+      
+        <a href="https://blog.ionosphere.site/BcThDDvbm/" class="badge success">
+          Linux
+        </a>
+      
+        <a href="https://blog.ionosphere.site/SNquWwbZf/" class="badge warning">
+          游戏
+        </a>
+      
+        <a href="https://blog.ionosphere.site/b3pYdgYb3/" class="badge success">
+          扯淡
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    QQ:85653879 | <a class="rss" href="https://blog.ionosphere.site/atom.xml" target="_blank">RSS</a>
   </div>
 </div>
 
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <h2 class="current-tag">标签: dotnet</h2>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://blog.ionosphere.site/nlog-yong-fa-zheng-li/">
-                  <h2 class="post-title">NLog用法整理</h2>
-                </a>
-                <div class="post-date">
-                  2021-02-01
-                </div>
-                <div class="post-abstract">
-                  <hr/>
-<p>NLog是一个简单灵活的.NET日志记录类库。</p>
-<hr>
-<blockquote>
-<p>官方文档  <a href="https://www.nuget.org/packages/NLog.Web.AspNetCore/#">Nlog</a></p>
-</blockquote>
-
-                </div>
-              </div>
-              
-            </article>
-          
-
-          <div class="pagination-container">
-  
-  
-</div>
-
-        </div>
-      </div>
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
 <script type="application/javascript">
 
 AOS.init();
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+hljs.initHighlightingOnLoad()
 
 </script>
-
-
 
 
 
