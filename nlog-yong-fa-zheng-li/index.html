@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>NLog用法整理 | Ionosphere</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://General-Tullius.github.io/favicon.ico?v=1612165995812">
+<link rel="stylesheet" href="https://General-Tullius.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="
+NLog是一个简单灵活的.NET日志记录类库。
+
+
+官方文档  Nlog
+
+
+使用流程
+添加相关包引用
+
+NLog.Web.AspNetCore
+NLog
+
+添加nlog.config
+配置内容如下
+&lt;?xml version=&q..." />
+    <meta name="keywords" content="dotnet" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://General-Tullius.github.io">
+        <img src="https://General-Tullius.github.io/images/avatar.png?v=1612165995812" class="site-logo">
+        <h1 class="site-title">Ionosphere</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://General-Tullius.github.io/guan-yu-wo" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      😏你找到我了
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://General-Tullius.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">NLog用法整理</h2>
+            <div class="post-date">2021-02-01</div>
+            
+            <div class="post-content" v-pre>
+              <hr/>
+<p>NLog是一个简单灵活的.NET日志记录类库。</p>
+<hr>
+<blockquote>
+<p>官方文档  <a href="https://www.nuget.org/packages/NLog.Web.AspNetCore/#">Nlog</a></p>
+</blockquote>
+<!--more-->
+<h2 id="使用流程">使用流程</h2>
+<h3 id="添加相关包引用">添加相关包引用</h3>
+<blockquote>
+<p>NLog.Web.AspNetCore</p>
+<p>NLog</p>
+</blockquote>
+<h3 id="添加nlogconfig">添加nlog.config</h3>
+<p>配置内容如下</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;nlog xmlns=&quot;http://www.nlog-project.org/schemas/NLog.xsd&quot;
+      xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+  &lt;targets&gt;
+    &lt;target name=&quot;logFile&quot; xsi:type=&quot;File&quot; fileName=&quot;logs/log-${shortdate}.log&quot; layout=&quot;[${longdate}]：${message}&quot; /&gt;    
+    &lt;target name=&quot;errFile&quot; xsi:type=&quot;File&quot; fileName=&quot;logs/err-${shortdate}.log&quot; layout=&quot;[${longdate}]：${message}&quot; /&gt;    
+  &lt;/targets&gt;
+  &lt;rules&gt;
+    &lt;logger name=&quot;*&quot; level=&quot;Info&quot; writeTo=&quot;logFile&quot; /&gt;
+    &lt;logger name=&quot;*&quot; level=&quot;Error&quot; writeTo=&quot;errFile&quot; /&gt;
+  &lt;/rules&gt;
+&lt;/nlog&gt;
+</code></pre>
+<h3 id="修改programcs">修改program.cs</h3>
+<pre><code class="language-c#">public static IHostBuilder CreateHostBuilder(string[] args) =&gt;
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =&gt;
+                {
+                    webBuilder.UseStartup&lt;Startup&gt;();
+                })
+                .ConfigureLogging(logging =&gt; { logging.ClearProviders(); logging.AddNLog(&quot;config/nlog.config&quot;); });
+</code></pre>
+<h3 id="记录日志">记录日志</h3>
+<pre><code class="language-C#">namespace Example.Contollers
+{
+    [Route(&quot;api/[controller]&quot;)]
+    [ApiController]
+    public class ExampleController : ControllerBase
+    {
+        readonly ILogger&lt;ExampleController&gt; _logger;
+        
+        public ExampleController(ILogger&lt;ExampleController&gt; logger)
+        {
+            _logger = logger;
+        }
+    }
+    
+    [HttpPost(&quot;&quot;)]
+    public ActionResult Post([FromBody] EType value)
+    {
+        _logger.LogInformation(&quot;日志内容&quot;);
+        return Ok();
+    }
+}
+</code></pre>
+<h2 id="其它说明">其它说明</h2>
+<h3 id="关于配置文件说明">关于配置文件说明</h3>
+<h4 id="targets部分">targets部分</h4>
+<ul>
+<li>
+<p><strong>targets的作用</strong></p>
+<p>targets用来设定日志记录相关的一些规则，例如日志存放位置、日志文件名称、日志内容记录格式等。</p>
+</li>
+<li>
+<p><strong>属性说明</strong></p>
+<p>name相当于id，用于选定某一个日志创建规则</p>
+<p>type日志记录类型，可以是文件File、数据库Database或者邮件Mail</p>
+<p>fileName用于设定日志文件存放路径和文件名称</p>
+<p>layout用于设定日志内容记录的格式</p>
+</li>
+<li>
+<p><strong>示例</strong></p>
+<pre><code class="language-xml">&lt;targets&gt;
+    &lt;target name=&quot;logFile&quot; xsi:type=&quot;File&quot; fileName=&quot;logs/log-${shortdate}.log&quot; layout=&quot;[${longdate}]：${message}&quot; /&gt;    
+    &lt;target name=&quot;errFile&quot; xsi:type=&quot;File&quot; fileName=&quot;logs/err-${shortdate}.log&quot; layout=&quot;[${longdate}]：${message}&quot; /&gt;    
+&lt;/targets&gt;
+</code></pre>
+</li>
+</ul>
+<h4 id="rules部分">rules部分</h4>
+<ul>
+<li>
+<p><strong>rules的作用</strong></p>
+<p>rules用来设定某处产生的某级别的日志应该采用哪个日志配置来记录。</p>
+</li>
+<li>
+<p><strong>属性说明</strong></p>
+<p>writeTo用来选定tagets中的某一个配置，取值为target的名字</p>
+<p>name用来筛选产生日志的地方（命名空间、类等）</p>
+<p>level用来控制某一特定的日志级别，还可以用minlevel、maxlevel、levels等属性来选定多个日志级别</p>
+</li>
+<li>
+<p><strong>示例</strong></p>
+<pre><code class="language-xml">&lt;rules&gt;
+    &lt;logger name=&quot;Example.*&quot; level=&quot;Info&quot; writeTo=&quot;logFile&quot; /&gt;
+    &lt;logger name=&quot;Example.*&quot; level=&quot;Error&quot; writeTo=&quot;errFile&quot; /&gt;
+&lt;/rules&gt;
+</code></pre>
+</li>
+</ul>
+<hr/>
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://General-Tullius.github.io/tag/hUWAycyfT/" class="tag">
+                    dotnet
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://General-Tullius.github.io/nginx-pei-zhi-wen-jian-xiang-jie/">
+                  <h3 class="post-title">
+                    nginx配置文件详解
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

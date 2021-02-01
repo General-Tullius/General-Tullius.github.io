@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>游戏 | Ionosphere</title>
+<title>nginx安装和基础命令 | Ionosphere</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,7 +18,21 @@
 
 
 
-    <meta name="description" content="😏你找到我了">
+    <meta name="description" content="
+安装
+Windows：
+# https://nginx.org/en/download.html
+# 下载合适的版本，解压放在合适的磁盘位置
+
+Mac：
+$ brew install nginx
+
+
+
+基础命令
+1. 启动
+# Windo..." />
+    <meta name="keywords" content="nginx" />
   </head>
   <body>
     <div id="app" class="main">
@@ -88,28 +102,86 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="current-tag">标签: 游戏</h2>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://General-Tullius.github.io/hei-shen-hua-zhi-wu-kong/">
-                  <h2 class="post-title">黑神话之悟空</h2>
-                </a>
-                <div class="post-date">
-                  2021-02-01
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
+          <div class="post-detail">
+            <h2 class="post-title">nginx安装和基础命令</h2>
+            <div class="post-date">2021-02-01</div>
+            
+            <div class="post-content" v-pre>
+              <hr>
+<h2 id="安装">安装</h2>
+<p>Windows：</p>
+<pre><code class="language-bash"># https://nginx.org/en/download.html
+# 下载合适的版本，解压放在合适的磁盘位置
+</code></pre>
+<p>Mac：</p>
+<pre><code class="language-bash">$ brew install nginx
+</code></pre>
+<!--more-->
+<hr>
+<h2 id="基础命令">基础命令</h2>
+<h3 id="1-启动">1. 启动</h3>
+<pre><code class="language-bash"># Windows
+# cd 至 nginx 根目录
+# 后台运行
+$ start .\nginx
+# 临时运行
+$ .\nginx
 
-          <div class="pagination-container">
-  
-  
-</div>
+# Mac
+# 后台运行并开机自启动
+$ brew services start nginx
+# 临时运行
+$ nginx
+</code></pre>
+<h3 id="2-维护">2. 维护</h3>
+<pre><code class="language-bash"># 重载配置
+# 重新加载配置文件
+# 不中断nginx服务，conf配置有错，会用上一次正确配置正常运行。
+$ nginx -s reload
+
+# 重启
+# nginx服务会中断，若conf配置有误，则nginx不能启动
+$ nginx - s restart
+
+# 截断日志
+# 用于防止日志文件过大,需要先移动文件，然后执行此命令
+$ nginx -s reopen
+</code></pre>
+<h3 id="3-停止">3. 停止</h3>
+<pre><code class="language-bash"> # 快速停止
+ # 可能并不保存相关信息
+ nginx -s stop
+ 
+ # 有序停止
+ # 完整有序停止，并保存相关信息
+ nginx -s quit
+</code></pre>
+<hr>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://General-Tullius.github.io/tag/WkC_8_bNb/" class="tag">
+                    nginx
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://General-Tullius.github.io/linux-chang-yong-ming-ling/">
+                  <h3 class="post-title">
+                    Linux常用命令
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
 
         </div>
       </div>

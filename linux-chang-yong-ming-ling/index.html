@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>游戏 | Ionosphere</title>
+<title>Linux常用命令 | Ionosphere</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,7 +18,31 @@
 
 
 
-    <meta name="description" content="😏你找到我了">
+    <meta name="description" content="
+
+查看登录日志
+# last -n
+last -5
+
+
+
+查看系统运行资源状况
+top
+
+
+
+查看系统负载
+uptime
+
+
+
+   
+
+
+SSH登录
+# ssh -p port username@host
+ssh user@***.**..." />
+    <meta name="keywords" content="Linux" />
   </head>
   <body>
     <div id="app" class="main">
@@ -88,28 +112,74 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="current-tag">标签: 游戏</h2>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://General-Tullius.github.io/hei-shen-hua-zhi-wu-kong/">
-                  <h2 class="post-title">黑神话之悟空</h2>
-                </a>
-                <div class="post-date">
-                  2021-02-01
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
+          <div class="post-detail">
+            <h2 class="post-title">Linux常用命令</h2>
+            <div class="post-date">2021-02-01</div>
+            
+            <div class="post-content" v-pre>
+              <ol>
+<li>
+<p>查看登录日志</p>
+<pre><code class="language-bash"># last -n
+last -5
+</code></pre>
+</li>
+<li>
+<p>查看系统运行资源状况</p>
+<pre><code class="language-bash">top
+</code></pre>
+</li>
+<li>
+<p>查看系统负载</p>
+<pre><code class="language-bash">uptime
+</code></pre>
+</li>
+</ol>
+<!--more-->   
+<ol start="4">
+<li>
+<p>SSH登录</p>
+<pre><code class="language-bash"># ssh -p port username@host
+ssh user@***.***.***.***
+</code></pre>
+</li>
+<li>
+<p>SSH传输文件</p>
+<pre><code class="language-bash"># 从服务器获取文件
+# scp -p port username@host:/服务器路径 /本地路径
+scp -P 666 user@***.***.***.***:filePath localPath
 
-          <div class="pagination-container">
-  
-  
-</div>
+# 上传文件到服务器
+# scp -p port /本地路径 username@host:/服务器路径 
+scp -P 666  localpath user@***.***.***.***:filePath
+</code></pre>
+</li>
+</ol>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://General-Tullius.github.io/tag/BcThDDvbm/" class="tag">
+                    Linux
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://General-Tullius.github.io/hei-shen-hua-zhi-wu-kong/">
+                  <h3 class="post-title">
+                    黑神话之悟空
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
 
         </div>
       </div>
