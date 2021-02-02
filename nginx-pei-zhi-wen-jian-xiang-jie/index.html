@@ -7,7 +7,7 @@
 <title>
     nginx配置文件详解 | Ionosphere
 </title>
-<link rel="shortcut icon" href="https://blog.ionosphere.site/favicon.ico?v=1612233732133">
+<link rel="shortcut icon" href="https://blog.ionosphere.site/favicon.ico?v=1612235165111">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -35,7 +35,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ionosphere.site">
-                <img class="avatar" src="https://blog.ionosphere.site/images/avatar.png?v=1612233732133" alt="">
+                <img class="avatar" src="https://blog.ionosphere.site/images/avatar.png?v=1612235165111" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -119,7 +119,7 @@
                         </div>
                         
                                 <div class="post-content">
-                                    <hr>
+                                    <h2 id="-more-"><!-- more --></h2>
 <h2 id="基础配置">基础配置</h2>
 <pre><code class="language-bash"># 定义nginx运行的用户和组
 user ** **;
@@ -483,6 +483,7 @@ worker_rlimit_nofile 65535;
             <ul class="markdownIt-TOC">
 <li>
 <ul>
+<li><a href="#-more-"><!-- more --></a></li>
 <li><a href="#%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE">基础配置</a></li>
 <li><a href="#events%E6%A8%A1%E5%9D%97">events模块</a></li>
 <li><a href="#http%E6%A8%A1%E5%9D%97">http模块</a></li>
