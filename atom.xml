@@ -2,13 +2,39 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ionosphere.site</id>
     <title>Ionosphere</title>
-    <updated>2021-02-04T09:03:21.117Z</updated>
+    <updated>2021-02-04T13:55:48.541Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ionosphere.site"/>
     <link rel="self" href="https://blog.ionosphere.site/atom.xml"/>
     <logo>https://blog.ionosphere.site/images/avatar.png</logo>
     <icon>https://blog.ionosphere.site/favicon.ico</icon>
     <rights>All rights reserved 2021, Ionosphere</rights>
+    <entry>
+        <title type="html"><![CDATA[Github+PicGo+jsdeliver搭建图床]]></title>
+        <id>https://blog.ionosphere.site/Rzivynw31/</id>
+        <link href="https://blog.ionosphere.site/Rzivynw31/">
+        </link>
+        <updated>2021-02-04T09:09:16.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="步骤">步骤</h2>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="步骤">步骤</h2>
+<!-- more -->
+<p>整体逻辑：使用GitHub仓库作为存储空间，利用jsdeliver做CDN，利用PicGo做图片管理工具</p>
+<h3 id="github设置">Github设置</h3>
+<ul>
+<li>创建公开仓库</li>
+<li>创建私人访问Token,并将Token记录下来</li>
+</ul>
+<blockquote>
+<p>注意：Token需要有repo、delete_repo权限</p>
+</blockquote>
+<h3 id="picgo设置">PicGo设置</h3>
+<p>配置如下</p>
+<figure data-type="image" tabindex="1"><img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210204213809.png" alt="" loading="lazy"></figure>
+<h2 id="资源">资源</h2>
+<p><a href="https://github.com/Molunerfinn/PicGo">PicGo</a> <a href="https://www.jsdelivr.com">jsDelivr</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[放假倒计时🏇]]></title>
         <id>https://blog.ionosphere.site/NkU0guHnx/</id>
