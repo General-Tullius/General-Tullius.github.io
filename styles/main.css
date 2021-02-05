@@ -283,8 +283,8 @@ pre {
   overflow-x: scroll;
   padding: 10pt 15pt;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  background-color: #f5f5f5;
+  border-radius: 10px;
+  background-color: #1E1E1E;
   color: #333;
   text-align: left;
   font-size: 13px;
@@ -979,83 +979,76 @@ summary {
   display: list-item;
 }
 /*
-Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
-*/
+ * Visual Studio 2015 dark style
+ * Author: Nicolas LLOBERA <nllobera@gmail.com>
+ */
 .hljs {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  color: #000;
-  background: #fff;
+  background: #1E1E1E;
+  color: #DCDCDC;
+}
+.hljs-keyword,
+.hljs-literal,
+.hljs-symbol,
+.hljs-name {
+  color: #569CD6;
+}
+.hljs-link {
+  color: #569CD6;
+  text-decoration: underline;
+}
+.hljs-built_in,
+.hljs-type {
+  color: #4EC9B0;
+}
+.hljs-number,
+.hljs-class {
+  color: #B8D7A3;
+}
+.hljs-string,
+.hljs-meta-string {
+  color: #D69D85;
+}
+.hljs-regexp,
+.hljs-template-tag {
+  color: #9A5334;
 }
 .hljs-subst,
-.hljs-title {
-  font-weight: normal;
-  color: #000;
+.hljs-function,
+.hljs-title,
+.hljs-params,
+.hljs-formula {
+  color: #DCDCDC;
 }
 .hljs-comment,
 .hljs-quote {
-  color: #808080;
-  font-style: italic;
-}
-.hljs-meta {
-  color: #808000;
-}
-.hljs-tag {
-  background: #efefef;
-}
-.hljs-section,
-.hljs-name,
-.hljs-literal,
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-type,
-.hljs-selector-id,
-.hljs-selector-class {
-  font-weight: bold;
-  color: #000080;
-}
-.hljs-attribute,
-.hljs-number,
-.hljs-regexp,
-.hljs-link {
-  font-weight: bold;
-  color: #0000ff;
-}
-.hljs-number,
-.hljs-regexp,
-.hljs-link {
-  font-weight: normal;
-}
-.hljs-string {
-  color: #008000;
-  font-weight: bold;
-}
-.hljs-symbol,
-.hljs-bullet,
-.hljs-formula {
-  color: #000;
-  background: #d0eded;
+  color: #57A64A;
   font-style: italic;
 }
 .hljs-doctag {
-  text-decoration: underline;
+  color: #608B4E;
+}
+.hljs-meta,
+.hljs-meta-keyword,
+.hljs-tag {
+  color: #9B9B9B;
 }
 .hljs-variable,
 .hljs-template-variable {
-  color: #660e7a;
+  color: #BD63C5;
 }
-.hljs-addition {
-  background: #baeeba;
+.hljs-attr,
+.hljs-attribute,
+.hljs-builtin-name {
+  color: #9CDCFE;
 }
-.hljs-deletion {
-  background: #ffc8bd;
+.hljs-section {
+  color: gold;
 }
 .hljs-emphasis {
   font-style: italic;
-}
-.hljs-strong {
-  font-weight: bold;
 }
 .post-detail {
   flex: 1;
