@@ -2,13 +2,30 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ionosphere.site</id>
     <title>Ionosphere</title>
-    <updated>2021-02-06T03:47:09.524Z</updated>
+    <updated>2021-02-06T05:27:16.821Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ionosphere.site"/>
     <link rel="self" href="https://blog.ionosphere.site/atom.xml"/>
     <logo>https://blog.ionosphere.site/images/avatar.png</logo>
     <icon>https://blog.ionosphere.site/favicon.ico</icon>
     <rights>All rights reserved 2021, Ionosphere</rights>
+    <entry>
+        <title type="html"><![CDATA[Visual Studio Code 使用问题记录]]></title>
+        <id>https://blog.ionosphere.site/P-CCz4AvV/</id>
+        <link href="https://blog.ionosphere.site/P-CCz4AvV/">
+        </link>
+        <updated>2021-02-06T05:19:30.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="nuget包管理加载版本时报错">Nuget包管理加载版本时报错</h2>
+<p>解决方案：</p>
+<ul>
+<li>打开<code>.vscode/extensions/jmrog.vscode-nuget-package-manager-1.1.6/out/src/actions/add-methods/fetchPackageVersions.js</code>，</li>
+<li>修改代码</li>
+</ul>
+<pre><code class="language-javascript">...node_fetch_1.default(`${versionsUrl}${selectedPackageName.toLowerCase()}/index.json`, utils_1.getFetchOptions(vscode.workspace.getConfiguration('http')))
+</code></pre>
+<hr/>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[坐标系转换]]></title>
         <id>https://blog.ionosphere.site/hX_kztFgl/</id>
