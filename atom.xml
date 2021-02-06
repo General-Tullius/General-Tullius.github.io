@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ionosphere.site</id>
     <title>Ionosphere</title>
-    <updated>2021-02-06T05:47:59.555Z</updated>
+    <updated>2021-02-06T05:51:10.320Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ionosphere.site"/>
     <link rel="self" href="https://blog.ionosphere.site/atom.xml"/>
@@ -234,6 +234,20 @@ if __name__ == '__main__':
 ]]></content>
     </entry>
     <entry>
+        <title type="html"><![CDATA[文字转语音]]></title>
+        <id>https://blog.ionosphere.site/mV0zp9v9E/</id>
+        <link href="https://blog.ionosphere.site/mV0zp9v9E/">
+        </link>
+        <updated>2020-10-06T05:48:54.000Z</updated>
+        <content type="html"><![CDATA[<pre><code class="language-shell"># 文字转语音
+say -f 1.txt -o 1.aiff
+say 你好 -o 你好.aiff
+# 音频格式转换
+ffmpeg -f aiff -i 你好.aiff 你好.mp3
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[黑神话之悟空]]></title>
         <id>https://blog.ionosphere.site/hei-shen-hua-zhi-wu-kong/</id>
         <link href="https://blog.ionosphere.site/hei-shen-hua-zhi-wu-kong/">
@@ -301,13 +315,5 @@ brew cleanup
         </link>
         <updated>2018-09-16T07:49:07.000Z</updated>
         <content type="html"><![CDATA[<video src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/video/2018091615490700.mp4" controls="controls" width="100%" preload="none"/>]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[目击了一条龙]]></title>
-        <id>https://blog.ionosphere.site/dqZz7PJJF/</id>
-        <link href="https://blog.ionosphere.site/dqZz7PJJF/">
-        </link>
-        <updated>2018-09-14T14:58:33.000Z</updated>
-        <content type="html"><![CDATA[<video src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/video/2018091422582400.mp4" controls="controls" width="100%" preload="none" />]]></content>
     </entry>
 </feed>
