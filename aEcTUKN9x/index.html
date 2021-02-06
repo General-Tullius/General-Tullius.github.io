@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    Github+PicGo+jsdeliver搭建图床 | Ionosphere
+    一种从天而降的棒法 | Ionosphere
 </title>
 <link rel="shortcut icon" href="https://blog.ionosphere.site/favicon.ico?v=1612580709643">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -120,47 +120,29 @@
                 <div id="content" class="main-container-left">
                     <article class="post i-card">
                         <h2 class="post-title">
-                            Github+PicGo+jsdeliver搭建图床
+                            一种从天而降的棒法
                         </h2>
                         <div class="post-info">
-                            <time class="post-time">2021-02-04</time>
+                            <time class="post-time">2018-09-16</time>
                             
-                                <a href="https://blog.ionosphere.site/itjwuLWo4/" class="post-tag i-tag
-                            i-tag-other_1">
-                            #薅羊毛
+                                <a href="https://blog.ionosphere.site/SNquWwbZf/" class="post-tag i-tag
+                            i-tag-info">
+                            #游戏
                         </a>
                                 
                         </div>
                         
-                            <div class="post-feature-image" style="background-image: url('https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210204215131.png')"></div>
-                            
                                 <div class="post-content">
-                                    <!-- more -->
-<h2 id="步骤">步骤</h2>
-<p>整体逻辑：使用GitHub仓库作为存储空间，利用jsdeliver做CDN，利用PicGo做图片管理工具</p>
-<h3 id="github设置">Github设置</h3>
-<ul>
-<li>创建公开仓库</li>
-<li>创建私人访问Token,并将Token记录下来</li>
-</ul>
-<blockquote>
-<p>注意：Token需要有repo、delete_repo权限</p>
-</blockquote>
-<h3 id="picgo设置">PicGo设置</h3>
-<p>配置如下</p>
-<figure data-type="image" tabindex="1"><img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210204213809.png" alt="" loading="lazy"></figure>
-<h2 id="资源">资源</h2>
-<p><a href="https://github.com/Molunerfinn/PicGo" target="_blank">PicGo</a>    <a href="https://www.jsdelivr.com" target="_blank">jsDelivr</a></p>
-
+                                    <video src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/video/2018091615490700.mp4" controls="controls" width="100%" />
                                 </div>
                     </article>
                     <!--  -->
                     
                         <div class="next-post">
                             <div class="next">下一篇</div>
-                            <a href="https://blog.ionosphere.site/NkU0guHnx/">
+                            <a href="https://blog.ionosphere.site/dqZz7PJJF/">
                                 <h3 class="post-title">
-                                    放假倒计时🏇
+                                    目击了一条龙
                                 </h3>
                             </a>
                         </div>
@@ -173,52 +155,38 @@
                 <!-- right -->
                 <div id="sidebar" class="main-container-right">
                     
-                        <!-- toc -->
-                        
-    <div class="toc-card i-card ">
-        <div class="toc-title i-card-title">目录</div>
-        <div class="toc-content">
-            <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E6%AD%A5%E9%AA%A4">步骤</a>
-<ul>
-<li><a href="#github%E8%AE%BE%E7%BD%AE">Github设置</a></li>
-<li><a href="#picgo%E8%AE%BE%E7%BD%AE">PicGo设置</a></li>
-</ul>
-</li>
-<li><a href="#%E8%B5%84%E6%BA%90">资源</a></li>
-</ul>
-</li>
-</ul>
+                                <!-- id-card -->
+                                
+    <div class="id_card i-card">
+        <div class="id_card-avatar" style="background-image: url(https://blog.ionosphere.site/images/avatar.png?v=1612580709643)">
+        </div>
+        <h1 class="id_card-title">
+            Ionosphere
+        </h1>
+        <h2 class="id_card-description">
+            
+        </h2>
+        <!--  -->
+        <div class="id_card-sns">
+            <!-- github -->
+            
+                <a href="https://github.com/General-Tullius" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-github"></i></a>
+                
+                    <!-- twitter -->
+                    
+                            <!-- weibo -->
+                            
+                                <a href="http://weibo.com/2667278511" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-weibo"></i></a>
+                                
+                                    <!-- facebook -->
+                                    
 
         </div>
-        <script>
-            function locateCatelogList() {
-                /*获取文章目录集合,可通过:header过滤器*/
-                var alis = $('.post-content :header');
-                /*获取侧边栏目录列表集合**/
-                var sidebar_alis = $('.markdownIt-TOC a');
-                /*获取滚动条到顶部的距离*/
-                var scroll_height = $(window).scrollTop();
-                for (var i = 0; i < alis.length; i++) {
-                    /*获取锚点集合中的元素分别到顶点的距离*/
-                    var a_height = $(alis[i]).offset().top;
-                    if (a_height < scroll_height) {
-                        /*高亮显示*/
-                        sidebar_alis.removeClass('on');
-                        $(sidebar_alis[i]).addClass('on');
-                    }
-                }
-            }
-            $(function() {
-                /*绑定滚动事件 */
-                $(window).bind('scroll', locateCatelogList);
-            });
-        </script>
     </div>
     
-                            
+                                    
 
                 </div>
 
