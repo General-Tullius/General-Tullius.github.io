@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ionosphere.site</id>
     <title>Ionosphere</title>
-    <updated>2021-02-06T05:36:53.970Z</updated>
+    <updated>2021-02-06T05:47:59.555Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ionosphere.site"/>
     <link rel="self" href="https://blog.ionosphere.site/atom.xml"/>
@@ -254,6 +254,38 @@ if __name__ == '__main__':
 ]]></content>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Homebrew]]></title>
+        <id>https://blog.ionosphere.site/E8SYLA47Y/</id>
+        <link href="https://blog.ionosphere.site/E8SYLA47Y/">
+        </link>
+        <updated>2020-07-06T05:46:40.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="查看已安装的包">查看已安装的包</h2>
+<p>查看已经安装的包</p>
+<pre><code class="language-bash">brew list
+</code></pre>
+<h2 id="更新homebrew">更新Homebrew</h2>
+<p>更新Homebrew(此命令会显示可以更新的包列表，已安装的包会有对号)</p>
+<pre><code class="language-bash">brew update
+</code></pre>
+<h2 id="列出可更新的包">列出可更新的包</h2>
+<pre><code class="language-bash"># 不包含含自动更新的包
+brew outdated
+# 含自动更新的包
+brew cask outdated --greedy
+</code></pre>
+<h2 id="安装更新">安装更新</h2>
+<pre><code class="language-bash">brew upgrade
+</code></pre>
+<h2 id="清理旧版本">清理旧版本</h2>
+<pre><code class="language-bash"># 查看可清理的包列表
+brew cleanup -n
+
+# 清理旧版本包
+brew cleanup
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[拿到 [真·大师剑] 了]]></title>
         <id>https://blog.ionosphere.site/s6rX3pWUl/</id>
         <link href="https://blog.ionosphere.site/s6rX3pWUl/">
@@ -277,16 +309,5 @@ if __name__ == '__main__':
         </link>
         <updated>2018-09-14T14:58:33.000Z</updated>
         <content type="html"><![CDATA[<video src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/video/2018091422582400.mp4" controls="controls" width="100%" preload="none" />]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[西山国家森林公园灵山风景区]]></title>
-        <id>https://blog.ionosphere.site/nun4bYzXp/</id>
-        <link href="https://blog.ionosphere.site/nun4bYzXp/">
-        </link>
-        <updated>2018-03-10T13:04:19.000Z</updated>
-        <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210204165719.jpg" alt="" loading="lazy"><br>
-<img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210204165718.jpg" alt="" loading="lazy"><br>
-<img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210204165720.jpg" alt="" loading="lazy"></p>
-]]></content>
     </entry>
 </feed>
