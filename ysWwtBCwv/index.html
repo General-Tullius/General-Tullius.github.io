@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    放假倒计时🏇 | Ionosphere
+    Windows KMS激活 | Ionosphere
 </title>
 <link rel="shortcut icon" href="https://blog.ionosphere.site/favicon.ico?v=1612592465563">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -120,21 +120,40 @@
                 <div id="content" class="main-container-left">
                     <article class="post i-card">
                         <h2 class="post-title">
-                            放假倒计时🏇
+                            Windows KMS激活
                         </h2>
                         <div class="post-info">
-                            <time class="post-time">2021-02-01</time>
+                            <time class="post-time">2019-08-13</time>
                             
-                                <a href="https://blog.ionosphere.site/b3pYdgYb3/" class="post-tag i-tag
-                            i-tag-primary">
-                            #扯淡
+                                <a href="https://blog.ionosphere.site/78O8DIiQt/" class="post-tag i-tag
+                            i-tag-other_3">
+                            #小工具
                         </a>
                                 
                         </div>
                         
                                 <div class="post-content">
-                                    <!-- more -->
-<center style="color:red;font-size:larger;">2（2021-02-06 00:00:00）</center>
+                                    <h2 id="命令">命令</h2>
+<pre><code class="language-shell"># 查看系统激活状态
+slmgr.vbs -xpr
+
+# 查看系统激活状态详细信息
+slmgr.vbs -dlv
+
+# 安装产品密钥（企业版Key）
+slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
+
+// 设置KMS服务器
+slmgr /skms 192.168.31.57:1688
+
+// 自动激活
+slmgr /ato
+</code></pre>
+<h2 id="密钥">密钥</h2>
+<pre><code class="language-shell">W269N-WFGWX-YVC9B-4J6C9-T83GX
+</code></pre>
+<h2 id="资源">资源</h2>
+<p><a target="_blank" href="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/annex/floppy144.flp">KMS服务器</a></p>
 
                                 </div>
                     </article>
@@ -142,9 +161,9 @@
                     
                         <div class="next-post">
                             <div class="next">下一篇</div>
-                            <a href="https://blog.ionosphere.site/mV0zp9v9E/">
+                            <a href="https://blog.ionosphere.site/s6rX3pWUl/">
                                 <h3 class="post-title">
-                                    文字转语音
+                                    拿到 [真·大师剑] 了
                                 </h3>
                             </a>
                         </div>
@@ -157,38 +176,48 @@
                 <!-- right -->
                 <div id="sidebar" class="main-container-right">
                     
-                                <!-- id-card -->
-                                
-    <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ionosphere.site/images/avatar.png?v=1612592465563)">
-        </div>
-        <h1 class="id_card-title">
-            Ionosphere
-        </h1>
-        <h2 class="id_card-description">
-            
-        </h2>
-        <!--  -->
-        <div class="id_card-sns">
-            <!-- github -->
-            
-                <a href="https://github.com/General-Tullius" target="_blank" rel="noopener noreferrer"><i
-                class="fa fa-github"></i></a>
-                
-                    <!-- twitter -->
-                    
-                            <!-- weibo -->
-                            
-                                <a href="http://weibo.com/2667278511" target="_blank" rel="noopener noreferrer"><i
-                class="fa fa-weibo"></i></a>
-                                
-                                    <!-- facebook -->
-                                    
+                        <!-- toc -->
+                        
+    <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+        <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%91%BD%E4%BB%A4">命令</a></li>
+<li><a href="#%E5%AF%86%E9%92%A5">密钥</a></li>
+<li><a href="#%E8%B5%84%E6%BA%90">资源</a></li>
+</ul>
+</li>
+</ul>
 
         </div>
+        <script>
+            function locateCatelogList() {
+                /*获取文章目录集合,可通过:header过滤器*/
+                var alis = $('.post-content :header');
+                /*获取侧边栏目录列表集合**/
+                var sidebar_alis = $('.markdownIt-TOC a');
+                /*获取滚动条到顶部的距离*/
+                var scroll_height = $(window).scrollTop();
+                for (var i = 0; i < alis.length; i++) {
+                    /*获取锚点集合中的元素分别到顶点的距离*/
+                    var a_height = $(alis[i]).offset().top;
+                    if (a_height < scroll_height) {
+                        /*高亮显示*/
+                        sidebar_alis.removeClass('on');
+                        $(sidebar_alis[i]).addClass('on');
+                    }
+                }
+            }
+            $(function() {
+                /*绑定滚动事件 */
+                $(window).bind('scroll', locateCatelogList);
+            });
+        </script>
     </div>
     
-                                    
+                            
 
                 </div>
 

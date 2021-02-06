@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ionosphere.site</id>
     <title>Ionosphere</title>
-    <updated>2021-02-06T05:51:10.320Z</updated>
+    <updated>2021-02-06T06:21:08.574Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ionosphere.site"/>
     <link rel="self" href="https://blog.ionosphere.site/atom.xml"/>
@@ -300,6 +300,35 @@ brew cleanup
 ]]></content>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Windows KMS激活]]></title>
+        <id>https://blog.ionosphere.site/ysWwtBCwv/</id>
+        <link href="https://blog.ionosphere.site/ysWwtBCwv/">
+        </link>
+        <updated>2019-08-13T05:54:20.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="命令">命令</h2>
+<pre><code class="language-shell"># 查看系统激活状态
+slmgr.vbs -xpr
+
+# 查看系统激活状态详细信息
+slmgr.vbs -dlv
+
+# 安装产品密钥（企业版Key）
+slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
+
+// 设置KMS服务器
+slmgr /skms 192.168.31.57:1688
+
+// 自动激活
+slmgr /ato
+</code></pre>
+<h2 id="密钥">密钥</h2>
+<pre><code class="language-shell">W269N-WFGWX-YVC9B-4J6C9-T83GX
+</code></pre>
+<h2 id="资源">资源</h2>
+<p><a target="_blank" href="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/annex/floppy144.flp">KMS服务器</a></p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[拿到 [真·大师剑] 了]]></title>
         <id>https://blog.ionosphere.site/s6rX3pWUl/</id>
         <link href="https://blog.ionosphere.site/s6rX3pWUl/">
@@ -307,13 +336,5 @@ brew cleanup
         <updated>2018-11-03T19:10:03.000Z</updated>
         <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210205191626.jpg" alt="" loading="lazy"></figure>
 ]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[一种从天而降的棒法]]></title>
-        <id>https://blog.ionosphere.site/aEcTUKN9x/</id>
-        <link href="https://blog.ionosphere.site/aEcTUKN9x/">
-        </link>
-        <updated>2018-09-16T07:49:07.000Z</updated>
-        <content type="html"><![CDATA[<video src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/video/2018091615490700.mp4" controls="controls" width="100%" preload="none"/>]]></content>
     </entry>
 </feed>
