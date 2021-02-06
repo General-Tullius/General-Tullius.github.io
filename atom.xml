@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ionosphere.site</id>
     <title>Ionosphere</title>
-    <updated>2021-02-06T06:58:39.417Z</updated>
+    <updated>2021-02-06T09:32:30.455Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ionosphere.site"/>
     <link rel="self" href="https://blog.ionosphere.site/atom.xml"/>
@@ -298,7 +298,7 @@ exit
 <p>注：以上内容参考 <a href="http://jingyan.baidu.com/article/08b6a591c30ae914a8092205.html" target="_blank">定时备份ORACLE数据库(windows环境下)</a></p>
 </blockquote>
 <h2 id="脚本">脚本</h2>
-<p><a href="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/annex/定时备份.bat" target="_blank">定时备份.bat</a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/annex/定时备份.txt" target="_blank">定时备份.txt</a></p>
 ]]></content>
     </entry>
     <entry>
