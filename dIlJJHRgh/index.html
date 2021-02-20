@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    拿到 [真·大师剑] 了 | Ionosphere
+    Gridea Gitalk 评论登录403问题 | Ionosphere
 </title>
 <link rel="shortcut icon" href="https://blog.ionosphere.site/favicon.ico?v=1613841511398">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -128,20 +128,41 @@
                 <div id="content" class="main-container-left">
                     <article class="post i-card">
                         <h2 class="post-title">
-                            拿到 [真·大师剑] 了
+                            Gridea Gitalk 评论登录403问题
                         </h2>
                         <div class="post-info">
-                            <time class="post-time">2018-11-04 03:10</time>
+                            <time class="post-time">2021-02-20 05:59</time>
                             
-                                <a href="https://blog.ionosphere.site/SNquWwbZf/" class="post-tag i-tag
-                            i-tag-other_2">
-                            #游戏
+                                <a href="https://blog.ionosphere.site/e4CgY8Do3/" class="post-tag i-tag
+                            i-tag-other_1">
+                            #Gridea
+                        </a>
+                                
+                                <a href="https://blog.ionosphere.site/wgbARWlYo/" class="post-tag i-tag
+                            i-tag-success">
+                            #Gitalk
                         </a>
                                 
                         </div>
                         
                                 <div class="post-content">
-                                    <figure data-type="image" tabindex="1"><img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210205191626.jpg" alt="" loading="lazy"></figure>
+                                    <!-- more -->
+<h1 id="表象">表象</h1>
+<figure data-type="image" tabindex="1"><img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png" alt="" loading="lazy"></figure>
+<h1 id="成因">成因</h1>
+<p>Gitalk默认的GitHub oauth请求反向代理CORS使用的是<code>https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token</code><a href="https://github.com/Rob--W/cors-anywhere">GitHub项目</a>，该代理只是一个演示项目，由于被滥用，作者决定于<a href="https://github.com/Rob--W/cors-anywhere/issues/301">2021年1月31日</a>停止开放使用，从而导致了此问题的产生</p>
+<h1 id="处理方案">处理方案</h1>
+<blockquote>
+<p>在Heroku上部署自己的cros-anywhere</p>
+</blockquote>
+<h2 id="1注册heroku账号">1.注册Heroku账号</h2>
+<h2 id="2fork-cros-anywhere项目">2.fork cros-anywhere项目</h2>
+<h2 id="3创建heroku应用">3.创建Heroku应用</h2>
+<h2 id="4从自己fork的项目部署应用">4.从自己fork的项目部署应用</h2>
+<h2 id="5设置白名单防止滥用">5.设置白名单防止滥用</h2>
+<blockquote>
+<p>PS太困了，细节之后补充补充-_-!</p>
+</blockquote>
 
                                 </div>
                     </article>
@@ -149,9 +170,9 @@
                     
                         <div class="next-post">
                             <div class="next">下一篇</div>
-                            <a href="https://blog.ionosphere.site/aEcTUKN9x/">
+                            <a href="https://blog.ionosphere.site/NkU0guHnx/">
                                 <h3 class="post-title">
-                                    一种从天而降的棒法
+                                    🎉🎉🎉放假了🎉🎉🎉
                                 </h3>
                             </a>
                         </div>
@@ -164,38 +185,52 @@
                 <!-- right -->
                 <div id="sidebar" class="main-container-right">
                     
-                                <!-- id-card -->
-                                
-    <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://blog.ionosphere.site/images/avatar.png?v=1613841511398)">
-        </div>
-        <h1 class="id_card-title">
-            Ionosphere
-        </h1>
-        <h2 class="id_card-description">
-            
-        </h2>
-        <!--  -->
-        <div class="id_card-sns">
-            <!-- github -->
-            
-                <a href="https://github.com/General-Tullius" target="_blank" rel="noopener noreferrer"><i
-                class="fa fa-github"></i></a>
-                
-                    <!-- twitter -->
-                    
-                            <!-- weibo -->
-                            
-                                <a href="http://weibo.com/2667278511" target="_blank" rel="noopener noreferrer"><i
-                class="fa fa-weibo"></i></a>
-                                
-                                    <!-- facebook -->
-                                    
+                        <!-- toc -->
+                        
+    <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+        <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li><a href="#%E8%A1%A8%E8%B1%A1">表象</a></li>
+<li><a href="#%E6%88%90%E5%9B%A0">成因</a></li>
+<li><a href="#%E5%A4%84%E7%90%86%E6%96%B9%E6%A1%88">处理方案</a>
+<ul>
+<li><a href="#1%E6%B3%A8%E5%86%8Cheroku%E8%B4%A6%E5%8F%B7">1.注册Heroku账号</a></li>
+<li><a href="#2fork-cros-anywhere%E9%A1%B9%E7%9B%AE">2.fork cros-anywhere项目</a></li>
+<li><a href="#3%E5%88%9B%E5%BB%BAheroku%E5%BA%94%E7%94%A8">3.创建Heroku应用</a></li>
+<li><a href="#4%E4%BB%8E%E8%87%AA%E5%B7%B1fork%E7%9A%84%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%BA%94%E7%94%A8">4.从自己fork的项目部署应用</a></li>
+<li><a href="#5%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95%E9%98%B2%E6%AD%A2%E6%BB%A5%E7%94%A8">5.设置白名单防止滥用</a></li>
+</ul>
+</li>
+</ul>
 
         </div>
+        <script>
+            function locateCatelogList() {
+                /*获取文章目录集合,可通过:header过滤器*/
+                var alis = $('.post-content :header');
+                /*获取侧边栏目录列表集合**/
+                var sidebar_alis = $('.markdownIt-TOC a');
+                /*获取滚动条到顶部的距离*/
+                var scroll_height = $(window).scrollTop();
+                for (var i = 0; i < alis.length; i++) {
+                    /*获取锚点集合中的元素分别到顶点的距离*/
+                    var a_height = $(alis[i]).offset().top;
+                    if (a_height < scroll_height) {
+                        /*高亮显示*/
+                        sidebar_alis.removeClass('on');
+                        $(sidebar_alis[i]).addClass('on');
+                    }
+                }
+            }
+            $(function() {
+                /*绑定滚动事件 */
+                $(window).bind('scroll', locateCatelogList);
+            });
+        </script>
     </div>
     
-                                    
+                            
 
                 </div>
 
