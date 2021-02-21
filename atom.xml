@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ionosphere.site</id>
     <title>Ionosphere</title>
-    <updated>2021-02-20T17:25:16.504Z</updated>
+    <updated>2021-02-21T01:29:29.682Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ionosphere.site"/>
     <link rel="self" href="https://blog.ionosphere.site/atom.xml"/>
@@ -24,16 +24,63 @@
 <blockquote>
 <p>在Heroku上部署自己的cros-anywhere</p>
 </blockquote>
-<h2 id="1注册heroku账号">1.注册Heroku账号</h2>
-<h2 id="2fork-cros-anywhere项目">2.fork cros-anywhere项目</h2>
-<h2 id="3创建heroku应用">3.创建Heroku应用</h2>
-<h2 id="4从自己fork的项目部署应用">4.从自己fork的项目部署应用</h2>
+<ul>
+<li>
+<p>1.注册Heroku账号</p>
+</li>
+<li>
+<p>2.fork cros-anywhere项目</p>
+</li>
+<li>
+<p>3.创建Heroku应用</p>
+</li>
+<li>
+<p>4.将自己fork的项目部署创建的Heroku应用</p>
 <p><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#deploy-the-app">官方文档</a><br>
-实际上自己通过网页操作更简单点</p>
-<h2 id="5设置白名单防止滥用导致封号">5.设置白名单防止滥用导致封号</h2>
-<blockquote>
-<p>PS太困了，细节之后补充补充-_-!</p>
-</blockquote>
+实际上自己通过网页端操作更方便点</p>
+</li>
+<li>
+<p>5.设置白名单防止滥用导致封号</p>
+</li>
+<li>
+<p>6.修改主题中Gitalk相关的代码<br>
+增加Gitalk反向代理配置项</p>
+</li>
+</ul>
+<pre><code class="language-json">// 修改主题根目录下config.json文件，增加Gitalk反向代理自定义配置节点，用于自定义配置代理地址
+{
+    &quot;customConfig&quot;: [
+        {
+            &quot;name&quot;: &quot;gitalkProxy&quot;,
+            &quot;label&quot;: &quot;GitHub登陆&quot;,
+            &quot;group&quot;: &quot;Gitalk&quot;,
+            //此处将地址配置成自己的代理服务器
+            &quot;value&quot;: &quot;https://netnr-proxy.cloudno.de/https://github.com/login/oauth/access_token&quot;,
+            &quot;type&quot;: &quot;input&quot;,
+            &quot;note&quot;: &quot;GitHub验证&quot;
+        }
+        ]
+}
+</code></pre>
+<p>修改Gitalk初始化代码<code>templates/includes/gitalk.ejs</code></p>
+<pre><code class="language-javascript">&lt;script&gt;
+    window.onload = function() {
+        var gitalk = new Gitalk({
+            //增加代理参数，赋值读取自定义配置
+            proxy: '&lt;%= site.customConfig.gitalkProxy %&gt;',
+            clientID: '&lt;%= commentSetting.gitalkSetting.clientId %&gt;',
+            clientSecret: '&lt;%= commentSetting.gitalkSetting.clientSecret %&gt;',
+            repo: '&lt;%= commentSetting.gitalkSetting.repository %&gt;',
+            owner: '&lt;%= commentSetting.gitalkSetting.owner %&gt;',
+            admin: ['&lt;%= commentSetting.gitalkSetting.owner %&gt;'],
+            id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
+            distractionFreeMode: false // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    }
+&lt;/script&gt;
+</code></pre>
 ]]></content>
     </entry>
     <entry>

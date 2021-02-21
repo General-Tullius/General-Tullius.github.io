@@ -7,7 +7,7 @@
 <title>
     Gridea Gitalk 评论登录403问题 | Ionosphere
 </title>
-<link rel="shortcut icon" href="https://blog.ionosphere.site/favicon.ico?v=1613841913909">
+<link rel="shortcut icon" href="https://blog.ionosphere.site/favicon.ico?v=1613870966623">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -49,7 +49,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ionosphere.site">
-                <img class="avatar" src="https://blog.ionosphere.site/images/avatar.png?v=1613841913909" alt="">
+                <img class="avatar" src="https://blog.ionosphere.site/images/avatar.png?v=1613870966623" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -134,12 +134,12 @@
                             <time class="post-time">2021-02-20 05:59</time>
                             
                                 <a href="https://blog.ionosphere.site/e4CgY8Do3/" class="post-tag i-tag
-                            i-tag-banana">
+                            i-tag-info">
                             #Gridea
                         </a>
                                 
                                 <a href="https://blog.ionosphere.site/wgbARWlYo/" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-info">
                             #Gitalk
                         </a>
                                 
@@ -155,16 +155,63 @@
 <blockquote>
 <p>在Heroku上部署自己的cros-anywhere</p>
 </blockquote>
-<h2 id="1注册heroku账号">1.注册Heroku账号</h2>
-<h2 id="2fork-cros-anywhere项目">2.fork cros-anywhere项目</h2>
-<h2 id="3创建heroku应用">3.创建Heroku应用</h2>
-<h2 id="4从自己fork的项目部署应用">4.从自己fork的项目部署应用</h2>
+<ul>
+<li>
+<p>1.注册Heroku账号</p>
+</li>
+<li>
+<p>2.fork cros-anywhere项目</p>
+</li>
+<li>
+<p>3.创建Heroku应用</p>
+</li>
+<li>
+<p>4.将自己fork的项目部署创建的Heroku应用</p>
 <p><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#deploy-the-app">官方文档</a><br>
-实际上自己通过网页操作更简单点</p>
-<h2 id="5设置白名单防止滥用导致封号">5.设置白名单防止滥用导致封号</h2>
-<blockquote>
-<p>PS太困了，细节之后补充补充-_-!</p>
-</blockquote>
+实际上自己通过网页端操作更方便点</p>
+</li>
+<li>
+<p>5.设置白名单防止滥用导致封号</p>
+</li>
+<li>
+<p>6.修改主题中Gitalk相关的代码<br>
+增加Gitalk反向代理配置项</p>
+</li>
+</ul>
+<pre><code class="language-json">// 修改主题根目录下config.json文件，增加Gitalk反向代理自定义配置节点，用于自定义配置代理地址
+{
+    &quot;customConfig&quot;: [
+        {
+            &quot;name&quot;: &quot;gitalkProxy&quot;,
+            &quot;label&quot;: &quot;GitHub登陆&quot;,
+            &quot;group&quot;: &quot;Gitalk&quot;,
+            //此处将地址配置成自己的代理服务器
+            &quot;value&quot;: &quot;https://netnr-proxy.cloudno.de/https://github.com/login/oauth/access_token&quot;,
+            &quot;type&quot;: &quot;input&quot;,
+            &quot;note&quot;: &quot;GitHub验证&quot;
+        }
+        ]
+}
+</code></pre>
+<p>修改Gitalk初始化代码<code>templates/includes/gitalk.ejs</code></p>
+<pre><code class="language-javascript">&lt;script&gt;
+    window.onload = function() {
+        var gitalk = new Gitalk({
+            //增加代理参数，赋值读取自定义配置
+            proxy: '&lt;%= site.customConfig.gitalkProxy %&gt;',
+            clientID: '&lt;%= commentSetting.gitalkSetting.clientId %&gt;',
+            clientSecret: '&lt;%= commentSetting.gitalkSetting.clientSecret %&gt;',
+            repo: '&lt;%= commentSetting.gitalkSetting.repository %&gt;',
+            owner: '&lt;%= commentSetting.gitalkSetting.owner %&gt;',
+            admin: ['&lt;%= commentSetting.gitalkSetting.owner %&gt;'],
+            id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
+            distractionFreeMode: false // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    }
+&lt;/script&gt;
+</code></pre>
 
                                 </div>
                     </article>
@@ -195,15 +242,7 @@
             <ul class="markdownIt-TOC">
 <li><a href="#%E8%A1%A8%E8%B1%A1">表象</a></li>
 <li><a href="#%E6%88%90%E5%9B%A0">成因</a></li>
-<li><a href="#%E5%A4%84%E7%90%86%E6%96%B9%E6%A1%88">处理方案</a>
-<ul>
-<li><a href="#1%E6%B3%A8%E5%86%8Cheroku%E8%B4%A6%E5%8F%B7">1.注册Heroku账号</a></li>
-<li><a href="#2fork-cros-anywhere%E9%A1%B9%E7%9B%AE">2.fork cros-anywhere项目</a></li>
-<li><a href="#3%E5%88%9B%E5%BB%BAheroku%E5%BA%94%E7%94%A8">3.创建Heroku应用</a></li>
-<li><a href="#4%E4%BB%8E%E8%87%AA%E5%B7%B1fork%E7%9A%84%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%BA%94%E7%94%A8">4.从自己fork的项目部署应用</a></li>
-<li><a href="#5%E8%AE%BE%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95%E9%98%B2%E6%AD%A2%E6%BB%A5%E7%94%A8%E5%AF%BC%E8%87%B4%E5%B0%81%E5%8F%B7">5.设置白名单防止滥用导致封号</a></li>
-</ul>
-</li>
+<li><a href="#%E5%A4%84%E7%90%86%E6%96%B9%E6%A1%88">处理方案</a></li>
 </ul>
 
         </div>
