@@ -7,7 +7,7 @@
 <title>
     Gridea Gitalk 评论登录403问题 | Ionosphere
 </title>
-<link rel="shortcut icon" href="https://blog.ionosphere.site/favicon.ico?v=1613879913888">
+<link rel="shortcut icon" href="https://blog.ionosphere.site/favicon.ico?v=1613886047816">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -49,7 +49,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://blog.ionosphere.site">
-                <img class="avatar" src="https://blog.ionosphere.site/images/avatar.png?v=1613879913888" alt="">
+                <img class="avatar" src="https://blog.ionosphere.site/images/avatar.png?v=1613886047816" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -134,12 +134,12 @@
                             <time class="post-time">2021-02-20 05:59</time>
                             
                                 <a href="https://blog.ionosphere.site/e4CgY8Do3/" class="post-tag i-tag
-                            i-tag-warning">
+                            i-tag-banana">
                             #Gridea
                         </a>
                                 
                                 <a href="https://blog.ionosphere.site/wgbARWlYo/" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-other_4">
                             #Gitalk
                         </a>
                                 
@@ -148,7 +148,7 @@
                                 <div class="post-content">
                                     <!-- more -->
 <h1 id="表象">表象</h1>
-<figure data-type="image" tabindex="1"><img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png" alt="Gitalk 403 错误" loading="lazy"></figure>
 <h1 id="成因">成因</h1>
 <p>Gitalk默认的GitHub oauth请求反向代理CORS使用的是<code>https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token</code><a href="https://github.com/Rob--W/cors-anywhere">GitHub项目</a>，该代理只是一个演示项目，由于被滥用，作者决定于<a href="https://github.com/Rob--W/cors-anywhere/issues/301">2021年1月31日</a>停止开放使用，从而导致了此问题的产生</p>
 <h1 id="解决">解决</h1>

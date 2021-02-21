@@ -2,13 +2,87 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ionosphere.site</id>
     <title>Ionosphere</title>
-    <updated>2021-02-21T05:38:32.606Z</updated>
+    <updated>2021-02-21T05:40:51.220Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ionosphere.site"/>
     <link rel="self" href="https://blog.ionosphere.site/atom.xml"/>
     <logo>https://blog.ionosphere.site/images/avatar.png</logo>
     <icon>https://blog.ionosphere.site/favicon.ico</icon>
     <rights>All rights reserved 2021, Ionosphere</rights>
+    <entry>
+        <title type="html"><![CDATA[Gridea Gitalk 评论登录403问题]]></title>
+        <id>https://blog.ionosphere.site/dIlJJHRgh/</id>
+        <link href="https://blog.ionosphere.site/dIlJJHRgh/">
+        </link>
+        <updated>2021-02-20T09:59:56.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<h1 id="表象">表象</h1>
+<figure data-type="image" tabindex="1"><img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png" alt="Gitalk 403 错误" loading="lazy"></figure>
+<h1 id="成因">成因</h1>
+<p>Gitalk默认的GitHub oauth请求反向代理CORS使用的是<code>https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token</code><a href="https://github.com/Rob--W/cors-anywhere">GitHub项目</a>，该代理只是一个演示项目，由于被滥用，作者决定于<a href="https://github.com/Rob--W/cors-anywhere/issues/301">2021年1月31日</a>停止开放使用，从而导致了此问题的产生</p>
+<h1 id="解决">解决</h1>
+<blockquote>
+<p>在Heroku上部署自己的cros-anywhere</p>
+</blockquote>
+<ul>
+<li>
+<p>1.注册Heroku账号</p>
+</li>
+<li>
+<p>2.fork cros-anywhere项目</p>
+</li>
+<li>
+<p>3.创建Heroku应用</p>
+</li>
+<li>
+<p>4.将自己fork的项目部署创建的Heroku应用</p>
+<p><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#deploy-the-app">官方文档</a><br>
+实际上自己通过网页端操作更方便点</p>
+</li>
+<li>
+<p>5.设置白名单防止滥用导致封号</p>
+</li>
+<li>
+<p>6.修改主题中Gitalk相关的代码<br>
+增加Gitalk反向代理配置项</p>
+</li>
+</ul>
+<pre><code class="language-json">// 修改主题根目录下config.json文件，增加Gitalk反向代理自定义配置节点，用于自定义配置代理地址
+{
+    &quot;customConfig&quot;: [
+        {
+            &quot;name&quot;: &quot;gitalkProxy&quot;,
+            &quot;label&quot;: &quot;GitHub登陆&quot;,
+            &quot;group&quot;: &quot;Gitalk&quot;,
+            //此处将地址配置成自己的代理服务器
+            &quot;value&quot;: &quot;https://netnr-proxy.cloudno.de/https://github.com/login/oauth/access_token&quot;,
+            &quot;type&quot;: &quot;input&quot;,
+            &quot;note&quot;: &quot;GitHub验证&quot;
+        }
+        ]
+}
+</code></pre>
+<p>修改Gitalk初始化代码<code>templates/includes/gitalk.ejs</code></p>
+<pre><code class="language-javascript">&lt;script&gt;
+    window.onload = function() {
+        var gitalk = new Gitalk({
+            //增加代理参数，赋值读取自定义配置
+            proxy: '&lt;%= site.customConfig.gitalkProxy %&gt;',
+            clientID: '&lt;%= commentSetting.gitalkSetting.clientId %&gt;',
+            clientSecret: '&lt;%= commentSetting.gitalkSetting.clientSecret %&gt;',
+            repo: '&lt;%= commentSetting.gitalkSetting.repository %&gt;',
+            owner: '&lt;%= commentSetting.gitalkSetting.owner %&gt;',
+            admin: ['&lt;%= commentSetting.gitalkSetting.owner %&gt;'],
+            id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
+            distractionFreeMode: false // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    }
+&lt;/script&gt;
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[🎉🎉🎉放假了🎉🎉🎉]]></title>
         <id>https://blog.ionosphere.site/NkU0guHnx/</id>
@@ -370,35 +444,6 @@ brew cleanup -n
 # 清理旧版本包
 brew cleanup
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Windows KMS激活]]></title>
-        <id>https://blog.ionosphere.site/ysWwtBCwv/</id>
-        <link href="https://blog.ionosphere.site/ysWwtBCwv/">
-        </link>
-        <updated>2019-08-13T05:54:20.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="命令">命令</h2>
-<pre><code class="language-shell"># 查看系统激活状态
-slmgr.vbs -xpr
-
-# 查看系统激活状态详细信息
-slmgr.vbs -dlv
-
-# 安装产品密钥（企业版Key）
-slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
-
-// 设置KMS服务器
-slmgr /skms 192.168.31.57:1688
-
-// 自动激活
-slmgr /ato
-</code></pre>
-<h2 id="密钥">密钥</h2>
-<pre><code class="language-shell">W269N-WFGWX-YVC9B-4J6C9-T83GX
-</code></pre>
-<h2 id="资源">资源</h2>
-<p><a target="_blank" href="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/annex/floppy144.flp">KMS服务器</a></p>
 ]]></content>
     </entry>
 </feed>
