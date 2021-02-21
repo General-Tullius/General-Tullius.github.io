@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ionosphere.site</id>
     <title>Ionosphere</title>
-    <updated>2021-02-21T01:29:29.682Z</updated>
+    <updated>2021-02-21T03:58:36.448Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ionosphere.site"/>
     <link rel="self" href="https://blog.ionosphere.site/atom.xml"/>
@@ -20,7 +20,7 @@
 <figure data-type="image" tabindex="1"><img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png" alt="" loading="lazy"></figure>
 <h1 id="成因">成因</h1>
 <p>Gitalk默认的GitHub oauth请求反向代理CORS使用的是<code>https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token</code><a href="https://github.com/Rob--W/cors-anywhere">GitHub项目</a>，该代理只是一个演示项目，由于被滥用，作者决定于<a href="https://github.com/Rob--W/cors-anywhere/issues/301">2021年1月31日</a>停止开放使用，从而导致了此问题的产生</p>
-<h1 id="处理方案">处理方案</h1>
+<h1 id="解决">解决</h1>
 <blockquote>
 <p>在Heroku上部署自己的cros-anywhere</p>
 </blockquote>
