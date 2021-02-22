@@ -6,7 +6,112 @@
         <description>Recent content on Ionosphere</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Mon, 22 Feb 2021 09:28:17 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 22 Feb 2021 17:17:12 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Windows快捷键</title>
+        <link>https://blog.ionosphere.site/p/20210222171712/</link>
+        <pubDate>Mon, 22 Feb 2021 17:17:12 +0800</pubDate>
+        
+        <guid>https://blog.ionosphere.site/p/20210222171712/</guid>
+        <description>&lt;img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210222164440.png" alt="Featured image of post Windows快捷键" /&gt;&lt;h2 id=&#34;说明&#34;&gt;说明&lt;/h2&gt;
+&lt;p&gt;文章中的快捷键针对Windows10，其它版本Windows系统可能不生效&lt;/p&gt;
+&lt;h2 id=&#34;快捷键&#34;&gt;快捷键&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;键位&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;ctrl+c&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;复制&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;ctrl+v&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;粘贴&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;ctrl+z&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;撤销&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;ctrl+a&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;全选&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;ctrl+s&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;保存&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;ctrl+x&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;剪切&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;ctrl+f&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;查找&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;ctrl+tab&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;切换浏览器、文件管理器等多标签软件标签页&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;ctrl+w&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;关闭浏览器、文件管理器等多标签软件的当前页面或单窗体软件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;ctrl+shift+t&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;恢复刚关闭的浏览器页面&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;ctrl+t&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;创建一个新浏览器标签页&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;ctrl++&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;放大（浏览器、图片浏览、桌面等处都可用）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;ctrl+-&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;缩小（浏览器、图片浏览、桌面等处都可用）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;ctrl+alt+delete&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;打开任务管理器界面&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;ctrl+p&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;打印当前文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;win+d&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;回到桌面（不论打开了多少窗体）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;win+L&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;锁定电脑&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;win+e&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;打开文件管理器&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;win+m&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;最小化当前窗体&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;win+数字键&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;打开固定在任务栏对应顺序的应用&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        </item>
+        <item>
         <title>Gridea Gitalk 评论登录403问题</title>
         <link>https://blog.ionosphere.site/p/20210220175956/</link>
         <pubDate>Sat, 20 Feb 2021 17:59:56 +0800</pubDate>

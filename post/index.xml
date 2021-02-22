@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Ionosphere</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 20 Feb 2021 17:59:56 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Feb 2021 17:17:12 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows快捷键</title>
+      <link>https://blog.ionosphere.site/p/20210222171712/</link>
+      <pubDate>Mon, 22 Feb 2021 17:17:12 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/20210222171712/</guid>
+      <description>说明 文章中的快捷键针对Windows10，其它版本Windows系统可能不生效
+快捷键    键位 功能     ctrl+c 复制   ctrl+v 粘贴   ctrl+z 撤销   ctrl+a 全选   ctrl+s 保存   ctrl+x 剪切   ctrl+f 查找   ctrl+tab 切换浏览器、文件管理器等多标签软件标签页   ctrl+w 关闭浏览器、文件管理器等多标签软件的当前页面或单窗体软件   ctrl+shift+t 恢复刚关闭的浏览器页面   ctrl+t 创建一个新浏览器标签页   ctrl++ 放大（浏览器、图片浏览、桌面等处都可用）   ctrl+- 缩小（浏览器、图片浏览、桌面等处都可用）   ctrl+alt+delete 打开任务管理器界面   ctrl+p 打印当前文件       win+d 回到桌面（不论打开了多少窗体）   win+L 锁定电脑   win+e 打开文件管理器   win+m 最小化当前窗体   win+数字键 打开固定在任务栏对应顺序的应用    </description>
+    </item>
+    
     <item>
       <title>Gridea Gitalk 评论登录403问题</title>
       <link>https://blog.ionosphere.site/p/20210220175956/</link>
