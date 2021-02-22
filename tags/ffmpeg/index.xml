@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ffmpeg on Ionosphere</title>
-    <link>http://blog.ionosphere.site/tags/ffmpeg/</link>
+    <link>https://blog.ionosphere.site/tags/ffmpeg/</link>
     <description>Recent content in ffmpeg on Ionosphere</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 06 Oct 2020 13:48:54 +0800</lastBuildDate><atom:link href="http://blog.ionosphere.site/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Oct 2020 13:48:54 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>文字转语音</title>
-      <link>http://blog.ionosphere.site/p/20201006134854/</link>
+      <link>https://blog.ionosphere.site/p/20201006134854/</link>
       <pubDate>Tue, 06 Oct 2020 13:48:54 +0800</pubDate>
       
-      <guid>http://blog.ionosphere.site/p/20201006134854/</guid>
+      <guid>https://blog.ionosphere.site/p/20201006134854/</guid>
       <description># 文字转语音 say -f 1.txt -o 1.aiff say 你好 -o 你好.aiff # 音频格式转换 ffmpeg -f aiff -i 你好.aiff 你好.mp3 </description>
     </item>
     

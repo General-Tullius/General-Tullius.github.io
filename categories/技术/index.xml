@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>技术 on Ionosphere</title>
-    <link>http://blog.ionosphere.site/categories/%E6%8A%80%E6%9C%AF/</link>
+    <link>https://blog.ionosphere.site/categories/%E6%8A%80%E6%9C%AF/</link>
     <description>Recent content in 技术 on Ionosphere</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 20 Feb 2021 17:59:56 +0800</lastBuildDate><atom:link href="http://blog.ionosphere.site/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Feb 2021 17:59:56 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gridea Gitalk 评论登录403问题</title>
-      <link>http://blog.ionosphere.site/p/20210220175956/</link>
+      <link>https://blog.ionosphere.site/p/20210220175956/</link>
       <pubDate>Sat, 20 Feb 2021 17:59:56 +0800</pubDate>
       
-      <guid>http://blog.ionosphere.site/p/20210220175956/</guid>
+      <guid>https://blog.ionosphere.site/p/20210220175956/</guid>
       <description>表象 成因 Gitalk默认的GitHub oauth请求反向代理CORS使用的是https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_tokenGitHub项目，该代理只是一个演示项目，由于被滥用，作者决定于2021年1月31日停止开放使用，从而导致了此问题的产生
 解决  在Heroku上部署自己的cros-anywhere
    1.注册Heroku账号
@@ -28,20 +28,20 @@
     
     <item>
       <title>Visual Studio_Code 使用问题记录</title>
-      <link>http://blog.ionosphere.site/p/20210206131930/</link>
+      <link>https://blog.ionosphere.site/p/20210206131930/</link>
       <pubDate>Sat, 06 Feb 2021 13:19:30 +0800</pubDate>
       
-      <guid>http://blog.ionosphere.site/p/20210206131930/</guid>
+      <guid>https://blog.ionosphere.site/p/20210206131930/</guid>
       <description>Nuget包管理加载版本时报错 解决方案：
  打开.vscode/extensions/jmrog.vscode-nuget-package-manager-1.1.6/out/src/actions/add-methods/fetchPackageVersions.js， 修改代码 ...node_fetch_1.default(`${versionsUrl}${selectedPackageName.toLowerCase()}/index.json`, utils_1.getFetchOptions(vscode.workspace.getConfiguration(&amp;#39;http&amp;#39;)))   </description>
     </item>
     
     <item>
       <title>Github&#43;PicGo&#43;jsdeliver搭建图床</title>
-      <link>http://blog.ionosphere.site/p/20210204170916/</link>
+      <link>https://blog.ionosphere.site/p/20210204170916/</link>
       <pubDate>Thu, 04 Feb 2021 17:09:16 +0800</pubDate>
       
-      <guid>http://blog.ionosphere.site/p/20210204170916/</guid>
+      <guid>https://blog.ionosphere.site/p/20210204170916/</guid>
       <description>步骤 整体逻辑：使用GitHub仓库作为存储空间，利用jsdeliver做CDN，利用PicGo做图片管理工具
 Github设置  创建公开仓库 创建私人访问Token,并将Token记录下来   注意：Token需要有repo、delete_repo权限
  PicGo设置 配置如下
@@ -50,10 +50,10 @@ Github设置  创建公开仓库 创建私人访问Token,并将Token记录下来
     
     <item>
       <title>Oracle定时备份</title>
-      <link>http://blog.ionosphere.site/p/20201225143832/</link>
+      <link>https://blog.ionosphere.site/p/20201225143832/</link>
       <pubDate>Fri, 25 Dec 2020 14:38:32 +0800</pubDate>
       
-      <guid>http://blog.ionosphere.site/p/20201225143832/</guid>
+      <guid>https://blog.ionosphere.site/p/20201225143832/</guid>
       <description>转载自：Windows下Oracle定时备份(全量备份)
  关于Windows下oracle全量备份的文章，很多网站都有，写下本文不过是为了以后方便查找，不用再到处找。
 以下些许内容有所参考到其他人所写内容，这里无意冒犯，本文引用内容部分会附上参考地址，还望原作者见谅。
@@ -66,19 +66,19 @@ Github设置  创建公开仓库 创建私人访问Token,并将Token记录下来
     
     <item>
       <title>文字转语音</title>
-      <link>http://blog.ionosphere.site/p/20201006134854/</link>
+      <link>https://blog.ionosphere.site/p/20201006134854/</link>
       <pubDate>Tue, 06 Oct 2020 13:48:54 +0800</pubDate>
       
-      <guid>http://blog.ionosphere.site/p/20201006134854/</guid>
+      <guid>https://blog.ionosphere.site/p/20201006134854/</guid>
       <description># 文字转语音 say -f 1.txt -o 1.aiff say 你好 -o 你好.aiff # 音频格式转换 ffmpeg -f aiff -i 你好.aiff 你好.mp3 </description>
     </item>
     
     <item>
       <title>Homebrew</title>
-      <link>http://blog.ionosphere.site/p/20200706134640/</link>
+      <link>https://blog.ionosphere.site/p/20200706134640/</link>
       <pubDate>Mon, 06 Jul 2020 13:46:40 +0800</pubDate>
       
-      <guid>http://blog.ionosphere.site/p/20200706134640/</guid>
+      <guid>https://blog.ionosphere.site/p/20200706134640/</guid>
       <description> Homebrew
  查看已安装的包 查看已经安装的包
 brew list 更新Homebrew 更新Homebrew(此命令会显示可以更新的包列表，已安装的包会有对号)
@@ -87,19 +87,19 @@ brew update 列出可更新的包 # 不包含含自动更新的包 brew outdated
     
     <item>
       <title>Windows KMS激活</title>
-      <link>http://blog.ionosphere.site/p/20190813135420/</link>
+      <link>https://blog.ionosphere.site/p/20190813135420/</link>
       <pubDate>Tue, 13 Aug 2019 13:54:20 +0800</pubDate>
       
-      <guid>http://blog.ionosphere.site/p/20190813135420/</guid>
+      <guid>https://blog.ionosphere.site/p/20190813135420/</guid>
       <description>命令 # 查看系统激活状态 slmgr.vbs -xpr # 查看系统激活状态详细信息 slmgr.vbs -dlv # 安装产品密钥（企业版Key） slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX # 设置KMS服务器 slmgr /skms 192.168.31.57:1688 # 自动激活 slmgr /ato 密钥 W269N-WFGWX-YVC9B-4J6C9-T83GX 资源 KMS服务器</description>
     </item>
     
     <item>
       <title>Hugo测试</title>
-      <link>http://blog.ionosphere.site/p/20180101233918/</link>
+      <link>https://blog.ionosphere.site/p/20180101233918/</link>
       <pubDate>Mon, 01 Jan 2018 23:39:18 +0800</pubDate>
       
-      <guid>http://blog.ionosphere.site/p/20180101233918/</guid>
+      <guid>https://blog.ionosphere.site/p/20180101233918/</guid>
       <description>标题 代码块测试 // 修改主题根目录下config.json文件，增加Gitalk反向代理自定义配置节点，用于自定义配置代理地址 { &amp;#34;customConfig&amp;#34;: [ { &amp;#34;name&amp;#34;: &amp;#34;gitalkProxy&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;GitHub登陆&amp;#34;, &amp;#34;group&amp;#34;: &amp;#34;Gitalk&amp;#34;, //此处将地址配置成自己的代理服务器 &amp;#34;value&amp;#34;: &amp;#34;https://netnr-proxy.cloudno.de/https://github.com/login/oauth/access_token&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;input&amp;#34;, &amp;#34;note&amp;#34;: &amp;#34;GitHub验证&amp;#34; } ] } 引用测试  白日依山尽，黄河入海流
  图片测试 </description>
     </item>

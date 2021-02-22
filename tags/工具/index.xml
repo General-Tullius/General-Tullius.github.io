@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>工具 on Ionosphere</title>
-    <link>http://blog.ionosphere.site/tags/%E5%B7%A5%E5%85%B7/</link>
+    <link>https://blog.ionosphere.site/tags/%E5%B7%A5%E5%85%B7/</link>
     <description>Recent content in 工具 on Ionosphere</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 06 Oct 2020 13:48:54 +0800</lastBuildDate><atom:link href="http://blog.ionosphere.site/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Oct 2020 13:48:54 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>文字转语音</title>
-      <link>http://blog.ionosphere.site/p/20201006134854/</link>
+      <link>https://blog.ionosphere.site/p/20201006134854/</link>
       <pubDate>Tue, 06 Oct 2020 13:48:54 +0800</pubDate>
       
-      <guid>http://blog.ionosphere.site/p/20201006134854/</guid>
+      <guid>https://blog.ionosphere.site/p/20201006134854/</guid>
       <description># 文字转语音 say -f 1.txt -o 1.aiff say 你好 -o 你好.aiff # 音频格式转换 ffmpeg -f aiff -i 你好.aiff 你好.mp3 </description>
     </item>
     
     <item>
       <title>Homebrew</title>
-      <link>http://blog.ionosphere.site/p/20200706134640/</link>
+      <link>https://blog.ionosphere.site/p/20200706134640/</link>
       <pubDate>Mon, 06 Jul 2020 13:46:40 +0800</pubDate>
       
-      <guid>http://blog.ionosphere.site/p/20200706134640/</guid>
+      <guid>https://blog.ionosphere.site/p/20200706134640/</guid>
       <description> Homebrew
  查看已安装的包 查看已经安装的包
 brew list 更新Homebrew 更新Homebrew(此命令会显示可以更新的包列表，已安装的包会有对号)
@@ -30,10 +30,10 @@ brew update 列出可更新的包 # 不包含含自动更新的包 brew outdated
     
     <item>
       <title>Windows KMS激活</title>
-      <link>http://blog.ionosphere.site/p/20190813135420/</link>
+      <link>https://blog.ionosphere.site/p/20190813135420/</link>
       <pubDate>Tue, 13 Aug 2019 13:54:20 +0800</pubDate>
       
-      <guid>http://blog.ionosphere.site/p/20190813135420/</guid>
+      <guid>https://blog.ionosphere.site/p/20190813135420/</guid>
       <description>命令 # 查看系统激活状态 slmgr.vbs -xpr # 查看系统激活状态详细信息 slmgr.vbs -dlv # 安装产品密钥（企业版Key） slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX # 设置KMS服务器 slmgr /skms 192.168.31.57:1688 # 自动激活 slmgr /ato 密钥 W269N-WFGWX-YVC9B-4J6C9-T83GX 资源 KMS服务器</description>
     </item>
     

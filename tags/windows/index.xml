@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows on Ionosphere</title>
-    <link>http://blog.ionosphere.site/tags/windows/</link>
+    <link>https://blog.ionosphere.site/tags/windows/</link>
     <description>Recent content in Windows on Ionosphere</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 13 Aug 2019 13:54:20 +0800</lastBuildDate><atom:link href="http://blog.ionosphere.site/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Aug 2019 13:54:20 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows KMS激活</title>
-      <link>http://blog.ionosphere.site/p/20190813135420/</link>
+      <link>https://blog.ionosphere.site/p/20190813135420/</link>
       <pubDate>Tue, 13 Aug 2019 13:54:20 +0800</pubDate>
       
-      <guid>http://blog.ionosphere.site/p/20190813135420/</guid>
+      <guid>https://blog.ionosphere.site/p/20190813135420/</guid>
       <description>命令 # 查看系统激活状态 slmgr.vbs -xpr # 查看系统激活状态详细信息 slmgr.vbs -dlv # 安装产品密钥（企业版Key） slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX # 设置KMS服务器 slmgr /skms 192.168.31.57:1688 # 自动激活 slmgr /ato 密钥 W269N-WFGWX-YVC9B-4J6C9-T83GX 资源 KMS服务器</description>
     </item>
     

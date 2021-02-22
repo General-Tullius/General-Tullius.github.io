@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Oracle on Ionosphere</title>
-    <link>http://blog.ionosphere.site/tags/oracle/</link>
+    <link>https://blog.ionosphere.site/tags/oracle/</link>
     <description>Recent content in Oracle on Ionosphere</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 25 Dec 2020 14:38:32 +0800</lastBuildDate><atom:link href="http://blog.ionosphere.site/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Dec 2020 14:38:32 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Oracle定时备份</title>
-      <link>http://blog.ionosphere.site/p/20201225143832/</link>
+      <link>https://blog.ionosphere.site/p/20201225143832/</link>
       <pubDate>Fri, 25 Dec 2020 14:38:32 +0800</pubDate>
       
-      <guid>http://blog.ionosphere.site/p/20201225143832/</guid>
+      <guid>https://blog.ionosphere.site/p/20201225143832/</guid>
       <description>转载自：Windows下Oracle定时备份(全量备份)
  关于Windows下oracle全量备份的文章，很多网站都有，写下本文不过是为了以后方便查找，不用再到处找。
 以下些许内容有所参考到其他人所写内容，这里无意冒犯，本文引用内容部分会附上参考地址，还望原作者见谅。
