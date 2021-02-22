@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>模板 on Ionosphere</title>
+    <link>http://blog.ionosphere.site/tags/%E6%A8%A1%E6%9D%BF/</link>
+    <description>Recent content in 模板 on Ionosphere</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 06 Feb 2021 13:19:30 +0800</lastBuildDate><atom:link href="http://blog.ionosphere.site/tags/%E6%A8%A1%E6%9D%BF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Visual Studio_Code 使用问题记录</title>
+      <link>http://blog.ionosphere.site/p/20210206131930/</link>
+      <pubDate>Sat, 06 Feb 2021 13:19:30 +0800</pubDate>
+      
+      <guid>http://blog.ionosphere.site/p/20210206131930/</guid>
+      <description>Nuget包管理加载版本时报错 解决方案：
+ 打开.vscode/extensions/jmrog.vscode-nuget-package-manager-1.1.6/out/src/actions/add-methods/fetchPackageVersions.js， 修改代码 ...node_fetch_1.default(`${versionsUrl}${selectedPackageName.toLowerCase()}/index.json`, utils_1.getFetchOptions(vscode.workspace.getConfiguration(&amp;#39;http&amp;#39;)))   </description>
+    </item>
+    
+    <item>
+      <title>Hugo测试</title>
+      <link>http://blog.ionosphere.site/p/20180101233918/</link>
+      <pubDate>Mon, 01 Jan 2018 23:39:18 +0800</pubDate>
+      
+      <guid>http://blog.ionosphere.site/p/20180101233918/</guid>
+      <description>标题 代码块测试 // 修改主题根目录下config.json文件，增加Gitalk反向代理自定义配置节点，用于自定义配置代理地址 { &amp;#34;customConfig&amp;#34;: [ { &amp;#34;name&amp;#34;: &amp;#34;gitalkProxy&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;GitHub登陆&amp;#34;, &amp;#34;group&amp;#34;: &amp;#34;Gitalk&amp;#34;, //此处将地址配置成自己的代理服务器 &amp;#34;value&amp;#34;: &amp;#34;https://netnr-proxy.cloudno.de/https://github.com/login/oauth/access_token&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;input&amp;#34;, &amp;#34;note&amp;#34;: &amp;#34;GitHub验证&amp;#34; } ] } 引用测试  白日依山尽，黄河入海流
+ 图片测试 </description>
+    </item>
+    
+  </channel>
+</rss>

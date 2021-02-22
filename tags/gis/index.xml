@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GIS on Ionosphere</title>
+    <link>http://blog.ionosphere.site/tags/gis/</link>
+    <description>Recent content in GIS on Ionosphere</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 05 Feb 2021 13:13:42 +0800</lastBuildDate><atom:link href="http://blog.ionosphere.site/tags/gis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>坐标系转换</title>
+      <link>http://blog.ionosphere.site/p/20210205131342/</link>
+      <pubDate>Fri, 05 Feb 2021 13:13:42 +0800</pubDate>
+      
+      <guid>http://blog.ionosphere.site/p/20210205131342/</guid>
+      <description>#!/usr/bin/python3 # -*- coding: utf-8 -*- import json import requests import math key = &amp;#39;your key here&amp;#39; # 这里填写你的百度开放平台的key x_pi = 3.14159265358979324 * 3000.0 / 180.0 pi = 3.1415926535897932384626 # π a = 6378245.0 # 长半轴 ee = 0.00669342162296594323 # 扁率 def geocode(address): &amp;#34;&amp;#34;&amp;#34; 利用百度geocoding服务解析地址获取位置坐标 :param address:需要解析的地址 :return: &amp;#34;&amp;#34;&amp;#34; geocoding = {&amp;#39;s&amp;#39;: &amp;#39;rsv3&amp;#39;, &amp;#39;key&amp;#39;: key, &amp;#39;city&amp;#39;: &amp;#39;全国&amp;#39;, &amp;#39;address&amp;#39;: address} res = requests.get( &amp;#34;http://restapi.amap.com/v3/geocode/geo&amp;#34;, params=geocoding) if res.status_code == 200: json = res.</description>
+    </item>
+    
+  </channel>
+</rss>
