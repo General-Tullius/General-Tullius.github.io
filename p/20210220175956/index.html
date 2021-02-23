@@ -43,17 +43,6 @@
   // 修改主题根目录下config.json文件，增加Gitalk反向代理自定义配置节点，用于自定义配置代理地址 { &amp;#34;customConfig&amp;#34;: [ { &amp;#34;name&amp;#34;: &amp;#34;gitalkProxy&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;GitHub登陆&amp;#34;, &amp;#34;group&amp;#34;: &amp;#34;Gitalk&amp;#34;, //此处将地址配置成自己的代理服务器 &amp;#34;value&amp;#34;: &amp;#34;https://netnr-proxy.cloudno.de/https://github.com/login/oauth/access_token&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;input&amp;#34;, &amp;#34;note&amp;#34;: &amp;#34;GitHub验证&amp;#34; } ] } 修改Gitalk初始化代码templates/includes/gitalk.ejs
 &amp;lt;script&amp;gt; window.onload = function() { var gitalk = new Gitalk({ //增加代理参数，赋值读取自定义配置  proxy: &amp;#39;&amp;lt;%= site.customConfig.gitalkProxy %&amp;gt;&amp;#39;, clientID: &amp;#39;&amp;lt;%= commentSetting."><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png' />
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-J10L714FSV', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
     </head>
     <body class="">
     <script>
