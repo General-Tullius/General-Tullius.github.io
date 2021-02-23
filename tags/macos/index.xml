@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>macOS on Ionosphere</title>
+    <title>MacOS on Ionosphere</title>
     <link>https://blog.ionosphere.site/tags/macos/</link>
-    <description>Recent content in macOS on Ionosphere</description>
+    <description>Recent content in MacOS on Ionosphere</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 06 Oct 2020 13:48:54 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/tags/macos/index.xml" rel="self" type="application/rss+xml" />
