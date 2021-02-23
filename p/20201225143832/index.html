@@ -218,10 +218,7 @@
 </blockquote>
 <p>关于Windows下oracle全量备份的文章，很多网站都有，写下本文不过是为了以后方便查找，不用再到处找。以下些许内容有所参考到其他人所写内容，这里无意冒犯，本文引用内容部分会附上参考地址，还望原作者见谅。</p>
 <h2 id="1-备份脚本">1. 备份脚本</h2>
-<p>新建txt文档，把脚本复制进去后改文件格式为bat文件，双击运行即可测试该脚本是否有误。</p>
-<p>这里要说明一下，开始把脚本拿过来执行时，一直未能成功备份数据库</p>
-<p>用bat的pause暂停调试发现了一些问题，有时不注意可能会在定义的变量如BACKUPDATE、USER等后面带了空格</p>
-<p>这个时候问题就来了，导致参数的不正确，所以这里需注意！</p>
+<p>新建txt文档，把脚本复制进去后改文件格式为bat文件，双击运行即可测试该脚本是否有误。这里要说明一下，开始把脚本拿过来执行时，一直未能成功备份数据库,用bat的pause暂停调试发现了一些问题，有时不注意可能会在定义,变量如BACKUPDATE、USER等后面带了空格,这个时候问题就来了，导致参数的不正确，所以这里需注意！</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">@echo off   
 <span class="nb">echo</span> <span class="o">================================================</span>   
 <span class="nb">echo</span>  Windows环境下Oracle数据库的自动备份脚本  
