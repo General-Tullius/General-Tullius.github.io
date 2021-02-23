@@ -157,15 +157,5 @@ brew update 列出可更新的包 # 不包含含自动更新的包 brew outdated
       <description>命令 # 查看系统激活状态 slmgr.vbs -xpr # 查看系统激活状态详细信息 slmgr.vbs -dlv # 安装产品密钥（企业版Key） slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX # 设置KMS服务器 slmgr /skms 192.168.31.57:1688 # 自动激活 slmgr /ato 密钥 W269N-WFGWX-YVC9B-4J6C9-T83GX 资源 KMS服务器</description>
     </item>
     
-    <item>
-      <title>Hugo测试</title>
-      <link>https://blog.ionosphere.site/p/20180101233918/</link>
-      <pubDate>Mon, 01 Jan 2018 23:39:18 +0800</pubDate>
-      
-      <guid>https://blog.ionosphere.site/p/20180101233918/</guid>
-      <description>标题 代码块测试 // 修改主题根目录下config.json文件，增加Gitalk反向代理自定义配置节点，用于自定义配置代理地址 { &amp;#34;customConfig&amp;#34;: [ { &amp;#34;name&amp;#34;: &amp;#34;gitalkProxy&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;GitHub登陆&amp;#34;, &amp;#34;group&amp;#34;: &amp;#34;Gitalk&amp;#34;, //此处将地址配置成自己的代理服务器 &amp;#34;value&amp;#34;: &amp;#34;https://netnr-proxy.cloudno.de/https://github.com/login/oauth/access_token&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;input&amp;#34;, &amp;#34;note&amp;#34;: &amp;#34;GitHub验证&amp;#34; } ] } 引用测试  白日依山尽，黄河入海流
- 图片测试 </description>
-    </item>
-    
   </channel>
 </rss>
