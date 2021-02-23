@@ -6,7 +6,20 @@
     <description>Recent content in 技术 on Ionosphere</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 23 Feb 2021 12:25:05 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Feb 2021 00:53:53 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo永久链接</title>
+      <link>https://blog.ionosphere.site/p/da23b91d/</link>
+      <pubDate>Wed, 24 Feb 2021 00:53:53 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/da23b91d/</guid>
+      <description> 使用 hugo new 新建页面时创建的页面由 archetypes/default.md决定
+ 永久链接的生成方案是比较简单的，直接对时间 + 文章名生成字符串做一下 md5 然后取任意 4-12 位即可。这样做的话 md5 冲撞概率极小，同时也没有那么大的运算负担。而 Hugo 在永久链接中支持下面这个参数：slug。简单来说，我们可以针对每一篇文章指定一个 slug，然后在 config.toml 中配置 permalinks 包含 slug 参数，就可以生成唯一的永久链接。我们的目的就是对每篇文章自动生成一个 slug。
+修改 archetypes/default.md 添加如下一行：
+---#...slug:{{substr (md5 (printf &amp;#34;%s%s&amp;#34; .Date (replace .TranslationBaseName &amp;#34;-&amp;#34; &amp;#34; &amp;#34; | title))) 4 8 }}#...--- 参考：Hugo 永久链接
+ </description>
+    </item>
+    
     <item>
       <title>二维码挪车牌</title>
       <link>https://blog.ionosphere.site/p/20210223122505/</link>

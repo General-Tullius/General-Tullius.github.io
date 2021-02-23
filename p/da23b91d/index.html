@@ -1,48 +1,17 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='表象 成因 Gitalk默认的GitHub oauth请求反向代理CORS使用的是https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_tokenGitHub项目，该代理只是一个演示项目，由于被滥用，作者决定于2021年1月31日停止开放使用，从而导致了此问题的产生
-解决  在Heroku上部署自己的cros-anywhere
-   1.注册Heroku账号
-  2.fork cros-anywhere项目
-  3.创建Heroku应用
-  4.将自己fork的项目部署创建的Heroku应用
-官方文档 实际上自己通过网页端操作更方便点
-  5.设置白名单防止滥用导致封号
-  6.修改主题中Gitalk相关的代码 增加Gitalk反向代理配置项
-  // 修改主题根目录下config.json文件，增加Gitalk反向代理自定义配置节点，用于自定义配置代理地址 { &amp;#34;customConfig&amp;#34;: [ { &amp;#34;name&amp;#34;: &amp;#34;gitalkProxy&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;GitHub登陆&amp;#34;, &amp;#34;group&amp;#34;: &amp;#34;Gitalk&amp;#34;, //此处将地址配置成自己的代理服务器 &amp;#34;value&amp;#34;: &amp;#34;https://netnr-proxy.cloudno.de/https://github.com/login/oauth/access_token&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;input&amp;#34;, &amp;#34;note&amp;#34;: &amp;#34;GitHub验证&amp;#34; } ] } 修改Gitalk初始化代码templates/includes/gitalk.ejs
-&amp;lt;script&amp;gt; window.onload = function() { var gitalk = new Gitalk({ //增加代理参数，赋值读取自定义配置  proxy: &amp;#39;&amp;lt;%= site.customConfig.gitalkProxy %&amp;gt;&amp;#39;, clientID: &amp;#39;&amp;lt;%= commentSetting.'><title>Gridea Gitalk 评论登录403问题</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='修改Hugo新建模板、生成永久链接'><title>Hugo永久链接</title>
 
-<link rel='canonical' href='https://blog.ionosphere.site/p/20210220175956/'>
+<link rel='canonical' href='https://blog.ionosphere.site/p/da23b91d/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Gridea Gitalk 评论登录403问题'>
-<meta property='og:description' content='表象 成因 Gitalk默认的GitHub oauth请求反向代理CORS使用的是https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_tokenGitHub项目，该代理只是一个演示项目，由于被滥用，作者决定于2021年1月31日停止开放使用，从而导致了此问题的产生
-解决  在Heroku上部署自己的cros-anywhere
-   1.注册Heroku账号
-  2.fork cros-anywhere项目
-  3.创建Heroku应用
-  4.将自己fork的项目部署创建的Heroku应用
-官方文档 实际上自己通过网页端操作更方便点
-  5.设置白名单防止滥用导致封号
-  6.修改主题中Gitalk相关的代码 增加Gitalk反向代理配置项
-  // 修改主题根目录下config.json文件，增加Gitalk反向代理自定义配置节点，用于自定义配置代理地址 { &amp;#34;customConfig&amp;#34;: [ { &amp;#34;name&amp;#34;: &amp;#34;gitalkProxy&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;GitHub登陆&amp;#34;, &amp;#34;group&amp;#34;: &amp;#34;Gitalk&amp;#34;, //此处将地址配置成自己的代理服务器 &amp;#34;value&amp;#34;: &amp;#34;https://netnr-proxy.cloudno.de/https://github.com/login/oauth/access_token&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;input&amp;#34;, &amp;#34;note&amp;#34;: &amp;#34;GitHub验证&amp;#34; } ] } 修改Gitalk初始化代码templates/includes/gitalk.ejs
-&amp;lt;script&amp;gt; window.onload = function() { var gitalk = new Gitalk({ //增加代理参数，赋值读取自定义配置  proxy: &amp;#39;&amp;lt;%= site.customConfig.gitalkProxy %&amp;gt;&amp;#39;, clientID: &amp;#39;&amp;lt;%= commentSetting.'>
-<meta property='og:url' content='https://blog.ionosphere.site/p/20210220175956/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Hugo永久链接'>
+<meta property='og:description' content='修改Hugo新建模板、生成永久链接'>
+<meta property='og:url' content='https://blog.ionosphere.site/p/da23b91d/'>
 <meta property='og:site_name' content='Ionosphere'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Gitalk' /><meta property='article:published_time' content='2021-02-20T17:59:56&#43;08:00'/><meta property='article:modified_time' content='2021-02-20T17:59:56&#43;08:00'/><meta property='og:image' content='https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png' />
-<meta name="twitter:title" content="Gridea Gitalk 评论登录403问题">
-<meta name="twitter:description" content="表象 成因 Gitalk默认的GitHub oauth请求反向代理CORS使用的是https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_tokenGitHub项目，该代理只是一个演示项目，由于被滥用，作者决定于2021年1月31日停止开放使用，从而导致了此问题的产生
-解决  在Heroku上部署自己的cros-anywhere
-   1.注册Heroku账号
-  2.fork cros-anywhere项目
-  3.创建Heroku应用
-  4.将自己fork的项目部署创建的Heroku应用
-官方文档 实际上自己通过网页端操作更方便点
-  5.设置白名单防止滥用导致封号
-  6.修改主题中Gitalk相关的代码 增加Gitalk反向代理配置项
-  // 修改主题根目录下config.json文件，增加Gitalk反向代理自定义配置节点，用于自定义配置代理地址 { &amp;#34;customConfig&amp;#34;: [ { &amp;#34;name&amp;#34;: &amp;#34;gitalkProxy&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;GitHub登陆&amp;#34;, &amp;#34;group&amp;#34;: &amp;#34;Gitalk&amp;#34;, //此处将地址配置成自己的代理服务器 &amp;#34;value&amp;#34;: &amp;#34;https://netnr-proxy.cloudno.de/https://github.com/login/oauth/access_token&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;input&amp;#34;, &amp;#34;note&amp;#34;: &amp;#34;GitHub验证&amp;#34; } ] } 修改Gitalk初始化代码templates/includes/gitalk.ejs
-&amp;lt;script&amp;gt; window.onload = function() { var gitalk = new Gitalk({ //增加代理参数，赋值读取自定义配置  proxy: &amp;#39;&amp;lt;%= site.customConfig.gitalkProxy %&amp;gt;&amp;#39;, clientID: &amp;#39;&amp;lt;%= commentSetting."><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Hugo' /><meta property='article:published_time' content='2021-02-24T00:53:53&#43;08:00'/><meta property='article:modified_time' content='2021-02-24T00:53:53&#43;08:00'/>
+<meta name="twitter:title" content="Hugo永久链接">
+<meta name="twitter:description" content="修改Hugo新建模板、生成永久链接">
     </head>
     <body class="">
     <script>
@@ -202,16 +171,8 @@
         </a>
     </div>
 
-    <article class="has-image main-article">
+    <article class="main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/20210220175956/">
-                
-                    <img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png" loading="lazy" alt="Featured image of post Gridea Gitalk 评论登录403问题" />
-                
-            </a>
-        </div>
-    
 
     <div class="article-details">
     
@@ -225,9 +186,13 @@
     
 
     <h2 class="article-title">
-        <a href="/p/20210220175956/">Gridea Gitalk 评论登录403问题</a>
+        <a href="/p/da23b91d/">Hugo永久链接</a>
     </h2>
 
+    
+    <h3 class="article-subtitle">
+        修改Hugo新建模板、生成永久链接
+    </h3>
     <footer class="article-time">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -237,78 +202,26 @@
 
 
 
-        <time class="article-time--published">2月20日, 2021</time>
+        <time class="article-time--published">2月24日, 2021</time>
     </footer></div>
 </header>
 
     <section class="article-content">
-    <h1 id="表象">表象</h1>
-<p><img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png" alt="Gitalk 403 错误"  /></p>
-<h1 id="成因">成因</h1>
-<p>Gitalk默认的GitHub oauth请求反向代理CORS使用的是<code>https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token</code><a class="link" href="https://github.com/Rob--W/cors-anywhere"  target="_blank" rel="noopener"
-    >GitHub项目</a>，该代理只是一个演示项目，由于被滥用，作者决定于<a class="link" href="https://github.com/Rob--W/cors-anywhere/issues/301"  target="_blank" rel="noopener"
-    >2021年1月31日</a>停止开放使用，从而导致了此问题的产生</p>
-<h1 id="解决">解决</h1>
-<blockquote>
-<p>在Heroku上部署自己的cros-anywhere</p>
+    <blockquote>
+<p>使用 <code>hugo new</code> 新建页面时创建的页面由 <code>archetypes/default.md</code>决定</p>
 </blockquote>
-<ul>
-<li>
-<p>1.注册Heroku账号</p>
-</li>
-<li>
-<p>2.fork cros-anywhere项目</p>
-</li>
-<li>
-<p>3.创建Heroku应用</p>
-</li>
-<li>
-<p>4.将自己fork的项目部署创建的Heroku应用</p>
-<p><a class="link" href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#deploy-the-app"  target="_blank" rel="noopener"
-    >官方文档</a>
-实际上自己通过网页端操作更方便点</p>
-</li>
-<li>
-<p>5.设置白名单防止滥用导致封号</p>
-</li>
-<li>
-<p>6.修改主题中Gitalk相关的代码
-增加Gitalk反向代理配置项</p>
-</li>
-</ul>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="err">//</span> <span class="err">修改主题根目录下config.json文件，增加Gitalk反向代理自定义配置节点，用于自定义配置代理地址</span>
-<span class="p">{</span>
-    <span class="nt">&#34;customConfig&#34;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;gitalkProxy&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;label&#34;</span><span class="p">:</span> <span class="s2">&#34;GitHub登陆&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;group&#34;</span><span class="p">:</span> <span class="s2">&#34;Gitalk&#34;</span><span class="p">,</span>
-            <span class="err">//此处将地址配置成自己的代理服务器</span>
-            <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;https://netnr-proxy.cloudno.de/https://github.com/login/oauth/access_token&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;input&#34;</span><span class="p">,</span>
-            <span class="nt">&#34;note&#34;</span><span class="p">:</span> <span class="s2">&#34;GitHub验证&#34;</span>
-        <span class="p">}</span>
-        <span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div><p>修改Gitalk初始化代码<code>templates/includes/gitalk.ejs</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
-    <span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">gitalk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Gitalk</span><span class="p">({</span>
-            <span class="c1">//增加代理参数，赋值读取自定义配置
-</span><span class="c1"></span>            <span class="nx">proxy</span><span class="o">:</span> <span class="s1">&#39;&lt;%= site.customConfig.gitalkProxy %&gt;&#39;</span><span class="p">,</span>
-            <span class="nx">clientID</span><span class="o">:</span> <span class="s1">&#39;&lt;%= commentSetting.gitalkSetting.clientId %&gt;&#39;</span><span class="p">,</span>
-            <span class="nx">clientSecret</span><span class="o">:</span> <span class="s1">&#39;&lt;%= commentSetting.gitalkSetting.clientSecret %&gt;&#39;</span><span class="p">,</span>
-            <span class="nx">repo</span><span class="o">:</span> <span class="s1">&#39;&lt;%= commentSetting.gitalkSetting.repository %&gt;&#39;</span><span class="p">,</span>
-            <span class="nx">owner</span><span class="o">:</span> <span class="s1">&#39;&lt;%= commentSetting.gitalkSetting.owner %&gt;&#39;</span><span class="p">,</span>
-            <span class="nx">admin</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;&lt;%= commentSetting.gitalkSetting.owner %&gt;&#39;</span><span class="p">],</span>
-            <span class="nx">id</span><span class="o">:</span> <span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="p">).</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">49</span><span class="p">),</span> <span class="c1">// Ensure uniqueness and length less than 50
-</span><span class="c1"></span>            <span class="nx">distractionFreeMode</span><span class="o">:</span> <span class="kc">false</span> <span class="c1">// Facebook-like distraction free mode
-</span><span class="c1"></span>        <span class="p">})</span>
+<p>永久链接的生成方案是比较简单的，直接对时间 + 文章名生成字符串做一下 md5 然后取任意 4-12 位即可。这样做的话 md5 冲撞概率极小，同时也没有那么大的运算负担。而 Hugo 在永久链接中支持下面这个参数：slug。简单来说，我们可以针对每一篇文章指定一个 slug，然后在 config.toml 中配置 permalinks 包含 slug 参数，就可以生成唯一的永久链接。我们的目的就是对每篇文章自动生成一个 slug。</p>
+<p>修改 <code>archetypes/default.md</code> 添加如下一行：</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+</span><span class="w"></span><span class="c">#...</span><span class="w">
+</span><span class="w"></span><span class="nt">slug</span><span class="p">:</span><span class="w"> </span>{{<span class="w"> </span><span class="l">substr (md5 (printf &#34;%s%s&#34; .Date (replace .TranslationBaseName &#34;-&#34; &#34; &#34; | title))) 4 8 }}</span><span class="w">
+</span><span class="w"></span><span class="c">#...</span><span class="w">
+</span><span class="w"></span><span class="nn">---</span><span class="w">
+</span></code></pre></div><blockquote>
+<p>参考：<a class="link" href="https://blog.lxdlam.com/post/9cc3283b/"  target="_blank" rel="noopener"
+    >Hugo 永久链接</a></p>
+</blockquote>
 
-        <span class="nx">gitalk</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;gitalk-container&#39;</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="o">&lt;</span><span class="err">/script&gt;</span>
-</code></pre></div>
 </section>
 
 
@@ -316,7 +229,7 @@
     
     <section class="article-tags">
         
-            <a href="/tags/gitalk/">Gitalk</a>
+            <a href="/tags/hugo/">Hugo</a>
         
     </section>
 
@@ -344,18 +257,6 @@
         <h2 class="section-title">相关文章</h2>
         <div class="related-contents">
             <div class="flex article-list--tile">
-                
-                    
-<article class="">
-    <a href="/p/da23b91d/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Hugo永久链接</h2>
-        </div>
-    </a>
-</article>
                 
                     
 <article class="has-image">
@@ -401,6 +302,24 @@
 
         <div class="article-details">
             <h2 class="article-title">Windows快捷键</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/20210220175956/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png" loading="lazy" data-key="20210220175956" data-hash="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Gridea Gitalk 评论登录403问题</h2>
         </div>
     </a>
 </article>
