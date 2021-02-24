@@ -44,14 +44,18 @@
 &amp;lt;script&amp;gt; window.onload = function() { var gitalk = new Gitalk({ //增加代理参数，赋值读取自定义配置  proxy: &amp;#39;&amp;lt;%= site.customConfig.gitalkProxy %&amp;gt;&amp;#39;, clientID: &amp;#39;&amp;lt;%= commentSetting."><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png' /><style>
     :root {
-        --article-font-family: "Noto Serif SC", var(--base-font-family);
+         
+        --article-font-family: "Noto Sans SC", var(--base-font-family);		
     }
 </style>
 
 <script>
 		(function () {
 		    const customFont = document.createElement('link');
-		    customFont.href = "https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/assets/css/Noto_Serif_SC:wght@400;700&display=swap.css";
+			
+		    
+			
+		    customFont.href = "https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/assets/css/Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap.css";
 		
 		    customFont.type = "text/css";
 		    customFont.rel = "stylesheet";
