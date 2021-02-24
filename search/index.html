@@ -11,7 +11,23 @@
 <meta property='og:site_name' content='Ionosphere'>
 <meta property='og:type' content='article'><meta property='article:section' content='Page' />
 <meta name="twitter:title" content="搜索">
-<meta name="twitter:description" content=""><link rel="alternate" type="application/json" href="https://blog.ionosphere.site/search/index.json"><link rel="preload" href="https://blog.ionosphere.site/search/index.json" as="fetch" crossorigin="anonymous">
+<meta name="twitter:description" content=""><link rel="alternate" type="application/json" href="https://blog.ionosphere.site/search/index.json"><style>
+    :root {
+        --article-font-family: "Noto Serif SC", var(--base-font-family);
+    }
+</style>
+
+<script>
+		(function () {
+		    const customFont = document.createElement('link');
+		    customFont.href = "https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/assets/css/Noto_Serif_SC:wght@400;700&display=swap.css";
+		
+		    customFont.type = "text/css";
+		    customFont.rel = "stylesheet";
+		
+		    document.head.appendChild(customFont);
+		}());
+</script><link rel="preload" href="https://blog.ionosphere.site/search/index.json" as="fetch" crossorigin="anonymous">
     </head>
     <body class="template-search">
     <script>
@@ -209,7 +225,7 @@
     (function () {
         const customFont = document.createElement('link');
         
-        customFont.href = "https://cdn.bootcdn.net/ajax/libs/lato-font/3.0.0/css/lato-font.css";
+        customFont.href = "https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/assets/css/lato-font.css";    
 
         customFont.type = "text/css";
         customFont.rel = "stylesheet";
