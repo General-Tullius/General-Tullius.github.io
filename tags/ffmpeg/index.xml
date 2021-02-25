@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 06 Oct 2020 13:48:54 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>文字转语音</title>
-      <link>https://blog.ionosphere.site/0272ad7a/</link>
+      <link>https://blog.ionosphere.site/p/0272ad7a/</link>
       <pubDate>Tue, 06 Oct 2020 13:48:54 +0800</pubDate>
       
-      <guid>https://blog.ionosphere.site/0272ad7a/</guid>
+      <guid>https://blog.ionosphere.site/p/0272ad7a/</guid>
       <description># 文字转语音 say -f 1.txt -o 1.aiff say 你好 -o 你好.aiff # 音频格式转换 ffmpeg -f aiff -i 你好.aiff 你好.mp3 </description>
     </item>
     
