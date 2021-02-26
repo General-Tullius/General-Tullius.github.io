@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Windows 系统下 Oracle 定时、全量备份'><title>Oracle定时备份</title>
+
+<link rel='canonical' href='https://blog.ionosphere.site/22637e0b/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Oracle定时备份'>
+<meta property='og:description' content='Windows 系统下 Oracle 定时、全量备份'>
+<meta property='og:url' content='https://blog.ionosphere.site/22637e0b/'>
+<meta property='og:site_name' content='Ionosphere'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Oracle' /><meta property='article:published_time' content='2020-12-25T14:38:32&#43;08:00'/><meta property='article:modified_time' content='2020-12-25T14:38:32&#43;08:00'/>
+<meta name="twitter:title" content="Oracle定时备份">
+<meta name="twitter:description" content="Windows 系统下 Oracle 定时、全量备份"><style>
+    :root {
+         
+        --article-font-family: "Noto Sans SC", var(--base-font-family);		
+    }
+</style>
+
+<script>
+		(function () {
+		    const customFont = document.createElement('link');
+			
+		    
+			
+		    customFont.href = "https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/assets/css/Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap.css";
+		
+		    customFont.type = "text/css";
+		    customFont.rel = "stylesheet";
+		
+		    document.head.appendChild(customFont);
+		}());
+</script>
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "auto");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    <img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210224000224.png" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+
+                
+                    <span class="emoji">🇨🇳</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.ionosphere.site/">Ionosphere</a></h1>
+        <h2 class="site-description">保持热爱, 奔赴山海.</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6f32be" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+                
+                <span>首页</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#009988" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/9c0b7f1d/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tools" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#a905b6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 21h4l13 -13a1.5 1.5 0 0 0 -4 -4l-13 13v4" />
+  <line x1="14.5" y1="5.5" x2="18.5" y2="9.5" />
+  <polyline points="12 8 7 3 3 7 8 12" />
+  <line x1="7" y1="8" x2="5.5" y2="9.5" />
+  <polyline points="16 12 21 17 17 21 12 16" />
+  <line x1="16" y1="17" x2="14.5" y2="18.5" />
+</svg>
+                
+                <span>工具</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/music/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-music" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <circle cx="11" cy="16" r="1" />
+  <polyline points="12 16 12 11 14 12" />
+</svg>
+                
+                <span>歌单</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/links/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#7bc62d" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff9300" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://blog.ionosphere.site/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%8A%80%E6%9C%AF/" >
+                技术
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/22637e0b/">Oracle定时备份</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        Windows 系统下 Oracle 定时、全量备份
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">12月25日, 2020</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <blockquote>
+<p>转载自：<a href="https://segmentfault.com/a/1190000008596697" target="_blank">Windows下Oracle定时备份(全量备份)</a></p>
+</blockquote>
+<p>关于Windows下oracle全量备份的文章，很多网站都有，写下本文不过是为了以后方便查找，不用再到处找。以下些许内容有所参考到其他人所写内容，这里无意冒犯，本文引用内容部分会附上参考地址，还望原作者见谅。</p>
+<h2 id="1-备份脚本">1. 备份脚本</h2>
+<p>新建txt文档，把脚本复制进去后改文件格式为bat文件，双击运行即可测试该脚本是否有误。这里要说明一下，开始把脚本拿过来执行时，一直未能成功备份数据库,用bat的pause暂停调试发现了一些问题，有时不注意可能会在定义,变量如BACKUPDATE、USER等后面带了空格,这个时候问题就来了，导致参数的不正确，所以这里需注意！</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">@echo off   
+<span class="nb">echo</span> <span class="o">================================================</span>   
+<span class="nb">echo</span>  Windows环境下Oracle数据库的自动备份脚本  
+<span class="nb">echo</span>  1. 使用当前日期命名备份文件。  
+<span class="nb">echo</span>  2. 自动删除7天前的备份。  
+<span class="nb">echo</span> <span class="o">================================================</span>  
+<span class="nb">echo</span>  以“YYYYMMDD”格式取出当前时间。  
+<span class="nb">set</span> <span class="nv">BACKUPDATE</span><span class="o">=</span>%date:~0,4%%date:~5,2%%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%
+<span class="nb">echo</span>  设置用户名、密码和要备份的数据库
+<span class="nb">set</span> <span class="nv">USER</span><span class="o">=</span>ora_user
+<span class="nb">set</span> <span class="nv">PASSWORD</span><span class="o">=</span>ora_name
+<span class="nb">set</span> <span class="nv">DATABASE</span><span class="o">=</span>conn_db
+<span class="nb">echo</span>  创建备份目录
+<span class="k">if</span> not exist <span class="s2">&#34;E:\backup\data&#34;</span>       mkdir E:<span class="se">\b</span>ackup<span class="se">\d</span>ata  
+<span class="k">if</span> not exist <span class="s2">&#34;E:\backup\log&#34;</span>        mkdir E:<span class="se">\b</span>ackup<span class="se">\l</span>og  
+<span class="nb">set</span> <span class="nv">DATADIR</span><span class="o">=</span>E:<span class="se">\b</span>ackup<span class="se">\d</span>ata
+<span class="nb">set</span> <span class="nv">LOGDIR</span><span class="o">=</span>E:<span class="se">\b</span>ackup<span class="se">\l</span>og
+exp %USER%/%PASSWORD%@%DATABASE% <span class="nv">file</span><span class="o">=</span>%DATADIR%<span class="se">\d</span>ata_%BACKUPDATE%.dmp <span class="nv">log</span><span class="o">=</span>%LOGDIR%<span class="se">\l</span>og_%BACKUPDATE%.log
+<span class="nb">echo</span>  删除7天前的备份。
+forfiles /p <span class="s2">&#34;%DATADIR%&#34;</span> /s /m *.* /d -7 /c <span class="s2">&#34;cmd /c del @path&#34;</span>
+forfiles /p <span class="s2">&#34;%LOGDIR%&#34;</span> /s /m *.* /d -7 /c <span class="s2">&#34;cmd /c del @path&#34;</span>
+<span class="nb">exit</span>
+</code></pre></div><blockquote>
+<p>注：该脚本参考<a href="http://blog.csdn.net/iw1210/article/details/39312783" target="_blank">Windows环境下Oracle数据库的自动备份脚本</a></p>
+</blockquote>
+<h2 id="2-定时任务">2. 定时任务</h2>
+<p>这里需要用到Windows的【任务计划程序】，操作按照下列截图一一操作。</p>
+<h3 id="21-快捷查询">2.1. 快捷查询</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210206144645.png" alt=""  /></p>
+<h3 id="22-选择任务计划程序">2.2. 选择任务计划程序</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210206144756.png" alt=""  /></p>
+<h3 id="23-创建基本任务">2.3. 创建基本任务</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210206144841.png" alt=""  /></p>
+<h3 id="24-填写任务相关信息">2.4. 填写任务相关信息</h3>
+<h4 id="241-定时任务描述">2.4.1. 定时任务描述</h4>
+<p><img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210206144907.png" alt=""  /></p>
+<h4 id="242-任务执行时间">2.4.2. 任务执行时间</h4>
+<p><img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210206144933.png" alt=""  /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210206144953.png" alt=""  /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210206145017.png" alt=""  /></p>
+<p>选择刚刚写的数据库备份脚本</p>
+<p><img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210206145042.png" alt=""  /></p>
+<p>最后在任务列表里可以看到刚刚创建的定时任务，那么这个任务从设定的时间开始则会每天执行一次，即达到定时备份任务了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210206145102.png" alt=""  /></p>
+<blockquote>
+<p>注：以上内容参考 <a href="http://jingyan.baidu.com/article/08b6a591c30ae914a8092205.html" target="_blank">定时备份ORACLE数据库(windows环境下)</a></p>
+</blockquote>
+<h2 id="3-脚本">3. 脚本</h2>
+<p><a href="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/annex/定时备份.txt" target="_blank">定时备份.txt</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/oracle/">Oracle</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/da23b91d/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Hugo永久链接</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/1a22f05b/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210223141926.png" loading="lazy" data-key="1a22f05b" data-hash="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210223141926.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">二维码挪车牌</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/a2e6bc04/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210222164440.png" loading="lazy" data-key="a2e6bc04" data-hash="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210222164440.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Windows快捷键</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/44c1c716/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png" loading="lazy" data-key="44c1c716" data-hash="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Gridea Gitalk 评论登录403问题</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/41e58ada/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Visual Studio Code 使用问题记录</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="General-Tullius/GitalkData"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+        setUtterancesTheme(document.body.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2018 - 
+        
+        2021 Ionosphere
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        
+        customFont.href = "https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/assets/css/lato-font.css";    
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
