@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 24 Feb 2021 00:53:53 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo永久链接</title>
-      <link>https://blog.ionosphere.site/da23b91d/</link>
+      <link>https://blog.ionosphere.site/p/da23b91d/</link>
       <pubDate>Wed, 24 Feb 2021 00:53:53 +0800</pubDate>
       
-      <guid>https://blog.ionosphere.site/da23b91d/</guid>
+      <guid>https://blog.ionosphere.site/p/da23b91d/</guid>
       <description> 使用 hugo new 新建页面时创建的页面由 archetypes/default.md决定
  永久链接的生成方案是比较简单的，直接对时间 + 文章名生成字符串做一下 md5 然后取任意 4-12 位即可。这样做的话 md5 冲撞概率极小，同时也没有那么大的运算负担。而 Hugo 在永久链接中支持下面这个参数：slug。简单来说，我们可以针对每一篇文章指定一个 slug，然后在 config.toml 中配置 permalinks 包含 slug 参数，就可以生成唯一的永久链接。我们的目的就是对每篇文章自动生成一个 slug。
 修改 archetypes/default.md 添加如下一行：
@@ -22,10 +22,10 @@
     
     <item>
       <title>二维码挪车牌</title>
-      <link>https://blog.ionosphere.site/1a22f05b/</link>
+      <link>https://blog.ionosphere.site/p/1a22f05b/</link>
       <pubDate>Tue, 23 Feb 2021 12:25:05 +0800</pubDate>
       
-      <guid>https://blog.ionosphere.site/1a22f05b/</guid>
+      <guid>https://blog.ionosphere.site/p/1a22f05b/</guid>
       <description>想法的产生 意识到自己的车里没有放挪车牌，然后网店上搜了一下，因为各种各样的原因都不太满意。然后印象微信中有提供扫码挪车服务的公众号，受这种概念的启发，就萌生了做一个自己的电子挪车牌的想法。
 实现思路  在一个在线页面内实现拨号逻辑 生成步骤1中的页面地址对应的二维码 设计步骤2中二维码的样式，打印出来  拨号界面简单实现 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;meta name=&amp;#34;renderer&amp;#34; content=&amp;#34;webkit&amp;#34;/&amp;gt; &amp;lt;meta name=&amp;#34;force-rendering&amp;#34; content=&amp;#34;webkit&amp;#34;/&amp;gt; &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&amp;#34;&amp;gt; &amp;lt;meta name=&amp;#34;keywords&amp;#34; content=&amp;#34;一键拨号&amp;#34;/&amp;gt; &amp;lt;meta name=&amp;#34;description&amp;#34; content=&amp;#34;方便、简单、实用&amp;#34;/&amp;gt; &amp;lt;title&amp;gt;联系我挪车&amp;lt;/title&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css&amp;#34;&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div style=&amp;#34;text-align: center;margin-top:50px&amp;#34;&amp;gt; &amp;lt;h1&amp;gt;临时停车😊请多关照&amp;lt;/h1&amp;gt; &amp;lt;a href=&amp;#34;tel:{{手机号码}}&amp;#34; class=&amp;#34;btn btn-success btn-lg&amp;#34; style=&amp;#34;font-size:35px;margin-top:20px;&amp;#34;&amp;gt;挪车电话&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div style=&amp;#34;text-align: center;margin-top:50px&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  页面的托管是很容易解决的，Gitee、GitHub都有提供pages服务，国内推荐用gitee
  优点  可定制性高 使用方便，换号方便 价格便宜  效果展示 </description>
@@ -33,20 +33,20 @@
     
     <item>
       <title>Windows快捷键</title>
-      <link>https://blog.ionosphere.site/a2e6bc04/</link>
+      <link>https://blog.ionosphere.site/p/a2e6bc04/</link>
       <pubDate>Mon, 22 Feb 2021 17:17:12 +0800</pubDate>
       
-      <guid>https://blog.ionosphere.site/a2e6bc04/</guid>
+      <guid>https://blog.ionosphere.site/p/a2e6bc04/</guid>
       <description>说明 文章中的快捷键针对Windows10，其它版本Windows系统可能不生效
 快捷键    键位 功能     ctrl+c 复制   ctrl+v 粘贴   ctrl+z 撤销   ctrl+a 全选   ctrl+s 保存   ctrl+x 剪切   ctrl+f 查找   ctrl+tab 切换浏览器、文件管理器等多标签软件标签页   ctrl+w 关闭浏览器、文件管理器等多标签软件的当前页面或单窗体软件   ctrl+shift+t 恢复刚关闭的浏览器页面   ctrl+t 创建一个新浏览器标签页   ctrl++ 放大（浏览器、图片浏览、桌面等处都可用）   ctrl+- 缩小（浏览器、图片浏览、桌面等处都可用）   ctrl+alt+delete 打开任务管理器界面   ctrl+p 打印当前文件       win+d 回到桌面（不论打开了多少窗体）   win+L 锁定电脑   win+e 打开文件管理器   win+m 最小化当前窗体   win+数字键 打开固定在任务栏对应顺序的应用    </description>
     </item>
     
     <item>
       <title>Gridea Gitalk 评论登录403问题</title>
-      <link>https://blog.ionosphere.site/44c1c716/</link>
+      <link>https://blog.ionosphere.site/p/44c1c716/</link>
       <pubDate>Sat, 20 Feb 2021 17:59:56 +0800</pubDate>
       
-      <guid>https://blog.ionosphere.site/44c1c716/</guid>
+      <guid>https://blog.ionosphere.site/p/44c1c716/</guid>
       <description>表象 成因 Gitalk默认的GitHub oauth请求反向代理CORS使用的是https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_tokenGitHub项目，该代理只是一个演示项目，由于被滥用，作者决定于2021年1月31日停止开放使用，从而导致了此问题的产生
 解决  在Heroku上部署自己的cros-anywhere
    1.注册Heroku账号
@@ -62,20 +62,20 @@
     
     <item>
       <title>Visual Studio Code 使用问题记录</title>
-      <link>https://blog.ionosphere.site/41e58ada/</link>
+      <link>https://blog.ionosphere.site/p/41e58ada/</link>
       <pubDate>Sat, 06 Feb 2021 13:19:30 +0800</pubDate>
       
-      <guid>https://blog.ionosphere.site/41e58ada/</guid>
+      <guid>https://blog.ionosphere.site/p/41e58ada/</guid>
       <description>Nuget包管理加载版本时报错 解决方案：
  打开.vscode/extensions/jmrog.vscode-nuget-package-manager-1.1.6/out/src/actions/add-methods/fetchPackageVersions.js， 修改代码 ...node_fetch_1.default(`${versionsUrl}${selectedPackageName.toLowerCase()}/index.json`, utils_1.getFetchOptions(vscode.workspace.getConfiguration(&amp;#39;http&amp;#39;)))   </description>
     </item>
     
     <item>
       <title>Github&#43;PicGo&#43;jsdeliver搭建图床</title>
-      <link>https://blog.ionosphere.site/4063f65b/</link>
+      <link>https://blog.ionosphere.site/p/4063f65b/</link>
       <pubDate>Thu, 04 Feb 2021 17:09:16 +0800</pubDate>
       
-      <guid>https://blog.ionosphere.site/4063f65b/</guid>
+      <guid>https://blog.ionosphere.site/p/4063f65b/</guid>
       <description>实现步骤  整体逻辑：使用GitHub仓库作为存储空间，利用jsdeliver做CDN，利用PicGo做图片管理工具
  1. Github设置  创建公开仓库 创建私人访问Token,并将Token记录下来   注意：Token需要有repo、delete_repo权限
  2. PicGo设置 配置如下
@@ -85,10 +85,10 @@ jsDelivr</description>
     
     <item>
       <title>Oracle定时备份</title>
-      <link>https://blog.ionosphere.site/22637e0b/</link>
+      <link>https://blog.ionosphere.site/p/22637e0b/</link>
       <pubDate>Fri, 25 Dec 2020 14:38:32 +0800</pubDate>
       
-      <guid>https://blog.ionosphere.site/22637e0b/</guid>
+      <guid>https://blog.ionosphere.site/p/22637e0b/</guid>
       <description>转载自：Windows下Oracle定时备份(全量备份)
  关于Windows下oracle全量备份的文章，很多网站都有，写下本文不过是为了以后方便查找，不用再到处找。以下些许内容有所参考到其他人所写内容，这里无意冒犯，本文引用内容部分会附上参考地址，还望原作者见谅。
 1. 备份脚本 新建txt文档，把脚本复制进去后改文件格式为bat文件，双击运行即可测试该脚本是否有误。这里要说明一下，开始把脚本拿过来执行时，一直未能成功备份数据库,用bat的pause暂停调试发现了一些问题，有时不注意可能会在定义,变量如BACKUPDATE、USER等后面带了空格,这个时候问题就来了，导致参数的不正确，所以这里需注意！
@@ -97,19 +97,19 @@ jsDelivr</description>
     
     <item>
       <title>文字转语音</title>
-      <link>https://blog.ionosphere.site/0272ad7a/</link>
+      <link>https://blog.ionosphere.site/p/0272ad7a/</link>
       <pubDate>Tue, 06 Oct 2020 13:48:54 +0800</pubDate>
       
-      <guid>https://blog.ionosphere.site/0272ad7a/</guid>
+      <guid>https://blog.ionosphere.site/p/0272ad7a/</guid>
       <description># 文字转语音 say -f 1.txt -o 1.aiff say 你好 -o 你好.aiff # 音频格式转换 ffmpeg -f aiff -i 你好.aiff 你好.mp3 </description>
     </item>
     
     <item>
       <title>Homebrew</title>
-      <link>https://blog.ionosphere.site/319d5434/</link>
+      <link>https://blog.ionosphere.site/p/319d5434/</link>
       <pubDate>Mon, 06 Jul 2020 13:46:40 +0800</pubDate>
       
-      <guid>https://blog.ionosphere.site/319d5434/</guid>
+      <guid>https://blog.ionosphere.site/p/319d5434/</guid>
       <description> Homebrew
  查看已安装的包 查看已经安装的包
 brew list 更新Homebrew 更新Homebrew(此命令会显示可以更新的包列表，已安装的包会有对号)
@@ -118,10 +118,10 @@ brew update 列出可更新的包 # 不包含含自动更新的包 brew outdated
     
     <item>
       <title>Windows KMS激活</title>
-      <link>https://blog.ionosphere.site/acf0469c/</link>
+      <link>https://blog.ionosphere.site/p/acf0469c/</link>
       <pubDate>Tue, 13 Aug 2019 13:54:20 +0800</pubDate>
       
-      <guid>https://blog.ionosphere.site/acf0469c/</guid>
+      <guid>https://blog.ionosphere.site/p/acf0469c/</guid>
       <description>命令 # 查看系统激活状态 slmgr.vbs -xpr # 查看系统激活状态详细信息 slmgr.vbs -dlv # 安装产品密钥（企业版Key） slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX # 设置KMS服务器 slmgr /skms 192.168.31.57:1688 # 自动激活 slmgr /ato 密钥 W269N-WFGWX-YVC9B-4J6C9-T83GX 资源 KMS服务器</description>
     </item>
     
