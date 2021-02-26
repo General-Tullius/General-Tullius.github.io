@@ -232,13 +232,13 @@
         <pubDate>Sat, 20 Feb 2021 17:59:56 +0800</pubDate>
         
         <guid>https://blog.ionosphere.site/p/44c1c716/</guid>
-        <description>&lt;img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png" alt="Featured image of post Gridea Gitalk 评论登录403问题" /&gt;&lt;h1 id=&#34;表象&#34;&gt;表象&lt;/h1&gt;
+        <description>&lt;img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png" alt="Featured image of post Gridea Gitalk 评论登录403问题" /&gt;&lt;h2 id=&#34;表象&#34;&gt;表象&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png&#34; alt=&#34;Gitalk 403 错误&#34;  /&gt;&lt;/p&gt;
-&lt;h1 id=&#34;成因&#34;&gt;成因&lt;/h1&gt;
+&lt;h2 id=&#34;成因&#34;&gt;成因&lt;/h2&gt;
 &lt;p&gt;Gitalk默认的GitHub oauth请求反向代理CORS使用的是&lt;code&gt;https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token&lt;/code&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/Rob--W/cors-anywhere&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;GitHub项目&lt;/a&gt;，该代理只是一个演示项目，由于被滥用，作者决定于&lt;a class=&#34;link&#34; href=&#34;https://github.com/Rob--W/cors-anywhere/issues/301&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;2021年1月31日&lt;/a&gt;停止开放使用，从而导致了此问题的产生&lt;/p&gt;
-&lt;h1 id=&#34;解决&#34;&gt;解决&lt;/h1&gt;
+&lt;h2 id=&#34;解决&#34;&gt;解决&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在Heroku上部署自己的cros-anywhere&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -254,7 +254,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;4.将自己fork的项目部署创建的Heroku应用&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://devcenter.heroku.com/articles/getting-started-with-nodejs#deploy-the-app&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://devcenter.heroku.com/articles/getting-started-with-nodejs##deploy-the-app&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;官方文档&lt;/a&gt;
 实际上自己通过网页端操作更方便点&lt;/p&gt;
 &lt;/li&gt;
