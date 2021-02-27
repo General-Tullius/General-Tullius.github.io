@@ -29,7 +29,7 @@
 &amp;lt;script&amp;gt; window.onload = function() { var gitalk = new Gitalk({ //增加代理参数，赋值读取自定义配置  proxy: &amp;#39;&amp;lt;%= site.customConfig.gitalkProxy %&amp;gt;&amp;#39;, clientID: &amp;#39;&amp;lt;%= commentSetting.'>
 <meta property='og:url' content='https://blog.ionosphere.site/p/44c1c716/'>
 <meta property='og:site_name' content='Ionosphere'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Gitalk' /><meta property='article:published_time' content='2021-02-20T17:59:56&#43;08:00'/><meta property='article:modified_time' content='2021-02-20T17:59:56&#43;08:00'/><meta property='og:image' content='https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Gitalk' /><meta property='article:published_time' content='2021-02-20T17:59:56&#43;08:00'/><meta property='article:modified_time' content='2021-02-20T17:59:56&#43;08:00'/><meta property='og:image' content='https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210220214315.png' />
 <meta name="twitter:title" content="Gridea Gitalk 评论登录403问题">
 <meta name="twitter:description" content="表象 成因 Gitalk默认的GitHub oauth请求反向代理CORS使用的是https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_tokenGitHub项目，该代理只是一个演示项目，由于被滥用，作者决定于2021年1月31日停止开放使用，从而导致了此问题的产生
 解决  在Heroku上部署自己的cros-anywhere
@@ -42,7 +42,7 @@
   6.修改主题中Gitalk相关的代码 增加Gitalk反向代理配置项
   // 修改主题根目录下config.json文件，增加Gitalk反向代理自定义配置节点，用于自定义配置代理地址 { &amp;#34;customConfig&amp;#34;: [ { &amp;#34;name&amp;#34;: &amp;#34;gitalkProxy&amp;#34;, &amp;#34;label&amp;#34;: &amp;#34;GitHub登陆&amp;#34;, &amp;#34;group&amp;#34;: &amp;#34;Gitalk&amp;#34;, //此处将地址配置成自己的代理服务器 &amp;#34;value&amp;#34;: &amp;#34;https://netnr-proxy.cloudno.de/https://github.com/login/oauth/access_token&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;input&amp;#34;, &amp;#34;note&amp;#34;: &amp;#34;GitHub验证&amp;#34; } ] } 修改Gitalk初始化代码templates/includes/gitalk.ejs
 &amp;lt;script&amp;gt; window.onload = function() { var gitalk = new Gitalk({ //增加代理参数，赋值读取自定义配置  proxy: &amp;#39;&amp;lt;%= site.customConfig.gitalkProxy %&amp;gt;&amp;#39;, clientID: &amp;#39;&amp;lt;%= commentSetting."><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png' /><style>
+    <meta name="twitter:image" content='https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210220214315.png' /><style>
     :root {
          
         --article-font-family: "Noto Sans SC", var(--base-font-family);		
@@ -55,7 +55,7 @@
 			
 		    
 			
-		    customFont.href = "https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/assets/css/Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap.css";
+		    customFont.href = "https://cdn.jsdelivr.net/gh/io-oss/NetDisk/assets/css/Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap.css";
 		
 		    customFont.type = "text/css";
 		    customFont.rel = "stylesheet";
@@ -96,7 +96,7 @@
         
             <figure class="site-avatar">
                 
-                    <img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210224000224.png" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    <img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210224000224.png" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
                 
 
                 
@@ -248,7 +248,7 @@
         <div class="article-image">
             <a href="/p/44c1c716/">
                 
-                    <img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png" loading="lazy" alt="Featured image of post Gridea Gitalk 评论登录403问题" />
+                    <img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210220214315.png" loading="lazy" alt="Featured image of post Gridea Gitalk 评论登录403问题" />
                 
             </a>
         </div>
@@ -284,7 +284,7 @@
 
     <section class="article-content">
     <h2 id="表象">表象</h2>
-<p><img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210220214315.png" alt="Gitalk 403 错误"  /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210220214315.png" alt="Gitalk 403 错误"  /></p>
 <h2 id="成因">成因</h2>
 <p>Gitalk默认的GitHub oauth请求反向代理CORS使用的是<code>https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token</code><a class="link" href="https://github.com/Rob--W/cors-anywhere"  target="_blank" rel="noopener"
     >GitHub项目</a>，该代理只是一个演示项目，由于被滥用，作者决定于<a class="link" href="https://github.com/Rob--W/cors-anywhere/issues/301"  target="_blank" rel="noopener"
@@ -405,7 +405,7 @@
         
             <div class="article-image">
                 
-                    <img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210223141926.png" loading="lazy" data-key="1a22f05b" data-hash="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210223141926.png"/>
+                    <img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210223141926.png" loading="lazy" data-key="1a22f05b" data-hash="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210223141926.png"/>
                 
             </div>
         
@@ -423,7 +423,7 @@
         
             <div class="article-image">
                 
-                    <img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210222164440.png" loading="lazy" data-key="a2e6bc04" data-hash="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210222164440.png"/>
+                    <img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210222164440.png" loading="lazy" data-key="a2e6bc04" data-hash="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210222164440.png"/>
                 
             </div>
         
@@ -453,7 +453,7 @@
         
             <div class="article-image">
                 
-                    <img src="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210204215131.png" loading="lazy" data-key="4063f65b" data-hash="https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/img/20210204215131.png"/>
+                    <img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210204215131.png" loading="lazy" data-key="4063f65b" data-hash="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210204215131.png"/>
                 
             </div>
         
@@ -473,7 +473,7 @@
     
         
     <script src="https://utteranc.es/client.js" 
-        repo="General-Tullius/GitalkData"
+        repo="io-oss/GitalkData"
         issue-term="pathname"
         
         crossorigin="anonymous"
@@ -614,7 +614,7 @@
     (function () {
         const customFont = document.createElement('link');
         
-        customFont.href = "https://cdn.jsdelivr.net/gh/General-Tullius/NetDisk/assets/css/lato-font.css";    
+        customFont.href = "https://cdn.jsdelivr.net/gh/io-oss/NetDisk/assets/css/lato-font.css";    
 
         customFont.type = "text/css";
         customFont.rel = "stylesheet";
