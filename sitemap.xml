@@ -103,11 +103,6 @@
   </url>
   
   <url>
-    <loc>https://blog.ionosphere.site/links/</loc>
-    <lastmod>2021-02-22T09:28:17+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.ionosphere.site/tags/gitalk/</loc>
     <lastmod>2021-02-20T17:59:56+08:00</lastmod>
   </url>
@@ -233,6 +228,11 @@
   </url>
   
   <url>
+    <loc>https://blog.ionosphere.site/links/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.ionosphere.site/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url>
@@ -284,10 +284,6 @@
   
   <url>
     <loc>https://blog.ionosphere.site/search/</loc>
-  </url>
-  
-  <url>
-    <loc>https://blog.ionosphere.site/tags/%E6%A8%A1%E6%9D%BF/</loc>
   </url>
   
 </urlset>
