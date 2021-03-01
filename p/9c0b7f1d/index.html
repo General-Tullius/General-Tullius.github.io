@@ -429,16 +429,28 @@
 
     
         
-    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<div>
+    <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        margin-top: var(--card-margin-top);
+    }
+</style>
+<div class="disqus-container">
     <div id="vcomments"></div>
+
     <script>
         new Valine({
             el: '#vcomments',
             appId: '99ywil13IubRqVUtbo5bt2oA-gzGzoHsz',
             appKey: 'eUtp4XUDrKeqUBpiMuoQ3Fdy',
             visitor: 'true',
-            avatar: 'mp'
+            avatar: 'mp',
+            placeholder: '要不要说些什么呢',
+            lang: 'zh-CN',
         })
         window.addEventListener('onColorSchemeChange', (e) => {
             window.vcomments.changeTheme(e.detail);
