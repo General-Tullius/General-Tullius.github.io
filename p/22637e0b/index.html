@@ -449,14 +449,18 @@ forfiles /p <span class="s2">&#34;%LOGDIR%&#34;</span> /s /m *.* /d -7 /c <span 
         box-shadow: var(--shadow-l1);
         padding: var(--card-padding);
         margin-top: var(--card-margin-top);
+        font-family: var(--article-font-family);
+        font-size: var(--article-font-size);
+        color: var(--card-text-color-main);
     }
 </style>
-<div class="valine-container">
+<div id = "valinecounter" class="valine-container">
     
     <center>
         <span id="/p/22637e0b/" class="leancloud_visitors" data-flag-title="Oracle定时备份">
-            <strong class="post-meta-item-text">当前页面阅读量</strong>
-            <strong class="leancloud-visitors-count">0</strong>
+            
+            当前页面阅读次数：
+            <i class="leancloud-visitors-count">0</i>
         </span>
     </center>
 </div>
@@ -472,10 +476,7 @@ forfiles /p <span class="s2">&#34;%LOGDIR%&#34;</span> /s /m *.* /d -7 /c <span 
             avatar: 'mp',
             placeholder: '可以匿名，但是填入邮箱效果会更好',
             lang: 'zh-CN'
-        })
-        window.addEventListener('onColorSchemeChange', (e) => {
-            window.vcomments.changeTheme(e.detail);
-        })
+        })        
     </script>    
 </div>
 
