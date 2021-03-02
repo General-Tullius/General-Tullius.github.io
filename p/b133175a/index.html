@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Markdown的基础语法'><title>Markdown语法简单教程</title>
+
+<link rel='canonical' href='https://blog.ionosphere.site/p/b133175a/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Markdown语法简单教程'>
+<meta property='og:description' content='Markdown的基础语法'>
+<meta property='og:url' content='https://blog.ionosphere.site/p/b133175a/'>
+<meta property='og:site_name' content='Ionosphere'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Markdown' /><meta property='article:tag' content='工具' /><meta property='article:published_time' content='2021-03-02T11:59:39&#43;08:00'/><meta property='article:modified_time' content='2021-03-02T11:59:39&#43;08:00'/>
+<meta name="twitter:title" content="Markdown语法简单教程">
+<meta name="twitter:description" content="Markdown的基础语法"><style>
+    :root {
+         
+        --article-font-family: "Noto Sans SC", var(--base-font-family);		
+    }
+</style>
+
+<script>
+		(function () {
+		    const customFont = document.createElement('link');
+			
+		    
+			
+		    customFont.href = "https://cdn.jsdelivr.net/gh/io-oss/NetDisk/assets/css/Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap.css";
+		
+		    customFont.type = "text/css";
+		    customFont.rel = "stylesheet";
+		
+		    document.head.appendChild(customFont);
+		}());
+</script>
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "auto");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    <img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210228014740.jpeg" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+
+                
+                    <span class="emoji">🇨🇳</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.ionosphere.site/">Ionosphere</a></h1>
+        <h2 class="site-description">保持热爱, 奔赴山海.</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6f32be" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+                
+                <span>首页</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#009988" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/p/9c0b7f1d/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tools" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#a905b6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 21h4l13 -13a1.5 1.5 0 0 0 -4 -4l-13 13v4" />
+  <line x1="14.5" y1="5.5" x2="18.5" y2="9.5" />
+  <polyline points="12 8 7 3 3 7 8 12" />
+  <line x1="7" y1="8" x2="5.5" y2="9.5" />
+  <polyline points="16 12 21 17 17 21 12 16" />
+  <line x1="16" y1="17" x2="14.5" y2="18.5" />
+</svg>
+                
+                <span>工具</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/p/music/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-music" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <circle cx="11" cy="16" r="1" />
+  <polyline points="12 16 12 11 14 12" />
+</svg>
+                
+                <span>歌单</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/links'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#7bc62d" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/p/3c32f507/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#009988" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+                
+                <span>留言</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff9300" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://blog.ionosphere.site/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%8A%80%E6%9C%AF/" >
+                技术
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/b133175a/">Markdown语法简单教程</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        Markdown的基础语法
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">3月2日, 2021</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <ul>
+<li><a class="link" href="#1-%e6%a0%87%e9%a2%98" >1. 标题</a></li>
+<li><a class="link" href="#2-%e5%88%97%e8%a1%a8" >2. 列表</a>
+<ul>
+<li><a class="link" href="#21-%e6%97%a0%e5%ba%8f%e5%88%97%e8%a1%a8" >2.1. 无序列表</a></li>
+<li><a class="link" href="#22-%e6%9c%89%e5%ba%8f%e5%88%97%e8%a1%a8" >2.2. 有序列表</a></li>
+</ul>
+</li>
+<li><a class="link" href="#3-%e5%bc%95%e7%94%a8" >3. 引用</a></li>
+<li><a class="link" href="#4-%e6%96%87%e5%ad%97%e5%bc%ba%e8%b0%83" >4. 文字强调</a>
+<ul>
+<li><a class="link" href="#41-%e7%b2%97%e4%bd%93" >4.1. 粗体</a></li>
+<li><a class="link" href="#42-%e6%96%9c%e4%bd%93" >4.2. 斜体</a></li>
+<li><a class="link" href="#43-%e4%b8%8b%e5%88%92%e7%ba%bf" >4.3. 下划线</a></li>
+<li><a class="link" href="#44-%e5%88%a0%e9%99%a4%e7%ba%bf" >4.4. 删除线</a></li>
+</ul>
+</li>
+<li><a class="link" href="#5-%e5%88%86%e5%89%b2%e7%ba%bf" >5. 分割线</a></li>
+<li><a class="link" href="#6-%e5%9b%be%e7%89%87" >6. 图片</a></li>
+<li><a class="link" href="#7-%e7%bd%91%e5%9d%80" >7. 网址</a></li>
+<li><a class="link" href="#8-%e8%a1%a8%e6%a0%bc" >8. 表格</a></li>
+</ul>
+<blockquote>
+<p>写作时所有标记用的符号都要用英文，文章标点随意</p>
+</blockquote>
+<h2 id="1-标题">1. 标题</h2>
+<p>语法  <code>#</code>加<code>文字</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown"><span class="gh"># 一级标题
+</span><span class="gh"></span><span class="gu">## 二级标题
+</span><span class="gu">### 三级标题
+</span><span class="gu"></span>.
+.
+.
+<span class="gu">###### 六级标题
+</span></code></pre></div><p>效果<br>
+<figure style="flex-grow: 128; flex-basis: 309px">
+		<a href="/p/b133175a/%E6%A0%87%E9%A2%98.png" data-size="564x438"><img src="/p/b133175a/%E6%A0%87%E9%A2%98.png"
+				srcset="/p/b133175a/%E6%A0%87%E9%A2%98_hu25375f5f8231cd5387392c2c8582a95d_23564_480x0_resize_box_2.png 480w, /p/b133175a/%E6%A0%87%E9%A2%98_hu25375f5f8231cd5387392c2c8582a95d_23564_1024x0_resize_box_2.png 1024w"
+				width="564"
+				height="438"
+				loading="lazy"
+				alt="标题">
+		</a>
+		
+		<figcaption>标题</figcaption>
+		
+	</figure><br>
+一般一级标题是文章的名称，所以在博客中的标题常从二级开始</p>
+<h2 id="2-列表">2. 列表</h2>
+<h3 id="21-无序列表">2.1. 无序列表</h3>
+<p>语法  <code>-</code>加<code>空格</code>加<code>文字</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown"><span class="k">-</span> 列表1
+    <span class="k">-</span> 列表1.1
+    <span class="k">-</span> 列表1.2
+<span class="k">-</span> 列表2
+<span class="k">-</span> 列表3
+</code></pre></div><p>效果<br>
+<figure style="flex-grow: 68; flex-basis: 164px">
+		<a href="/p/b133175a/%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8.png" data-size="136x199"><img src="/p/b133175a/%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8.png"
+				srcset="/p/b133175a/%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8_hu95ba82d92425cfff3b81c4151f6ac4c6_6815_480x0_resize_box_2.png 480w, /p/b133175a/%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8_hu95ba82d92425cfff3b81c4151f6ac4c6_6815_1024x0_resize_box_2.png 1024w"
+				width="136"
+				height="199"
+				loading="lazy"
+				alt="无序列表">
+		</a>
+		
+		<figcaption>无序列表</figcaption>
+		
+	</figure></p>
+<h3 id="22-有序列表">2.2. 有序列表</h3>
+<p>语法  <code>数字</code>加<code>.(英文句号)</code>加<code>空格</code>加<code>文字</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown"><span class="k">1.</span> 列表1
+    <span class="k">1.</span> 列表1.1
+    <span class="k">1.</span> 列表1.2
+<span class="k">1.</span> 列表2
+<span class="k">1.</span> 列表3
+</code></pre></div><p>列表中数字并不需要自己一个个排序，全写1即可自动生成序号<br>
+效果<br>
+<figure style="flex-grow: 72; flex-basis: 174px">
+		<a href="/p/b133175a/%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8.png" data-size="145x199"><img src="/p/b133175a/%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8.png"
+				srcset="/p/b133175a/%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8_hudf229f7ce44e3ea91a96d15a9bd11a1b_8259_480x0_resize_box_2.png 480w, /p/b133175a/%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8_hudf229f7ce44e3ea91a96d15a9bd11a1b_8259_1024x0_resize_box_2.png 1024w"
+				width="145"
+				height="199"
+				loading="lazy"
+				alt="有序列表">
+		</a>
+		
+		<figcaption>有序列表</figcaption>
+		
+	</figure></p>
+<h2 id="3-引用">3. 引用</h2>
+<p>语法  <code>&gt;</code>加<code>空格</code>加<code>引用内容</code>，多行每行都加</p>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown"><span class="k">&gt; </span><span class="ge">登鹳雀楼_百度汉语
+</span><span class="ge"></span><span class="k">&gt; </span><span class="ge">作者：王之涣
+</span><span class="ge"></span><span class="k">&gt; </span><span class="ge">白日依山尽，黄河入海流。 
+</span><span class="ge"></span><span class="k">&gt; </span><span class="ge">欲穷千里目，更上一层楼。
+</span></code></pre></div><p>效果<br>
+<figure style="flex-grow: 421; flex-basis: 1010px">
+		<a href="/p/b133175a/%E5%BC%95%E7%94%A8.png" data-size="640x152"><img src="/p/b133175a/%E5%BC%95%E7%94%A8.png"
+				srcset="/p/b133175a/%E5%BC%95%E7%94%A8_hua86407a82c78e77da189e4d804852ecb_18685_480x0_resize_box_2.png 480w, /p/b133175a/%E5%BC%95%E7%94%A8_hua86407a82c78e77da189e4d804852ecb_18685_1024x0_resize_box_2.png 1024w"
+				width="640"
+				height="152"
+				loading="lazy"
+				alt="引用">
+		</a>
+		
+		<figcaption>引用</figcaption>
+		
+	</figure></p>
+<h2 id="4-文字强调">4. 文字强调</h2>
+<h3 id="41-粗体">4.1. 粗体</h3>
+<p>语法  <code>**</code>要加粗的文字<code>**</code> 或者用<code>_</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">**文字**
+</code></pre></div><p>效果</p>
+<p><strong>粗体</strong></p>
+<h3 id="42-斜体">4.2. 斜体</h3>
+<p>语法 <code>*</code>要变斜体的文字<code>*</code> 或者用<code>_</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">*文字*
+</code></pre></div><p>效果<br>
+<em>斜体</em></p>
+<h3 id="43-下划线">4.3. 下划线</h3>
+<p>语法</p>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown"><span class="p">&lt;</span><span class="nt">u</span><span class="p">&gt;</span>文字<span class="p">&lt;/</span><span class="nt">u</span><span class="p">&gt;</span>
+</code></pre></div><p>效果</p>
+<p><u>下划线</u></p>
+<p>语法  ``</p>
+<h3 id="44-删除线">4.4. 删除线</h3>
+<p>语法</p>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown"><span class="gh"># ~ 英文输入法状态下 Shift 加 ESC下面的按键
+</span><span class="gh"></span>~~文字~~
+</code></pre></div><p>效果<br>
+<del>删除线</del></p>
+<h2 id="5-分割线">5. 分割线</h2>
+<p>语法</p>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">***
+</code></pre></div><p>效果
+<figure style="flex-grow: 163; flex-basis: 392px">
+		<a href="/p/b133175a/%E5%88%86%E5%89%B2%E7%BA%BF.png" data-size="564x345"><img src="/p/b133175a/%E5%88%86%E5%89%B2%E7%BA%BF.png"
+				srcset="/p/b133175a/%E5%88%86%E5%89%B2%E7%BA%BF_hu39b334faed7c3ebcaa8593fecd71aec3_34002_480x0_resize_box_2.png 480w, /p/b133175a/%E5%88%86%E5%89%B2%E7%BA%BF_hu39b334faed7c3ebcaa8593fecd71aec3_34002_1024x0_resize_box_2.png 1024w"
+				width="564"
+				height="345"
+				loading="lazy"
+				alt="分割线">
+		</a>
+		
+		<figcaption>分割线</figcaption>
+		
+	</figure></p>
+<h2 id="6-图片">6. 图片</h2>
+<p>语法</p>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">![<span class="nt">名称·随便写</span>](<span class="na">图片地址</span>)
+</code></pre></div><h2 id="7-网址">7. 网址</h2>
+<p>语法</p>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">[<span class="nt">显示名称</span>](<span class="na">网址</span>)
+</code></pre></div><p>效果<br>
+<a class="link" href="https://www.baidu.com"  target="_blank" rel="noopener"
+    >百度</a></p>
+<h2 id="8-表格">8. 表格</h2>
+<p>语法</p>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">|      |      |      |
+| :--- | :--: | ---: |
+|      |      |      |
+|      |      |      |
+|      |      |      |
+</code></pre></div><p>说明</p>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown"><span class="gh"># 两个｜｜之间是一列，需要几列就分隔出来几个
+</span><span class="gh"></span>|      |      |      |这一行是表头
+| :--- | :--: | ---: |这一行是显示控制行：列左对齐则冒号在左，右对齐冒号在右，居中则两头冒号
+|      |      |      |以下行是表格内容，有几行就加几个，单元格内容放在｜｜中间
+|      |      |      |
+|      |      |      |
+
+</code></pre></div><p>效果</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">表头</th>
+<th style="text-align:center">表头</th>
+<th style="text-align:right">表头</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:center">5</td>
+<td style="text-align:right">6</td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:center">8</td>
+<td style="text-align:right">9</td>
+</tr>
+<tr>
+<td style="text-align:left">10</td>
+<td style="text-align:center">11</td>
+<td style="text-align:right">12</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/markdown/">Markdown</a>
+        
+            <a href="/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/1a22f05b/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210228015227.jpeg" loading="lazy" data-key="1a22f05b" data-hash="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210228015227.jpeg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">二维码挪车牌</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/0272ad7a/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">文字转语音</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/319d5434/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Homebrew</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/acf0469c/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Windows KMS激活</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/da23b91d/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Hugo永久链接</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+<style>
+    .valine-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        margin-top: var(--card-margin-top);
+    }
+</style>
+<div class="valine-container">
+    
+    <center>
+        <span id="/p/b133175a/" class="leancloud_visitors" data-flag-title="Markdown语法简单教程">
+            <strong class="post-meta-item-text">当前页面阅读量</strong>
+            <strong class="leancloud-visitors-count">0</strong>
+        </span>
+    </center>
+</div>
+<div class="valine-container">
+    <div id="vcomments"></div>
+
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: '99ywil13IubRqVUtbo5bt2oA-gzGzoHsz',
+            appKey: 'eUtp4XUDrKeqUBpiMuoQ3Fdy',
+            visitor:  true ,
+            avatar: 'mp',
+            placeholder: '可以匿名，但是填入邮箱效果会更好',
+            lang: 'zh-CN'
+        })
+        window.addEventListener('onColorSchemeChange', (e) => {
+            window.vcomments.changeTheme(e.detail);
+        })
+    </script>    
+</div>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2018 - 
+        
+        2021 Ionosphere
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        
+        customFont.href = "https://cdn.jsdelivr.net/gh/io-oss/NetDisk/assets/css/lato-font.css";    
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

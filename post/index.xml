@@ -6,7 +6,22 @@
     <description>Recent content in Posts on Ionosphere</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 01 Mar 2021 09:38:52 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Mar 2021 11:59:39 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown语法简单教程</title>
+      <link>https://blog.ionosphere.site/p/b133175a/</link>
+      <pubDate>Tue, 02 Mar 2021 11:59:39 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/b133175a/</guid>
+      <description>1. 标题 2. 列表  2.1. 无序列表 2.2. 有序列表   3. 引用 4. 文字强调  4.1. 粗体 4.2. 斜体 4.3. 下划线 4.4. 删除线   5. 分割线 6. 图片 7. 网址 8. 表格   写作时所有标记用的符号都要用英文，文章标点随意
+ 1. 标题 语法 #加文字
+# 一级标题 ## 二级标题 ### 三级标题 . . . ###### 六级标题 效果
+ 标题 
+一般一级标题是文章的名称，所以在博客中的标题常从二级开始
+2. 列表 2.1. 无序列表 语法 -加空格加文字
+- 列表1 - 列表1.1 - 列表1.</description>
+    </item>
+    
     <item>
       <title>留言</title>
       <link>https://blog.ionosphere.site/p/3c32f507/</link>
