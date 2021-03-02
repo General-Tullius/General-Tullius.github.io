@@ -37,6 +37,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;写作时所有标记用的符号都要用英文，文章标点随意&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;hr&gt;
 &lt;h2 id=&#34;1-标题&#34;&gt;1. 标题&lt;/h2&gt;
 &lt;p&gt;语法  &lt;code&gt;#&lt;/code&gt;加&lt;code&gt;文字&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;gh&#34;&gt;# 一级标题
@@ -60,6 +61,7 @@
 		
 	&lt;/figure&gt;&lt;br&gt;
 一般一级标题是文章的名称，所以在博客中的标题常从二级开始&lt;/p&gt;
+&lt;hr&gt;
 &lt;h2 id=&#34;2-列表&#34;&gt;2. 列表&lt;/h2&gt;
 &lt;h3 id=&#34;21-无序列表&#34;&gt;2.1. 无序列表&lt;/h3&gt;
 &lt;p&gt;语法  &lt;code&gt;-&lt;/code&gt;加&lt;code&gt;空格&lt;/code&gt;加&lt;code&gt;文字&lt;/code&gt;&lt;/p&gt;
@@ -102,6 +104,7 @@
 		&lt;figcaption&gt;有序列表&lt;/figcaption&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
+&lt;hr&gt;
 &lt;h2 id=&#34;3-引用&#34;&gt;3. 引用&lt;/h2&gt;
 &lt;p&gt;语法  &lt;code&gt;&amp;gt;&lt;/code&gt;加&lt;code&gt;空格&lt;/code&gt;加&lt;code&gt;引用内容&lt;/code&gt;，多行每行都加&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;k&#34;&gt;&amp;gt; &lt;/span&gt;&lt;span class=&#34;ge&#34;&gt;登鹳雀楼_百度汉语
@@ -121,6 +124,7 @@
 		&lt;figcaption&gt;引用&lt;/figcaption&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
+&lt;hr&gt;
 &lt;h2 id=&#34;4-文字强调&#34;&gt;4. 文字强调&lt;/h2&gt;
 &lt;h3 id=&#34;41-粗体&#34;&gt;4.1. 粗体&lt;/h3&gt;
 &lt;p&gt;语法  &lt;code&gt;**&lt;/code&gt;要加粗的文字&lt;code&gt;**&lt;/code&gt; 或者用&lt;code&gt;_&lt;/code&gt;&lt;/p&gt;
@@ -137,13 +141,13 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;文字&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;效果&lt;/p&gt;
 &lt;p&gt;&lt;u&gt;下划线&lt;/u&gt;&lt;/p&gt;
-&lt;p&gt;语法  ``&lt;/p&gt;
 &lt;h3 id=&#34;44-删除线&#34;&gt;4.4. 删除线&lt;/h3&gt;
 &lt;p&gt;语法&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;gh&#34;&gt;# ~ 英文输入法状态下 Shift 加 ESC下面的按键
 &lt;/span&gt;&lt;span class=&#34;gh&#34;&gt;&lt;/span&gt;~~文字~~
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;效果&lt;br&gt;
 &lt;del&gt;删除线&lt;/del&gt;&lt;/p&gt;
+&lt;hr&gt;
 &lt;h2 id=&#34;5-分割线&#34;&gt;5. 分割线&lt;/h2&gt;
 &lt;p&gt;语法&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;***
@@ -160,15 +164,18 @@
 		&lt;figcaption&gt;分割线&lt;/figcaption&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
+&lt;hr&gt;
 &lt;h2 id=&#34;6-图片&#34;&gt;6. 图片&lt;/h2&gt;
 &lt;p&gt;语法&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;![&lt;span class=&#34;nt&#34;&gt;名称·随便写&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;图片地址&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;7-网址&#34;&gt;7. 网址&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;7-网址&#34;&gt;7. 网址&lt;/h2&gt;
 &lt;p&gt;语法&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;[&lt;span class=&#34;nt&#34;&gt;显示名称&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;网址&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;效果&lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://www.baidu.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;百度&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
 &lt;h2 id=&#34;8-表格&#34;&gt;8. 表格&lt;/h2&gt;
 &lt;p&gt;语法&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;|      |      |      |
