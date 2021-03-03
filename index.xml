@@ -59,8 +59,8 @@
 		
 		&lt;figcaption&gt;标题&lt;/figcaption&gt;
 		
-	&lt;/figure&gt;&lt;br&gt;
-一般一级标题是文章的名称，所以在博客中的标题常从二级开始&lt;/p&gt;
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;一般一级标题是文章的名称，所以在博客中的标题常从二级开始&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;2-列表&#34;&gt;2. 列表&lt;/h2&gt;
 &lt;h3 id=&#34;21-无序列表&#34;&gt;2.1. 无序列表&lt;/h3&gt;
@@ -91,8 +91,8 @@
 &lt;span class=&#34;k&#34;&gt;1.&lt;/span&gt; 列表2
 &lt;span class=&#34;k&#34;&gt;1.&lt;/span&gt; 列表3
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;列表中数字并不需要自己一个个排序，全写1即可自动生成序号&lt;br&gt;
-效果&lt;br&gt;
-&lt;figure style=&#34;flex-grow: 72; flex-basis: 174px&#34;&gt;
+效果&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 72; flex-basis: 174px&#34;&gt;
 		&lt;a href=&#34;https://blog.ionosphere.site/p/b133175a/%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8.png&#34; data-size=&#34;145x199&#34;&gt;&lt;img src=&#34;https://blog.ionosphere.site/p/b133175a/%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8.png&#34;
 				srcset=&#34;https://blog.ionosphere.site/p/b133175a/%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8_hudf229f7ce44e3ea91a96d15a9bd11a1b_8259_480x0_resize_box_2.png 480w, https://blog.ionosphere.site/p/b133175a/%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8_hudf229f7ce44e3ea91a96d15a9bd11a1b_8259_1024x0_resize_box_2.png 1024w&#34;
 				width=&#34;145&#34;
