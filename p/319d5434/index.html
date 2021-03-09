@@ -9,7 +9,7 @@
 <meta property='og:description' content='Homebrew一些相关命令'>
 <meta property='og:url' content='https://blog.ionosphere.site/p/319d5434/'>
 <meta property='og:site_name' content='Ionosphere'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='工具' /><meta property='article:published_time' content='2020-07-06T13:46:40&#43;08:00'/><meta property='article:modified_time' content='2020-07-06T13:46:40&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='工具' /><meta property='article:published_time' content='2020-07-06T13:46:40&#43;08:00'/><meta property='article:modified_time' content='2021-03-09T14:30:24&#43;08:00'/>
 <meta name="twitter:title" content="Homebrew">
 <meta name="twitter:description" content="Homebrew一些相关命令"><style>
     :root {
@@ -308,6 +308,9 @@ brew cleanup -n
 
 <span class="c1"># 清理旧版本包</span>
 brew cleanup
+
+<span class="c1"># 清理早于3天的无用的symlink，且清理与之相关的位于/Applications和~/Applications中的无用App链接</span>
+brew cleanup --prune <span class="m">3</span>
 </code></pre></div>
 </section>
 
@@ -333,7 +336,19 @@ brew cleanup
 
         <span>Licensed under CC BY-NC-SA 4.0</span>
     </section>
-    </footer>
+    <section class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span class="article-time--modified">
+            最后更新于 3月9日, 2021 14:30 CST
+        </span>
+    </section></footer>
 
     
 </article>

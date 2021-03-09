@@ -219,7 +219,7 @@ jsDelivr</description>
       <description> Homebrew
  查看已安装的包 查看已经安装的包
 brew list 更新Homebrew 更新Homebrew(此命令会显示可以更新的包列表，已安装的包会有对号)
-brew update 列出可更新的包 # 不包含含自动更新的包 brew outdated # 含自动更新的包 brew cask outdated --greedy 安装更新 brew upgrade 清理旧版本 # 查看可清理的包列表 brew cleanup -n # 清理旧版本包 brew cleanup </description>
+brew update 列出可更新的包 # 不包含含自动更新的包 brew outdated # 含自动更新的包 brew cask outdated --greedy 安装更新 brew upgrade 清理旧版本 # 查看可清理的包列表 brew cleanup -n # 清理旧版本包 brew cleanup # 清理早于3天的无用的symlink，且清理与之相关的位于/Applications和~/Applications中的无用App链接 brew cleanup --prune 3 </description>
     </item>
     
     <item>

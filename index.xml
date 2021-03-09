@@ -1036,6 +1036,9 @@ brew cleanup -n
 
 &lt;span class=&#34;c1&#34;&gt;# 清理旧版本包&lt;/span&gt;
 brew cleanup
+
+&lt;span class=&#34;c1&#34;&gt;# 清理早于3天的无用的symlink，且清理与之相关的位于/Applications和~/Applications中的无用App链接&lt;/span&gt;
+brew cleanup --prune &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         </item>
         <item>
