@@ -2,19 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.ionosphere.site/</loc>
-    <lastmod>2021-03-12T00:57:00+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.ionosphere.site/post/</loc>
-    <lastmod>2021-03-12T00:57:00+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.ionosphere.site/p/fe2e108a/</loc>
-    <lastmod>2021-03-11T17:10:39+08:00</lastmod>
-  </url><url>
     <loc>https://blog.ionosphere.site/categories/</loc>
     <lastmod>2021-03-12T00:57:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.ionosphere.site/tags/git/</loc>
+    <lastmod>2021-03-12T00:57:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ionosphere.site/</loc>
+    <lastmod>2021-03-12T00:57:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ionosphere.site/post/</loc>
     <lastmod>2021-03-12T00:57:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.ionosphere.site/p/a0fa4610/</loc>

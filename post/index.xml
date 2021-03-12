@@ -6,16 +6,7 @@
     <description>Recent content in Posts on Ionosphere</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 11 Mar 2021 17:10:39 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/post/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>闪电下载错误</title>
-      <link>https://blog.ionosphere.site/p/fe2e108a/</link>
-      <pubDate>Thu, 11 Mar 2021 17:10:39 +0800</pubDate>
-      
-      <guid>https://blog.ionosphere.site/p/fe2e108a/</guid>
-      <description>Process:FlashDownloadDesktop [14324]Path:/Applications/FlashDownloadDesktop.app/Contents/MacOS/FlashDownloadDesktopIdentifier:com.ghost.xigua.FlashDownloadDesktopVersion:0Code Type:X86-64 (Native)Parent Process:???[1]Responsible:FlashDownloadDesktop [14324]User ID:501Date/Time:2021-03-11 16:54:20.036 +0800OS Version:macOS 11.2.3 (20D91)Report Version:12Bridge OS Version:5.2(18P4347)Anonymous UUID:Sleep/Wake UUID:Time Awake Since Boot:28000secondsSystem Integrity Protection:enabledCrashed Thread:0Exception Type:EXC_CRASH (SIGABRT)Exception Codes:0x0000000000000000,0x0000000000000000Exception Note:EXC_CORPSE_NOTIFYTermination Reason:DYLD, [0x1] Library missingApplication Specific Information:dyld:launch, loading dependent librariesDyld Error Message:dyld: Using shared cache:Library not loaded:/Users/*/Downloads/*/libaria2.0.dylibReferenced from:/Applications/FlashDownloadDesktop.app/Contents/MacOS/FlashDownloadDesktopReason:image not foundBinary Images:0x1094a0000- 0x109a5ffff+com.ghost.xigua.FlashDownloadDesktop (0) &amp;lt;&amp;gt; /Applications/FlashDownloadDesktop.app/Contents/MacOS/FlashDownloadDesktop0x10ea2e000- 0x10eac9fffdyld (832.7.3) &amp;lt;&amp;gt; /usr/lib/dyldModel: MacBookPro16,1, BootROM 1554.80.3.0.0 (iBridge:18.16.14347.0.0,0), 6 processors, 6-Core Intel Core i7, 2.6 GHz, 32 GB, SMC Graphics:kHW_IntelUHDGraphics630Item, Intel UHD Graphics 630, spdisplays_builtinGraphics:kHW_AMDRadeonPro5500MItem, AMD Radeon Pro 5500M, spdisplays_pcie_device, 8 GBMemory Module:BANK 0/ChannelA-DIMM0, 16 GB, DDR4, 2667 MHz, SK Hynix, -Memory Module:BANK 2/ChannelB-DIMM0, 16 GB, DDR4, 2667 MHz, SK Hynix, -AirPort: spairport_wireless_card_type_airport_extreme (0x14E4, 0x7BF), wl0:Sep 11 2020 17:01:15 version 9.</description>
-    </item>
-    
+    <lastBuildDate>Wed, 10 Mar 2021 22:55:00 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pro Git</title>
       <link>https://blog.ionosphere.site/p/a0fa4610/</link>
