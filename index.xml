@@ -14,6 +14,7 @@
         <guid>https://blog.ionosphere.site/p/a0fa4610/</guid>
         <description>&lt;h2 id=&#34;1-起步&#34;&gt;1. 起步&lt;/h2&gt;
 &lt;p&gt;本章为Git入门。主要讲解为什么Git这么流行，为什么要使用Git，Git如何设置&lt;/p&gt;
+&lt;hr&gt;
 &lt;h3 id=&#34;11-关于版本控制&#34;&gt;1.1. 关于版本控制&lt;/h3&gt;
 &lt;p&gt;记录一个或多个文件内容变化，以便将来阅读特定版本修订情况的系统即版本控制系统（VCS）。&lt;/p&gt;
 &lt;h4 id=&#34;111-本地版本控制系统&#34;&gt;1.1.1. 本地版本控制系统&lt;/h4&gt;
@@ -107,6 +108,21 @@
 &lt;li&gt;已提交（committed）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;已修改表示修改了文件，但是还没有保存到数据库。已暂存表示对一个已修改文件的当前版本做了标记使之包含在下次提交的快照中。已提交表示数据已安全的保存在了本地数据库中。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;14-安装git&#34;&gt;1.4. 安装Git&lt;/h3&gt;
+&lt;p&gt;略&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;15-git初始配置&#34;&gt;1.5. Git初始配置&lt;/h3&gt;
+&lt;h4 id=&#34;151-用户信息&#34;&gt;1.5.1. 用户信息&lt;/h4&gt;
+&lt;h4 id=&#34;152-文本编辑器&#34;&gt;1.5.2. 文本编辑器&lt;/h4&gt;
+&lt;h4 id=&#34;153-差异分析工具&#34;&gt;1.5.3. 差异分析工具&lt;/h4&gt;
+&lt;h4 id=&#34;154-查看配置信息&#34;&gt;1.5.4. 查看配置信息&lt;/h4&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;16-获取帮助&#34;&gt;1.6. 获取帮助&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;17-总结&#34;&gt;1.7. 总结&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2-git基础&#34;&gt;2. Git基础&lt;/h2&gt;
 </description>
         </item>
         <item>
