@@ -202,14 +202,15 @@ MM Rakefile
 A  lib/git.rb
 M  lib/simplegit.rb
 ?? LICENSE.tx
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;M 表示文件已修改，MM 表示文件暂存后又有修改，A 表示文件是新增的，?? 表示文件未跟踪&lt;/p&gt;
-&lt;p&gt;在简览信息中，&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;M 表示文件已修改，MM 表示文件暂存后又有修改，A 表示文件是新增的，?? 表示文件未跟踪。在简览时，未暂存的修改和已暂存的修改标识符号一样，但是颜色不同。&lt;/p&gt;
 &lt;h4 id=&#34;225-忽略文件&#34;&gt;2.2.5. 忽略文件&lt;/h4&gt;
-&lt;h4 id=&#34;226-查看已暂存和未暂存的修改&#34;&gt;2.2.6. 查看已暂存和未暂存的修改&lt;/h4&gt;
-&lt;h4 id=&#34;227-提交更新&#34;&gt;2.2.7. 提交更新&lt;/h4&gt;
-&lt;h4 id=&#34;228-跳过使用暂存区域&#34;&gt;2.2.8. 跳过使用暂存区域&lt;/h4&gt;
-&lt;h4 id=&#34;229-移除文件&#34;&gt;2.2.9. 移除文件&lt;/h4&gt;
-&lt;h4 id=&#34;2210-移动文件&#34;&gt;2.2.10. 移动文件&lt;/h4&gt;
+&lt;p&gt;无需纳入 Git 跟踪的文件记录在 &lt;code&gt;.gitignore&lt;/code&gt;中&lt;/p&gt;
+&lt;h4 id=&#34;226-提交更新&#34;&gt;2.2.6. 提交更新&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git commit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在 commit 时，Git 会启动编辑器来输入提交说明，使用 &lt;code&gt;git commit -m &#39;提交说明&#39;&lt;/code&gt; 可以直接输入提交说明。&lt;/p&gt;
+&lt;h4 id=&#34;227-跳过使用暂存区域&#34;&gt;2.2.7. 跳过使用暂存区域&lt;/h4&gt;
+&lt;h4 id=&#34;228-移除文件&#34;&gt;2.2.8. 移除文件&lt;/h4&gt;
+&lt;h4 id=&#34;229-移动文件&#34;&gt;2.2.9. 移动文件&lt;/h4&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;23-查看提交历史&#34;&gt;2.3. 查看提交历史&lt;/h3&gt;
 &lt;hr&gt;
