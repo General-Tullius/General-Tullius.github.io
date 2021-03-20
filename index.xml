@@ -152,10 +152,64 @@ man git-&amp;lt;verb&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果不需要全面的手册，只需要可用选项的快捷参考，可用 &lt;code&gt;git &amp;lt;verb&amp;gt; -h&lt;/code&gt; 来获取更简明的“help”输出。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;2-git基础&#34;&gt;2. Git基础&lt;/h2&gt;
+&lt;p&gt;本章主要内容：Git 使用过程中的各种基本命令。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;21-取得项目的-git-仓库&#34;&gt;2.1. 取得项目的 Git 仓库&lt;/h3&gt;
+&lt;h3 id=&#34;21-获取-git-仓库&#34;&gt;2.1. 获取 Git 仓库&lt;/h3&gt;
+&lt;p&gt;通常获取 Git 的方式有两种：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;将尚未进行版本控制的本地目录转为 Git 仓库；&lt;/li&gt;
+&lt;li&gt;从其它服务器 &lt;strong&gt;克隆&lt;/strong&gt; 一个已存在的 Git 仓库。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;211-从本地目录初始化仓库&#34;&gt;2.1.1. 从本地目录初始化仓库&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /my_project_path
+git init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以上命令将创建一个名为 &lt;code&gt;.git&lt;/code&gt; 的子目录，目录中包含了初始化 Git 仓库所有的必须文件。此命令执行后只是初始化了一个 Git 仓库，项目中已有的文件不会被跟踪，此时需要开始追踪并进行初始提交。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git add *.c
+git add LICENSE
+git commit -m &lt;span class=&#34;s1&#34;&gt;&amp;#39;提交消息内容&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;212-克隆现有仓库&#34;&gt;2.1.2. 克隆现有仓库&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git clone &amp;lt;url&amp;gt; &amp;lt;自定义本地仓库名 可选&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;克隆仓库时，支持 http(s):// 协议， git:// 协议 或者 SSH 传输协议。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;22-记录每次更新到仓库&#34;&gt;2.2. 记录每次更新到仓库&lt;/h3&gt;
+&lt;p&gt;Git 中文件的变化周期：&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 227; flex-basis: 545px&#34;&gt;
+		&lt;a href=&#34;https://blog.ionosphere.site/p/a0fa4610/lifecycle.png&#34; data-size=&#34;1548x681&#34;&gt;&lt;img src=&#34;https://blog.ionosphere.site/p/a0fa4610/lifecycle.png&#34;
+				srcset=&#34;https://blog.ionosphere.site/p/a0fa4610/lifecycle_hufcce2bc9fc0059c8d54be19027c1a185_99321_480x0_resize_box_2.png 480w, https://blog.ionosphere.site/p/a0fa4610/lifecycle_hufcce2bc9fc0059c8d54be19027c1a185_99321_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1548&#34;
+				height=&#34;681&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&#34;221-检查当前文件状态&#34;&gt;2.2.1. 检查当前文件状态&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git status
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;此命令会显示当前哪些文件处于什么状态。列出未跟踪、&lt;/p&gt;
+&lt;h4 id=&#34;222-跟踪新文件&#34;&gt;2.2.2. 跟踪新文件&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git add &amp;lt;fileName&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;223-暂存已修改的文件&#34;&gt;2.2.3. 暂存已修改的文件&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git add &amp;lt;fileName&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可以看到，新文件的跟踪、已修改文件的暂存都使用 add 操作，所以 add 操作实际上应该理解为：将指定内容标记为待提交状态（放到暂存区）；
+若暂存后的文件被修改，必须重新 add，否则 git commit 只会提交上次 add时的状态。&lt;/p&gt;
+&lt;h4 id=&#34;224-状态简览&#34;&gt;2.2.4. 状态简览&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git status --short
+git status -s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;git status&lt;/code&gt; 命令的输出十分的详细，实际上我们可能并不需要，通过上面的命令，可以得到简洁的状态信息。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ git status -s
+ M README
+MM Rakefile
+A  lib/git.rb
+M  lib/simplegit.rb
+?? LICENSE.tx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;M 表示文件已修改，MM 表示文件暂存后又有修改，A 表示文件是新增的，?? 表示文件未跟踪&lt;/p&gt;
+&lt;p&gt;在简览信息中，&lt;/p&gt;
+&lt;h4 id=&#34;225-忽略文件&#34;&gt;2.2.5. 忽略文件&lt;/h4&gt;
+&lt;h4 id=&#34;226-查看已暂存和未暂存的修改&#34;&gt;2.2.6. 查看已暂存和未暂存的修改&lt;/h4&gt;
+&lt;h4 id=&#34;227-提交更新&#34;&gt;2.2.7. 提交更新&lt;/h4&gt;
+&lt;h4 id=&#34;228-跳过使用暂存区域&#34;&gt;2.2.8. 跳过使用暂存区域&lt;/h4&gt;
+&lt;h4 id=&#34;229-移除文件&#34;&gt;2.2.9. 移除文件&lt;/h4&gt;
+&lt;h4 id=&#34;2210-移动文件&#34;&gt;2.2.10. 移动文件&lt;/h4&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;23-查看提交历史&#34;&gt;2.3. 查看提交历史&lt;/h3&gt;
 &lt;hr&gt;
@@ -169,44 +223,84 @@ man git-&amp;lt;verb&amp;gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;28-小结&#34;&gt;2.8. 小结&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;3-git-分支&#34;&gt;3. Git 分支&lt;/h2&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;31-何谓分支&#34;&gt;3.1. 何谓分支&lt;/h3&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;32-分支的新建与合并&#34;&gt;3.2. 分支的新建与合并&lt;/h3&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;33-分支的管理&#34;&gt;3.3. 分支的管理&lt;/h3&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;34-利用分支进行开发的工作流程&#34;&gt;3.4. 利用分支进行开发的工作流程&lt;/h3&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;35-远程分支&#34;&gt;3.5. 远程分支&lt;/h3&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;36-分支的衍合&#34;&gt;3.6. 分支的衍合&lt;/h3&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;4-服务器上的-git&#34;&gt;4. 服务器上的 Git&lt;/h2&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;41-协议&#34;&gt;4.1. 协议&lt;/h3&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;42-在服务器上部署-git&#34;&gt;4.2. 在服务器上部署 Git&lt;/h3&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;43-生成-ssh-公钥&#34;&gt;4.3. 生成 SSH 公钥&lt;/h3&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;44-架设服务器&#34;&gt;4.4. 架设服务器&lt;/h3&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;45-公共访问&#34;&gt;4.5. 公共访问&lt;/h3&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;46-gitweb&#34;&gt;4.6. GitWeb&lt;/h3&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;47-gitlab&#34;&gt;4.7. GitLab&lt;/h3&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;5-分布式-git&#34;&gt;5. 分布式 Git&lt;/h2&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;51-分布式工作流程&#34;&gt;5.1. 分布式工作流程&lt;/h3&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;52-为项目做贡献&#34;&gt;5.2. 为项目做贡献&lt;/h3&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;53-维护项目&#34;&gt;5.3. 维护项目&lt;/h3&gt;
-&lt;hr&gt;
+&lt;!--
+## 3. Git 分支
+
+---
+
+### 3.1. 何谓分支
+
+---
+
+### 3.2. 分支的新建与合并
+
+---
+
+### 3.3. 分支的管理
+
+---
+
+### 3.4. 利用分支进行开发的工作流程
+
+---
+
+### 3.5. 远程分支
+
+---
+
+### 3.6. 分支的衍合
+
+---
+
+## 4. 服务器上的 Git
+
+---
+
+### 4.1. 协议
+
+---
+
+### 4.2. 在服务器上部署 Git
+
+---
+
+### 4.3. 生成 SSH 公钥
+
+---
+
+### 4.4. 架设服务器
+
+---
+
+### 4.5. 公共访问
+
+---
+
+### 4.6. GitWeb
+
+---
+
+### 4.7. GitLab
+
+---
+
+## 5. 分布式 Git
+
+---
+
+### 5.1. 分布式工作流程
+
+---
+
+### 5.2. 为项目做贡献
+
+---
+
+### 5.3. 维护项目
+
+---
+--&gt;&lt;blockquote&gt;
+&lt;/blockquote&gt;
 </description>
         </item>
         <item>
