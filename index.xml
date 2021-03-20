@@ -190,9 +190,12 @@ git commit -m &lt;span class=&#34;s1&#34;&gt;&amp;#39;提交消息内容&amp;#39
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git add &amp;lt;fileName&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;223-暂存已修改的文件&#34;&gt;2.2.3. 暂存已修改的文件&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git add &amp;lt;fileName&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可以看到，新文件的跟踪、已修改文件的暂存都使用 add 操作，所以 add 操作实际上应该理解为：将指定内容标记为待提交状态（放到暂存区）；
-若暂存后的文件被修改，必须重新 add，否则 git commit 只会提交上次 add时的状态。&lt;/p&gt;
-&lt;h4 id=&#34;224-状态简览&#34;&gt;2.2.4. 状态简览&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可以看到，新文件的跟踪、已修改文件的暂存都使用 add 操作，所以 add 操作实际上应该理解为：将指定内容标记为待提交状态（放到暂存区）；若暂存后的文件被修改，必须重新 add，否则 git commit 只会提交上次 add时的状态。&lt;/p&gt;
+&lt;p&gt;批量操作：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git add -A &lt;span class=&#34;c1&#34;&gt;# 提交所有变化&lt;/span&gt;
+git add -u &lt;span class=&#34;c1&#34;&gt;# 提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)&lt;/span&gt;
+git add . &lt;span class=&#34;c1&#34;&gt;# 提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;224-状态简览&#34;&gt;2.2.4. 状态简览&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git status --short
 git status -s
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;git status&lt;/code&gt; 命令的输出十分的详细，实际上我们可能并不需要，通过上面的命令，可以得到简洁的状态信息。&lt;/p&gt;
