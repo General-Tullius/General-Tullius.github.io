@@ -122,16 +122,91 @@
 &lt;p&gt;略&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;15-git初始配置&#34;&gt;1.5. Git初始配置&lt;/h3&gt;
+&lt;p&gt;Git自带一个 git config 工具来帮助设置控制 Git 外观和行为的配置变量。这些变量主要存储在三个地方：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;/etc/gitconfig 文件：配置针对所有用户。在执行 git config 时带上 &amp;ndash;system选项，就会读写此文件中的配置。&lt;/li&gt;
+&lt;li&gt;~/.gitconfig 或 ~/.config/git/config 文件：配置只针对当前用户。可以传递 &amp;ndash;global 选项让 Git 读写此文件。&lt;/li&gt;
+&lt;li&gt;当前仓库的 Git 目录中的 config 文件（即 .git/config ）：配置针对当前仓库。可以传递 &amp;ndash;local 选项让 Git 强制读写此文件，同时默认情况下也是读取的此文件。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这三个级别的配置都会覆盖上一级的配置，即当前仓库自定义配置优先级最高。&lt;/p&gt;
 &lt;h4 id=&#34;151-用户信息&#34;&gt;1.5.1. 用户信息&lt;/h4&gt;
-&lt;h4 id=&#34;152-文本编辑器&#34;&gt;1.5.2. 文本编辑器&lt;/h4&gt;
-&lt;h4 id=&#34;153-差异分析工具&#34;&gt;1.5.3. 差异分析工具&lt;/h4&gt;
-&lt;h4 id=&#34;154-查看配置信息&#34;&gt;1.5.4. 查看配置信息&lt;/h4&gt;
-&lt;hr&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git config --global user.name &lt;span class=&#34;s2&#34;&gt;&amp;#34;Any Tom&amp;#34;&lt;/span&gt;
+git config --global user.email anytom@example.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;152-文本编辑器&#34;&gt;1.5.2. 文本编辑器&lt;/h4&gt;
+&lt;p&gt;Git 需要用户输入信息时会调用系统默认的编辑器，如果想使用不同的，可以自己配置：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git config --global core.edit code
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;⚠️在 Windows 系统上，如果想使用别的文本编辑器，必须指定完整的可执行文件路径&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;153-查看配置信息&#34;&gt;1.5.3. 查看配置信息&lt;/h4&gt;
+&lt;p&gt;列出所有 Git 当时能找到的配置&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git config --list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;查看某一项配置&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git config user.name
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;由于 Git 会从不同的配置文件中读取同一配置变量的值，因此有些时候可能会看到意料之外的值而不知道为啥。此时可以用命令查看该变量的原始值，命令会告诉你是哪一个配置文件最后设置了该值：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git config --show-origin user.name
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h3 id=&#34;16-获取帮助&#34;&gt;1.6. 获取帮助&lt;/h3&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;17-总结&#34;&gt;1.7. 总结&lt;/h3&gt;
+&lt;p&gt;在使用 Git 时，有三种等价的方法可以找到 Git 命令的综合手册：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git &lt;span class=&#34;nb&#34;&gt;help&lt;/span&gt; &amp;lt;verb&amp;gt;
+git &amp;lt;verb&amp;gt; --help
+man git-&amp;lt;verb&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果不需要全面的手册，只需要可用选项的快捷参考，可用 &lt;code&gt;git &amp;lt;verb&amp;gt; -h&lt;/code&gt; 来获取更简明的“help”输出。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;2-git基础&#34;&gt;2. Git基础&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;21-取得项目的-git-仓库&#34;&gt;2.1. 取得项目的 Git 仓库&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;22-记录每次更新到仓库&#34;&gt;2.2. 记录每次更新到仓库&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;23-查看提交历史&#34;&gt;2.3. 查看提交历史&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;24-撤销操作&#34;&gt;2.4. 撤销操作&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;25-远程仓库的使用&#34;&gt;2.5. 远程仓库的使用&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;26-打标签&#34;&gt;2.6. 打标签&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;27-技巧和窍门&#34;&gt;2.7. 技巧和窍门&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;28-小结&#34;&gt;2.8. 小结&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;3-git-分支&#34;&gt;3. Git 分支&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;31-何谓分支&#34;&gt;3.1. 何谓分支&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;32-分支的新建与合并&#34;&gt;3.2. 分支的新建与合并&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;33-分支的管理&#34;&gt;3.3. 分支的管理&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;34-利用分支进行开发的工作流程&#34;&gt;3.4. 利用分支进行开发的工作流程&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;35-远程分支&#34;&gt;3.5. 远程分支&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;36-分支的衍合&#34;&gt;3.6. 分支的衍合&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;4-服务器上的-git&#34;&gt;4. 服务器上的 Git&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;41-协议&#34;&gt;4.1. 协议&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;42-在服务器上部署-git&#34;&gt;4.2. 在服务器上部署 Git&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;43-生成-ssh-公钥&#34;&gt;4.3. 生成 SSH 公钥&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;44-架设服务器&#34;&gt;4.4. 架设服务器&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;45-公共访问&#34;&gt;4.5. 公共访问&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;46-gitweb&#34;&gt;4.6. GitWeb&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;47-gitlab&#34;&gt;4.7. GitLab&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;5-分布式-git&#34;&gt;5. 分布式 Git&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;51-分布式工作流程&#34;&gt;5.1. 分布式工作流程&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;52-为项目做贡献&#34;&gt;5.2. 为项目做贡献&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;53-维护项目&#34;&gt;5.3. 维护项目&lt;/h3&gt;
+&lt;hr&gt;
 </description>
         </item>
         <item>
