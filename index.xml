@@ -212,20 +212,79 @@ M  lib/simplegit.rb
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git commit
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在 commit 时，Git 会启动编辑器来输入提交说明，使用 &lt;code&gt;git commit -m &#39;提交说明&#39;&lt;/code&gt; 可以直接输入提交说明。&lt;/p&gt;
 &lt;h4 id=&#34;227-跳过使用暂存区域&#34;&gt;2.2.7. 跳过使用暂存区域&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git commit -a
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用此命令 Git 会自动把所有已跟踪的文件暂存起来一并提交，从而跳过 &lt;code&gt;git add&lt;/code&gt; 步骤。&lt;/p&gt;
 &lt;h4 id=&#34;228-移除文件&#34;&gt;2.2.8. 移除文件&lt;/h4&gt;
+&lt;p&gt;从 Git 中移除文件：必须要从已跟踪文件清单中移除，然后提交。Git 提供了 &lt;code&gt;git rm&lt;/code&gt; 命令，可完成删除文件并将删除操作放入暂存区的操作。如果删除的文件已经修改过，直接 rm 会报错（不论有没有提交到暂存区，都会报错），此时需要使用 &lt;code&gt;git rm -f&lt;/code&gt; 命令。如果只是想把某文件从版本库中删除，本地磁盘保留，则需要命令 &lt;code&gt;git rm --cached&lt;/code&gt;。&lt;/p&gt;
 &lt;h4 id=&#34;229-移动文件&#34;&gt;2.2.9. 移动文件&lt;/h4&gt;
-&lt;hr&gt;
+&lt;p&gt;Git 不像其它的一些 VCS 一样支持显式的跟踪文件移动操作。如果要重命名文件，需要用到以下命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git mv file_from file_to
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h3 id=&#34;23-查看提交历史&#34;&gt;2.3. 查看提交历史&lt;/h3&gt;
-&lt;hr&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git log
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h3 id=&#34;24-撤销操作&#34;&gt;2.4. 撤销操作&lt;/h3&gt;
+&lt;h4 id=&#34;241-上次提交少了几个文件的情况&#34;&gt;2.4.1. 上次提交少了几个文件的情况&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git commit -amend
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;此命令会将当前暂存区中的操作追加上次提交中（最终仓库只显示一次提交记录）。&lt;/p&gt;
+&lt;h4 id=&#34;242-取消暂存的操作&#34;&gt;2.4.2. 取消暂存的操作&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git reset HEAD &amp;lt;file&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;文件修改还保留在本地磁盘，只是不在暂存区。&lt;/p&gt;
+&lt;h4 id=&#34;243-撤销对文件的修改&#34;&gt;2.4.3. 撤销对文件的修改&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git restore &amp;lt;文件&amp;gt;...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;此操作 Git 会用仓库中最近一次提交的版本覆盖本地文件，文件在本地磁盘上的修改会全部被删除（不可通过 Git 恢复）。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;25-远程仓库的使用&#34;&gt;2.5. 远程仓库的使用&lt;/h3&gt;
-&lt;hr&gt;
+&lt;h4 id=&#34;查看远程仓库对应的简写和对应的-url&#34;&gt;查看远程仓库对应的简写和对应的 URL。&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git remote -v
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;添加远程仓库并指定一个方便使用的简写&#34;&gt;添加远程仓库并指定一个方便使用的简写&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git remote add &amp;lt;shortname&amp;gt; &amp;lt;url&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;指定shortname之后就可以用shortname来代替整个 URL。例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git fetch &amp;lt;shortname&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;从远程仓库中抓取与拉取&#34;&gt;从远程仓库中抓取与拉取&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git fetch &amp;lt;remote&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;此命令只会将最新数据下载到本地仓库，但是不会自动合并，需要手动操作。如果使用 &lt;code&gt;git pull&lt;/code&gt; 命令，则会从服务器抓取数据，并尝试自动合并到当前所在的分支。&lt;/p&gt;
+&lt;h4 id=&#34;推送到远程仓库&#34;&gt;推送到远程仓库&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# git push &amp;lt;remote&amp;gt; &amp;lt;branch&amp;gt;&lt;/span&gt;
+git push orgin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果在你 push 之前，有人 push 过，那就要先将他人的 push pull 下来进行合并，然后才能 push。&lt;/p&gt;
+&lt;h4 id=&#34;查看某个远程仓库&#34;&gt;查看某个远程仓库&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git remote show &amp;lt;remote&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h3 id=&#34;26-打标签&#34;&gt;2.6. 打标签&lt;/h3&gt;
-&lt;hr&gt;
+&lt;p&gt;打标签功能用于给仓库的某一个提交打上标签，以示重要。常用这个功能来标记发布结点&lt;/p&gt;
+&lt;h4 id=&#34;列出标签&#34;&gt;列出标签&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git tag &lt;span class=&#34;c1&#34;&gt;# 可带上 -l 或 --list&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;创建标签&#34;&gt;创建标签&lt;/h4&gt;
+&lt;h5 id=&#34;附注标签&#34;&gt;附注标签&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git tag -a v1.0 -m &lt;span class=&#34;s2&#34;&gt;&amp;#34;版本1.0&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;轻量标签&#34;&gt;轻量标签&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git tag v1.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;后期打标签&#34;&gt;后期打标签&lt;/h5&gt;
+&lt;p&gt;若某个版本已提交，但是忘了打标签，可以通过 &lt;code&gt;git log&lt;/code&gt; 命令找到那个版本的校验和，然后执行命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git tag -a v0.1 &amp;lt;校验和 可以只输入部分&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;共享标签&#34;&gt;共享标签&lt;/h5&gt;
+&lt;p&gt;默认情况下，push 时并不会传送标签到远程仓库，需要显式的推送。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 单个标签推送&lt;/span&gt;
+git push origin &amp;lt;tagname&amp;gt;
+&lt;span class=&#34;c1&#34;&gt;# 批量推送，会把所有不在远程仓库的标签全部推送上去&lt;/span&gt;
+git push origin --tags
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;删除标签&#34;&gt;删除标签&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 第一步&lt;/span&gt;
+git tag -d v0.1
+&lt;span class=&#34;c1&#34;&gt;# 第二步&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# 将冒号前的空值推送到远程标签&lt;/span&gt;
+git push &amp;lt;remote&amp;gt; :refs/tags/v0.1 
+&lt;span class=&#34;c1&#34;&gt;# 还可写为&lt;/span&gt;
+git push &amp;lt;remote&amp;gt; --delete v0.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h3 id=&#34;27-技巧和窍门&#34;&gt;2.7. 技巧和窍门&lt;/h3&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;28-小结&#34;&gt;2.8. 小结&lt;/h3&gt;
+&lt;h4 id=&#34;git-别名&#34;&gt;Git 别名&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ git config --global alias.co checkout
+$ git config --global alias.br branch
+$ git config --global alias.ci commit
+$ git config --global alias.st status
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在 &lt;code&gt;git commit&lt;/code&gt; 时 只需要 &lt;code&gt;git ci&lt;/code&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;!--
 ## 3. Git 分支
