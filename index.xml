@@ -225,7 +225,7 @@ M  lib/simplegit.rb
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h3 id=&#34;24-撤销操作&#34;&gt;2.4. 撤销操作&lt;/h3&gt;
 &lt;h4 id=&#34;241-上次提交少了几个文件的情况&#34;&gt;2.4.1. 上次提交少了几个文件的情况&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git commit -amend
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git commit --amend
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;此命令会将当前暂存区中的操作追加上次提交中（最终仓库只显示一次提交记录）。&lt;/p&gt;
 &lt;h4 id=&#34;242-取消暂存的操作&#34;&gt;2.4.2. 取消暂存的操作&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git reset HEAD &amp;lt;file&amp;gt;

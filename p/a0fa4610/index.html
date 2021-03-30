@@ -491,7 +491,7 @@ M  lib/simplegit.rb
 </code></pre></div><hr>
 <h3 id="24-撤销操作">2.4. 撤销操作</h3>
 <h4 id="241-上次提交少了几个文件的情况">2.4.1. 上次提交少了几个文件的情况</h4>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">git commit -amend
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">git commit --amend
 </code></pre></div><p>此命令会将当前暂存区中的操作追加上次提交中（最终仓库只显示一次提交记录）。</p>
 <h4 id="242-取消暂存的操作">2.4.2. 取消暂存的操作</h4>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">git reset HEAD &lt;file&gt;
