@@ -89,6 +89,7 @@
 &lt;/ul&gt;
 &lt;h3 id=&#34;32-内网&#34;&gt;3.2. 内网&lt;/h3&gt;
 &lt;ul&gt;
+&lt;li&gt;IP需要固定&lt;/li&gt;
 &lt;li&gt;需要了解客户网络特性，比如在服务器\内网环境是否可以访问自己的外网IP&lt;/li&gt;
 &lt;li&gt;配置服务器防火墙，需要哪个端口才开哪个，不要直接关闭防火墙&lt;/li&gt;
 &lt;/ul&gt;
