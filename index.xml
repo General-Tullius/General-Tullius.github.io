@@ -12,7 +12,56 @@
         <pubDate>Fri, 16 Apr 2021 09:57:10 +0800</pubDate>
         
         <guid>https://blog.ionosphere.site/p/e4584901/</guid>
-        <description></description>
+        <description>&lt;blockquote&gt;
+&lt;p&gt;整理一下Web服务器建设时需要注意的内容&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;1-网络&#34;&gt;1. 网络&lt;/h2&gt;
+&lt;h3 id=&#34;11-公网&#34;&gt;1.1. 公网&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;IP需要固定或者可以域名访问&lt;/li&gt;
+&lt;li&gt;开放必要的端口，做好端口映射。正常情况下，需要开放BS、消息服务、地图服务3个端口&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;12-内网&#34;&gt;1.2. 内网&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;需要了解客户网络特性，比如在服务器\内网环境是否可以访问自己的外网IP&lt;/li&gt;
+&lt;li&gt;配置服务器防火墙，需要哪个端口才开哪个，不要直接关闭防火墙&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-软件&#34;&gt;2. 软件&lt;/h2&gt;
+&lt;p&gt;服务器需要有 .NET Framework4.0 环境&lt;/p&gt;
+&lt;h3 id=&#34;21-iis&#34;&gt;2.1. IIS&lt;/h3&gt;
+&lt;p&gt;开启IIS功能&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 90; flex-basis: 216px&#34;&gt;
+		&lt;a href=&#34;https://blog.ionosphere.site/p/e4584901/IIS%E5%8A%9F%E8%83%BD%E5%8B%BE%E9%80%89.jpg&#34; data-size=&#34;658x728&#34;&gt;&lt;img src=&#34;https://blog.ionosphere.site/p/e4584901/IIS%E5%8A%9F%E8%83%BD%E5%8B%BE%E9%80%89.jpg&#34;
+				srcset=&#34;https://blog.ionosphere.site/p/e4584901/IIS%E5%8A%9F%E8%83%BD%E5%8B%BE%E9%80%89_hu2f1e02e515e351c311ec896043222feb_108547_480x0_resize_q75_box.jpg 480w, https://blog.ionosphere.site/p/e4584901/IIS%E5%8A%9F%E8%83%BD%E5%8B%BE%E9%80%89_hu2f1e02e515e351c311ec896043222feb_108547_1024x0_resize_q75_box.jpg 1024w&#34;
+				width=&#34;658&#34;
+				height=&#34;728&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不要图方便去开启IIS的&amp;quot;目录浏览&amp;quot;，要通过&amp;quot;默认文档&amp;quot;功能来配置访问IP端口地址之后的默认跳转页面&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 94; flex-basis: 226px&#34;&gt;
+		&lt;a href=&#34;https://blog.ionosphere.site/p/e4584901/IIS%E7%9B%AE%E5%BD%95%E6%B5%8F%E8%A7%88.png&#34; data-size=&#34;1198x1268&#34;&gt;&lt;img src=&#34;https://blog.ionosphere.site/p/e4584901/IIS%E7%9B%AE%E5%BD%95%E6%B5%8F%E8%A7%88.png&#34;
+				srcset=&#34;https://blog.ionosphere.site/p/e4584901/IIS%E7%9B%AE%E5%BD%95%E6%B5%8F%E8%A7%88_hu566cb3d2a3b3f22eb8edecb272ca5e59_168997_480x0_resize_box_2.png 480w, https://blog.ionosphere.site/p/e4584901/IIS%E7%9B%AE%E5%BD%95%E6%B5%8F%E8%A7%88_hu566cb3d2a3b3f22eb8edecb272ca5e59_168997_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1198&#34;
+				height=&#34;1268&#34;
+				loading=&#34;lazy&#34;
+				&gt;
+		&lt;/a&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;22-数据库&#34;&gt;2.2. 数据库&lt;/h3&gt;
+&lt;p&gt;数据库挂上去之后要做好自动维护任务。自动维护包含备份和清理两部分，不要只做定时备份，但是不定时清理旧备份，最终磁盘空间用完了，导致一开始正常运行的系统，某一天突然出问题&lt;/p&gt;
+&lt;h3 id=&#34;23-其它软件&#34;&gt;2.3. 其它软件&lt;/h3&gt;
+&lt;p&gt;经常有客户服务器在初期建设时因为软件选用不当，导致被装了各种全家桶软件，平时各种广告弹窗，影响远程时的速度，有些还严重到影响服务器性能，这里对常用软件做一些建议：&lt;/p&gt;
+&lt;p&gt;解压缩：&lt;strong&gt;7z&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://www.7-zip.org&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;下载地址&lt;/a&gt;&lt;br&gt;
+文本编辑器：&lt;strong&gt;Visual Studio Code&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://code.visualstudio.com/Download&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;下载地址&lt;/a&gt;&lt;br&gt;
+浏览器：&lt;strong&gt;Edge&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/zh-cn/edge&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;下载地址&lt;/a&gt;&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>关于Web Service</title>
