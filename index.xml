@@ -40,7 +40,9 @@
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;不要图方便去开启IIS的&amp;quot;目录浏览&amp;quot;，要通过&amp;quot;默认文档&amp;quot;功能来配置访问IP端口地址之后的默认跳转页面&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;&lt;figure style=&#34;flex-grow: 94; flex-basis: 226px&#34;&gt;
 		&lt;a href=&#34;https://blog.ionosphere.site/p/e4584901/IIS%E7%9B%AE%E5%BD%95%E6%B5%8F%E8%A7%88.png&#34; data-size=&#34;1198x1268&#34;&gt;&lt;img src=&#34;https://blog.ionosphere.site/p/e4584901/IIS%E7%9B%AE%E5%BD%95%E6%B5%8F%E8%A7%88.png&#34;
 				srcset=&#34;https://blog.ionosphere.site/p/e4584901/IIS%E7%9B%AE%E5%BD%95%E6%B5%8F%E8%A7%88_hu566cb3d2a3b3f22eb8edecb272ca5e59_168997_480x0_resize_box_2.png 480w, https://blog.ionosphere.site/p/e4584901/IIS%E7%9B%AE%E5%BD%95%E6%B5%8F%E8%A7%88_hu566cb3d2a3b3f22eb8edecb272ca5e59_168997_1024x0_resize_box_2.png 1024w&#34;
