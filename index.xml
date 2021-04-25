@@ -6,7 +6,64 @@
         <description>Recent content on Ionosphere</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Fri, 16 Apr 2021 09:57:10 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 24 Apr 2021 21:27:56 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>正则表达式常用规则</title>
+        <link>https://blog.ionosphere.site/p/6de70ddc/</link>
+        <pubDate>Sat, 24 Apr 2021 21:27:56 +0800</pubDate>
+        
+        <guid>https://blog.ionosphere.site/p/6de70ddc/</guid>
+        <description>&lt;blockquote&gt;
+&lt;p&gt;首先要明确一点，针对同一个场景的正则表达式并不是唯一的，只要结果正确即可，不要疑惑为什么自己写的正则跟别人的不一样&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;1-匹配确定的值&#34;&gt;1. 匹配确定的值&lt;/h2&gt;
+&lt;p&gt;值是什么表达式就是什么。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C#&#34; data-lang=&#34;C#&#34;&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;匹配字母‘&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;’&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;2-匹配一些值&#34;&gt;2. 匹配一些值&lt;/h2&gt;
+&lt;p&gt;用方括号将值包裹起来&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C#&#34; data-lang=&#34;C#&#34;&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;匹配姓张的和姓王的&lt;/span&gt;
+&lt;span class=&#34;na&#34;&gt;[张王]&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;w&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;+&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C#&#34; data-lang=&#34;C#&#34;&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;匹配数字&lt;/span&gt;
+&lt;span class=&#34;na&#34;&gt;[0-9]&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;匹配中文&lt;/span&gt;
+&lt;span class=&#34;na&#34;&gt;[\u4e00-\u9fa5]&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;区间取非&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;^&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;只有在‘&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;’中切紧跟在‘&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;’之后才表示取非&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;例：非数字&lt;/span&gt;
+&lt;span class=&#34;na&#34;&gt;[^0-9]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;元字符：有特殊含义的字符，比如在‘[]’中的连字符‘-’，表示取连字符左右两边值之间的内容。若要取元字符本身的含义，需要用转移字符‘\’进行转义。若用转义字符对普通字符转义，则普通字符将被理解成元字符，比如匹配换行符‘\n’。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;3-匹配所有值&#34;&gt;3. 匹配所有值&lt;/h2&gt;
+&lt;p&gt;英文句号&lt;code&gt;.&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;4-匹配次数控制&#34;&gt;4. 匹配次数控制&lt;/h2&gt;
+&lt;h3 id=&#34;41-匹配确定的次数&#34;&gt;4.1. 匹配确定的次数&lt;/h3&gt;
+&lt;h4 id=&#34;411-匹配一次&#34;&gt;4.1.1. 匹配一次&lt;/h4&gt;
+&lt;p&gt;表达式默认匹配一次，不需要做任何特殊操作&lt;/p&gt;
+&lt;h4 id=&#34;412-匹配n次&#34;&gt;4.1.2. 匹配n次&lt;/h4&gt;
+&lt;p&gt;表达式加‘{n}’&lt;/p&gt;
+&lt;h4 id=&#34;413-匹配m次到n次&#34;&gt;4.1.3. 匹配m次到n次&lt;/h4&gt;
+&lt;p&gt;表达式加‘{m,n}’&lt;/p&gt;
+&lt;h3 id=&#34;42-匹配不确定的次数&#34;&gt;4.2. 匹配不确定的次数&lt;/h3&gt;
+&lt;h4 id=&#34;421-匹配1到多次&#34;&gt;4.2.1. 匹配1到多次&lt;/h4&gt;
+&lt;p&gt;表达式加‘+’&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C#&#34; data-lang=&#34;C#&#34;&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;匹配一组数字&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;+&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;422-匹配0到多次&#34;&gt;4.2.2. 匹配0到多次&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C#&#34; data-lang=&#34;C#&#34;&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;匹配&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;到多个字符&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;w&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;*&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;423-匹配0次或1次&#34;&gt;4.2.3. 匹配0次或1次&lt;/h4&gt;
+&lt;p&gt;表达式加‘?’&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C#&#34; data-lang=&#34;C#&#34;&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;匹配网址&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//[\w./]+
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;5-边界&#34;&gt;5. 边界&lt;/h2&gt;
+&lt;h3 id=&#34;51-单词边界&#34;&gt;5.1. 单词边界&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;\b&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;52-字符串边界&#34;&gt;5.2. 字符串边界&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;^\w+$&lt;/code&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Web服务器建设时的一些点</title>
         <link>https://blog.ionosphere.site/p/e4584901/</link>
         <pubDate>Fri, 16 Apr 2021 09:57:10 +0800</pubDate>
