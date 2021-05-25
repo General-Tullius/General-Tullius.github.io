@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='「Java核心技术·卷I」的读书笔记'><title>Java核心技术·卷I</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=''><title>关于Spring</title>
 
-<link rel='canonical' href='https://blog.ionosphere.site/p/a8e95393/'>
+<link rel='canonical' href='https://blog.ionosphere.site/p/006e1380/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Java核心技术·卷I'>
-<meta property='og:description' content='「Java核心技术·卷I」的读书笔记'>
-<meta property='og:url' content='https://blog.ionosphere.site/p/a8e95393/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='关于Spring'>
+<meta property='og:description' content=''>
+<meta property='og:url' content='https://blog.ionosphere.site/p/006e1380/'>
 <meta property='og:site_name' content='Ionosphere'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Java' /><meta property='article:published_time' content='2021-03-04T23:27:31&#43;08:00'/><meta property='article:modified_time' content='2021-04-14T12:10:00&#43;08:00'/>
-<meta name="twitter:title" content="Java核心技术·卷I">
-<meta name="twitter:description" content="「Java核心技术·卷I」的读书笔记">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Spring' /><meta property='article:published_time' content='2021-05-20T15:16:06&#43;08:00'/><meta property='article:modified_time' content='2021-05-20T15:16:06&#43;08:00'/>
+<meta name="twitter:title" content="关于Spring">
+<meta name="twitter:description" content="">
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210312233706.png" />
 <style>
     :root {
@@ -266,12 +266,12 @@
     
 
     <h2 class="article-title">
-        <a href="/p/a8e95393/">Java核心技术·卷I</a>
+        <a href="/p/006e1380/">关于Spring</a>
     </h2>
 
     
     <h3 class="article-subtitle">
-        「Java核心技术·卷I」的读书笔记
+        &lt;&lt;Spring实战&gt;&gt;
     </h3>
     <footer class="article-time">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -282,265 +282,76 @@
 
 
 
-        <time class="article-time--published">3月4日, 2021</time>
+        <time class="article-time--published">5月20日, 2021</time>
     </footer></div>
 </header>
 
     <section class="article-content">
-    <blockquote>
-<p>开始系统的学习Java基础知识</p>
-</blockquote>
-<h2 id="第1章-java程序设计概述">第1章 Java程序设计概述</h2>
-<h3 id="java发展简史">Java发展简史</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">版本</th>
-<th style="text-align:center">年份</th>
-<th style="text-align:center">语言新特性</th>
-<th style="text-align:center">类与接口的数量</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1.0</td>
-<td style="text-align:center">1996</td>
-<td style="text-align:center">语言本身</td>
-<td style="text-align:center">211</td>
-</tr>
-<tr>
-<td style="text-align:center">1.1</td>
-<td style="text-align:center">1997</td>
-<td style="text-align:center">内部类</td>
-<td style="text-align:center">477</td>
-</tr>
-<tr>
-<td style="text-align:center">1.2</td>
-<td style="text-align:center">1998</td>
-<td style="text-align:center">strictfp修饰符</td>
-<td style="text-align:center">1524</td>
-</tr>
-<tr>
-<td style="text-align:center">1.3</td>
-<td style="text-align:center">2000</td>
-<td style="text-align:center">无</td>
-<td style="text-align:center">1840</td>
-</tr>
-<tr>
-<td style="text-align:center">1.4</td>
-<td style="text-align:center">2002</td>
-<td style="text-align:center">断言</td>
-<td style="text-align:center">2723</td>
-</tr>
-<tr>
-<td style="text-align:center">5.0</td>
-<td style="text-align:center">2004</td>
-<td style="text-align:center">泛型类、“for each”循环、可变元参数、自动装箱、元数据、枚举、静态导入</td>
-<td style="text-align:center">3279</td>
-</tr>
-<tr>
-<td style="text-align:center">6</td>
-<td style="text-align:center">2006</td>
-<td style="text-align:center">无</td>
-<td style="text-align:center">3793</td>
-</tr>
-<tr>
-<td style="text-align:center">7</td>
-<td style="text-align:center">2011</td>
-<td style="text-align:center">基于字符串的switch、钻石操作符、二进制字面量、异常处理改进</td>
-<td style="text-align:center">4024</td>
-</tr>
-<tr>
-<td style="text-align:center">8</td>
-<td style="text-align:center">2014</td>
-<td style="text-align:center">lambda表达式、包含默认方法的接口、流和日期/时间库</td>
-<td style="text-align:center">4240</td>
-</tr>
-</tbody>
-</table>
-<p>注：当前已发布到版本16</p>
-<h3 id="12-java白皮书的关键术语">1.2 Java“白皮书”的关键术语</h3>
+    <h2 id="spring是什么">Spring是什么</h2>
+<p>Spring是一个为了解决企业级应用开发的复杂性而创建的开源框架。</p>
+<p>Spring降低Java开发复杂性的4种关键策略</p>
 <ul>
-<li>简单性</li>
-<li>面向对象</li>
-<li>分布式</li>
-<li>健壮性</li>
-<li>安全性</li>
-<li>体系结构中立</li>
-<li>可移植性</li>
-<li>解释型</li>
-<li>高性能</li>
-<li>多线程</li>
-<li>动态性</li>
+<li>基于POJO的轻量级和最小侵入性编程；</li>
+<li>通过依赖注入和面向接口实现松耦合；</li>
+<li>基于切面和惯例进行声明式编程；</li>
+<li>通过切面和模板减少样板式代码。</li>
 </ul>
-<h2 id="第2章-java程序设计环境">第2章 Java程序设计环境</h2>
-<h3 id="21-安装java开发工具包jdk">2.1 安装Java开发工具包（JDK）</h3>
-<p>相关术语</p>
+<h3 id="激发pojo的潜能最小侵入性编程">激发POJO的潜能最小侵入性编程</h3>
+<p>除了某些类会用到Spring注解，不会感觉到使用Spring的任何痕迹。</p>
+<h3 id="依赖注入di">依赖注入（DI）</h3>
+<p>依赖注入可以使应用对象之间保持松散耦合。</p>
+<h3 id="应用切面">应用切面</h3>
+<p>面向切面编程可以把遍布应用各处的功能分离出来，形成可重用组件。面向切面编程往往被定义为促使软件系统实现关注点分离的一项技术。</p>
+<h3 id="使用模板消除样板式代码">使用模板消除样板式代码</h3>
+<p>通过模板封装来消除样板式代码（比如JDBC操作）。</p>
+<h2 id="spring容器">Spring容器</h2>
+<p>在Spring中，应用对象生存于Spring容器（container）中。容器负责创建对象，装配它们，配置并管理它们的整个生命周期，从生存到死亡（new到finalize()）。容器是使用DI管理构成应用的组件，它会创建相互协作的组件之间的关联。</p>
+<p>Spring自带了两类容器，bean工厂 和 应用上下文。bean工厂是最简单的容器，提供了基本的DI支持。应用上下文基于bean工厂构建，并提供应用框架级别的服务。bean工厂太过低级，，应用上下文要比bean工厂更受欢迎。</p>
+<h3 id="应用上下文">应用上下文</h3>
+<p>常见的应用上下文</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">术语名</th>
-<th style="text-align:center">缩写</th>
-<th style="text-align:center">解释</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">Java Development Kit</td>
-<td style="text-align:center">JDK</td>
-<td style="text-align:center">编写Java程序的程序员使用的软件</td>
+<td style="text-align:center">AnnotationConfigApplicationContext</td>
+<td style="text-align:center">从一个或多个基于Java的配置类中加载Spring应用上下文</td>
 </tr>
 <tr>
-<td style="text-align:center">Java Runtime Environment</td>
-<td style="text-align:center">JRE</td>
-<td style="text-align:center">运行Java程序的用户使用的软件</td>
+<td style="text-align:center">AnnotationConfigWebApplicationContext</td>
+<td style="text-align:center">从一个或多个基于Java的配置类中加载Spring Web应用上下文。</td>
 </tr>
 <tr>
-<td style="text-align:center">Server JRE</td>
-<td style="text-align:center">——</td>
-<td style="text-align:center">在服务器上运行Java程序的软件</td>
+<td style="text-align:center">ClassPathXmlApplicationContext</td>
+<td style="text-align:center">从类路径下的一个或多个XML配置文件中加载上下文定义，把应用上下文的定义文件作为类资源。</td>
 </tr>
 <tr>
-<td style="text-align:center">Standard Edition</td>
-<td style="text-align:center">SE</td>
-<td style="text-align:center">用于桌面或简单服务器应用的Java平台</td>
+<td style="text-align:center">FileSystemXmlApplicationContext</td>
+<td style="text-align:center">从文件系统下的一个或多个XML配置文件中加载上下文定义。</td>
 </tr>
 <tr>
-<td style="text-align:center">Enterprise Edition</td>
-<td style="text-align:center">EE</td>
-<td style="text-align:center">用于复杂服务器应用的Java平台</td>
-</tr>
-<tr>
-<td style="text-align:center">Micro Edition</td>
-<td style="text-align:center">ME</td>
-<td style="text-align:center">用于手机和其它小型设备的Java平台</td>
-</tr>
-<tr>
-<td style="text-align:center">Java FX</td>
-<td style="text-align:center">——</td>
-<td style="text-align:center">用于图形化用户界面的一个替代工具包，在Oracle的Java SE发布版本中提供</td>
-</tr>
-<tr>
-<td style="text-align:center">OpenJDK</td>
-<td style="text-align:center">——</td>
-<td style="text-align:center">Java SE的一个免费开源实现，不包含浏览器集成或JavaFX</td>
-</tr>
-<tr>
-<td style="text-align:center">Java 2</td>
-<td style="text-align:center">J2</td>
-<td style="text-align:center">一个过时的术语，用于描述1998年～2006年之间的Java版本</td>
-</tr>
-<tr>
-<td style="text-align:center">Software Development Kit</td>
-<td style="text-align:center">SDK</td>
-<td style="text-align:center">一个过时的术语，用于描述1998年～2006年之间的JDK</td>
-</tr>
-<tr>
-<td style="text-align:center">Update</td>
-<td style="text-align:center">u</td>
-<td style="text-align:center">Oracle的术语，表示bug修正版本</td>
-</tr>
-<tr>
-<td style="text-align:center">Netbeans</td>
-<td style="text-align:center">——</td>
-<td style="text-align:center">Oracle的集成开发环境</td>
+<td style="text-align:center">XmlWebApplicationContext</td>
+<td style="text-align:center">从Web应用下的一个或多个XML配置文件中加载上下文定义。</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>这两章简单介绍了Java的一些特点、发展历史和学习Java编程的前期准备工作，接下来开始正式的内容</p>
-</blockquote>
-<h2 id="第3章-java的基本程序设计结构">第3章 Java的基本程序设计结构</h2>
-<h3 id="31-一个简单的-java-应用程序">3.1 一个简单的 Java 应用程序</h3>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FirstSample</span>
-<span class="o">{</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">)</span>
-  <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="err">“</span><span class="n">We</span> <span class="n">will</span> <span class="n">not</span> <span class="n">use</span> <span class="err">‘</span><span class="n">Hello</span> <span class="n">World</span><span class="o">!</span><span class="err">‘“</span><span class="o">);</span>
-  <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div><p>类名必须以大写字母开头，遵循骆驼命名法。文件名必须与公共类名一致。</p>
-<h3 id="32-注释">3.2 注释</h3>
-<p>单行注释</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">//这是单行注释
-</span><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="err">“</span><span class="n">Hello</span> <span class="n">World</span><span class="o">!</span><span class="err">“</span><span class="o">);</span>
-</code></pre></div><p>多行注释</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/*
-</span><span class="cm"> 这是多行注释的示例
-</span><span class="cm"> 这是多行注释的示例
-</span><span class="cm">*/</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="err">“</span><span class="n">Hello</span> <span class="n">World</span><span class="o">!</span><span class="err">“</span><span class="o">);</span>
-</code></pre></div><p>文档注释</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/**
-</span><span class="cm">*文档注释的写法
-</span><span class="cm">*/</span>
-</code></pre></div><h3 id="33-数据类型">3.3 数据类型</h3>
-<p>Java 是一种强类型语言，每个变量都必须声明类型。Java 共有 8 种基本类型，包含 4 种整型、两种浮点类型、1 种用于表示 Unicode 编码字符单元的字符类型 char。</p>
-<table>
-<thead>
-<tr>
-<th>基本类型</th>
-<th>位数</th>
-<th>字节</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>int</td>
-<td>32</td>
-<td>4</td>
-<td>0</td>
-</tr>
-<tr>
-<td>short</td>
-<td>16</td>
-<td>2</td>
-<td>0</td>
-</tr>
-<tr>
-<td>long</td>
-<td>64</td>
-<td>8</td>
-<td>0L</td>
-</tr>
-<tr>
-<td>byte</td>
-<td>8</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr>
-<td>char</td>
-<td>16</td>
-<td>2</td>
-<td>&lsquo;u0000&rsquo;</td>
-</tr>
-<tr>
-<td>float</td>
-<td>32</td>
-<td>4</td>
-<td>0f</td>
-</tr>
-<tr>
-<td>double</td>
-<td>64</td>
-<td>8</td>
-<td>0d</td>
-</tr>
-<tr>
-<td>boolen</td>
-<td>1</td>
-<td></td>
-<td>false</td>
-</tr>
-</tbody>
-</table>
-<h3 id="34-变量">3.4 变量</h3>
-<h4 id="声明变量与初始化">声明变量与初始化</h4>
-<div class="highlight"><pre class="chroma"><code class="language-Java" data-lang="Java"><span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;名字&#34;</span><span class="o">;</span>
-</code></pre></div><h4 id="常量">常量</h4>
-<p>常量即用final关键字修饰的变量，表示这个变量只能被赋值一次。常量名习惯全大写。</p>
+<h3 id="bean的生命周期">bean的生命周期</h3>
+<p><figure style="flex-grow: 181; flex-basis: 435px">
+		<a href="/p/006e1380/21.png" data-size="1246x687"><img src="/p/006e1380/21.png"
+				srcset="/p/006e1380/21_huce13b5bcf31babc5ad496976f571778f_133284_480x0_resize_box_2.png 480w, /p/006e1380/21_huce13b5bcf31babc5ad496976f571778f_133284_1024x0_resize_box_2.png 1024w"
+				width="1246"
+				height="687"
+				loading="lazy"
+				alt="bean的生命周期">
+		</a>
+		
+		<figcaption>bean的生命周期</figcaption>
+		
+	</figure></p>
 
 </section>
 
@@ -549,7 +360,7 @@
     
     <section class="article-tags">
         
-            <a href="/tags/java/">Java</a>
+            <a href="/tags/spring/">Spring</a>
         
     </section>
 
@@ -566,19 +377,7 @@
 
         <span>Licensed under CC BY-NC-SA 4.0</span>
     </section>
-    <section class="article-time">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-        <span class="article-time--modified">
-            最后更新于 4月14日, 2021 12:10 CST
-        </span>
-    </section></footer>
+    </footer>
 
     
 </article>
@@ -589,18 +388,6 @@
         <h2 class="section-title">相关文章</h2>
         <div class="related-contents">
             <div class="flex article-list--tile">
-                
-                    
-<article class="">
-    <a href="/p/006e1380/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">关于Spring</h2>
-        </div>
-    </a>
-</article>
                 
                     
 <article class="">
@@ -622,6 +409,18 @@
 
         <div class="article-details">
             <h2 class="article-title">Pro Git</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/a8e95393/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Java核心技术·卷I</h2>
         </div>
     </a>
 </article>
@@ -650,7 +449,7 @@
 <div id = "valinecounter" class="valine-container">
     
     <center>
-        <span id="/p/a8e95393/" class="leancloud_visitors" data-flag-title="Java核心技术·卷I">
+        <span id="/p/006e1380/" class="leancloud_visitors" data-flag-title="关于Spring">
             
             当前页面阅读次数：
             <i class="leancloud-visitors-count">0</i>
