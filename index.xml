@@ -147,11 +147,11 @@ sips -z &lt;span class=&#34;m&#34;&gt;1024&lt;/span&gt; &lt;span class=&#34;m&#3
         <description>&lt;blockquote&gt;
 &lt;p&gt;首先要明确一点，针对同一个场景的正则表达式并不是唯一的，只要结果正确即可，不要疑惑为什么自己写的正则跟别人的不一样&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;1-匹配确定的值&#34;&gt;1. 匹配确定的值&lt;/h2&gt;
+&lt;h2 id=&#34;匹配确定的值&#34;&gt;匹配确定的值&lt;/h2&gt;
 &lt;p&gt;值是什么表达式就是什么。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C#&#34; data-lang=&#34;C#&#34;&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;匹配字母‘&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;’&lt;/span&gt;
 &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;2-匹配一些值&#34;&gt;2. 匹配一些值&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;匹配一些值&#34;&gt;匹配一些值&lt;/h2&gt;
 &lt;p&gt;用方括号将值包裹起来&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C#&#34; data-lang=&#34;C#&#34;&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;匹配姓张的和姓王的&lt;/span&gt;
 &lt;span class=&#34;na&#34;&gt;[张王]&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;w&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;+&lt;/span&gt;
@@ -166,32 +166,32 @@ sips -z &lt;span class=&#34;m&#34;&gt;1024&lt;/span&gt; &lt;span class=&#34;m&#3
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;元字符：有特殊含义的字符，比如在‘[]’中的连字符‘-’，表示取连字符左右两边值之间的内容。若要取元字符本身的含义，需要用转移字符‘\’进行转义。若用转义字符对普通字符转义，则普通字符将被理解成元字符，比如匹配换行符‘\n’。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;3-匹配所有值&#34;&gt;3. 匹配所有值&lt;/h2&gt;
+&lt;h2 id=&#34;匹配所有值&#34;&gt;匹配所有值&lt;/h2&gt;
 &lt;p&gt;英文句号&lt;code&gt;.&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;4-匹配次数控制&#34;&gt;4. 匹配次数控制&lt;/h2&gt;
-&lt;h3 id=&#34;41-匹配确定的次数&#34;&gt;4.1. 匹配确定的次数&lt;/h3&gt;
-&lt;h4 id=&#34;411-匹配一次&#34;&gt;4.1.1. 匹配一次&lt;/h4&gt;
+&lt;h2 id=&#34;匹配次数控制&#34;&gt;匹配次数控制&lt;/h2&gt;
+&lt;h3 id=&#34;匹配确定的次数&#34;&gt;匹配确定的次数&lt;/h3&gt;
+&lt;h4 id=&#34;匹配一次&#34;&gt;匹配一次&lt;/h4&gt;
 &lt;p&gt;表达式默认匹配一次，不需要做任何特殊操作&lt;/p&gt;
-&lt;h4 id=&#34;412-匹配n次&#34;&gt;4.1.2. 匹配n次&lt;/h4&gt;
+&lt;h4 id=&#34;匹配n次&#34;&gt;匹配n次&lt;/h4&gt;
 &lt;p&gt;表达式加‘{n}’&lt;/p&gt;
-&lt;h4 id=&#34;413-匹配m次到n次&#34;&gt;4.1.3. 匹配m次到n次&lt;/h4&gt;
+&lt;h4 id=&#34;匹配m次到n次&#34;&gt;匹配m次到n次&lt;/h4&gt;
 &lt;p&gt;表达式加‘{m,n}’&lt;/p&gt;
-&lt;h3 id=&#34;42-匹配不确定的次数&#34;&gt;4.2. 匹配不确定的次数&lt;/h3&gt;
-&lt;h4 id=&#34;421-匹配1到多次&#34;&gt;4.2.1. 匹配1到多次&lt;/h4&gt;
+&lt;h3 id=&#34;匹配不确定的次数&#34;&gt;匹配不确定的次数&lt;/h3&gt;
+&lt;h4 id=&#34;匹配1到多次&#34;&gt;匹配1到多次&lt;/h4&gt;
 &lt;p&gt;表达式加‘+’&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C#&#34; data-lang=&#34;C#&#34;&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;匹配一组数字&lt;/span&gt;
 &lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;+&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;422-匹配0到多次&#34;&gt;4.2.2. 匹配0到多次&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;匹配0到多次&#34;&gt;匹配0到多次&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C#&#34; data-lang=&#34;C#&#34;&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;匹配&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;到多个字符&lt;/span&gt;
 &lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;w&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;*&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;423-匹配0次或1次&#34;&gt;4.2.3. 匹配0次或1次&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;匹配0次或1次&#34;&gt;匹配0次或1次&lt;/h4&gt;
 &lt;p&gt;表达式加‘?’&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C#&#34; data-lang=&#34;C#&#34;&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;匹配网址&lt;/span&gt;
 &lt;span class=&#34;n&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//[\w./]+
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;5-边界&#34;&gt;5. 边界&lt;/h2&gt;
-&lt;h3 id=&#34;51-单词边界&#34;&gt;5.1. 单词边界&lt;/h3&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;边界&#34;&gt;边界&lt;/h2&gt;
+&lt;h3 id=&#34;单词边界&#34;&gt;单词边界&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;\b&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;52-字符串边界&#34;&gt;5.2. 字符串边界&lt;/h3&gt;
+&lt;h3 id=&#34;字符串边界&#34;&gt;字符串边界&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;^\w+$&lt;/code&gt;&lt;/p&gt;
 </description>
         </item>
@@ -204,33 +204,16 @@ sips -z &lt;span class=&#34;m&#34;&gt;1024&lt;/span&gt; &lt;span class=&#34;m&#3
         <description>&lt;blockquote&gt;
 &lt;p&gt;整理一下Web服务器建设时需要注意的内容&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e7%a1%ac%e4%bb%b6&#34; &gt;1. 硬件&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e8%bd%af%e4%bb%b6&#34; &gt;2. 软件&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#21-%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f&#34; &gt;2.1. 操作系统&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#22-iis&#34; &gt;2.2. IIS&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#23-%e6%95%b0%e6%8d%ae%e5%ba%93&#34; &gt;2.3. 数据库&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#24-%e5%85%b6%e5%ae%83%e8%bd%af%e4%bb%b6&#34; &gt;2.4. 其它软件&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-%e7%bd%91%e7%bb%9c&#34; &gt;3. 网络&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#31-%e5%85%ac%e7%bd%91&#34; &gt;3.1. 公网&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#32-%e5%86%85%e7%bd%91&#34; &gt;3.2. 内网&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;1-硬件&#34;&gt;1. 硬件&lt;/h2&gt;
+&lt;h2 id=&#34;硬件&#34;&gt;硬件&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;数量：2台（程序+数据）&lt;/p&gt;
 &lt;p&gt;硬盘：500G+/500G+&lt;/p&gt;
 &lt;p&gt;内存：16G+/16G+&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;2-软件&#34;&gt;2. 软件&lt;/h2&gt;
-&lt;h3 id=&#34;21-操作系统&#34;&gt;2.1. 操作系统&lt;/h3&gt;
+&lt;h2 id=&#34;软件&#34;&gt;软件&lt;/h2&gt;
+&lt;h3 id=&#34;操作系统&#34;&gt;操作系统&lt;/h3&gt;
 &lt;p&gt;推荐版本：Windows Server 2016&lt;/p&gt;
-&lt;h3 id=&#34;22-iis&#34;&gt;2.2. IIS&lt;/h3&gt;
+&lt;h3 id=&#34;iis&#34;&gt;IIS&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;服务器需要有 .NET Framework 4.0 环境&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -258,10 +241,10 @@ sips -z &lt;span class=&#34;m&#34;&gt;1024&lt;/span&gt; &lt;span class=&#34;m&#3
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
-&lt;h3 id=&#34;23-数据库&#34;&gt;2.3. 数据库&lt;/h3&gt;
+&lt;h3 id=&#34;数据库&#34;&gt;数据库&lt;/h3&gt;
 &lt;p&gt;推荐版本：SqlServer 2016，最低2008R2&lt;/p&gt;
 &lt;p&gt;数据库挂上去之后要做好自动维护任务。自动维护包含备份和清理两部分，不要只做定时备份，但是不定时清理旧备份，最终磁盘空间用完了，导致一开始正常运行的系统，某一天突然出问题&lt;/p&gt;
-&lt;h3 id=&#34;24-其它软件&#34;&gt;2.4. 其它软件&lt;/h3&gt;
+&lt;h3 id=&#34;其它软件&#34;&gt;其它软件&lt;/h3&gt;
 &lt;p&gt;经常有客户服务器在初期建设时因为软件选用不当，导致被装了各种全家桶软件，平时各种广告弹窗，影响远程时的速度，有些还严重到影响服务器性能，这里对常用软件做一些建议：&lt;/p&gt;
 &lt;p&gt;解压缩：&lt;strong&gt;7z&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://www.7-zip.org&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;下载地址&lt;/a&gt;&lt;br&gt;
@@ -270,13 +253,13 @@ sips -z &lt;span class=&#34;m&#34;&gt;1024&lt;/span&gt; &lt;span class=&#34;m&#3
 浏览器：&lt;strong&gt;Edge&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/zh-cn/edge&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;下载地址&lt;/a&gt;&lt;strong&gt;Google Chrome&lt;/strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.google.cn/intl/zh-CN/chrome/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;下载地址&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;3-网络&#34;&gt;3. 网络&lt;/h2&gt;
-&lt;h3 id=&#34;31-公网&#34;&gt;3.1. 公网&lt;/h3&gt;
+&lt;h2 id=&#34;网络&#34;&gt;网络&lt;/h2&gt;
+&lt;h3 id=&#34;公网&#34;&gt;公网&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;IP需要固定或者可以域名访问&lt;/li&gt;
 &lt;li&gt;开放必要的端口，做好端口映射。正常情况下，需要开放BS、消息服务、地图服务（固定6080）3个端口，前后端分离版本需要额外增加前端端口。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;32-内网&#34;&gt;3.2. 内网&lt;/h3&gt;
+&lt;h3 id=&#34;内网&#34;&gt;内网&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;IP需要固定&lt;/li&gt;
 &lt;li&gt;需要了解客户网络特性，比如在服务器\内网环境是否可以访问自己的外网IP&lt;/li&gt;
@@ -318,12 +301,12 @@ sips -z &lt;span class=&#34;m&#34;&gt;1024&lt;/span&gt; &lt;span class=&#34;m&#3
         <pubDate>Wed, 10 Mar 2021 22:55:00 +0800</pubDate>
         
         <guid>https://blog.ionosphere.site/p/a0fa4610/</guid>
-        <description>&lt;h2 id=&#34;1-起步&#34;&gt;1. 起步&lt;/h2&gt;
+        <description>&lt;h2 id=&#34;起步&#34;&gt;起步&lt;/h2&gt;
 &lt;p&gt;本章为Git入门。主要讲解为什么Git这么流行，为什么要使用Git，Git如何设置&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;11-关于版本控制&#34;&gt;1.1. 关于版本控制&lt;/h3&gt;
+&lt;h3 id=&#34;关于版本控制&#34;&gt;关于版本控制&lt;/h3&gt;
 &lt;p&gt;记录一个或多个文件内容变化，以便将来阅读特定版本修订情况的系统即版本控制系统（VCS）。&lt;/p&gt;
-&lt;h4 id=&#34;111-本地版本控制系统&#34;&gt;1.1.1. 本地版本控制系统&lt;/h4&gt;
+&lt;h4 id=&#34;本地版本控制系统&#34;&gt;本地版本控制系统&lt;/h4&gt;
 &lt;p&gt;本地版本控制系统大多都是采用某种简单的数据库来记录文件的历次更新差异，如图所示：&lt;/p&gt;
 &lt;p&gt;&lt;figure style=&#34;flex-grow: 117; flex-basis: 280px&#34;&gt;
 		&lt;a href=&#34;https://blog.ionosphere.site/p/a0fa4610/local.png&#34; data-size=&#34;1008x861&#34;&gt;&lt;img src=&#34;https://blog.ionosphere.site/p/a0fa4610/local.png&#34;
@@ -336,7 +319,7 @@ sips -z &lt;span class=&#34;m&#34;&gt;1024&lt;/span&gt; &lt;span class=&#34;m&#3
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;其中最流行的一种叫做RCS。RCS的工作原理是在硬盘上保存补丁集（补丁集是指文件修订前后的变化）；通过应用所有的补丁，可以重新计算出各个版本的文件内容。本地版本控制系统无法让不同系统上的开发者协同工作。&lt;/p&gt;
-&lt;h4 id=&#34;112-集中化的版本控制系统&#34;&gt;1.1.2. 集中化的版本控制系统&lt;/h4&gt;
+&lt;h4 id=&#34;集中化的版本控制系统&#34;&gt;集中化的版本控制系统&lt;/h4&gt;
 &lt;p&gt;集中化版本控制系统（Centralized Version Control System，CVCS）很好的解决了本地版本控制系统不能让不同系统上的开发者协同工作的问题。CVCS模式：有一个单一的集中管理服务器，保存所有文件的修订版本，协同工作的人都通过客户端连接到这台服务器，取出最新文件或者提交更新。&lt;/p&gt;
 &lt;p&gt;&lt;figure style=&#34;flex-grow: 245; flex-basis: 589px&#34;&gt;
 		&lt;a href=&#34;https://blog.ionosphere.site/p/a0fa4610/centralized.png&#34; data-size=&#34;906x369&#34;&gt;&lt;img src=&#34;https://blog.ionosphere.site/p/a0fa4610/centralized.png&#34;
@@ -351,7 +334,7 @@ sips -z &lt;span class=&#34;m&#34;&gt;1024&lt;/span&gt; &lt;span class=&#34;m&#3
 &lt;p&gt;CVCS的优点：1.项目参与者可以看到其他人在做什么。2.管理人员可以掌控每个参与者的权限。3.管理一个CVCS相较于在各个客户端维护本地数据库要简单。&lt;/p&gt;
 &lt;p&gt;CVCS的缺点：中央服务器故障后会影响所有人的工作。&lt;/p&gt;
 &lt;p&gt;典型的CVCS：CVS，Subversion，Perforce&amp;hellip;&lt;/p&gt;
-&lt;h4 id=&#34;113-分布式版本控制系统&#34;&gt;1.1.3. 分布式版本控制系统&lt;/h4&gt;
+&lt;h4 id=&#34;分布式版本控制系统&#34;&gt;分布式版本控制系统&lt;/h4&gt;
 &lt;p&gt;分布式版本控制系统（Distributed Version Control System，DVCS）中，客户端不仅仅提取最新版本的文件，还把代码仓库完整的镜像下来，包括完整的历史记录。在分布式版本控制系统中，任何一处服务器发生故障，事后都可以用任意一个镜像出来的本地仓库恢复。&lt;/p&gt;
 &lt;p&gt;&lt;figure style=&#34;flex-grow: 83; flex-basis: 200px&#34;&gt;
 		&lt;a href=&#34;https://blog.ionosphere.site/p/a0fa4610/distributed.png&#34; data-size=&#34;1413x1692&#34;&gt;&lt;img src=&#34;https://blog.ionosphere.site/p/a0fa4610/distributed.png&#34;
@@ -365,7 +348,7 @@ sips -z &lt;span class=&#34;m&#34;&gt;1024&lt;/span&gt; &lt;span class=&#34;m&#3
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;典型的DVCS：Git，Mercurial，Bazaar，Darcs&amp;hellip;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;12-git的诞生&#34;&gt;1.2. Git的诞生&lt;/h3&gt;
+&lt;h3 id=&#34;git的诞生&#34;&gt;Git的诞生&lt;/h3&gt;
 &lt;p&gt;Linux开源社区的BitKeeper（一款DVCS）使用权到期了，他们只好去开发自己的版本控制系统😂，并且给新系统制定了若干目标：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;速度&lt;/li&gt;
@@ -375,8 +358,8 @@ sips -z &lt;span class=&#34;m&#34;&gt;1024&lt;/span&gt; &lt;span class=&#34;m&#3
 &lt;li&gt;有能力高效管理类似Linux内核一样的超大规模项目（速度和数据量）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;13-git的工作原理&#34;&gt;1.3. Git的工作原理&lt;/h3&gt;
-&lt;h4 id=&#34;131-直接记录快照而非比较差异&#34;&gt;1.3.1. 直接记录快照、而非比较差异&lt;/h4&gt;
+&lt;h3 id=&#34;git的工作原理&#34;&gt;Git的工作原理&lt;/h3&gt;
+&lt;h4 id=&#34;直接记录快照而非比较差异&#34;&gt;直接记录快照、而非比较差异&lt;/h4&gt;
 &lt;p&gt;Git和其它版本控制系统的主要差别在于对待数据的方式。其它大部分系统一文件变更列表的方式存储信息，将它们存储的信息看作是一组基本文件和每个文件随时间逐步累积的差异。&lt;/p&gt;
 &lt;p&gt;&lt;figure style=&#34;flex-grow: 258; flex-basis: 620px&#34;&gt;
 		&lt;a href=&#34;https://blog.ionosphere.site/p/a0fa4610/deltas.png&#34; data-size=&#34;1674x648&#34;&gt;&lt;img src=&#34;https://blog.ionosphere.site/p/a0fa4610/deltas.png&#34;
@@ -399,15 +382,15 @@ sips -z &lt;span class=&#34;m&#34;&gt;1024&lt;/span&gt; &lt;span class=&#34;m&#3
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
-&lt;h4 id=&#34;132-近乎所有操作都是本地执行&#34;&gt;1.3.2. 近乎所有操作都是本地执行&lt;/h4&gt;
+&lt;h4 id=&#34;近乎所有操作都是本地执行&#34;&gt;近乎所有操作都是本地执行&lt;/h4&gt;
 &lt;p&gt;Giit中大多数操作都只需要访问本地文件和资源，一般不需要来自网络上其它计算机的信息，因为本地磁盘上就有项目的完整历史，同时Git是先提交到本地副本，再上传到服务器的，所以即使离线也可以继续进行任何操作。&lt;/p&gt;
-&lt;h4 id=&#34;133-git保证完整性&#34;&gt;1.3.3. Git保证完整性&lt;/h4&gt;
+&lt;h4 id=&#34;git保证完整性&#34;&gt;Git保证完整性&lt;/h4&gt;
 &lt;p&gt;Git中所有数据在存储前都计算校验和，然后以校验和来引用。这意味着不可能在Git不知情时更改任何文件内容或目录内容。&lt;/p&gt;
 &lt;p&gt;Git用于计算校验和的机制叫做SHA-1散列（Hash，哈希，把任意长度的输入「又叫做预映射pre-image」通过散列算法变换成固定长度的输出，该输出就是散列值。这种转换是一种压缩映射，也就是，散列值的空间通常远小于输入的空间，不同的输入可能会散列成相同的输出，所以不可能从散列值来确定唯一的输入值）。这是一个由40个16进制字符（0-9，a-f）组成的字符串，基于Git中文件的内容或目录结构计算出来。SHA-1 Hash 看起来是这样的：&lt;code&gt;24b9da6552252987aa493b52f8696cd6d3b00373&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Git中保存的信息都是以文件的Hash值来索引，而不是文件名。&lt;/p&gt;
-&lt;h4 id=&#34;134-git一般只添加数据&#34;&gt;1.3.4. Git一般只添加数据&lt;/h4&gt;
+&lt;h4 id=&#34;git一般只添加数据&#34;&gt;Git一般只添加数据&lt;/h4&gt;
 &lt;p&gt;你执行的Git操作几乎只向数据库中添加数据，也就是说Git几乎不会执行任何不可恢复操作。&lt;/p&gt;
-&lt;h4 id=&#34;135-三种状态&#34;&gt;1.3.5. 三种状态&lt;/h4&gt;
+&lt;h4 id=&#34;三种状态&#34;&gt;三种状态&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;已修改（modified）&lt;/li&gt;
 &lt;li&gt;已暂存（staged）&lt;/li&gt;
@@ -415,10 +398,10 @@ sips -z &lt;span class=&#34;m&#34;&gt;1024&lt;/span&gt; &lt;span class=&#34;m&#3
 &lt;/ul&gt;
 &lt;p&gt;已修改表示修改了文件，但是还没有保存到数据库。已暂存表示对一个已修改文件的当前版本做了标记使之包含在下次提交的快照中。已提交表示数据已安全的保存在了本地数据库中。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;14-安装git&#34;&gt;1.4. 安装Git&lt;/h3&gt;
+&lt;h3 id=&#34;安装git&#34;&gt;安装Git&lt;/h3&gt;
 &lt;p&gt;略&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;15-git初始配置&#34;&gt;1.5. Git初始配置&lt;/h3&gt;
+&lt;h3 id=&#34;git初始配置&#34;&gt;Git初始配置&lt;/h3&gt;
 &lt;p&gt;Git自带一个 git config 工具来帮助设置控制 Git 外观和行为的配置变量。这些变量主要存储在三个地方：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;/etc/gitconfig 文件：配置针对所有用户。在执行 git config 时带上 &amp;ndash;system选项，就会读写此文件中的配置。&lt;/li&gt;
@@ -426,14 +409,14 @@ sips -z &lt;span class=&#34;m&#34;&gt;1024&lt;/span&gt; &lt;span class=&#34;m&#3
 &lt;li&gt;当前仓库的 Git 目录中的 config 文件（即 .git/config ）：配置针对当前仓库。可以传递 &amp;ndash;local 选项让 Git 强制读写此文件，同时默认情况下也是读取的此文件。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;这三个级别的配置都会覆盖上一级的配置，即当前仓库自定义配置优先级最高。&lt;/p&gt;
-&lt;h4 id=&#34;151-用户信息&#34;&gt;1.5.1. 用户信息&lt;/h4&gt;
+&lt;h4 id=&#34;用户信息&#34;&gt;用户信息&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git config --global user.name &lt;span class=&#34;s2&#34;&gt;&amp;#34;Any Tom&amp;#34;&lt;/span&gt;
 git config --global user.email anytom@example.com
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;152-文本编辑器&#34;&gt;1.5.2. 文本编辑器&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;文本编辑器&#34;&gt;文本编辑器&lt;/h4&gt;
 &lt;p&gt;Git 需要用户输入信息时会调用系统默认的编辑器，如果想使用不同的，可以自己配置：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git config --global core.edit code
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;⚠️在 Windows 系统上，如果想使用别的文本编辑器，必须指定完整的可执行文件路径&lt;/strong&gt;&lt;/p&gt;
-&lt;h4 id=&#34;153-查看配置信息&#34;&gt;1.5.3. 查看配置信息&lt;/h4&gt;
+&lt;h4 id=&#34;查看配置信息&#34;&gt;查看配置信息&lt;/h4&gt;
 &lt;p&gt;列出所有 Git 当时能找到的配置&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git config --list
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;查看某一项配置&lt;/p&gt;
@@ -441,34 +424,34 @@ git config --global user.email anytom@example.com
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;由于 Git 会从不同的配置文件中读取同一配置变量的值，因此有些时候可能会看到意料之外的值而不知道为啥。此时可以用命令查看该变量的原始值，命令会告诉你是哪一个配置文件最后设置了该值：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git config --show-origin user.name
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
-&lt;h3 id=&#34;16-获取帮助&#34;&gt;1.6. 获取帮助&lt;/h3&gt;
+&lt;h3 id=&#34;获取帮助&#34;&gt;获取帮助&lt;/h3&gt;
 &lt;p&gt;在使用 Git 时，有三种等价的方法可以找到 Git 命令的综合手册：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git &lt;span class=&#34;nb&#34;&gt;help&lt;/span&gt; &amp;lt;verb&amp;gt;
 git &amp;lt;verb&amp;gt; --help
 man git-&amp;lt;verb&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果不需要全面的手册，只需要可用选项的快捷参考，可用 &lt;code&gt;git &amp;lt;verb&amp;gt; -h&lt;/code&gt; 来获取更简明的“help”输出。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;2-git基础&#34;&gt;2. Git基础&lt;/h2&gt;
+&lt;h2 id=&#34;git基础&#34;&gt;Git基础&lt;/h2&gt;
 &lt;p&gt;本章主要内容：Git 使用过程中的各种基本命令。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;21-获取-git-仓库&#34;&gt;2.1. 获取 Git 仓库&lt;/h3&gt;
+&lt;h3 id=&#34;获取-git-仓库&#34;&gt;获取 Git 仓库&lt;/h3&gt;
 &lt;p&gt;通常获取 Git 的方式有两种：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;将尚未进行版本控制的本地目录转为 Git 仓库；&lt;/li&gt;
 &lt;li&gt;从其它服务器 &lt;strong&gt;克隆&lt;/strong&gt; 一个已存在的 Git 仓库。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&#34;211-从本地目录初始化仓库&#34;&gt;2.1.1. 从本地目录初始化仓库&lt;/h4&gt;
+&lt;h4 id=&#34;从本地目录初始化仓库&#34;&gt;从本地目录初始化仓库&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /my_project_path
 git init
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以上命令将创建一个名为 &lt;code&gt;.git&lt;/code&gt; 的子目录，目录中包含了初始化 Git 仓库所有的必须文件。此命令执行后只是初始化了一个 Git 仓库，项目中已有的文件不会被跟踪，此时需要开始追踪并进行初始提交。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git add *.c
 git add LICENSE
 git commit -m &lt;span class=&#34;s1&#34;&gt;&amp;#39;提交消息内容&amp;#39;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;212-克隆现有仓库&#34;&gt;2.1.2. 克隆现有仓库&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;克隆现有仓库&#34;&gt;克隆现有仓库&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git clone &amp;lt;url&amp;gt; &amp;lt;自定义本地仓库名 可选&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;克隆仓库时，支持 http(s):// 协议， git:// 协议 或者 SSH 传输协议。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;22-记录每次更新到仓库&#34;&gt;2.2. 记录每次更新到仓库&lt;/h3&gt;
+&lt;h3 id=&#34;记录每次更新到仓库&#34;&gt;记录每次更新到仓库&lt;/h3&gt;
 &lt;p&gt;Git 中文件的变化周期：&lt;/p&gt;
 &lt;p&gt;&lt;figure style=&#34;flex-grow: 227; flex-basis: 545px&#34;&gt;
 		&lt;a href=&#34;https://blog.ionosphere.site/p/a0fa4610/lifecycle.png&#34; data-size=&#34;1548x681&#34;&gt;&lt;img src=&#34;https://blog.ionosphere.site/p/a0fa4610/lifecycle.png&#34;
@@ -480,19 +463,19 @@ git commit -m &lt;span class=&#34;s1&#34;&gt;&amp;#39;提交消息内容&amp;#39
 		&lt;/a&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
-&lt;h4 id=&#34;221-检查当前文件状态&#34;&gt;2.2.1. 检查当前文件状态&lt;/h4&gt;
+&lt;h4 id=&#34;检查当前文件状态&#34;&gt;检查当前文件状态&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git status
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;此命令会显示当前哪些文件处于什么状态。列出未跟踪、&lt;/p&gt;
-&lt;h4 id=&#34;222-跟踪新文件&#34;&gt;2.2.2. 跟踪新文件&lt;/h4&gt;
+&lt;h4 id=&#34;跟踪新文件&#34;&gt;跟踪新文件&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git add &amp;lt;fileName&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;223-暂存已修改的文件&#34;&gt;2.2.3. 暂存已修改的文件&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;暂存已修改的文件&#34;&gt;暂存已修改的文件&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git add &amp;lt;fileName&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可以看到，新文件的跟踪、已修改文件的暂存都使用 add 操作，所以 add 操作实际上应该理解为：将指定内容标记为待提交状态（放到暂存区）；若暂存后的文件被修改，必须重新 add，否则 git commit 只会提交上次 add时的状态。&lt;/p&gt;
 &lt;p&gt;批量操作：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git add -A &lt;span class=&#34;c1&#34;&gt;# 提交所有变化&lt;/span&gt;
 git add -u &lt;span class=&#34;c1&#34;&gt;# 提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)&lt;/span&gt;
 git add . &lt;span class=&#34;c1&#34;&gt;# 提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;224-状态简览&#34;&gt;2.2.4. 状态简览&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;状态简览&#34;&gt;状态简览&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git status --short
 git status -s
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;git status&lt;/code&gt; 命令的输出十分的详细，实际上我们可能并不需要，通过上面的命令，可以得到简洁的状态信息。&lt;/p&gt;
@@ -503,35 +486,35 @@ A  lib/git.rb
 M  lib/simplegit.rb
 ?? LICENSE.tx
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;M 表示文件已修改，MM 表示文件暂存后又有修改，A 表示文件是新增的，?? 表示文件未跟踪。在简览时，未暂存的修改和已暂存的修改标识符号一样，但是颜色不同。&lt;/p&gt;
-&lt;h4 id=&#34;225-忽略文件&#34;&gt;2.2.5. 忽略文件&lt;/h4&gt;
+&lt;h4 id=&#34;忽略文件&#34;&gt;忽略文件&lt;/h4&gt;
 &lt;p&gt;无需纳入 Git 跟踪的文件记录在 &lt;code&gt;.gitignore&lt;/code&gt;中&lt;/p&gt;
-&lt;h4 id=&#34;226-提交更新&#34;&gt;2.2.6. 提交更新&lt;/h4&gt;
+&lt;h4 id=&#34;提交更新&#34;&gt;提交更新&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git commit
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在 commit 时，Git 会启动编辑器来输入提交说明，使用 &lt;code&gt;git commit -m &#39;提交说明&#39;&lt;/code&gt; 可以直接输入提交说明。&lt;/p&gt;
-&lt;h4 id=&#34;227-跳过使用暂存区域&#34;&gt;2.2.7. 跳过使用暂存区域&lt;/h4&gt;
+&lt;h4 id=&#34;跳过使用暂存区域&#34;&gt;跳过使用暂存区域&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git commit -a
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用此命令 Git 会自动把所有已跟踪的文件暂存起来一并提交，从而跳过 &lt;code&gt;git add&lt;/code&gt; 步骤。&lt;/p&gt;
-&lt;h4 id=&#34;228-移除文件&#34;&gt;2.2.8. 移除文件&lt;/h4&gt;
+&lt;h4 id=&#34;移除文件&#34;&gt;移除文件&lt;/h4&gt;
 &lt;p&gt;从 Git 中移除文件：必须要从已跟踪文件清单中移除，然后提交。Git 提供了 &lt;code&gt;git rm&lt;/code&gt; 命令，可完成删除文件并将删除操作放入暂存区的操作。如果删除的文件已经修改过，直接 rm 会报错（不论有没有提交到暂存区，都会报错），此时需要使用 &lt;code&gt;git rm -f&lt;/code&gt; 命令。如果只是想把某文件从版本库中删除，本地磁盘保留，则需要命令 &lt;code&gt;git rm --cached&lt;/code&gt;。&lt;/p&gt;
-&lt;h4 id=&#34;229-移动文件&#34;&gt;2.2.9. 移动文件&lt;/h4&gt;
+&lt;h4 id=&#34;移动文件&#34;&gt;移动文件&lt;/h4&gt;
 &lt;p&gt;Git 不像其它的一些 VCS 一样支持显式的跟踪文件移动操作。如果要重命名文件，需要用到以下命令：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git mv file_from file_to
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
-&lt;h3 id=&#34;23-查看提交历史&#34;&gt;2.3. 查看提交历史&lt;/h3&gt;
+&lt;h3 id=&#34;查看提交历史&#34;&gt;查看提交历史&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git log
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
-&lt;h3 id=&#34;24-撤销操作&#34;&gt;2.4. 撤销操作&lt;/h3&gt;
-&lt;h4 id=&#34;241-上次提交少了几个文件的情况&#34;&gt;2.4.1. 上次提交少了几个文件的情况&lt;/h4&gt;
+&lt;h3 id=&#34;撤销操作&#34;&gt;撤销操作&lt;/h3&gt;
+&lt;h4 id=&#34;上次提交少了几个文件的情况&#34;&gt;上次提交少了几个文件的情况&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git commit --amend
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;此命令会将当前暂存区中的操作追加上次提交中（最终仓库只显示一次提交记录）。&lt;/p&gt;
-&lt;h4 id=&#34;242-取消暂存的操作&#34;&gt;2.4.2. 取消暂存的操作&lt;/h4&gt;
+&lt;h4 id=&#34;取消暂存的操作&#34;&gt;取消暂存的操作&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git reset HEAD &amp;lt;file&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;文件修改还保留在本地磁盘，只是不在暂存区。&lt;/p&gt;
-&lt;h4 id=&#34;243-撤销对文件的修改&#34;&gt;2.4.3. 撤销对文件的修改&lt;/h4&gt;
+&lt;h4 id=&#34;撤销对文件的修改&#34;&gt;撤销对文件的修改&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git restore &amp;lt;文件&amp;gt;...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;此操作 Git 会用仓库中最近一次提交的版本覆盖本地文件，文件在本地磁盘上的修改会全部被删除（不可通过 Git 恢复）。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;25-远程仓库的使用&#34;&gt;2.5. 远程仓库的使用&lt;/h3&gt;
+&lt;h3 id=&#34;远程仓库的使用&#34;&gt;远程仓库的使用&lt;/h3&gt;
 &lt;h4 id=&#34;查看远程仓库对应的简写和对应的-url&#34;&gt;查看远程仓库对应的简写和对应的 URL。&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git remote -v
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;添加远程仓库并指定一个方便使用的简写&#34;&gt;添加远程仓库并指定一个方便使用的简写&lt;/h4&gt;
@@ -548,7 +531,7 @@ git push orgin master
 &lt;h4 id=&#34;查看某个远程仓库&#34;&gt;查看某个远程仓库&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git remote show &amp;lt;remote&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
-&lt;h3 id=&#34;26-打标签&#34;&gt;2.6. 打标签&lt;/h3&gt;
+&lt;h3 id=&#34;打标签&#34;&gt;打标签&lt;/h3&gt;
 &lt;p&gt;打标签功能用于给仓库的某一个提交打上标签，以示重要。常用这个功能来标记发布结点&lt;/p&gt;
 &lt;h4 id=&#34;列出标签&#34;&gt;列出标签&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git tag &lt;span class=&#34;c1&#34;&gt;# 可带上 -l 或 --list&lt;/span&gt;
@@ -575,7 +558,7 @@ git push &amp;lt;remote&amp;gt; :refs/tags/v0.1
 &lt;span class=&#34;c1&#34;&gt;# 还可写为&lt;/span&gt;
 git push &amp;lt;remote&amp;gt; --delete v0.1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
-&lt;h3 id=&#34;27-技巧和窍门&#34;&gt;2.7. 技巧和窍门&lt;/h3&gt;
+&lt;h3 id=&#34;技巧和窍门&#34;&gt;技巧和窍门&lt;/h3&gt;
 &lt;h4 id=&#34;git-别名&#34;&gt;Git 别名&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ git config --global alias.co checkout
 $ git config --global alias.br branch
@@ -741,7 +724,7 @@ $ git config --global alias.st status
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;注：当前已发布到版本16&lt;/p&gt;
-&lt;h3 id=&#34;12-java白皮书的关键术语&#34;&gt;1.2 Java“白皮书”的关键术语&lt;/h3&gt;
+&lt;h3 id=&#34;java白皮书的关键术语&#34;&gt;Java“白皮书”的关键术语&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;简单性&lt;/li&gt;
 &lt;li&gt;面向对象&lt;/li&gt;
@@ -756,7 +739,7 @@ $ git config --global alias.st status
 &lt;li&gt;动态性&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;第2章-java程序设计环境&#34;&gt;第2章 Java程序设计环境&lt;/h2&gt;
-&lt;h3 id=&#34;21-安装java开发工具包jdk&#34;&gt;2.1 安装Java开发工具包（JDK）&lt;/h3&gt;
+&lt;h3 id=&#34;安装java开发工具包jdk&#34;&gt;安装Java开发工具包（JDK）&lt;/h3&gt;
 &lt;p&gt;相关术语&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -833,7 +816,7 @@ $ git config --global alias.st status
 &lt;p&gt;这两章简单介绍了Java的一些特点、发展历史和学习Java编程的前期准备工作，接下来开始正式的内容&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;第3章-java的基本程序设计结构&#34;&gt;第3章 Java的基本程序设计结构&lt;/h2&gt;
-&lt;h3 id=&#34;31-一个简单的-java-应用程序&#34;&gt;3.1 一个简单的 Java 应用程序&lt;/h3&gt;
+&lt;h3 id=&#34;一个简单的-java-应用程序&#34;&gt;一个简单的 Java 应用程序&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;FirstSample&lt;/span&gt;
 &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;args&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
@@ -842,7 +825,7 @@ $ git config --global alias.st status
   &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
 &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;类名必须以大写字母开头，遵循骆驼命名法。文件名必须与公共类名一致。&lt;/p&gt;
-&lt;h3 id=&#34;32-注释&#34;&gt;3.2 注释&lt;/h3&gt;
+&lt;h3 id=&#34;注释&#34;&gt;注释&lt;/h3&gt;
 &lt;p&gt;单行注释&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//这是单行注释
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;“&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Hello&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;World&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;“&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
@@ -856,7 +839,7 @@ $ git config --global alias.st status
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;cm&#34;&gt;/**
 &lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;*文档注释的写法
 &lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;*/&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;33-数据类型&#34;&gt;3.3 数据类型&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;数据类型&#34;&gt;数据类型&lt;/h3&gt;
 &lt;p&gt;Java 是一种强类型语言，每个变量都必须声明类型。Java 共有 8 种基本类型，包含 4 种整型、两种浮点类型、1 种用于表示 Unicode 编码字符单元的字符类型 char。&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -918,7 +901,7 @@ $ git config --global alias.st status
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;34-变量&#34;&gt;3.4 变量&lt;/h3&gt;
+&lt;h3 id=&#34;变量&#34;&gt;变量&lt;/h3&gt;
 &lt;h4 id=&#34;声明变量与初始化&#34;&gt;声明变量与初始化&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Java&#34; data-lang=&#34;Java&#34;&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;name&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;名字&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;常量&#34;&gt;常量&lt;/h4&gt;
@@ -934,30 +917,8 @@ $ git config --global alias.st status
         <description>&lt;blockquote&gt;
 &lt;p&gt;写作时所有标记用的符号都要用英文，文章标点随意&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%a0%87%e9%a2%98&#34; &gt;1. 标题&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%88%97%e8%a1%a8&#34; &gt;2. 列表&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#21-%e6%97%a0%e5%ba%8f%e5%88%97%e8%a1%a8&#34; &gt;2.1. 无序列表&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#22-%e6%9c%89%e5%ba%8f%e5%88%97%e8%a1%a8&#34; &gt;2.2. 有序列表&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-%e5%bc%95%e7%94%a8&#34; &gt;3. 引用&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#4-%e6%96%87%e5%ad%97%e5%bc%ba%e8%b0%83&#34; &gt;4. 文字强调&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#41-%e7%b2%97%e4%bd%93&#34; &gt;4.1. 粗体&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#42-%e6%96%9c%e4%bd%93&#34; &gt;4.2. 斜体&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#43-%e4%b8%8b%e5%88%92%e7%ba%bf&#34; &gt;4.3. 下划线&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#44-%e5%88%a0%e9%99%a4%e7%ba%bf&#34; &gt;4.4. 删除线&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#5-%e5%88%86%e5%89%b2%e7%ba%bf&#34; &gt;5. 分割线&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#6-%e5%9b%be%e7%89%87&#34; &gt;6. 图片&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#7-%e7%bd%91%e5%9d%80&#34; &gt;7. 网址&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#8-%e8%a1%a8%e6%a0%bc&#34; &gt;8. 表格&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;1-标题&#34;&gt;1. 标题&lt;/h2&gt;
+&lt;h2 id=&#34;标题&#34;&gt;标题&lt;/h2&gt;
 &lt;p&gt;语法  &lt;code&gt;#&lt;/code&gt;加&lt;code&gt;文字&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;gh&#34;&gt;# 一级标题
 &lt;/span&gt;&lt;span class=&#34;gh&#34;&gt;&lt;/span&gt;&lt;span class=&#34;gu&#34;&gt;## 二级标题
@@ -981,8 +942,8 @@ $ git config --global alias.st status
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;一般一级标题是文章的名称，所以在博客中的标题常从二级开始&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;2-列表&#34;&gt;2. 列表&lt;/h2&gt;
-&lt;h3 id=&#34;21-无序列表&#34;&gt;2.1. 无序列表&lt;/h3&gt;
+&lt;h2 id=&#34;列表&#34;&gt;列表&lt;/h2&gt;
+&lt;h3 id=&#34;无序列表&#34;&gt;无序列表&lt;/h3&gt;
 &lt;p&gt;语法  &lt;code&gt;-&lt;/code&gt;加&lt;code&gt;空格&lt;/code&gt;加&lt;code&gt;文字&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; 列表1
     &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; 列表1.1
@@ -1002,7 +963,7 @@ $ git config --global alias.st status
 		&lt;figcaption&gt;无序列表&lt;/figcaption&gt;
 		
 	&lt;/figure&gt;&lt;/p&gt;
-&lt;h3 id=&#34;22-有序列表&#34;&gt;2.2. 有序列表&lt;/h3&gt;
+&lt;h3 id=&#34;有序列表&#34;&gt;有序列表&lt;/h3&gt;
 &lt;p&gt;语法  &lt;code&gt;数字&lt;/code&gt;加&lt;code&gt;.(英文句号)&lt;/code&gt;加&lt;code&gt;空格&lt;/code&gt;加&lt;code&gt;文字&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;k&#34;&gt;1.&lt;/span&gt; 列表1
     &lt;span class=&#34;k&#34;&gt;1.&lt;/span&gt; 列表1.1
@@ -1024,7 +985,7 @@ $ git config --global alias.st status
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;3-引用&#34;&gt;3. 引用&lt;/h2&gt;
+&lt;h2 id=&#34;引用&#34;&gt;引用&lt;/h2&gt;
 &lt;p&gt;语法  &lt;code&gt;&amp;gt;&lt;/code&gt;加&lt;code&gt;空格&lt;/code&gt;加&lt;code&gt;引用内容&lt;/code&gt;，多行每行都加&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;k&#34;&gt;&amp;gt; &lt;/span&gt;&lt;span class=&#34;ge&#34;&gt;登鹳雀楼_百度汉语
 &lt;/span&gt;&lt;span class=&#34;ge&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;&amp;gt; &lt;/span&gt;&lt;span class=&#34;ge&#34;&gt;作者：王之涣
@@ -1044,30 +1005,30 @@ $ git config --global alias.st status
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;4-文字强调&#34;&gt;4. 文字强调&lt;/h2&gt;
-&lt;h3 id=&#34;41-粗体&#34;&gt;4.1. 粗体&lt;/h3&gt;
+&lt;h2 id=&#34;文字强调&#34;&gt;文字强调&lt;/h2&gt;
+&lt;h3 id=&#34;粗体&#34;&gt;粗体&lt;/h3&gt;
 &lt;p&gt;语法  &lt;code&gt;**&lt;/code&gt;要加粗的文字&lt;code&gt;**&lt;/code&gt; 或者用&lt;code&gt;_&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;**文字**
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;效果&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;粗体&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&#34;42-斜体&#34;&gt;4.2. 斜体&lt;/h3&gt;
+&lt;h3 id=&#34;斜体&#34;&gt;斜体&lt;/h3&gt;
 &lt;p&gt;语法 &lt;code&gt;*&lt;/code&gt;要变斜体的文字&lt;code&gt;*&lt;/code&gt; 或者用&lt;code&gt;_&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;*文字*
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;效果&lt;br&gt;
 &lt;em&gt;斜体&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id=&#34;43-下划线&#34;&gt;4.3. 下划线&lt;/h3&gt;
+&lt;h3 id=&#34;下划线&#34;&gt;下划线&lt;/h3&gt;
 &lt;p&gt;语法&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;文字&lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;效果&lt;/p&gt;
 &lt;p&gt;&lt;u&gt;下划线&lt;/u&gt;&lt;/p&gt;
-&lt;h3 id=&#34;44-删除线&#34;&gt;4.4. 删除线&lt;/h3&gt;
+&lt;h3 id=&#34;删除线&#34;&gt;删除线&lt;/h3&gt;
 &lt;p&gt;语法&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;gh&#34;&gt;# ~ 英文输入法状态下 Shift 加 ESC下面的按键
 &lt;/span&gt;&lt;span class=&#34;gh&#34;&gt;&lt;/span&gt;~~文字~~
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;效果&lt;br&gt;
 &lt;del&gt;删除线&lt;/del&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;5-分割线&#34;&gt;5. 分割线&lt;/h2&gt;
+&lt;h2 id=&#34;分割线&#34;&gt;分割线&lt;/h2&gt;
 &lt;p&gt;语法&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;***
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;效果
@@ -1084,18 +1045,18 @@ $ git config --global alias.st status
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;6-图片&#34;&gt;6. 图片&lt;/h2&gt;
+&lt;h2 id=&#34;图片&#34;&gt;图片&lt;/h2&gt;
 &lt;p&gt;语法&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;![&lt;span class=&#34;nt&#34;&gt;名称·随便写&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;图片地址&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
-&lt;h2 id=&#34;7-网址&#34;&gt;7. 网址&lt;/h2&gt;
+&lt;h2 id=&#34;网址&#34;&gt;网址&lt;/h2&gt;
 &lt;p&gt;语法&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;[&lt;span class=&#34;nt&#34;&gt;显示名称&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;网址&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;效果&lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://www.baidu.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;百度&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;8-表格&#34;&gt;8. 表格&lt;/h2&gt;
+&lt;h2 id=&#34;表格&#34;&gt;表格&lt;/h2&gt;
 &lt;p&gt;语法&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;|      |      |      |
 | :--- | :--: | ---: |
@@ -1651,7 +1612,7 @@ $ git config --global alias.st status
 &lt;p&gt;转载自：&lt;a href=&#34;https://segmentfault.com/a/1190000008596697&#34; target=&#34;_blank&#34;&gt;Windows下Oracle定时备份(全量备份)&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;关于Windows下oracle全量备份的文章，很多网站都有，写下本文不过是为了以后方便查找，不用再到处找。以下些许内容有所参考到其他人所写内容，这里无意冒犯，本文引用内容部分会附上参考地址，还望原作者见谅。&lt;/p&gt;
-&lt;h2 id=&#34;1-备份脚本&#34;&gt;1. 备份脚本&lt;/h2&gt;
+&lt;h2 id=&#34;备份脚本&#34;&gt;备份脚本&lt;/h2&gt;
 &lt;p&gt;新建txt文档，把脚本复制进去后改文件格式为bat文件，双击运行即可测试该脚本是否有误。这里要说明一下，开始把脚本拿过来执行时，一直未能成功备份数据库,用bat的pause暂停调试发现了一些问题，有时不注意可能会在定义,变量如BACKUPDATE、USER等后面带了空格,这个时候问题就来了，导致参数的不正确，所以这里需注意！&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;@echo off   
 &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;================================================&lt;/span&gt;   
@@ -1678,18 +1639,18 @@ forfiles /p &lt;span class=&#34;s2&#34;&gt;&amp;#34;%LOGDIR%&amp;#34;&lt;/span&g
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;注：该脚本参考&lt;a href=&#34;http://blog.csdn.net/iw1210/article/details/39312783&#34; target=&#34;_blank&#34;&gt;Windows环境下Oracle数据库的自动备份脚本&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;2-定时任务&#34;&gt;2. 定时任务&lt;/h2&gt;
+&lt;h2 id=&#34;定时任务&#34;&gt;定时任务&lt;/h2&gt;
 &lt;p&gt;这里需要用到Windows的【任务计划程序】，操作按照下列截图一一操作。&lt;/p&gt;
-&lt;h3 id=&#34;21-快捷查询&#34;&gt;2.1. 快捷查询&lt;/h3&gt;
+&lt;h3 id=&#34;快捷查询&#34;&gt;快捷查询&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210206144645.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;22-选择任务计划程序&#34;&gt;2.2. 选择任务计划程序&lt;/h3&gt;
+&lt;h3 id=&#34;选择任务计划程序&#34;&gt;选择任务计划程序&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210206144756.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;23-创建基本任务&#34;&gt;2.3. 创建基本任务&lt;/h3&gt;
+&lt;h3 id=&#34;创建基本任务&#34;&gt;创建基本任务&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210206144841.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;24-填写任务相关信息&#34;&gt;2.4. 填写任务相关信息&lt;/h3&gt;
-&lt;h4 id=&#34;241-定时任务描述&#34;&gt;2.4.1. 定时任务描述&lt;/h4&gt;
+&lt;h3 id=&#34;填写任务相关信息&#34;&gt;填写任务相关信息&lt;/h3&gt;
+&lt;h4 id=&#34;定时任务描述&#34;&gt;定时任务描述&lt;/h4&gt;
 &lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210206144907.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
-&lt;h4 id=&#34;242-任务执行时间&#34;&gt;2.4.2. 任务执行时间&lt;/h4&gt;
+&lt;h4 id=&#34;任务执行时间&#34;&gt;任务执行时间&lt;/h4&gt;
 &lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210206144933.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210206144953.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210206145017.png&#34; alt=&#34;&#34;  /&gt;&lt;/p&gt;
@@ -1700,7 +1661,7 @@ forfiles /p &lt;span class=&#34;s2&#34;&gt;&amp;#34;%LOGDIR%&amp;#34;&lt;/span&g
 &lt;blockquote&gt;
 &lt;p&gt;注：以上内容参考 &lt;a href=&#34;http://jingyan.baidu.com/article/08b6a591c30ae914a8092205.html&#34; target=&#34;_blank&#34;&gt;定时备份ORACLE数据库(windows环境下)&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;3-脚本&#34;&gt;3. 脚本&lt;/h2&gt;
+&lt;h2 id=&#34;脚本&#34;&gt;脚本&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://cdn.jsdelivr.net/gh/io-oss/NetDisk/annex/定时备份.txt&#34; target=&#34;_blank&#34;&gt;定时备份.txt&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
