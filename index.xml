@@ -21,13 +21,13 @@
 &lt;li&gt;基于切面和惯例进行声明式编程；&lt;/li&gt;
 &lt;li&gt;通过切面和模板减少样板式代码。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;激发pojo的潜能最小侵入性编程&#34;&gt;激发POJO的潜能最小侵入性编程&lt;/h3&gt;
-&lt;p&gt;除了某些类会用到Spring注解，不会感觉到使用Spring的任何痕迹。&lt;/p&gt;
+&lt;h3 id=&#34;基于pojo&#34;&gt;基于POJO&lt;/h3&gt;
+&lt;p&gt;Spring代码仍旧是POJO，除了某些类会用到Spring注解，不会感觉到使用Spring的任何痕迹。&lt;/p&gt;
 &lt;h3 id=&#34;依赖注入di&#34;&gt;依赖注入（DI）&lt;/h3&gt;
 &lt;p&gt;依赖注入可以使应用对象之间保持松散耦合。&lt;/p&gt;
 &lt;h3 id=&#34;应用切面&#34;&gt;应用切面&lt;/h3&gt;
 &lt;p&gt;面向切面编程可以把遍布应用各处的功能分离出来，形成可重用组件。面向切面编程往往被定义为促使软件系统实现关注点分离的一项技术。&lt;/p&gt;
-&lt;h3 id=&#34;使用模板消除样板式代码&#34;&gt;使用模板消除样板式代码&lt;/h3&gt;
+&lt;h3 id=&#34;使用模板&#34;&gt;使用模板&lt;/h3&gt;
 &lt;p&gt;通过模板封装来消除样板式代码（比如JDBC操作）。&lt;/p&gt;
 &lt;h2 id=&#34;spring容器&#34;&gt;Spring容器&lt;/h2&gt;
 &lt;p&gt;在Spring中，应用对象生存于Spring容器（container）中。容器负责创建对象，装配它们，配置并管理它们的整个生命周期，从生存到死亡（new到finalize()）。容器是使用DI管理构成应用的组件，它会创建相互协作的组件之间的关联。&lt;/p&gt;
