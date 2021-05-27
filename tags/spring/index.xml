@@ -6,7 +6,19 @@
     <description>Recent content in Spring on Ionosphere</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 20 May 2021 15:16:06 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 May 2021 15:15:20 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>装配Bean</title>
+      <link>https://blog.ionosphere.site/p/a6324888/</link>
+      <pubDate>Thu, 27 May 2021 15:15:20 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/a6324888/</guid>
+      <description>内容预览  声明bean 构造器注入和Setter方法注入 装配bean 控制bean的创建和销毁   创建应用对象之间协作关系的行为通常称为装配（wiring），这也是依赖注入（DI）的本质
+ Spring配置方案  在XML中进显式配置 在Java中进行显式配置 隐式的bean发现机制和自动装配  选择Spring装配方案时，要根据实际情况选择自己最喜欢的方式，多种方案还可以搭配使用。要尽可能的使用自动配置机制，显式配置越少越好；当必须要使用显式配置时，优先JavaConfig；只有在想使用便利的XML命名空间而且在JavaConfig中没有同样的实现时，才使用XML。
+自动化装配bean Spring从两个角度来实现自动化装配：
+ 组件扫描（Component scanning）：Spring会自动发现应用上下文中所创建的bean。 自动装配（autowiring）：Spring自动满足bean之间的依赖。  创建可被发现的bean </description>
+    </item>
+    
     <item>
       <title>初步了解Spring</title>
       <link>https://blog.ionosphere.site/p/006e1380/</link>
