@@ -33,13 +33,6 @@
         <description>&lt;blockquote&gt;
 &lt;p&gt;创建应用对象之间协作关系的行为通常称为装配（wiring），这也是依赖注入（DI）的本质&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;bean装配内容预览&#34;&gt;bean装配内容预览&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;声明bean&lt;/li&gt;
-&lt;li&gt;构造器注入和Setter方法注入&lt;/li&gt;
-&lt;li&gt;装配bean&lt;/li&gt;
-&lt;li&gt;控制bean的创建和销毁&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id=&#34;spring配置方案&#34;&gt;Spring配置方案&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;在XML中进显式配置&lt;/li&gt;
