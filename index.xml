@@ -7,24 +7,6 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <lastBuildDate>Fri, 28 May 2021 13:31:34 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>自动操作（Automator）</title>
-        <link>https://blog.ionosphere.site/p/375e7a13/</link>
-        <pubDate>Fri, 28 May 2021 13:31:34 +0800</pubDate>
-        
-        <guid>https://blog.ionosphere.site/p/375e7a13/</guid>
-        <description>&lt;img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210528111008.webp" alt="Featured image of post 自动操作（Automator）" /&gt;&lt;blockquote&gt;
-&lt;p&gt;自动操作是系统自带软件，通过简单的操作就可以组合出来一个工作流，实现将一些重复性的复杂工作自动化。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;shell脚本接收参数&#34;&gt;Shell脚本接收参数&lt;/h2&gt;
-&lt;h2 id=&#34;定义变量&#34;&gt;定义变量&lt;/h2&gt;
-&lt;h2 id=&#34;接收用户输入&#34;&gt;接收用户输入&lt;/h2&gt;
-&lt;h2 id=&#34;执行shell脚本&#34;&gt;执行Shell脚本&lt;/h2&gt;
-&lt;h2 id=&#34;文件操作&#34;&gt;文件操作&lt;/h2&gt;
-&lt;h2 id=&#34;系统通知&#34;&gt;系统通知&lt;/h2&gt;
-&lt;h2 id=&#34;脚本中部分命令不识别&#34;&gt;脚本中部分命令不识别&lt;/h2&gt;
-</description>
-        </item>
-        <item>
         <title>装配Bean</title>
         <link>https://blog.ionosphere.site/p/a6324888/</link>
         <pubDate>Thu, 27 May 2021 15:15:20 +0800</pubDate>
