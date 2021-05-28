@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automator on Ionosphere</title>
+    <link>https://blog.ionosphere.site/tags/automator/</link>
+    <description>Recent content in Automator on Ionosphere</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 28 May 2021 13:31:34 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/tags/automator/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>自动操作（Automator）</title>
+      <link>https://blog.ionosphere.site/p/375e7a13/</link>
+      <pubDate>Fri, 28 May 2021 13:31:34 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/375e7a13/</guid>
+      <description> 自动操作是系统自带软件，通过简单的操作就可以组合出来一个工作流，实现将一些重复性的复杂工作自动化。
+ Shell脚本接收参数 定义变量 接收用户输入 执行Shell脚本 文件操作 系统通知 脚本中部分命令不识别 </description>
+    </item>
+    
+  </channel>
+</rss>

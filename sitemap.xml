@@ -2,19 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.ionosphere.site/tags/automator/</loc>
+    <lastmod>2021-05-28T13:31:34+08:00</lastmod>
+  </url><url>
     <loc>https://blog.ionosphere.site/categories/</loc>
-    <lastmod>2021-05-27T15:15:20+08:00</lastmod>
+    <lastmod>2021-05-28T13:31:34+08:00</lastmod>
   </url><url>
     <loc>https://blog.ionosphere.site/</loc>
-    <lastmod>2021-05-27T15:15:20+08:00</lastmod>
+    <lastmod>2021-05-28T13:31:34+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ionosphere.site/tags/macos/</loc>
+    <lastmod>2021-05-28T13:31:34+08:00</lastmod>
   </url><url>
     <loc>https://blog.ionosphere.site/post/</loc>
-    <lastmod>2021-05-27T15:15:20+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.ionosphere.site/tags/spring/</loc>
-    <lastmod>2021-05-27T15:15:20+08:00</lastmod>
+    <lastmod>2021-05-28T13:31:34+08:00</lastmod>
   </url><url>
     <loc>https://blog.ionosphere.site/tags/</loc>
+    <lastmod>2021-05-28T13:31:34+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ionosphere.site/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2021-05-28T13:31:34+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ionosphere.site/p/375e7a13/</loc>
+    <lastmod>2021-05-28T13:31:34+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ionosphere.site/tags/spring/</loc>
     <lastmod>2021-05-27T15:15:20+08:00</lastmod>
   </url><url>
     <loc>https://blog.ionosphere.site/p/a6324888/</loc>
@@ -27,12 +39,6 @@
     <lastmod>2021-05-20T15:16:06+08:00</lastmod>
   </url><url>
     <loc>https://blog.ionosphere.site/tags/app%E5%9B%BE%E6%A0%87/</loc>
-    <lastmod>2021-04-28T12:19:35+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.ionosphere.site/tags/macos/</loc>
-    <lastmod>2021-04-28T12:19:35+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.ionosphere.site/categories/%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2021-04-28T12:19:35+08:00</lastmod>
   </url><url>
     <loc>https://blog.ionosphere.site/p/1844ba76/</loc>

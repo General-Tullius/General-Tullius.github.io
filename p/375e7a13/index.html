@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Homebrew一些相关命令'><title>Homebrew</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='自动操作使用方法整理，持续更新中。'><title>自动操作（Automator）</title>
 
-<link rel='canonical' href='https://blog.ionosphere.site/p/319d5434/'>
+<link rel='canonical' href='https://blog.ionosphere.site/p/375e7a13/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Homebrew'>
-<meta property='og:description' content='Homebrew一些相关命令'>
-<meta property='og:url' content='https://blog.ionosphere.site/p/319d5434/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='自动操作（Automator）'>
+<meta property='og:description' content='自动操作使用方法整理，持续更新中。'>
+<meta property='og:url' content='https://blog.ionosphere.site/p/375e7a13/'>
 <meta property='og:site_name' content='Ionosphere'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='工具' /><meta property='article:published_time' content='2020-07-06T13:46:40&#43;08:00'/><meta property='article:modified_time' content='2021-03-09T14:30:24&#43;08:00'/>
-<meta name="twitter:title" content="Homebrew">
-<meta name="twitter:description" content="Homebrew一些相关命令">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='MacOS' /><meta property='article:tag' content='Automator' /><meta property='article:published_time' content='2021-05-28T13:31:34&#43;08:00'/><meta property='article:modified_time' content='2021-05-28T13:31:34&#43;08:00'/><meta property='og:image' content='https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210528111008.webp' />
+<meta name="twitter:title" content="自动操作（Automator）">
+<meta name="twitter:description" content="自动操作使用方法整理，持续更新中。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210528111008.webp' />
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210527160407.png" />
 <style>
     :root {
@@ -75,8 +76,16 @@
 
             <main class="main full-width">
 
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+        <div class="article-image">
+            <a href="/p/375e7a13/">
+                
+                    <img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210528111008.webp" loading="lazy" alt="Featured image of post 自动操作（Automator）" />
+                
+            </a>
+        </div>
+    
 
     <div class="article-details">
     
@@ -90,12 +99,12 @@
     
 
     <h2 class="article-title">
-        <a href="/p/319d5434/">Homebrew</a>
+        <a href="/p/375e7a13/">自动操作（Automator）</a>
     </h2>
 
     
     <h3 class="article-subtitle">
-        Homebrew一些相关命令
+        自动操作使用方法整理，持续更新中。
     </h3>
     <footer class="article-time">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -106,38 +115,22 @@
 
 
 
-        <time class="article-time--published">7月6日, 2020</time>
+        <time class="article-time--published">5月28日, 2021</time>
     </footer></div>
 </header>
 
     <section class="article-content">
     <blockquote>
-<p><a class="link" href="https://brew.sh/index_zh-cn"  target="_blank" rel="noopener"
-    >Homebrew</a></p>
+<p>自动操作是系统自带软件，通过简单的操作就可以组合出来一个工作流，实现将一些重复性的复杂工作自动化。</p>
 </blockquote>
-<h2 id="查看已安装的包">查看已安装的包</h2>
-<p>查看已经安装的包</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">brew list
-</code></pre></div><h2 id="更新homebrew">更新Homebrew</h2>
-<p>更新Homebrew(此命令会显示可以更新的包列表，已安装的包会有对号)</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">brew update
-</code></pre></div><h2 id="列出可更新的包">列出可更新的包</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 不包含含自动更新的包</span>
-brew outdated
-<span class="c1"># 含自动更新的包</span>
-brew cask outdated --greedy
-</code></pre></div><h2 id="安装更新">安装更新</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">brew upgrade
-</code></pre></div><h2 id="清理旧版本">清理旧版本</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 查看可清理的包列表</span>
-brew cleanup -n
+<h2 id="shell脚本接收参数">Shell脚本接收参数</h2>
+<h2 id="定义变量">定义变量</h2>
+<h2 id="接收用户输入">接收用户输入</h2>
+<h2 id="执行shell脚本">执行Shell脚本</h2>
+<h2 id="文件操作">文件操作</h2>
+<h2 id="系统通知">系统通知</h2>
+<h2 id="脚本中部分命令不识别">脚本中部分命令不识别</h2>
 
-<span class="c1"># 清理旧版本包</span>
-brew cleanup
-
-<span class="c1"># 清理早于3天的无用的symlink，且清理与之相关的位于/Applications和~/Applications中的无用App链接</span>
-brew cleanup --prune <span class="m">3</span>
-</code></pre></div>
 </section>
 
 
@@ -145,7 +138,9 @@ brew cleanup --prune <span class="m">3</span>
     
     <section class="article-tags">
         
-            <a href="/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+            <a href="/tags/macos/">MacOS</a>
+        
+            <a href="/tags/automator/">Automator</a>
         
     </section>
 
@@ -162,19 +157,7 @@ brew cleanup --prune <span class="m">3</span>
 
         <span>Licensed under CC BY-NC-SA 4.0</span>
     </section>
-    <section class="article-time">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-        <span class="article-time--modified">
-            最后更新于 3月9日, 2021 14:30 CST
-        </span>
-    </section></footer>
+    </footer>
 
     
 </article>
@@ -188,30 +171,12 @@ brew cleanup --prune <span class="m">3</span>
                 
                     
 <article class="">
-    <a href="/p/b133175a/">
+    <a href="/p/1844ba76/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Markdown语法简单教程</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="has-image">
-    <a href="/p/1a22f05b/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210228015227.jpeg" loading="lazy" data-key="1a22f05b" data-hash="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210228015227.jpeg"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">二维码挪车牌</h2>
+            <h2 class="article-title">自制App图标</h2>
         </div>
     </a>
 </article>
@@ -230,30 +195,36 @@ brew cleanup --prune <span class="m">3</span>
                 
                     
 <article class="">
-    <a href="/p/acf0469c/">
+    <a href="/p/e4584901/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Windows KMS激活</h2>
+            <h2 class="article-title">Web服务器建设时的一些点</h2>
         </div>
     </a>
 </article>
                 
                     
-<article class="has-image">
-    <a href="/p/375e7a13/">
+<article class="">
+    <a href="/p/b133175a/">
         
-        
-            <div class="article-image">
-                
-                    <img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210528111008.webp" loading="lazy" data-key="375e7a13" data-hash="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210528111008.webp"/>
-                
-            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">自动操作（Automator）</h2>
+            <h2 class="article-title">Markdown语法简单教程</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/da23b91d/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Hugo永久链接</h2>
         </div>
     </a>
 </article>
@@ -282,7 +253,7 @@ brew cleanup --prune <span class="m">3</span>
 <div id = "valinecounter" class="valine-container">
     
     <center>
-        <span id="/p/319d5434/" class="leancloud_visitors" data-flag-title="Homebrew">
+        <span id="/p/375e7a13/" class="leancloud_visitors" data-flag-title="自动操作（Automator）">
             
             当前页面阅读次数：
             <i class="leancloud-visitors-count">0</i>
@@ -481,11 +452,13 @@ brew cleanup --prune <span class="m">3</span>
             <div class="widget--toc">
                 <nav id="TableOfContents">
   <ul>
-    <li><a href="#查看已安装的包">查看已安装的包</a></li>
-    <li><a href="#更新homebrew">更新Homebrew</a></li>
-    <li><a href="#列出可更新的包">列出可更新的包</a></li>
-    <li><a href="#安装更新">安装更新</a></li>
-    <li><a href="#清理旧版本">清理旧版本</a></li>
+    <li><a href="#shell脚本接收参数">Shell脚本接收参数</a></li>
+    <li><a href="#定义变量">定义变量</a></li>
+    <li><a href="#接收用户输入">接收用户输入</a></li>
+    <li><a href="#执行shell脚本">执行Shell脚本</a></li>
+    <li><a href="#文件操作">文件操作</a></li>
+    <li><a href="#系统通知">系统通知</a></li>
+    <li><a href="#脚本中部分命令不识别">脚本中部分命令不识别</a></li>
   </ul>
 </nav>
             </div>

@@ -6,22 +6,40 @@
         <description>Recent content on Ionosphere</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Thu, 27 May 2021 15:15:20 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 28 May 2021 13:31:34 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>自动操作（Automator）</title>
+        <link>https://blog.ionosphere.site/p/375e7a13/</link>
+        <pubDate>Fri, 28 May 2021 13:31:34 +0800</pubDate>
+        
+        <guid>https://blog.ionosphere.site/p/375e7a13/</guid>
+        <description>&lt;img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210528111008.webp" alt="Featured image of post 自动操作（Automator）" /&gt;&lt;blockquote&gt;
+&lt;p&gt;自动操作是系统自带软件，通过简单的操作就可以组合出来一个工作流，实现将一些重复性的复杂工作自动化。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;shell脚本接收参数&#34;&gt;Shell脚本接收参数&lt;/h2&gt;
+&lt;h2 id=&#34;定义变量&#34;&gt;定义变量&lt;/h2&gt;
+&lt;h2 id=&#34;接收用户输入&#34;&gt;接收用户输入&lt;/h2&gt;
+&lt;h2 id=&#34;执行shell脚本&#34;&gt;执行Shell脚本&lt;/h2&gt;
+&lt;h2 id=&#34;文件操作&#34;&gt;文件操作&lt;/h2&gt;
+&lt;h2 id=&#34;系统通知&#34;&gt;系统通知&lt;/h2&gt;
+&lt;h2 id=&#34;脚本中部分命令不识别&#34;&gt;脚本中部分命令不识别&lt;/h2&gt;
+</description>
+        </item>
+        <item>
         <title>装配Bean</title>
         <link>https://blog.ionosphere.site/p/a6324888/</link>
         <pubDate>Thu, 27 May 2021 15:15:20 +0800</pubDate>
         
         <guid>https://blog.ionosphere.site/p/a6324888/</guid>
-        <description>&lt;h2 id=&#34;内容预览&#34;&gt;内容预览&lt;/h2&gt;
+        <description>&lt;blockquote&gt;
+&lt;p&gt;创建应用对象之间协作关系的行为通常称为装配（wiring），这也是依赖注入（DI）的本质&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;bean装配内容预览&#34;&gt;bean装配内容预览&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;声明bean&lt;/li&gt;
 &lt;li&gt;构造器注入和Setter方法注入&lt;/li&gt;
 &lt;li&gt;装配bean&lt;/li&gt;
 &lt;li&gt;控制bean的创建和销毁&lt;/li&gt;
 &lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;创建应用对象之间协作关系的行为通常称为装配（wiring），这也是依赖注入（DI）的本质&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;h2 id=&#34;spring配置方案&#34;&gt;Spring配置方案&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;在XML中进显式配置&lt;/li&gt;
@@ -36,6 +54,106 @@
 &lt;li&gt;自动装配（autowiring）：Spring自动满足bean之间的依赖。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;创建可被发现的bean&#34;&gt;创建可被发现的bean&lt;/h3&gt;
+&lt;h4 id=&#34;创建组件类&#34;&gt;创建组件类&lt;/h4&gt;
+&lt;p&gt;在类上加@Component注解，就表明这个类会作为组件类、并告知了Spring要为这个类创建bean。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;soundsystem&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;org.springframework.stereotype.Component&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;nd&#34;&gt;@Component&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;SgtPeppers&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;implements&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;CompactDisc&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+
+  &lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;title&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Sgt. Pepper&amp;#39;s Lonely Hearts Club Band&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;artist&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;The Beatles&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+
+  &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;play&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Playing &amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;title&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34; by &amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;artist&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;开启组件扫描&#34;&gt;开启组件扫描&lt;/h4&gt;
+&lt;p&gt;组件扫描默认不启用，需要显式配置来命令Spring扫描带有@Component注解的类、并为之创建bean。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;通过Java配置类启用组件扫描&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;soundsystem&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;org.springframework.context.annotation.ComponentScan&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;org.springframework.context.annotation.Configuration&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;nd&#34;&gt;@Configuration&lt;/span&gt;
+&lt;span class=&#34;nd&#34;&gt;@ComponentScan&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;CDPlayerConfig&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;配置类不需要显式声明bean，只需要@ComponentScan注解即可，默认会扫描配置类相同的包和子包下的加@Component注解的类。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过XML启用组件扫描&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;beans&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;xmlns=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://www.springframework.org/schema/beans&amp;#34;&lt;/span&gt;
+  &lt;span class=&#34;na&#34;&gt;xmlns:xsi=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;&lt;/span&gt;
+  &lt;span class=&#34;na&#34;&gt;xmlns:context=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://www.springframework.org/schema/context&amp;#34;&lt;/span&gt;
+  &lt;span class=&#34;na&#34;&gt;xsi:schemaLocation=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://www.springframework.org/schema/beans
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;    http://www.springframework.org/schema/beans/spring-beans.xsd
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;    http://www.springframework.org/schema/context
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;    http://www.springframework.org/schema/context/spring-context.xsd&amp;#34;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&#34;nt&#34;&gt;&amp;lt;context:component-scan&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;base-package=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;soundsystem&amp;#34;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;/beans&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;设置bean的id&#34;&gt;设置bean的ID&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;默认ID&lt;/p&gt;
+&lt;p&gt;Spring默认会用首字母变小写的类名作为bean的ID&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;@Component注解参数设置ID
+@Component注解可以接收一个字符串作为ID&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Component&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;lonelyHeartsClub&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;SgtPeppers&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;implements&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;CompactDisc&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;@Named注解设置ID&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;soundsystem&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;javax.inject.Named&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;nd&#34;&gt;@Named&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;lonelyHeartsClub&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;SgtPeppers&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;implements&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;CompactDisc&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;@Named与@Component注解在大多数场景中可以相互替换，但是@Component更便于理解意图&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;设置组件扫描的对象&#34;&gt;设置组件扫描的对象&lt;/h3&gt;
+&lt;p&gt;实际项目中组件扫描不能仅仅扫描配置类所在的包，这就要手动指定扫描对象。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在@ComponentScan注解指明包名称&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Configuration&lt;/span&gt;
+&lt;span class=&#34;nd&#34;&gt;@ComponentScan&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;soundsystem&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;CDPlayerConfig&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;更加清晰的表明是在设置基础包&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Configuration&lt;/span&gt;
+&lt;span class=&#34;nd&#34;&gt;@ComponentScan&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;basePackages&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;soundsystem&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;CDPlayerConfig&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;指定多个基础包&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Configuration&lt;/span&gt;
+&lt;span class=&#34;nd&#34;&gt;@ComponentScan&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;basePackages&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;={&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;value1&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;value2&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;})&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;CDPlayerConfig&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;上面的指定方式用String处理基础包名称，类型不安全（not type- safe），很容易在代码重构时出错。@ComponentScan还提供了一种类型安全的处理方式&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Configuration&lt;/span&gt;
+&lt;span class=&#34;nd&#34;&gt;@ComponentScan&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;basePackageClasses&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;={&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CDPlayer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;DVDPlayer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;})&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;CDPlayerConfig&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bean自动装配的实现&#34;&gt;bean自动装配的实现&lt;/h3&gt;
 </description>
         </item>
         <item>
