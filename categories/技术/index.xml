@@ -45,15 +45,6 @@ IIS  服务器需要有 .NET Framework 4.0 环境
     </item>
     
     <item>
-      <title>Taio模板生成Hugo文章测试</title>
-      <link>https://blog.ionosphere.site/p/5cf05d4c/</link>
-      <pubDate>Fri, 19 Mar 2021 03:06:55 +0800</pubDate>
-      
-      <guid>https://blog.ionosphere.site/p/5cf05d4c/</guid>
-      <description>Taio模板生成Hugo文章测试</description>
-    </item>
-    
-    <item>
       <title>Markdown语法简单教程</title>
       <link>https://blog.ionosphere.site/p/b133175a/</link>
       <pubDate>Tue, 02 Mar 2021 11:59:39 +0800</pubDate>
