@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='自动操作使用方法整理，持续更新中。'><title>自动操作（Automator）</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='自动操作使用过程中的一些内容记录。'><title>自动操作（Automator）</title>
 
 <link rel='canonical' href='https://blog.ionosphere.site/p/375e7a13/'>
 
 <link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='自动操作（Automator）'>
-<meta property='og:description' content='自动操作使用方法整理，持续更新中。'>
+<meta property='og:description' content='自动操作使用过程中的一些内容记录。'>
 <meta property='og:url' content='https://blog.ionosphere.site/p/375e7a13/'>
 <meta property='og:site_name' content='Ionosphere'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='MacOS' /><meta property='article:tag' content='Automator' /><meta property='article:published_time' content='2021-05-28T13:31:34&#43;08:00'/><meta property='article:modified_time' content='2021-05-28T13:31:34&#43;08:00'/><meta property='og:image' content='https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210528111008.webp' />
 <meta name="twitter:title" content="自动操作（Automator）">
-<meta name="twitter:description" content="自动操作使用方法整理，持续更新中。"><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="自动操作使用过程中的一些内容记录。"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210528111008.webp' />
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210527160407.png" />
 <style>
@@ -104,7 +104,7 @@
 
     
     <h3 class="article-subtitle">
-        自动操作使用方法整理，持续更新中。
+        自动操作使用过程中的一些内容记录。
     </h3>
     <footer class="article-time">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -121,15 +121,60 @@
 
     <section class="article-content">
     <blockquote>
-<p>自动操作是系统自带软件，通过简单的操作就可以组合出来一个工作流，实现将一些重复性的复杂工作自动化。</p>
+<p>自动操作是系统自带软件，可以将一些重复性的工作自动化。</p>
 </blockquote>
-<h2 id="shell脚本接收参数">Shell脚本接收参数</h2>
-<h2 id="定义变量">定义变量</h2>
-<h2 id="接收用户输入">接收用户输入</h2>
-<h2 id="执行shell脚本">执行Shell脚本</h2>
-<h2 id="文件操作">文件操作</h2>
-<h2 id="系统通知">系统通知</h2>
-<h2 id="脚本中部分命令不识别">脚本中部分命令不识别</h2>
+<h2 id="功能使用">功能使用</h2>
+<h3 id="shell脚本接收参数">Shell脚本接收参数</h3>
+<ol>
+<li>
+<p>自变量获取参数</p>
+<p><figure style="flex-grow: 350; flex-basis: 840px">
+		<a href="/p/375e7a13/image-20210529140411891.png" data-size="2586x738"><img src="/p/375e7a13/image-20210529140411891.png"
+				srcset="/p/375e7a13/image-20210529140411891_huaa86f5c88be918244d88a7d416da6983_303900_480x0_resize_box_2.png 480w, /p/375e7a13/image-20210529140411891_huaa86f5c88be918244d88a7d416da6983_303900_1024x0_resize_box_2.png 1024w"
+				width="2586"
+				height="738"
+				loading="lazy"
+				alt="自变量获取参数">
+		</a>
+		
+		<figcaption>自变量获取参数</figcaption>
+		
+	</figure></p>
+</li>
+<li>
+<p>stdin获取参数
+<figure style="flex-grow: 349; flex-basis: 838px">
+		<a href="/p/375e7a13/image-20210529132528728.png" data-size="2586x740"><img src="/p/375e7a13/image-20210529132528728.png"
+				srcset="/p/375e7a13/image-20210529132528728_hud4e303a31bbc2386eddab3ba9428998f_290227_480x0_resize_box_2.png 480w, /p/375e7a13/image-20210529132528728_hud4e303a31bbc2386eddab3ba9428998f_290227_1024x0_resize_box_2.png 1024w"
+				width="2586"
+				height="740"
+				loading="lazy"
+				alt="stdin获取参数">
+		</a>
+		
+		<figcaption>stdin获取参数</figcaption>
+		
+	</figure></p>
+</li>
+</ol>
+<h2 id="故障排除">故障排除</h2>
+<h3 id="shell脚本部分命令不识别">Shell脚本部分命令不识别</h3>
+<p><figure style="flex-grow: 722; flex-basis: 1734px">
+		<a href="/p/375e7a13/image-20210529140016823.png" data-size="578x80"><img src="/p/375e7a13/image-20210529140016823.png"
+				srcset="/p/375e7a13/image-20210529140016823_hueeb6cc8e5efd06468d801e2602ee2f9d_29523_480x0_resize_box_2.png 480w, /p/375e7a13/image-20210529140016823_hueeb6cc8e5efd06468d801e2602ee2f9d_29523_1024x0_resize_box_2.png 1024w"
+				width="578"
+				height="80"
+				loading="lazy"
+				alt="**: command not found">
+		</a>
+		
+		<figcaption>**: command not found</figcaption>
+		
+	</figure></p>
+<ol>
+<li>查看选择的Shell类型是否合适。</li>
+<li>在脚本前面加入<code>source ~/.bash_profile</code>,引入环境变量配置。</li>
+</ol>
 
 </section>
 
@@ -452,13 +497,16 @@
             <div class="widget--toc">
                 <nav id="TableOfContents">
   <ul>
-    <li><a href="#shell脚本接收参数">Shell脚本接收参数</a></li>
-    <li><a href="#定义变量">定义变量</a></li>
-    <li><a href="#接收用户输入">接收用户输入</a></li>
-    <li><a href="#执行shell脚本">执行Shell脚本</a></li>
-    <li><a href="#文件操作">文件操作</a></li>
-    <li><a href="#系统通知">系统通知</a></li>
-    <li><a href="#脚本中部分命令不识别">脚本中部分命令不识别</a></li>
+    <li><a href="#功能使用">功能使用</a>
+      <ul>
+        <li><a href="#shell脚本接收参数">Shell脚本接收参数</a></li>
+      </ul>
+    </li>
+    <li><a href="#故障排除">故障排除</a>
+      <ul>
+        <li><a href="#shell脚本部分命令不识别">Shell脚本部分命令不识别</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
             </div>
