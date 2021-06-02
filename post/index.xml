@@ -257,6 +257,7 @@ Git一般只添加数据 你执行的Git操作几乎只向数据库中添加数�
       <description>MacOS 网络工具 ZeroTier One - 组网工具
 shadowsocks - 梯子
 Charles - 网络分析
+burp suite - 网络分析
 Postman - Web Api调试工具
 阅读 Kindle
 calibre - 电子书工具
@@ -273,8 +274,7 @@ Typora - Markdown编辑
 语雀 - 在线知识库
 印象笔记 - 本来很好，现在广告有点恶心，特别是逢年过节，堪称丧心病狂，且不能通过开会员解决
 amWiki - 一款轻量级的文库系统
-博客 Hugo - 真香
-Hexo - 嗯，好多人用，资源很多</description>
+博客 Hugo - 真香</description>
     </item>
     
     <item>

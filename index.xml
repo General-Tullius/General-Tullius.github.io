@@ -192,6 +192,82 @@
 &lt;span class=&#34;nd&#34;&gt;@ComponentScan&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;basePackageClasses&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;={&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CDPlayer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;DVDPlayer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;})&lt;/span&gt;
 &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;CDPlayerConfig&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bean自动装配的实现&#34;&gt;bean自动装配的实现&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;自动装配：让Spring自动满足bean依赖。在自动装配过程中，会在Spring上下文中寻找匹配某个bean需求的其它bean。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;使用__@Autowired__注解来声明要进行自动装配：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;soundsystem&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;org.springframework.beans.factory.annotation.Autowired&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;org.springframework.stereotype.Component&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;nd&#34;&gt;@Component&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;CDPlayer&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;implements&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MediaPlayer&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;CompactDisc&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cd&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+
+  &lt;span class=&#34;nd&#34;&gt;@Autowired&lt;/span&gt;
+  &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;CDPlayer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CompactDisc&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cd&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;cd&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cd&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+
+  &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;play&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;cd&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;play&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+  &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;除了构造器,__@AutoWired__注解还可用于类的任何方法上：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Autowired&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;setCompactDisc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CompactDisc&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cd&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;cd&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cd&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在应用上下文创建时，Spring会尝试满足所有__@AutoWired__注解声明的参数依赖。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;如果有且只有一个bean匹配依赖的需求，那这个bean会被装配。&lt;/li&gt;
+&lt;li&gt;如果没有匹配的bean，应用上下文创建时会抛出异常。&lt;/li&gt;
+&lt;li&gt;如果注解设置成**@AutoWired(required=false)**，Spring会尝试自动装配，若没有匹配bean就会让这个bean处于未装配状态，而不会报错（对于可能未装配的bean要注意做null检查）。&lt;/li&gt;
+&lt;li&gt;如果有多个bean满足以依赖关系，会抛出异常（没有明确指定要选择哪个bean进行自动装配）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;@AutoWired&lt;/strong&gt;注解是Spring特有的，如果不愿意代码中到处使用Spring的特定注解来完成自动装配任务，可以用**@Inject**替换。**@Inject**注解来源于Java依赖注入规范，与**@AutoWired**有细微差别，但是大多数场景可以互相替换。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;自动扫描和自动装配可以满足大部分应用场景，但是部分场景仍需要显式配置。比如要将第三方库中的组件装配到自己的应用中，此时没办法修改第三方库、增加@Component&lt;strong&gt;和&lt;/strong&gt;@AutoWired**注解，一次要采用显示装配方案。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;通过java代码装配bean&#34;&gt;通过Java代码装配bean&lt;/h2&gt;
+&lt;h3 id=&#34;创建配置类&#34;&gt;创建配置类&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;soundsystem&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;org.springframework.context.annotation.Configuration&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;nd&#34;&gt;@Configuration&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;CDPlayerConfig&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;配置类的关键在于**@Configuration**注解，与自动装配的配置类的区别在于移除了组件扫描注解**@ComponentScan**。&lt;/p&gt;
+&lt;h3 id=&#34;声明简单的bean&#34;&gt;声明简单的bean&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Bean&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;CompactDisc&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;sgtPeppers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SgtPeppers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;@Bean&lt;/strong&gt;表明此方法会返回一个对象，并且这个对象需要注册为Spring应用上下文中的bean。最中产生bean实例的逻辑包含在方法体中。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;默认情况下bean的ID与带有&lt;strong&gt;Bean注解&lt;/strong&gt;的方法名一致。如果要自己指定可以用&lt;code&gt;@Bean(name=&amp;quot;customName&amp;quot;)&lt;/code&gt;注解方式来指定&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;借助javaconfig实现依赖注入&#34;&gt;借助JavaConfig实现依赖注入&lt;/h3&gt;
+&lt;p&gt;假设&lt;code&gt;CDPlayer&lt;/code&gt;bean依赖于之前声明的bean&lt;code&gt;CompactDisc&lt;/code&gt;,则这样装配：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Bean&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;CDPlayer&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;cdPlayer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;CDPlayer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sgtPeppers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;());&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;此处的&lt;code&gt;CompactDisc&lt;/code&gt;看似是&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;通过xml装配bean&#34;&gt;通过XML装配bean&lt;/h2&gt;
+&lt;h3 id=&#34;创建xml配置规范&#34;&gt;创建XML配置规范&lt;/h3&gt;
+&lt;h3 id=&#34;声明一个简单bean&#34;&gt;声明一个简单&amp;lt;bean&amp;gt;&lt;/h3&gt;
+&lt;h3 id=&#34;借助构造器注入初始化bean&#34;&gt;借助构造器注入初始化bean&lt;/h3&gt;
+&lt;h3 id=&#34;设置属性&#34;&gt;设置属性&lt;/h3&gt;
+&lt;h2 id=&#34;导入和混合配制&#34;&gt;导入和混合配制&lt;/h2&gt;
+&lt;h3 id=&#34;在javaconfig中引入xml配置&#34;&gt;在JavaConfig中引入XML配置&lt;/h3&gt;
+&lt;h3 id=&#34;在xml配置用引入javaconfig&#34;&gt;在XML配置用引入JavaConfig&lt;/h3&gt;
 </description>
         </item>
         <item>
@@ -395,78 +471,6 @@ sips -z &lt;span class=&#34;m&#34;&gt;1024&lt;/span&gt; &lt;span class=&#34;m&#3
 &lt;p&gt;&lt;code&gt;\b&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;字符串边界&#34;&gt;字符串边界&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;^\w+$&lt;/code&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Web服务器建设时的一些点</title>
-        <link>https://blog.ionosphere.site/p/e4584901/</link>
-        <pubDate>Fri, 16 Apr 2021 09:57:10 +0800</pubDate>
-        
-        <guid>https://blog.ionosphere.site/p/e4584901/</guid>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;整理一下Web服务器建设时需要注意的内容&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;硬件&#34;&gt;硬件&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;数量：2台（程序+数据）&lt;/p&gt;
-&lt;p&gt;硬盘：500G+/500G+&lt;/p&gt;
-&lt;p&gt;内存：16G+/16G+&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;软件&#34;&gt;软件&lt;/h2&gt;
-&lt;h3 id=&#34;操作系统&#34;&gt;操作系统&lt;/h3&gt;
-&lt;p&gt;推荐版本：Windows Server 2016&lt;/p&gt;
-&lt;h3 id=&#34;iis&#34;&gt;IIS&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;服务器需要有 .NET Framework 4.0 环境&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;开启IIS功能&lt;/p&gt;
-&lt;p&gt;&lt;figure style=&#34;flex-grow: 90; flex-basis: 216px&#34;&gt;
-		&lt;a href=&#34;https://blog.ionosphere.site/p/e4584901/IIS%E5%8A%9F%E8%83%BD%E5%8B%BE%E9%80%89.jpg&#34; data-size=&#34;658x728&#34;&gt;&lt;img src=&#34;https://blog.ionosphere.site/p/e4584901/IIS%E5%8A%9F%E8%83%BD%E5%8B%BE%E9%80%89.jpg&#34;
-				srcset=&#34;https://blog.ionosphere.site/p/e4584901/IIS%E5%8A%9F%E8%83%BD%E5%8B%BE%E9%80%89_hu2f1e02e515e351c311ec896043222feb_108547_480x0_resize_q75_box.jpg 480w, https://blog.ionosphere.site/p/e4584901/IIS%E5%8A%9F%E8%83%BD%E5%8B%BE%E9%80%89_hu2f1e02e515e351c311ec896043222feb_108547_1024x0_resize_q75_box.jpg 1024w&#34;
-				width=&#34;658&#34;
-				height=&#34;728&#34;
-				loading=&#34;lazy&#34;
-				&gt;
-		&lt;/a&gt;
-		
-	&lt;/figure&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;不要图方便去开启IIS的&amp;quot;目录浏览&amp;quot;，要通过&amp;quot;默认文档&amp;quot;功能来配置访问IP端口地址之后的默认跳转页面&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;figure style=&#34;flex-grow: 94; flex-basis: 226px&#34;&gt;
-		&lt;a href=&#34;https://blog.ionosphere.site/p/e4584901/IIS%E7%9B%AE%E5%BD%95%E6%B5%8F%E8%A7%88.png&#34; data-size=&#34;1198x1268&#34;&gt;&lt;img src=&#34;https://blog.ionosphere.site/p/e4584901/IIS%E7%9B%AE%E5%BD%95%E6%B5%8F%E8%A7%88.png&#34;
-				srcset=&#34;https://blog.ionosphere.site/p/e4584901/IIS%E7%9B%AE%E5%BD%95%E6%B5%8F%E8%A7%88_hu566cb3d2a3b3f22eb8edecb272ca5e59_168997_480x0_resize_box_2.png 480w, https://blog.ionosphere.site/p/e4584901/IIS%E7%9B%AE%E5%BD%95%E6%B5%8F%E8%A7%88_hu566cb3d2a3b3f22eb8edecb272ca5e59_168997_1024x0_resize_box_2.png 1024w&#34;
-				width=&#34;1198&#34;
-				height=&#34;1268&#34;
-				loading=&#34;lazy&#34;
-				&gt;
-		&lt;/a&gt;
-		
-	&lt;/figure&gt;&lt;/p&gt;
-&lt;h3 id=&#34;数据库&#34;&gt;数据库&lt;/h3&gt;
-&lt;p&gt;推荐版本：SqlServer 2016，最低2008R2&lt;/p&gt;
-&lt;p&gt;数据库挂上去之后要做好自动维护任务。自动维护包含备份和清理两部分，不要只做定时备份，但是不定时清理旧备份，最终磁盘空间用完了，导致一开始正常运行的系统，某一天突然出问题&lt;/p&gt;
-&lt;h3 id=&#34;其它软件&#34;&gt;其它软件&lt;/h3&gt;
-&lt;p&gt;经常有客户服务器在初期建设时因为软件选用不当，导致被装了各种全家桶软件，平时各种广告弹窗，影响远程时的速度，有些还严重到影响服务器性能，这里对常用软件做一些建议：&lt;/p&gt;
-&lt;p&gt;解压缩：&lt;strong&gt;7z&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://www.7-zip.org&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;下载地址&lt;/a&gt;&lt;br&gt;
-文本编辑器：&lt;strong&gt;Visual Studio Code&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://code.visualstudio.com/Download&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;下载地址&lt;/a&gt;&lt;br&gt;
-浏览器：&lt;strong&gt;Edge&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://www.microsoft.com/zh-cn/edge&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;下载地址&lt;/a&gt;&lt;strong&gt;Google Chrome&lt;/strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.google.cn/intl/zh-CN/chrome/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;下载地址&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;网络&#34;&gt;网络&lt;/h2&gt;
-&lt;h3 id=&#34;公网&#34;&gt;公网&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;IP需要固定或者可以域名访问&lt;/li&gt;
-&lt;li&gt;开放必要的端口，做好端口映射。正常情况下，需要开放BS、消息服务、地图服务（固定6080）3个端口，前后端分离版本需要额外增加前端端口。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;内网&#34;&gt;内网&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;IP需要固定&lt;/li&gt;
-&lt;li&gt;需要了解客户网络特性，比如在服务器\内网环境是否可以访问自己的外网IP&lt;/li&gt;
-&lt;li&gt;配置服务器防火墙，需要哪个端口才开哪个，不要直接关闭防火墙&lt;/li&gt;
-&lt;/ul&gt;
 </description>
         </item>
         <item>
