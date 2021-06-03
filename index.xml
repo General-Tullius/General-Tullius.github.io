@@ -258,16 +258,153 @@
   &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;CDPlayer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sgtPeppers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;());&lt;/span&gt;
 &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;此处的&lt;code&gt;CompactDisc&lt;/code&gt;看似是&lt;/p&gt;
+&lt;p&gt;此处的&lt;code&gt;CompactDisc&lt;/code&gt;看似是调用&lt;code&gt;sgtPeppers()&lt;/code&gt;得到的，实际上因为&lt;code&gt;sgtPeppers()&lt;/code&gt;加了&lt;code&gt;@Bean&lt;/code&gt;注解，Spring会拦截所有对此方法的调用，并确保直接返回此方法所创建的bean，而不是每次都实际调用。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;通过xml装配bean&#34;&gt;通过XML装配bean&lt;/h2&gt;
+&lt;p&gt;构造器注入bean：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Bean&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;CDPlayer&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;cdPlayer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CompactDisc&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;compactDisc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;CDPlayer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;compactDisc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;通过Setter方法注入：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Bean&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;CDPlayer&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;cdPlayer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CompactDisc&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;compactDisc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;CDPlayer&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cdPlayer&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;CDPlayer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;compactDisc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;cdPlayer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;setCompactDisc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;compactDisc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cdPlayer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;通过xml装配bean&#34;&gt;通过XML装配bean&lt;/h2&gt;
+&lt;p&gt;Spring刚出现时，XML是描述配置的主要方式，所以现存大量基于XML的Spring配置。因此虽然现在有了自动化配置和基于Java的配置，要想更好的维护已有的XML配置，就需要了解XML配置方式。&lt;/p&gt;
 &lt;h3 id=&#34;创建xml配置规范&#34;&gt;创建XML配置规范&lt;/h3&gt;
-&lt;h3 id=&#34;声明一个简单bean&#34;&gt;声明一个简单&amp;lt;bean&amp;gt;&lt;/h3&gt;
+&lt;p&gt;使用JavaConfig时，要创建一个带有**@Configuration**注解的类，与此对应的操作，是创建一个XML文件，并且要以&lt;code&gt;&amp;lt;beans&amp;gt;&lt;/code&gt;元素为根。以spring-beans模式装配bean的最基本XML：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;beans&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;xmlns=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://www.springframework.org/schema/beans&amp;#34;&lt;/span&gt;
+  &lt;span class=&#34;na&#34;&gt;xmlns:xsi=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;&lt;/span&gt;
+  &lt;span class=&#34;na&#34;&gt;xsi:schemaLocation=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://www.springframework.org/schema/beans
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;    http://www.springframework.org/schema/beans/spring-beans.xsd
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;    http://www.springframework.org/schema/context&amp;#34;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;c&#34;&gt;&amp;lt;!-- configuration details go here --&amp;gt;&lt;/span&gt;
+
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;/beans&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;声明一个简单bean&#34;&gt;声明一个简单&amp;lt;bean&amp;gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;简单bean的声明&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;bean&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;soundsystem.SgtPeppers&amp;#34;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;指定bean的名字（id）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;bean&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;compactDisc&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;soundsystem.SgtPeppers&amp;#34;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id=&#34;借助构造器注入初始化bean&#34;&gt;借助构造器注入初始化bean&lt;/h3&gt;
-&lt;h3 id=&#34;设置属性&#34;&gt;设置属性&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;constructor-arg&amp;gt;&lt;/code&gt;元素&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;bean&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;cdPlayer&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;soundsystem.CDPlayer&amp;#34;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;lt;constructor-arg&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;ref=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;compactDisc&amp;#34;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;/bean&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;c-命名空间&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;c-命名空间是Spring3.0引入的，可以在XML中更简洁的描述构造器参数。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;要使用&lt;strong&gt;c-命名空间&lt;/strong&gt;需要在XML顶部声明其模式：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;beans&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;xmlns=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://www.springframework.org/schema/beans&amp;#34;&lt;/span&gt;
+  &lt;span class=&#34;na&#34;&gt;xmlns:c=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://www.springframework.org/schema/c&amp;#34;&lt;/span&gt;
+  &lt;span class=&#34;na&#34;&gt;xmlns:xsi=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;&lt;/span&gt;
+  &lt;span class=&#34;na&#34;&gt;xsi:schemaLocation=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://www.springframework.org/schema/beans
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;  http://www.springframework.org/schema/beans/spring-beans.xsd&amp;#34;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
+ ...
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;/beans&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;声明构造器参数：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;bean&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;cdPlayer&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;soundsystem.CDPlayer&amp;#34;&lt;/span&gt;
+      &lt;span class=&#34;na&#34;&gt;c:cd-ref=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;compactDisc&amp;#34;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;属性名以“c:”开头，也就是命名空间的前缀。接下来就是要装配的构造器参数名，在此之后是“-ref”，这是一个命名的约定，它会告诉Spring，正在装配的是一个bean的引用，这个bean的名字是compactDisc。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 209; flex-basis: 503px&#34;&gt;
+		&lt;a href=&#34;https://blog.ionosphere.site/p/a6324888/56.png&#34; data-size=&#34;443x211&#34;&gt;&lt;img src=&#34;https://blog.ionosphere.site/p/a6324888/56.png&#34;
+				srcset=&#34;https://blog.ionosphere.site/p/a6324888/56_huafd35f23ad5d90250baa639b2f641fe5_11550_480x0_resize_box_2.png 480w, https://blog.ionosphere.site/p/a6324888/56_huafd35f23ad5d90250baa639b2f641fe5_11550_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;443&#34;
+				height=&#34;211&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;c-命名空间属性结构&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;c-命名空间属性结构&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;需要注意的是构造器参数名，直接写参数名在某些情况下会导致错误，替代方案是使用参数在整个参数列表中的位置信息：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;bean&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;cdPlayer&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;soundsystem.CDPlayer&amp;#34;&lt;/span&gt;
+      &lt;span class=&#34;na&#34;&gt;c:_0-ref=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;compactDisc&amp;#34;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果构造器中只有一个参数，还可以写成：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;bean&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;cdPlayer&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;soundsystem.CDPlayer&amp;#34;&lt;/span&gt;
+      &lt;span class=&#34;na&#34;&gt;c:_-ref=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;compactDisc&amp;#34;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;借助属性的setter方法注入&#34;&gt;借助属性的Setter方法注入&lt;/h3&gt;
+&lt;p&gt;假设注入对象CDPlayer如下所示：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;soundsystem&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;org.springframework.beans.factory.annotation.Autowired&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;soundsystem.CompactDisc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;soundsystem.MediaPlayer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;CDPlayer&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;implements&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MediaPlayer&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;CompactDisc&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;compactDisc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+
+  &lt;span class=&#34;nd&#34;&gt;@Autowired&lt;/span&gt;
+  &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;setCompactDisc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CompactDisc&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;compactDisc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;compactDisc&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;compactDisc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+  &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;play&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;compactDisc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;play&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+  &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;对此类的Spring bean声明：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;bean&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;cdPlayer&amp;#34;&lt;/span&gt;
+      &lt;span class=&#34;na&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;soundsystem.CDPlayer&amp;#34;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;lt;property&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;name=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;compactDisc&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;ref=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;compactDisc&amp;#34;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;/bean&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;与构造器注入中Spring为&lt;code&gt;&amp;lt;constructor-arg&amp;gt;&lt;/code&gt;提供了简洁的&lt;strong&gt;c-命名空间&lt;/strong&gt;替代方案类似，Spring为属性注入提供了&lt;strong&gt;p-命名空间&lt;/strong&gt;的替代方案。&lt;/p&gt;
+&lt;p&gt;首先要声明&lt;strong&gt;p-命名空间&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;beans&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;xmlns=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://www.springframework.org/schema/beans&amp;#34;&lt;/span&gt;
+  &lt;span class=&#34;na&#34;&gt;xmlns:p=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://www.springframework.org/schema/p&amp;#34;&lt;/span&gt;
+  &lt;span class=&#34;na&#34;&gt;xmlns:xsi=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;&lt;/span&gt;
+  &lt;span class=&#34;na&#34;&gt;xsi:schemaLocation=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://www.springframework.org/schema/beans
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;    http://www.springframework.org/schema/beans/spring-beans.xsd&amp;#34;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;gt;&lt;/span&gt;
+  ...
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;/beans&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;属性装配：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;bean&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;cdPlayer&amp;#34;&lt;/span&gt;
+      &lt;span class=&#34;na&#34;&gt;class=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;soundsystem.CDPlayer&amp;#34;&lt;/span&gt;
+      &lt;span class=&#34;na&#34;&gt;p:compactDisc-ref=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;compactDisc&amp;#34;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;p-命名空间&lt;/strong&gt;的命名约定与&lt;strong&gt;c-命名空间&lt;/strong&gt;类似：&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 232; flex-basis: 558px&#34;&gt;
+		&lt;a href=&#34;https://blog.ionosphere.site/p/a6324888/77.png&#34; data-size=&#34;538x231&#34;&gt;&lt;img src=&#34;https://blog.ionosphere.site/p/a6324888/77.png&#34;
+				srcset=&#34;https://blog.ionosphere.site/p/a6324888/77_hu0de01dba55ebf90c9ca7f2f099f64b81_11846_480x0_resize_box_2.png 480w, https://blog.ionosphere.site/p/a6324888/77_hu0de01dba55ebf90c9ca7f2f099f64b81_11846_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;538&#34;
+				height=&#34;231&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;p-命名空间&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;p-命名空间&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
 &lt;h2 id=&#34;导入和混合配制&#34;&gt;导入和混合配制&lt;/h2&gt;
-&lt;h3 id=&#34;在javaconfig中引入xml配置&#34;&gt;在JavaConfig中引入XML配置&lt;/h3&gt;
-&lt;h3 id=&#34;在xml配置用引入javaconfig&#34;&gt;在XML配置用引入JavaConfig&lt;/h3&gt;
+&lt;p&gt;在典型的Spring应用中，经常会同时使用自动配置和显式配置，在Spring中这些配置都不是互斥的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;在JavaConfig中引入XML配置&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在XML配置用引入JavaConfig&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这两种混合模式都是支持的。&lt;/p&gt;
 </description>
         </item>
         <item>
