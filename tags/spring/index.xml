@@ -6,7 +6,22 @@
     <description>Recent content in Spring on Ionosphere</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 27 May 2021 15:15:20 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Jun 2021 17:13:10 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>高级装配</title>
+      <link>https://blog.ionosphere.site/p/de06998b/</link>
+      <pubDate>Thu, 03 Jun 2021 17:13:10 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/de06998b/</guid>
+      <description>Spring profile 条件化的bean声明 自动装配与歧义性 bean的作用域 Spring表达式语言   环境与profile 软件运行在不同的环境，需要装配不同的bean。比如：在开发环境、QA环境和生产环境可能会用到不同类型的数据库配置。
+常规的处理手段是构建针对性的独立配置类（或者XML），在构建阶段确定要将哪一个配置编译到应用中。这种方式需要为每种环境重新构建应用，这将导致各种问题，比如从QA阶段迁移到生产环境时，重新构建可能会引入BUG。
+Spring提供了不需要重新构建的解决方案。首先，在Java配置中，通过**@Profile**注解来指定某个bean属于哪一个Profile（或者在XML配置中通过&amp;lt;beans&amp;gt;元素的profile属性置顶）；然后，用spring.profiles.active和spring.profiles.default 来指定激活的profile和默认的profile（激活和默认的profile可以同时指定多个）。
+ 指定了profile的bean只有在对应的profile被激活时才会被创建。没有指定profie的bean始终都会被创建。
+ 设置active和default属性的方式
+ 作为DispatcherServlet的初始化参数； 作为Web应用的上下文参数； 作为JNDI条目； 作为环境变量； 作为JVM的系统属性； 在集成测试类上，使用@ActiveProfiles注解设置。  条件化的bean 有些时候，对于某些bean，我们希望只有在某些特定的情况满足之后在创建这个bean。Spring提供了**@Conditional**注解来实现根据条件动态配置bean的功能。
+@Bean @Conditional(MagicExistsCondition.class) public MagicBean magicBean(){ return new MagicBean(); } package com.habuma.restfun; import org.springframework.context.annotation.Condition; import org.springframework.context.annotation.ConditionContext; import org.springframework.core.env.Environment; import org.springframework.core.type.AnnotatedTypeMetadata; public class MagicExistsCondition implements Condition { @Override public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) { Environment env = context.getEnvironment(); return env.containsProperty(&amp;#34;magic&amp;#34;); } } 当matches()方法返回true时bean才会被创建。</description>
+    </item>
+    
     <item>
       <title>装配Bean</title>
       <link>https://blog.ionosphere.site/p/a6324888/</link>

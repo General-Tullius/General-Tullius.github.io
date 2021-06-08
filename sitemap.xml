@@ -2,23 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.ionosphere.site/categories/</loc>
+    <lastmod>2021-06-08T17:25:10+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ionosphere.site/</loc>
+    <lastmod>2021-06-08T17:25:10+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ionosphere.site/post/</loc>
+    <lastmod>2021-06-08T17:25:10+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ionosphere.site/tags/spring/</loc>
+    <lastmod>2021-06-08T17:25:10+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ionosphere.site/tags/</loc>
+    <lastmod>2021-06-08T17:25:10+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ionosphere.site/categories/%E8%AF%BB%E4%B9%A6/</loc>
+    <lastmod>2021-06-08T17:25:10+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ionosphere.site/p/de06998b/</loc>
+    <lastmod>2021-06-08T17:25:10+08:00</lastmod>
+  </url><url>
     <loc>https://blog.ionosphere.site/tags/automator/</loc>
     <lastmod>2021-05-28T13:31:34+08:00</lastmod>
   </url><url>
-    <loc>https://blog.ionosphere.site/categories/</loc>
-    <lastmod>2021-06-03T16:56:20+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.ionosphere.site/</loc>
-    <lastmod>2021-06-03T16:56:20+08:00</lastmod>
-  </url><url>
     <loc>https://blog.ionosphere.site/tags/macos/</loc>
     <lastmod>2021-05-28T13:31:34+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.ionosphere.site/post/</loc>
-    <lastmod>2021-06-03T16:56:20+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.ionosphere.site/tags/</loc>
-    <lastmod>2021-06-03T16:56:20+08:00</lastmod>
   </url><url>
     <loc>https://blog.ionosphere.site/categories/%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2021-05-28T13:31:34+08:00</lastmod>
@@ -26,13 +35,7 @@
     <loc>https://blog.ionosphere.site/p/375e7a13/</loc>
     <lastmod>2021-05-28T13:31:34+08:00</lastmod>
   </url><url>
-    <loc>https://blog.ionosphere.site/tags/spring/</loc>
-    <lastmod>2021-06-03T16:56:20+08:00</lastmod>
-  </url><url>
     <loc>https://blog.ionosphere.site/p/a6324888/</loc>
-    <lastmod>2021-06-03T16:56:20+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.ionosphere.site/categories/%E8%AF%BB%E4%B9%A6/</loc>
     <lastmod>2021-06-03T16:56:20+08:00</lastmod>
   </url><url>
     <loc>https://blog.ionosphere.site/p/006e1380/</loc>
