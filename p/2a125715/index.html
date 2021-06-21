@@ -146,9 +146,9 @@
             <span class="n">lat</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">geocodes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
             <span class="k">return</span> <span class="p">[</span><span class="n">lng</span><span class="p">,</span> <span class="n">lat</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">None</span>
+            <span class="k">return</span> <span class="kc">None</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">None</span>
+        <span class="k">return</span> <span class="kc">None</span>
  
  
 <span class="k">def</span> <span class="nf">gcj02tobd09</span><span class="p">(</span><span class="n">lng</span><span class="p">,</span> <span class="n">lat</span><span class="p">):</span>
@@ -259,10 +259,10 @@
 </span><span class="s2">    :return:
 </span><span class="s2">    &#34;&#34;&#34;</span>
     <span class="k">if</span> <span class="n">lng</span> <span class="o">&lt;</span> <span class="mf">72.004</span> <span class="ow">or</span> <span class="n">lng</span> <span class="o">&gt;</span> <span class="mf">137.8347</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">return</span> <span class="kc">True</span>
     <span class="k">if</span> <span class="n">lat</span> <span class="o">&lt;</span> <span class="mf">0.8293</span> <span class="ow">or</span> <span class="n">lat</span> <span class="o">&gt;</span> <span class="mf">55.8271</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">True</span>
-    <span class="k">return</span> <span class="bp">False</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
  
  
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
@@ -273,7 +273,7 @@
     <span class="n">result3</span> <span class="o">=</span> <span class="n">wgs84togcj02</span><span class="p">(</span><span class="n">lng</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span>
     <span class="n">result4</span> <span class="o">=</span> <span class="n">gcj02towgs84</span><span class="p">(</span><span class="n">lng</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span>
     <span class="n">result5</span> <span class="o">=</span> <span class="n">geocode</span><span class="p">(</span><span class="s1">&#39;北京市朝阳区朝阳公园&#39;</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">result1</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">result2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">result3</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">result4</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">result5</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result1</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">result2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">result3</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">result4</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">result5</span><span class="p">)</span>
 </code></pre></div>
 </section>
 
