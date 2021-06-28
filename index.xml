@@ -33,10 +33,10 @@ LICENSE.txt Project’s license
 README.txt Project’s readme
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;发布后的目录结构：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;jar
-	-META-INF
-	-BOOT-INF
-		-classes
-		-lib
+  -META-INF
+  -BOOT-INF
+    -classes
+    -lib
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其中开发时期的&lt;code&gt;src/main/&lt;/code&gt;下面的&lt;code&gt;java&lt;/code&gt;和&lt;code&gt;resources&lt;/code&gt;文件夹都被打包到了生产包的&lt;code&gt;BOOT-INF/classes/&lt;/code&gt;目录下，由maven引入的依赖都被放入到了&lt;code&gt;BOOT-INF/lib/&lt;/code&gt;下面。classpath指的就是&lt;code&gt;BOOT-INF&lt;/code&gt;目录下的&lt;code&gt;classes&lt;/code&gt;文件夹。&lt;/p&gt;
 &lt;h2 id=&#34;classpath的作用&#34;&gt;classpath的作用&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;classpath&lt;/code&gt;一般用于指定配置或者资源的路径，比如在配置mybatis的Mapper.xml文件位置时：&lt;/p&gt;

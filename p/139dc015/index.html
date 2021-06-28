@@ -140,10 +140,10 @@ LICENSE.txt Project’s license
 README.txt Project’s readme
 </code></pre><p>发布后的目录结构：</p>
 <pre><code>jar
-	-META-INF
-	-BOOT-INF
-		-classes
-		-lib
+  -META-INF
+  -BOOT-INF
+    -classes
+    -lib
 </code></pre><p>其中开发时期的<code>src/main/</code>下面的<code>java</code>和<code>resources</code>文件夹都被打包到了生产包的<code>BOOT-INF/classes/</code>目录下，由maven引入的依赖都被放入到了<code>BOOT-INF/lib/</code>下面。classpath指的就是<code>BOOT-INF</code>目录下的<code>classes</code>文件夹。</p>
 <h2 id="classpath的作用">classpath的作用</h2>
 <p><code>classpath</code>一般用于指定配置或者资源的路径，比如在配置mybatis的Mapper.xml文件位置时：</p>
