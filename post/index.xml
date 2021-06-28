@@ -6,7 +6,20 @@
     <description>Recent content in Posts on Ionosphere</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 22 Jun 2021 16:49:05 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Jun 2021 11:49:22 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java项目中的classpath是什么</title>
+      <link>https://blog.ionosphere.site/p/139dc015/</link>
+      <pubDate>Mon, 28 Jun 2021 11:49:22 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/139dc015/</guid>
+      <description>什么是classpath 一般情况下基于Maven的Java项目开发阶段目录结构：
+src -main –java java源代码文件 –resources 资源库，会自动复制到classes目录里 –filters 资源过滤文件 –webapp web应用的目录。WEB-INF、css、js等 –test –java 单元测试java源代码文件 –resources 测试需要用的资源库 –filters 测试资源过滤库 –assembly 组件的描述配置（如何打包） –it 集成测试(主要用于插件) –site Site（一些文档） target pom.xml maven的pom文件 LICENSE.txt Project’s license README.txt Project’s readme 发布后的目录结构：
+jar -META-INF -BOOT-INF -classes -lib 其中开发时期的src/main/下面的java和resources文件夹都被打包到了生产包的BOOT-INF/classes/目录下，由maven引入的依赖都被放入到了BOOT-INF/lib/下面。classpath指的就是BOOT-INF目录下的classes文件夹。
+classpath的作用 classpath一般用于指定配置或者资源的路径，比如在配置mybatis的Mapper.xml文件位置时：
+classpath*:**/mapper/mapping/*Mapper.xml classpath*表示可以匹配多个文件，路径中的**表示在BOOT-INF/classes/下的任意下层目录。</description>
+    </item>
+    
     <item>
       <title>Spring和JDBC</title>
       <link>https://blog.ionosphere.site/p/10d7a273/</link>

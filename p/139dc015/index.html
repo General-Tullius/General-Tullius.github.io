@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='客户端终结点配置 &amp;lt;system.serviceModel&amp;gt; &amp;lt;bindings&amp;gt; &amp;lt;basicHttpBinding&amp;gt; &amp;lt;binding name=&amp;#34;MISServiceHttpBinding&amp;#34; maxBufferSize=&amp;#34;2147483647&amp;#34; maxReceivedMessageSize=&amp;#34;2147483647&amp;#34;/&amp;gt; &amp;lt;/basicHttpBinding&amp;gt; &amp;lt;/bindings&amp;gt; &amp;lt;client&amp;gt; ... &amp;lt;/client&amp;gt; &amp;lt;/system.serviceModel&amp;gt; '><title>关于Web Service</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='什么是classpath 一般情况下基于Maven的Java项目开发阶段目录结构：
+src -main –java java源代码文件 –resources 资源库，会自动复制到classes目录里 –filters 资源过滤文件 –webapp web应用的目录。WEB-INF、css、js等 –test –java 单元测试java源代码文件 –resources 测试需要用的资源库 –filters 测试资源过滤库 –assembly 组件的描述配置（如何打包） –it 集成测试(主要用于插件) –site Site（一些文档） target pom.xml maven的pom文件 LICENSE.txt Project’s license README.txt Project’s readme 发布后的目录结构：
+jar -META-INF -BOOT-INF -classes -lib 其中开发时期的src/main/下面的java和resources文件夹都被打包到了生产包的BOOT-INF/classes/目录下，由maven引入的依赖都被放入到了BOOT-INF/lib/下面。classpath指的就是BOOT-INF目录下的classes文件夹。
+classpath的作用 classpath一般用于指定配置或者资源的路径，比如在配置mybatis的Mapper.xml文件位置时：
+classpath*:**/mapper/mapping/*Mapper.xml classpath*表示可以匹配多个文件，路径中的**表示在BOOT-INF/classes/下的任意下层目录。'><title>Java项目中的classpath是什么</title>
 
-<link rel='canonical' href='https://blog.ionosphere.site/p/74cc3c3c/'>
+<link rel='canonical' href='https://blog.ionosphere.site/p/139dc015/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='关于Web Service'>
-<meta property='og:description' content='客户端终结点配置 &amp;lt;system.serviceModel&amp;gt; &amp;lt;bindings&amp;gt; &amp;lt;basicHttpBinding&amp;gt; &amp;lt;binding name=&amp;#34;MISServiceHttpBinding&amp;#34; maxBufferSize=&amp;#34;2147483647&amp;#34; maxReceivedMessageSize=&amp;#34;2147483647&amp;#34;/&amp;gt; &amp;lt;/basicHttpBinding&amp;gt; &amp;lt;/bindings&amp;gt; &amp;lt;client&amp;gt; ... &amp;lt;/client&amp;gt; &amp;lt;/system.serviceModel&amp;gt; '>
-<meta property='og:url' content='https://blog.ionosphere.site/p/74cc3c3c/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Java项目中的classpath是什么'>
+<meta property='og:description' content='什么是classpath 一般情况下基于Maven的Java项目开发阶段目录结构：
+src -main –java java源代码文件 –resources 资源库，会自动复制到classes目录里 –filters 资源过滤文件 –webapp web应用的目录。WEB-INF、css、js等 –test –java 单元测试java源代码文件 –resources 测试需要用的资源库 –filters 测试资源过滤库 –assembly 组件的描述配置（如何打包） –it 集成测试(主要用于插件) –site Site（一些文档） target pom.xml maven的pom文件 LICENSE.txt Project’s license README.txt Project’s readme 发布后的目录结构：
+jar -META-INF -BOOT-INF -classes -lib 其中开发时期的src/main/下面的java和resources文件夹都被打包到了生产包的BOOT-INF/classes/目录下，由maven引入的依赖都被放入到了BOOT-INF/lib/下面。classpath指的就是BOOT-INF目录下的classes文件夹。
+classpath的作用 classpath一般用于指定配置或者资源的路径，比如在配置mybatis的Mapper.xml文件位置时：
+classpath*:**/mapper/mapping/*Mapper.xml classpath*表示可以匹配多个文件，路径中的**表示在BOOT-INF/classes/下的任意下层目录。'>
+<meta property='og:url' content='https://blog.ionosphere.site/p/139dc015/'>
 <meta property='og:site_name' content='Ionosphere'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Web Service' /><meta property='article:published_time' content='2021-04-09T12:03:53&#43;08:00'/><meta property='article:modified_time' content='2021-04-09T12:03:53&#43;08:00'/>
-<meta name="twitter:title" content="关于Web Service">
-<meta name="twitter:description" content="客户端终结点配置 &amp;lt;system.serviceModel&amp;gt; &amp;lt;bindings&amp;gt; &amp;lt;basicHttpBinding&amp;gt; &amp;lt;binding name=&amp;#34;MISServiceHttpBinding&amp;#34; maxBufferSize=&amp;#34;2147483647&amp;#34; maxReceivedMessageSize=&amp;#34;2147483647&amp;#34;/&amp;gt; &amp;lt;/basicHttpBinding&amp;gt; &amp;lt;/bindings&amp;gt; &amp;lt;client&amp;gt; ... &amp;lt;/client&amp;gt; &amp;lt;/system.serviceModel&amp;gt; ">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Java' /><meta property='article:published_time' content='2021-06-28T11:49:22&#43;08:00'/><meta property='article:modified_time' content='2021-06-28T11:49:22&#43;08:00'/>
+<meta name="twitter:title" content="Java项目中的classpath是什么">
+<meta name="twitter:description" content="什么是classpath 一般情况下基于Maven的Java项目开发阶段目录结构：
+src -main –java java源代码文件 –resources 资源库，会自动复制到classes目录里 –filters 资源过滤文件 –webapp web应用的目录。WEB-INF、css、js等 –test –java 单元测试java源代码文件 –resources 测试需要用的资源库 –filters 测试资源过滤库 –assembly 组件的描述配置（如何打包） –it 集成测试(主要用于插件) –site Site（一些文档） target pom.xml maven的pom文件 LICENSE.txt Project’s license README.txt Project’s readme 发布后的目录结构：
+jar -META-INF -BOOT-INF -classes -lib 其中开发时期的src/main/下面的java和resources文件夹都被打包到了生产包的BOOT-INF/classes/目录下，由maven引入的依赖都被放入到了BOOT-INF/lib/下面。classpath指的就是BOOT-INF目录下的classes文件夹。
+classpath的作用 classpath一般用于指定配置或者资源的路径，比如在配置mybatis的Mapper.xml文件位置时：
+classpath*:**/mapper/mapping/*Mapper.xml classpath*表示可以匹配多个文件，路径中的**表示在BOOT-INF/classes/下的任意下层目录。">
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210527160407.png" />
 <style>
     :root {
@@ -90,7 +102,7 @@
     
 
     <h2 class="article-title">
-        <a href="/p/74cc3c3c/">关于Web Service</a>
+        <a href="/p/139dc015/">Java项目中的classpath是什么</a>
     </h2>
 
     <footer class="article-time">
@@ -102,23 +114,42 @@
 
 
 
-        <time class="article-time--published">4月9日, 2021</time>
+        <time class="article-time--published">6月28日, 2021</time>
     </footer></div>
 </header>
 
     <section class="article-content">
-    <h2 id="客户端终结点配置">客户端终结点配置</h2>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;system.serviceModel&gt;</span>
-    <span class="nt">&lt;bindings&gt;</span>
-      <span class="nt">&lt;basicHttpBinding&gt;</span>
-        <span class="nt">&lt;binding</span> <span class="na">name=</span><span class="s">&#34;MISServiceHttpBinding&#34;</span> <span class="na">maxBufferSize=</span><span class="s">&#34;2147483647&#34;</span> <span class="na">maxReceivedMessageSize=</span><span class="s">&#34;2147483647&#34;</span><span class="nt">/&gt;</span>
-      <span class="nt">&lt;/basicHttpBinding&gt;</span>
-    <span class="nt">&lt;/bindings&gt;</span>
-    <span class="nt">&lt;client&gt;</span>
-    ...      
-    <span class="nt">&lt;/client&gt;</span>
-<span class="nt">&lt;/system.serviceModel&gt;</span>
-</code></pre></div>
+    <h2 id="什么是classpath">什么是classpath</h2>
+<p>一般情况下基于Maven的Java项目开发阶段目录结构：</p>
+<pre><code>src
+  -main
+      –java java源代码文件
+      –resources 资源库，会自动复制到classes目录里
+      –filters 资源过滤文件
+      –webapp web应用的目录。WEB-INF、css、js等
+  –test
+      –java 单元测试java源代码文件
+      –resources 测试需要用的资源库
+      –filters 测试资源过滤库
+  –assembly 组件的描述配置（如何打包）
+  –it 集成测试(主要用于插件)
+  –site Site（一些文档）
+target
+pom.xml  maven的pom文件
+LICENSE.txt Project’s license
+README.txt Project’s readme
+</code></pre><p>发布后的目录结构：</p>
+<pre><code>jar
+	-META-INF
+	-BOOT-INF
+		-classes
+		-lib
+</code></pre><p>其中开发时期的<code>src/main/</code>下面的<code>java</code>和<code>resources</code>文件夹都被打包到了生产包的<code>BOOT-INF/classes/</code>目录下，由maven引入的依赖都被放入到了<code>BOOT-INF/lib/</code>下面。classpath指的就是<code>BOOT-INF</code>目录下的<code>classes</code>文件夹。</p>
+<h2 id="classpath的作用">classpath的作用</h2>
+<p><code>classpath</code>一般用于指定配置或者资源的路径，比如在配置mybatis的Mapper.xml文件位置时：</p>
+<pre><code>classpath*:**/mapper/mapping/*Mapper.xml
+</code></pre><p><code>classpath*</code>表示可以匹配多个文件，路径中的<code>**</code>表示在<code>BOOT-INF/classes/</code>下的任意下层目录。</p>
+
 </section>
 
 
@@ -126,7 +157,7 @@
     
     <section class="article-tags">
         
-            <a href="/tags/web-service/">Web Service</a>
+            <a href="/tags/java/">Java</a>
         
     </section>
 
@@ -157,12 +188,12 @@
                 
                     
 <article class="">
-    <a href="/p/139dc015/">
+    <a href="/p/74cc3c3c/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Java项目中的classpath是什么</h2>
+            <h2 class="article-title">关于Web Service</h2>
         </div>
     </a>
 </article>
@@ -203,7 +234,7 @@
 <div id = "valinecounter" class="valine-container">
     
     <center>
-        <span id="/p/74cc3c3c/" class="leancloud_visitors" data-flag-title="关于Web Service">
+        <span id="/p/139dc015/" class="leancloud_visitors" data-flag-title="Java项目中的classpath是什么">
             
             当前页面阅读次数：
             <i class="leancloud-visitors-count">0</i>
@@ -402,7 +433,8 @@
             <div class="widget--toc">
                 <nav id="TableOfContents">
   <ul>
-    <li><a href="#客户端终结点配置">客户端终结点配置</a></li>
+    <li><a href="#什么是classpath">什么是classpath</a></li>
+    <li><a href="#classpath的作用">classpath的作用</a></li>
   </ul>
 </nav>
             </div>
