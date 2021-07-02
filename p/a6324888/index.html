@@ -52,12 +52,13 @@
         if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
             
 
-            document.body.dataset.scheme = 'dark';
+            document.documentElement.dataset.scheme = 'dark';
         } else {
-            document.body.dataset.scheme = 'light';
+            document.documentElement.dataset.scheme = 'light';
         }
     })();
-</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+</script>
+<div class="container main-container flex on-phone--column extended article-page with-toolbar">
             
     <div id="article-toolbar">
         <a href="https://blog.ionosphere.site/" class="back-home">
@@ -674,7 +675,7 @@
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.3.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.4.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 </footer>
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
