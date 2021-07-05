@@ -5,8 +5,7 @@
 src -main –java java源代码文件 –resources 资源库，会自动复制到classes目录里 –filters 资源过滤文件 –webapp web应用的目录。WEB-INF、css、js等 –test –java 单元测试java源代码文件 –resources 测试需要用的资源库 –filters 测试资源过滤库 –assembly 组件的描述配置（如何打包） –it 集成测试(主要用于插件) –site Site（一些文档） target pom.xml maven的pom文件 LICENSE.txt Project’s license README.txt Project’s readme 发布后的目录结构：
 jar -META-INF -BOOT-INF -classes -lib 其中开发时期的src/main/下面的java和resources文件夹都被打包到了生产包的BOOT-INF/classes/目录下，由maven引入的依赖都被放入到了BOOT-INF/lib/下面。classpath指的就是BOOT-INF目录下的classes文件夹。
 classpath的作用 classpath一般用于指定配置或者资源的路径，比如在配置mybatis的Mapper.xml文件位置时：
-classpath*:**/mapper/mapping/*Mapper.xml classpath*表示可以匹配多个文件，路径中的**表示在BOOT-INF/classes/下的任意下层目录。
-测试 测试 测试 '><title>Java项目中的classpath是什么</title>
+classpath*:**/mapper/mapping/*Mapper.xml classpath*表示可以匹配多个文件，路径中的**表示在BOOT-INF/classes/下的任意下层目录。'><title>Java项目中的classpath是什么</title>
 
 <link rel='canonical' href='https://blog.ionosphere.site/p/139dc015/'>
 
@@ -15,8 +14,7 @@ classpath*:**/mapper/mapping/*Mapper.xml classpath*表示可以匹配多个文�
 src -main –java java源代码文件 –resources 资源库，会自动复制到classes目录里 –filters 资源过滤文件 –webapp web应用的目录。WEB-INF、css、js等 –test –java 单元测试java源代码文件 –resources 测试需要用的资源库 –filters 测试资源过滤库 –assembly 组件的描述配置（如何打包） –it 集成测试(主要用于插件) –site Site（一些文档） target pom.xml maven的pom文件 LICENSE.txt Project’s license README.txt Project’s readme 发布后的目录结构：
 jar -META-INF -BOOT-INF -classes -lib 其中开发时期的src/main/下面的java和resources文件夹都被打包到了生产包的BOOT-INF/classes/目录下，由maven引入的依赖都被放入到了BOOT-INF/lib/下面。classpath指的就是BOOT-INF目录下的classes文件夹。
 classpath的作用 classpath一般用于指定配置或者资源的路径，比如在配置mybatis的Mapper.xml文件位置时：
-classpath*:**/mapper/mapping/*Mapper.xml classpath*表示可以匹配多个文件，路径中的**表示在BOOT-INF/classes/下的任意下层目录。
-测试 测试 测试 '>
+classpath*:**/mapper/mapping/*Mapper.xml classpath*表示可以匹配多个文件，路径中的**表示在BOOT-INF/classes/下的任意下层目录。'>
 <meta property='og:url' content='https://blog.ionosphere.site/p/139dc015/'>
 <meta property='og:site_name' content='Ionosphere'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Java' /><meta property='article:published_time' content='2021-06-28T11:49:22&#43;08:00'/><meta property='article:modified_time' content='2021-06-28T11:49:22&#43;08:00'/>
@@ -25,8 +23,7 @@ classpath*:**/mapper/mapping/*Mapper.xml classpath*表示可以匹配多个文�
 src -main –java java源代码文件 –resources 资源库，会自动复制到classes目录里 –filters 资源过滤文件 –webapp web应用的目录。WEB-INF、css、js等 –test –java 单元测试java源代码文件 –resources 测试需要用的资源库 –filters 测试资源过滤库 –assembly 组件的描述配置（如何打包） –it 集成测试(主要用于插件) –site Site（一些文档） target pom.xml maven的pom文件 LICENSE.txt Project’s license README.txt Project’s readme 发布后的目录结构：
 jar -META-INF -BOOT-INF -classes -lib 其中开发时期的src/main/下面的java和resources文件夹都被打包到了生产包的BOOT-INF/classes/目录下，由maven引入的依赖都被放入到了BOOT-INF/lib/下面。classpath指的就是BOOT-INF目录下的classes文件夹。
 classpath的作用 classpath一般用于指定配置或者资源的路径，比如在配置mybatis的Mapper.xml文件位置时：
-classpath*:**/mapper/mapping/*Mapper.xml classpath*表示可以匹配多个文件，路径中的**表示在BOOT-INF/classes/下的任意下层目录。
-测试 测试 测试 ">
+classpath*:**/mapper/mapping/*Mapper.xml classpath*表示可以匹配多个文件，路径中的**表示在BOOT-INF/classes/下的任意下层目录。">
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210527160407.png" />
 
     </head>
@@ -137,9 +134,6 @@ README.txt Project’s readme
 <p><code>classpath</code>一般用于指定配置或者资源的路径，比如在配置mybatis的Mapper.xml文件位置时：</p>
 <pre><code>classpath*:**/mapper/mapping/*Mapper.xml
 </code></pre><p><code>classpath*</code>表示可以匹配多个文件，路径中的<code>**</code>表示在<code>BOOT-INF/classes/</code>下的任意下层目录。</p>
-<h3 id="测试">测试</h3>
-<h4 id="测试-1">测试</h4>
-<h3 id="测试-2">测试</h3>
 
 </section>
 
@@ -429,16 +423,7 @@ README.txt Project’s readme
                     <nav id="TableOfContents">
   <ol>
     <li><a href="#什么是classpath">什么是classpath</a></li>
-    <li><a href="#classpath的作用">classpath的作用</a>
-      <ol>
-        <li><a href="#测试">测试</a>
-          <ol>
-            <li><a href="#测试-1">测试</a></li>
-          </ol>
-        </li>
-        <li><a href="#测试-2">测试</a></li>
-      </ol>
-    </li>
+    <li><a href="#classpath的作用">classpath的作用</a></li>
   </ol>
 </nav>
                 </div>
