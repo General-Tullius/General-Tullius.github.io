@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>读书 on Ionosphere</title>
+    <link>https://blog.ionosphere.site/categories/%E8%AF%BB%E4%B9%A6/</link>
+    <description>Recent content in 读书 on Ionosphere</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 22 Jun 2021 16:49:05 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/categories/%E8%AF%BB%E4%B9%A6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring和JDBC</title>
+      <link>https://blog.ionosphere.site/p/10d7a273/</link>
+      <pubDate>Tue, 22 Jun 2021 16:49:05 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/10d7a273/</guid>
+      <description> 如何在Spring中使用JDBC？
+ 配置数据源  JNDI数据源  </description>
+    </item>
+    
+    <item>
+      <title>面向切面的Spring</title>
+      <link>https://blog.ionosphere.site/p/7d1371cd/</link>
+      <pubDate>Tue, 08 Jun 2021 17:32:23 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/7d1371cd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>高级装配</title>
+      <link>https://blog.ionosphere.site/p/de06998b/</link>
+      <pubDate>Thu, 03 Jun 2021 17:13:10 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/de06998b/</guid>
+      <description>Spring profile 条件化的bean声明 自动装配与歧义性 bean的作用域 Spring表达式语言   环境与profile 软件运行在不同的环境，需要装配不同的bean。比如：在开发环境、QA环境和生产环境可能会用到不同类型的数据库配置。
+常规的处理手段是构建针对性的独立配置类（或者XML），在构建阶段确定要将哪一个配置编译到应用中。这种方式需要为每种环境重新构建应用，这将导致各种问题，比如从QA阶段迁移到生产环境时，重新构建可能会引入BUG。
+Spring提供了不需要重新构建的解决方案。首先，在Java配置中，通过**@Profile**注解来指定某个bean属于哪一个Profile（或者在XML配置中通过&amp;lt;beans&amp;gt;元素的profile属性置顶）；然后，用spring.profiles.active和spring.profiles.default 来指定激活的profile和默认的profile（激活和默认的profile可以同时指定多个）。
+ 指定了profile的bean只有在对应的profile被激活时才会被创建。没有指定profie的bean始终都会被创建。
+ 设置active和default属性的方式
+ 作为DispatcherServlet的初始化参数； 作为Web应用的上下文参数； 作为JNDI条目； 作为环境变量； 作为JVM的系统属性； 在集成测试类上，使用@ActiveProfiles注解设置。  条件化的bean 有些时候，对于某些bean，我们希望只有在某些特定的情况满足之后在创建这个bean。Spring提供了**@Conditional**注解来实现根据条件动态配置bean的功能。
+@Bean @Conditional(MagicExistsCondition.class) public MagicBean magicBean(){ return new MagicBean(); } package com.habuma.restfun; import org.springframework.context.annotation.Condition; import org.springframework.context.annotation.ConditionContext; import org.springframework.core.env.Environment; import org.springframework.core.type.AnnotatedTypeMetadata; public class MagicExistsCondition implements Condition { @Override public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) { Environment env = context.getEnvironment(); return env.containsProperty(&amp;#34;magic&amp;#34;); } } 当matches()方法返回true时bean才会被创建。</description>
+    </item>
+    
+    <item>
+      <title>装配Bean</title>
+      <link>https://blog.ionosphere.site/p/a6324888/</link>
+      <pubDate>Thu, 27 May 2021 15:15:20 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/a6324888/</guid>
+      <description>创建应用对象之间协作关系的行为通常称为装配（wiring），这也是依赖注入（DI）的本质
+ Spring配置方案  在XML中进显式配置 在Java中进行显式配置 隐式的bean发现机制和自动装配  选择Spring装配方案时，要根据实际情况选择自己最喜欢的方式，多种方案还可以搭配使用。要尽可能的使用自动配置机制，显式配置越少越好；当必须要使用显式配置时，优先JavaConfig；只有在想使用便利的XML命名空间而且在JavaConfig中没有同样的实现时，才使用XML。
+自动化装配bean Spring从两个角度来实现自动化装配：
+ 组件扫描（Component scanning）：Spring会自动发现应用上下文中所创建的bean。 自动装配（autowiring）：Spring自动满足bean之间的依赖。  创建可被发现的bean 创建组件类 在类上加@Component注解，就表明这个类会作为组件类、并告知了Spring要为这个类创建bean。
+package soundsystem; import org.springframework.stereotype.Component; @Component public class SgtPeppers implements CompactDisc { private String title = &amp;#34;Sgt. Pepper&amp;#39;s Lonely Hearts Club Band&amp;#34;; private String artist = &amp;#34;The Beatles&amp;#34;; public void play() { System.out.println(&amp;#34;Playing &amp;#34; + title + &amp;#34; by &amp;#34; + artist); } } 开启组件扫描 组件扫描默认不启用，需要显式配置来命令Spring扫描带有@Component注解的类、并为之创建bean。
+  通过Java配置类启用组件扫描
+package soundsystem; import org.</description>
+    </item>
+    
+    <item>
+      <title>初步了解Spring</title>
+      <link>https://blog.ionosphere.site/p/006e1380/</link>
+      <pubDate>Thu, 20 May 2021 15:16:06 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/006e1380/</guid>
+      <description>Spring是什么 Spring是一个为了解决企业级应用开发的复杂性而创建的开源框架。
+Spring降低Java开发复杂性的4种关键策略
+ 基于POJO的轻量级和最小侵入性编程； 通过依赖注入和面向接口实现松耦合； 基于切面和惯例进行声明式编程； 通过切面和模板减少样板式代码。  基于POJO Spring代码仍旧是POJO，除了某些类会用到Spring注解，不会感觉到使用Spring的任何痕迹。
+依赖注入（DI） 依赖注入可以使应用对象之间保持松散耦合。
+应用切面 面向切面编程可以把遍布应用各处的功能分离出来，形成可重用组件。面向切面编程往往被定义为促使软件系统实现关注点分离的一项技术。
+使用模板 通过模板封装来消除样板式代码（比如JDBC操作）。
+Spring容器 在Spring中，应用对象生存于Spring容器（container）中。容器负责创建对象，装配它们，配置并管理它们的整个生命周期，从生存到死亡（new到finalize()）。容器是使用DI管理构成应用的组件，它会创建相互协作的组件之间的关联。
+Spring自带了两类容器，bean工厂 和 应用上下文。bean工厂是最简单的容器，提供了基本的DI支持。应用上下文基于bean工厂构建，并提供应用框架级别的服务。bean工厂太过低级，，应用上下文要比bean工厂更受欢迎。
+应用上下文 常见的应用上下文
+   类型 作用     AnnotationConfigApplicationContext 从一个或多个基于Java的配置类中加载Spring应用上下文   AnnotationConfigWebApplicationContext 从一个或多个基于Java的配置类中加载Spring Web应用上下文。   ClassPathXmlApplicationContext 从类路径下的一个或多个XML配置文件中加载上下文定义，把应用上下文的定义文件作为类资源。   FileSystemXmlApplicationContext 从文件系统下的一个或多个XML配置文件中加载上下文定义。   XmlWebApplicationContext 从Web应用下的一个或多个XML配置文件中加载上下文定义。    bean的生命周期  bean的生命周期 
+Spring功能概览 Spring框架通过专注于DI和AOP和消除样板代码来简化企业级Java开发，这只是Spring提供的部分功能。Spring框架是一个庞大的生态圈，它涵盖了多个不同领域，例如Web服务、REST、移动开发以及NoSQL等。
+ Spring框架模块示意图</description>
+    </item>
+    
+    <item>
+      <title>正则表达式常用规则</title>
+      <link>https://blog.ionosphere.site/p/6de70ddc/</link>
+      <pubDate>Sat, 24 Apr 2021 21:27:56 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/6de70ddc/</guid>
+      <description>首先要明确一点，针对同一个场景的正则表达式并不是唯一的，只要结果正确即可，不要疑惑为什么自己写的正则跟别人的不一样
+ 匹配确定的值 值是什么表达式就是什么。
+# 匹配字母‘A’ A 匹配一些值 用方括号将值包裹起来
+# 匹配姓张的和姓王的 [张王]\w+ # 匹配数字 [0-9] # 匹配中文 [\u4e00-\u9fa5] # 区间取非 # ^只有在‘[]’中且紧跟在‘[’之后才表示取非 # 例：非数字 [^0-9]  元字符：有特殊含义的字符，比如在‘[]’中的连字符‘-’，表示取连字符左右两边值之间的内容。若要取元字符本身的含义，需要用转移字符‘\’进行转义。若用转义字符对普通字符转义，则普通字符将被理解成元字符，比如匹配换行符‘\n’。
+ 匹配所有值 英文句号.
+匹配次数控制 匹配确定的次数 匹配一次 表达式默认匹配一次，不需要做任何特殊操作
+匹配n次 表达式加‘{n}’
+匹配m次到n次 表达式加‘{m,n}’
+匹配不确定的次数 匹配1到多次 表达式加‘+’
+# 匹配一组数字 \d+ 匹配0到多次 # 匹配0到多个字符 \w* 匹配0次或1次 表达式加‘?’
+# 匹配网址 https?//[\w./]+ 边界 单词边界 \b
+字符串边界 ^\w+$</description>
+    </item>
+    
+    <item>
+      <title>Pro Git</title>
+      <link>https://blog.ionosphere.site/p/a0fa4610/</link>
+      <pubDate>Wed, 10 Mar 2021 22:55:00 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/a0fa4610/</guid>
+      <description>起步 本章为Git入门。主要讲解为什么Git这么流行，为什么要使用Git，Git如何设置
+ 关于版本控制 记录一个或多个文件内容变化，以便将来阅读特定版本修订情况的系统即版本控制系统（VCS）。
+本地版本控制系统 本地版本控制系统大多都是采用某种简单的数据库来记录文件的历次更新差异，如图所示：
+ 
+其中最流行的一种叫做RCS。RCS的工作原理是在硬盘上保存补丁集（补丁集是指文件修订前后的变化）；通过应用所有的补丁，可以重新计算出各个版本的文件内容。本地版本控制系统无法让不同系统上的开发者协同工作。
+集中化的版本控制系统 集中化版本控制系统（Centralized Version Control System，CVCS）很好的解决了本地版本控制系统不能让不同系统上的开发者协同工作的问题。CVCS模式：有一个单一的集中管理服务器，保存所有文件的修订版本，协同工作的人都通过客户端连接到这台服务器，取出最新文件或者提交更新。
+ 
+CVCS的优点：1.项目参与者可以看到其他人在做什么。2.管理人员可以掌控每个参与者的权限。3.管理一个CVCS相较于在各个客户端维护本地数据库要简单。
+CVCS的缺点：中央服务器故障后会影响所有人的工作。
+典型的CVCS：CVS，Subversion，Perforce&amp;hellip;
+分布式版本控制系统 分布式版本控制系统（Distributed Version Control System，DVCS）中，客户端不仅仅提取最新版本的文件，还把代码仓库完整的镜像下来，包括完整的历史记录。在分布式版本控制系统中，任何一处服务器发生故障，事后都可以用任意一个镜像出来的本地仓库恢复。
+ 
+典型的DVCS：Git，Mercurial，Bazaar，Darcs&amp;hellip;
+ Git的诞生 Linux开源社区的BitKeeper（一款DVCS）使用权到期了，他们只好去开发自己的版本控制系统😂，并且给新系统制定了若干目标：
+ 速度 简单的设计 对非线性开发模式的强力支持 完全分布式 有能力高效管理类似Linux内核一样的超大规模项目（速度和数据量）   Git的工作原理 直接记录快照、而非比较差异 Git和其它版本控制系统的主要差别在于对待数据的方式。其它大部分系统一文件变更列表的方式存储信息，将它们存储的信息看作是一组基本文件和每个文件随时间逐步累积的差异。
+ 
+Git则更像是把数据看作是对小型文件系统的一系列快照。每当你提交更新或者保存项目状态时，它基本上就会对当时的全部文件创建一个快照并保存这个快照的索引。为了效率，如果文件没有修改，Git不再重新存储该文件，而是保留一个链接指向之前存储的文件。Git对待数据更像是一个快照流。
+ 
+近乎所有操作都是本地执行 Giit中大多数操作都只需要访问本地文件和资源，一般不需要来自网络上其它计算机的信息，因为本地磁盘上就有项目的完整历史，同时Git是先提交到本地副本，再上传到服务器的，所以即使离线也可以继续进行任何操作。
+Git保证完整性 Git中所有数据在存储前都计算校验和，然后以校验和来引用。这意味着不可能在Git不知情时更改任何文件内容或目录内容。
+Git用于计算校验和的机制叫做SHA-1散列（Hash，哈希，把任意长度的输入「又叫做预映射pre-image」通过散列算法变换成固定长度的输出，该输出就是散列值。这种转换是一种压缩映射，也就是，散列值的空间通常远小于输入的空间，不同的输入可能会散列成相同的输出，所以不可能从散列值来确定唯一的输入值）。这是一个由40个16进制字符（0-9，a-f）组成的字符串，基于Git中文件的内容或目录结构计算出来。SHA-1 Hash 看起来是这样的：24b9da6552252987aa493b52f8696cd6d3b00373
+Git中保存的信息都是以文件的Hash值来索引，而不是文件名。
+Git一般只添加数据 你执行的Git操作几乎只向数据库中添加数据，也就是说Git几乎不会执行任何不可恢复操作。
+三种状态  已修改（modified） 已暂存（staged） 已提交（committed）  已修改表示修改了文件，但是还没有保存到数据库。已暂存表示对一个已修改文件的当前版本做了标记使之包含在下次提交的快照中。已提交表示数据已安全的保存在了本地数据库中。
+ 安装Git 略
+ Git初始配置 Git自带一个 git config 工具来帮助设置控制 Git 外观和行为的配置变量。这些变量主要存储在三个地方：</description>
+    </item>
+    
+    <item>
+      <title>Java核心技术·卷I</title>
+      <link>https://blog.ionosphere.site/p/a8e95393/</link>
+      <pubDate>Thu, 04 Mar 2021 23:27:31 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/a8e95393/</guid>
+      <description>开始系统的学习Java基础知识
+ 第1章 Java程序设计概述 Java发展简史    版本 年份 语言新特性 类与接口的数量     1.0 1996 语言本身 211   1.1 1997 内部类 477   1.2 1998 strictfp修饰符 1524   1.3 2000 无 1840   1.4 2002 断言 2723   5.0 2004 泛型类、“for each”循环、可变元参数、自动装箱、元数据、枚举、静态导入 3279   6 2006 无 3793   7 2011 基于字符串的switch、钻石操作符、二进制字面量、异常处理改进 4024   8 2014 lambda表达式、包含默认方法的接口、流和日期/时间库 4240    注：当前已发布到版本16</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Windows 系统下 Oracle 定时、全量备份'><title>Oracle定时备份</title>
+
+<link rel='canonical' href='https://blog.ionosphere.site/p/22637e0b/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Oracle定时备份'>
+<meta property='og:description' content='Windows 系统下 Oracle 定时、全量备份'>
+<meta property='og:url' content='https://blog.ionosphere.site/p/22637e0b/'>
+<meta property='og:site_name' content='Ionosphere'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Oracle' /><meta property='article:published_time' content='2020-12-25T14:38:32&#43;08:00'/><meta property='article:modified_time' content='2020-12-25T14:38:32&#43;08:00'/>
+<meta name="twitter:title" content="Oracle定时备份">
+<meta name="twitter:description" content="Windows 系统下 Oracle 定时、全量备份">
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210527160407.png" />
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="https://blog.ionosphere.site/" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>返回</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%8A%80%E6%9C%AF/" >
+                技术
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/22637e0b/">Oracle定时备份</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        Windows 系统下 Oracle 定时、全量备份
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">12月25日, 2020</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <blockquote>
+<p>转载自：<a href="https://segmentfault.com/a/1190000008596697" target="_blank">Windows下Oracle定时备份(全量备份)</a></p>
+</blockquote>
+<p>关于Windows下oracle全量备份的文章，很多网站都有，写下本文不过是为了以后方便查找，不用再到处找。以下些许内容有所参考到其他人所写内容，这里无意冒犯，本文引用内容部分会附上参考地址，还望原作者见谅。</p>
+<h2 id="备份脚本">备份脚本</h2>
+<p>新建txt文档，把脚本复制进去后改文件格式为bat文件，双击运行即可测试该脚本是否有误。这里要说明一下，开始把脚本拿过来执行时，一直未能成功备份数据库,用bat的pause暂停调试发现了一些问题，有时不注意可能会在定义,变量如BACKUPDATE、USER等后面带了空格,这个时候问题就来了，导致参数的不正确，所以这里需注意！</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">@echo off   
+<span class="nb">echo</span> <span class="o">================================================</span>   
+<span class="nb">echo</span>  Windows环境下Oracle数据库的自动备份脚本  
+<span class="nb">echo</span>  1. 使用当前日期命名备份文件。  
+<span class="nb">echo</span>  2. 自动删除7天前的备份。  
+<span class="nb">echo</span> <span class="o">================================================</span>  
+<span class="nb">echo</span>  以“YYYYMMDD”格式取出当前时间。  
+<span class="nb">set</span> <span class="nv">BACKUPDATE</span><span class="o">=</span>%date:~0,4%%date:~5,2%%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%
+<span class="nb">echo</span>  设置用户名、密码和要备份的数据库
+<span class="nb">set</span> <span class="nv">USER</span><span class="o">=</span>ora_user
+<span class="nb">set</span> <span class="nv">PASSWORD</span><span class="o">=</span>ora_name
+<span class="nb">set</span> <span class="nv">DATABASE</span><span class="o">=</span>conn_db
+<span class="nb">echo</span>  创建备份目录
+<span class="k">if</span> not exist <span class="s2">&#34;E:\backup\data&#34;</span>       mkdir E:<span class="se">\b</span>ackup<span class="se">\d</span>ata  
+<span class="k">if</span> not exist <span class="s2">&#34;E:\backup\log&#34;</span>        mkdir E:<span class="se">\b</span>ackup<span class="se">\l</span>og  
+<span class="nb">set</span> <span class="nv">DATADIR</span><span class="o">=</span>E:<span class="se">\b</span>ackup<span class="se">\d</span>ata
+<span class="nb">set</span> <span class="nv">LOGDIR</span><span class="o">=</span>E:<span class="se">\b</span>ackup<span class="se">\l</span>og
+exp %USER%/%PASSWORD%@%DATABASE% <span class="nv">file</span><span class="o">=</span>%DATADIR%<span class="se">\d</span>ata_%BACKUPDATE%.dmp <span class="nv">log</span><span class="o">=</span>%LOGDIR%<span class="se">\l</span>og_%BACKUPDATE%.log
+<span class="nb">echo</span>  删除7天前的备份。
+forfiles /p <span class="s2">&#34;%DATADIR%&#34;</span> /s /m *.* /d -7 /c <span class="s2">&#34;cmd /c del @path&#34;</span>
+forfiles /p <span class="s2">&#34;%LOGDIR%&#34;</span> /s /m *.* /d -7 /c <span class="s2">&#34;cmd /c del @path&#34;</span>
+<span class="nb">exit</span>
+</code></pre></div><blockquote>
+<p>注：该脚本参考<a href="http://blog.csdn.net/iw1210/article/details/39312783" target="_blank">Windows环境下Oracle数据库的自动备份脚本</a></p>
+</blockquote>
+<h2 id="定时任务">定时任务</h2>
+<p>这里需要用到Windows的【任务计划程序】，操作按照下列截图一一操作。</p>
+<h3 id="快捷查询">快捷查询</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210206144645.png" alt=""  /></p>
+<h3 id="选择任务计划程序">选择任务计划程序</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210206144756.png" alt=""  /></p>
+<h3 id="创建基本任务">创建基本任务</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210206144841.png" alt=""  /></p>
+<h3 id="填写任务相关信息">填写任务相关信息</h3>
+<h4 id="定时任务描述">定时任务描述</h4>
+<p><img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210206144907.png" alt=""  /></p>
+<h4 id="任务执行时间">任务执行时间</h4>
+<p><img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210206144933.png" alt=""  /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210206144953.png" alt=""  /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210206145017.png" alt=""  /></p>
+<p>选择刚刚写的数据库备份脚本</p>
+<p><img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210206145042.png" alt=""  /></p>
+<p>最后在任务列表里可以看到刚刚创建的定时任务，那么这个任务从设定的时间开始则会每天执行一次，即达到定时备份任务了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210206145102.png" alt=""  /></p>
+<blockquote>
+<p>注：以上内容参考 <a href="http://jingyan.baidu.com/article/08b6a591c30ae914a8092205.html" target="_blank">定时备份ORACLE数据库(windows环境下)</a></p>
+</blockquote>
+<h2 id="脚本">脚本</h2>
+<p><a href="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/annex/定时备份.txt" target="_blank">定时备份.txt</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/oracle/">Oracle</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/375e7a13/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210528111008.webp" loading="lazy" data-key="375e7a13" data-hash="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210528111008.webp"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">自动操作（Automator）</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/1844ba76/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">自制App图标</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/b133175a/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Markdown语法简单教程</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/da23b91d/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Hugo永久链接</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/1a22f05b/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210228015227.jpeg" loading="lazy" data-key="1a22f05b" data-hash="https://cdn.jsdelivr.net/gh/io-oss/NetDisk/img/20210228015227.jpeg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">二维码挪车牌</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+<style>
+    .valine-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        margin-top: var(--card-margin-top);
+        font-family: var(--article-font-family);
+        font-size: var(--article-font-size);
+        color: var(--card-text-color-main);
+    }
+</style>
+<div id = "valinecounter" class="valine-container">
+    
+    <center>
+        <span id="/p/22637e0b/" class="leancloud_visitors" data-flag-title="Oracle定时备份">
+            
+            当前页面阅读次数：
+            <i class="leancloud-visitors-count">0</i>
+        </span>
+    </center>
+</div>
+<div class="valine-container">
+    <div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: '634ivFgtCuKGbhPEnnaTxLro-MdYXbMMI',
+            appKey: 'SNEL15NDdNJEA7lcFlMfBdDi',
+            visitor:  true ,
+            avatar: 'mp',
+            placeholder: '聊点什么。。。',
+            lang: 'zh-CN',
+            recordIP:  false ,
+            emojiCDN: 'https://cdn.jsdelivr.net/gh/io-oss/NetDisk/alu/',
+            emojiMaps: {
+                "不出所料":"不出所料.png",
+                "不说话":"不说话.png",
+                "不高兴":"不高兴.png",
+                "中刀":"中刀.png",
+                "中指":"中指.png",
+                "中枪":"中枪.png",
+                "亲亲":"亲亲.png",
+                "便便":"便便.png",
+                "内伤":"内伤.png",
+                "击掌":"击掌.png",
+                "口水":"口水.png",
+                "吐":"吐.png",
+                "吐舌":"吐舌.png",
+                "吐血倒地":"吐血倒地.png",
+                "呲牙":"呲牙.png",
+                "咽气":"咽气.png",
+                "哭泣":"哭泣.png",
+                "喜极而泣":"喜极而泣.png",
+                "喷水":"喷水.png",
+                "喷血":"喷血.png",
+                "坐等":"坐等.png",
+                "害羞":"害羞.png",
+                "小眼睛":"小眼睛.png",
+                "尴尬":"尴尬.png",
+                "得意":"得意.png",
+                "惊喜":"惊喜.png",
+                "想一想":"想一想.png",
+                "愤怒":"愤怒.png",
+                "扇耳光":"扇耳光.png",
+                "投降":"投降.png",
+                "抠鼻":"抠鼻.png",
+                "抽烟":"抽烟.png",
+                "无奈":"无奈.png",
+                "无所谓":"无所谓.png",
+                "无语":"无语.png",
+                "暗地观察":"暗地观察.png",
+                "期待":"期待.png",
+                "欢呼":"欢呼.png",
+                "汗":"汗.png",
+                "深思":"深思.png",
+                "狂汗":"狂汗.png",
+                "献花":"献花.png",
+                "献黄瓜":"献黄瓜.png",
+                "皱眉":"皱眉.png",
+                "看不见":"看不见.png",
+                "看热闹":"看热闹.png",
+                "瞅你":"瞅你.png",
+                "肿包":"肿包.png",
+                "脸红":"脸红.png",
+                "蜡烛":"蜡烛.png",
+                "装大款":"装大款.png",
+                "观察":"观察.png",
+                "赞一个":"赞一个.png",
+                "邪恶":"邪恶.png",
+                "锁眉":"锁眉.png",
+                "长草":"长草.png",
+                "阴暗":"阴暗.png",
+                "高兴":"高兴.png",
+                "黑线":"黑线.png",
+                "鼓掌":"鼓掌.png"
+            }
+        })        
+    </script>    
+</div>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2018 - 
+        
+        2021 Ionosphere
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.4.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">目录</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#备份脚本">备份脚本</a></li>
+    <li><a href="#定时任务">定时任务</a>
+      <ul>
+        <li><a href="#快捷查询">快捷查询</a></li>
+        <li><a href="#选择任务计划程序">选择任务计划程序</a></li>
+        <li><a href="#创建基本任务">创建基本任务</a></li>
+        <li><a href="#填写任务相关信息">填写任务相关信息</a>
+          <ul>
+            <li><a href="#定时任务描述">定时任务描述</a></li>
+            <li><a href="#任务执行时间">任务执行时间</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#脚本">脚本</a></li>
+  </ul>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

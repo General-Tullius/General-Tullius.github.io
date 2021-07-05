@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Markdown on Ionosphere</title>
+    <link>https://blog.ionosphere.site/tags/markdown/</link>
+    <description>Recent content in Markdown on Ionosphere</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 02 Mar 2021 11:59:39 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown语法简单教程</title>
+      <link>https://blog.ionosphere.site/p/b133175a/</link>
+      <pubDate>Tue, 02 Mar 2021 11:59:39 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/b133175a/</guid>
+      <description>写作时所有标记用的符号都要用英文，文章标点随意
+  标题 语法 #加文字
+# 一级标题 ## 二级标题 ### 三级标题 . . . ###### 六级标题 效果
+ 标题 
+一般一级标题是文章的名称，所以在博客中的标题常从二级开始
+ 列表 无序列表 语法 -加空格加文字
+- 列表1 - 列表1.1 - 列表1.2 - 列表2 - 列表3 效果
+ 无序列表 
+有序列表 语法 数字加.(英文句号)加空格加文字
+1. 列表1 1. 列表1.1 1. 列表1.2 1. 列表2 1. 列表3 列表中数字并不需要自己一个个排序，全写1即可自动生成序号
+效果
+ 有序列表 
+ 引用 语法 &amp;gt;加空格加引用内容，多行每行都加
+&amp;gt; 登鹳雀楼_百度汉语 &amp;gt; 作者：王之涣 &amp;gt; 白日依山尽，黄河入海流。 &amp;gt; 欲穷千里目，更上一层楼。 效果</description>
+    </item>
+    
+  </channel>
+</rss>

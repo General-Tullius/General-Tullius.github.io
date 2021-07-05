@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>App图标 on Ionosphere</title>
+    <link>https://blog.ionosphere.site/tags/app%E5%9B%BE%E6%A0%87/</link>
+    <description>Recent content in App图标 on Ionosphere</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 28 Apr 2021 12:19:35 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/tags/app%E5%9B%BE%E6%A0%87/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>自制App图标</title>
+      <link>https://blog.ionosphere.site/p/1844ba76/</link>
+      <pubDate>Wed, 28 Apr 2021 12:19:35 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/1844ba76/</guid>
+      <description>步骤  设计图标  尺寸要求1024*1024的
+创建图片存放目录  mkdir AppIcon.iconset
+名字随便，但是必须有.iconset后缀
+将原图标转为各种尺寸  sips -z 16 16 AppIcon.png --out AppIcon.iconset/icon_16x16.png sips -z 32 32 AppIcon.png --out AppIcon.iconset/icon_16x16@2x.png sips -z 32 32 AppIcon.png --out AppIcon.iconset/icon_32x32.png sips -z 64 64 AppIcon.png --out AppIcon.iconset/icon_32x32@2x.png sips -z 128 128 AppIcon.png --out AppIcon.iconset/icon_128x128.png sips -z 256 256 AppIcon.png --out AppIcon.iconset/icon_128x128@2x.png sips -z 256 256 AppIcon.png --out AppIcon.iconset/icon_256x256.png sips -z 512 512 AppIcon.png --out AppIcon.iconset/icon_256x256@2x.png sips -z 512 512 AppIcon.</description>
+    </item>
+    
+  </channel>
+</rss>

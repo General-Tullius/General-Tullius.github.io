@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MacOS on Ionosphere</title>
+    <link>https://blog.ionosphere.site/tags/macos/</link>
+    <description>Recent content in MacOS on Ionosphere</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 28 May 2021 13:31:34 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>自动操作（Automator）</title>
+      <link>https://blog.ionosphere.site/p/375e7a13/</link>
+      <pubDate>Fri, 28 May 2021 13:31:34 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/375e7a13/</guid>
+      <description> 自动操作是系统自带软件，可以将一些重复性的工作自动化。
+ 功能使用 Shell脚本接收参数   自变量获取参数
+ 自变量获取参数 
+  stdin获取参数  stdin获取参数 
+  故障排除 Shell脚本部分命令不识别  **: command not found 
+ 查看选择的Shell类型是否合适。 在脚本前面加入source ~/.bash_profile,引入环境变量配置。  </description>
+    </item>
+    
+    <item>
+      <title>自制App图标</title>
+      <link>https://blog.ionosphere.site/p/1844ba76/</link>
+      <pubDate>Wed, 28 Apr 2021 12:19:35 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/1844ba76/</guid>
+      <description>步骤  设计图标  尺寸要求1024*1024的
+创建图片存放目录  mkdir AppIcon.iconset
+名字随便，但是必须有.iconset后缀
+将原图标转为各种尺寸  sips -z 16 16 AppIcon.png --out AppIcon.iconset/icon_16x16.png sips -z 32 32 AppIcon.png --out AppIcon.iconset/icon_16x16@2x.png sips -z 32 32 AppIcon.png --out AppIcon.iconset/icon_32x32.png sips -z 64 64 AppIcon.png --out AppIcon.iconset/icon_32x32@2x.png sips -z 128 128 AppIcon.png --out AppIcon.iconset/icon_128x128.png sips -z 256 256 AppIcon.png --out AppIcon.iconset/icon_128x128@2x.png sips -z 256 256 AppIcon.png --out AppIcon.iconset/icon_256x256.png sips -z 512 512 AppIcon.png --out AppIcon.iconset/icon_256x256@2x.png sips -z 512 512 AppIcon.</description>
+    </item>
+    
+    <item>
+      <title>文字转语音</title>
+      <link>https://blog.ionosphere.site/p/0272ad7a/</link>
+      <pubDate>Tue, 06 Oct 2020 13:48:54 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/0272ad7a/</guid>
+      <description># 文字转语音 say -f 1.txt -o 1.aiff say 你好 -o 你好.aiff # 音频格式转换 ffmpeg -f aiff -i 你好.aiff 你好.mp3 </description>
+    </item>
+    
+  </channel>
+</rss>

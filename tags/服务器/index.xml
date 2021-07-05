@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>服务器 on Ionosphere</title>
+    <link>https://blog.ionosphere.site/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+    <description>Recent content in 服务器 on Ionosphere</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 16 Apr 2021 09:57:10 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web服务器建设时的一些点</title>
+      <link>https://blog.ionosphere.site/p/e4584901/</link>
+      <pubDate>Fri, 16 Apr 2021 09:57:10 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/e4584901/</guid>
+      <description> 整理一下Web服务器建设时需要注意的内容
+ 硬件  数量：2台（程序+数据）
+硬盘：500G+/500G+
+内存：16G+/16G+
+ 软件 操作系统 推荐版本：Windows Server 2016
+IIS  服务器需要有 .NET Framework 4.0 环境
+ 开启IIS功能
+ 
+ 不要图方便去开启IIS的&amp;quot;目录浏览&amp;quot;，要通过&amp;quot;默认文档&amp;quot;功能来配置访问IP端口地址之后的默认跳转页面
+  
+数据库 推荐版本：SqlServer 2016，最低2008R2
+数据库挂上去之后要做好自动维护任务。自动维护包含备份和清理两部分，不要只做定时备份，但是不定时清理旧备份，最终磁盘空间用完了，导致一开始正常运行的系统，某一天突然出问题
+其它软件 经常有客户服务器在初期建设时因为软件选用不当，导致被装了各种全家桶软件，平时各种广告弹窗，影响远程时的速度，有些还严重到影响服务器性能，这里对常用软件做一些建议：
+解压缩：7z 下载地址
+文本编辑器：Visual Studio Code 下载地址
+浏览器：Edge 下载地址Google Chrome下载地址
+网络 公网  IP需要固定或者可以域名访问 开放必要的端口，做好端口映射。正常情况下，需要开放BS、消息服务、地图服务（固定6080）3个端口，前后端分离版本需要额外增加前端端口。  内网  IP需要固定 需要了解客户网络特性，比如在服务器\内网环境是否可以访问自己的外网IP 配置服务器防火墙，需要哪个端口才开哪个，不要直接关闭防火墙  </description>
+    </item>
+    
+  </channel>
+</rss>

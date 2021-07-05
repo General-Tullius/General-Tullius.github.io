@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VSCode on Ionosphere</title>
+    <link>https://blog.ionosphere.site/tags/vscode/</link>
+    <description>Recent content in VSCode on Ionosphere</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 06 Feb 2021 13:19:30 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Visual Studio Code 使用问题记录</title>
+      <link>https://blog.ionosphere.site/p/41e58ada/</link>
+      <pubDate>Sat, 06 Feb 2021 13:19:30 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/41e58ada/</guid>
+      <description>Nuget包管理加载版本时报错 解决方案：
+ 打开.vscode/extensions/jmrog.vscode-nuget-package-manager-1.1.6/out/src/actions/add-methods/fetchPackageVersions.js， 修改代码 ...node_fetch_1.default(`${versionsUrl}${selectedPackageName.toLowerCase()}/index.json`, utils_1.getFetchOptions(vscode.workspace.getConfiguration(&amp;#39;http&amp;#39;)))   </description>
+    </item>
+    
+  </channel>
+</rss>
