@@ -6,7 +6,20 @@
     <description>Recent content in Spring on Ionosphere</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 22 Jun 2021 16:49:05 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Jul 2021 10:07:10 +0800</lastBuildDate><atom:link href="https://blog.ionosphere.site/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>用 Spring 创建 RESTful Web Service</title>
+      <link>https://blog.ionosphere.site/p/96fc722c/</link>
+      <pubDate>Tue, 06 Jul 2021 10:07:10 +0800</pubDate>
+      
+      <guid>https://blog.ionosphere.site/p/96fc722c/</guid>
+      <description>目标 创建一个RESTful API。
+实现 在IDEA中创建Spring项目  通过srping initializr来初始化项目 依赖项要增加spring web  创建RESTful API @RestController public class IndexController { @RequestMapping(&amp;#34;/&amp;#34;) public String index() { return &amp;#34;hello, there&amp;#34;; } }    @RestController和@Controller注解的区别： 加@Controller注解的类里的每个方法都将返回一个视图页面；加@RestController注解则数据会以json/xml的形式返回前台页面；@Controller加@ResponseBody则与@RestController效果一样。加@RestController注解则不能返回jsp、html页面。
+  @RequestMapping注解，在不指定请求谓词的情况下Post和Get都支持，可以通过method指定请求方式
+@RequestMapping( method = RequestMethod.GET, // .post 　path = &amp;#34;/&amp;#34; ) 还可以直接@GetMapping(&amp;quot;/&amp;quot;)
+   指定服务启动端口 修改src/main/resources/application.properties文件，通过server.port=*****来指定启动端口</description>
+    </item>
+    
     <item>
       <title>Spring和JDBC</title>
       <link>https://blog.ionosphere.site/p/10d7a273/</link>
