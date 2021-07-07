@@ -40,7 +40,7 @@
 　　&lt;span class=&#34;n&#34;&gt;method&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;RequestMethod&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;GET&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// .post
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;　　&lt;span class=&#34;n&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt;
 &lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;还可以直接通过@GetMapping(&amp;quot;/&amp;quot;)/@PostMapping(&amp;quot;/&amp;quot;)来制定请求方式和路由&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;还可以直接通过@GetMapping(&amp;quot;/&amp;quot;)/@PostMapping(&amp;quot;/&amp;quot;)来指定请求方式和路由&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
